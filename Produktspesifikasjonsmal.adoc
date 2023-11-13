@@ -211,7 +211,7 @@ Standarder geografisk informasjon - Geodatakvalitet - versjon 1.0
 
 == Definisjoner og forkortelser
 
-// PSV avsnitt 4.Kap 2 viser til standardisert måte å skrive definisjoner (og implisitt forkortelser) på. 
+// PSV avsnitt 4.Kap 2 viser til standardisert måte å skrive definisjoner (og implisitt forkortelser) på.
 
 === Definisjoner
 // Liste over begreper - termer med definisjoner brukt i standarden. Dersom termene er hentet fra andre standarddokumenter, skal kilde oppgis.  Begrepene bør sorteres alfabetisk etter term.
@@ -435,19 +435,19 @@ Norske tegn er ok hvis enkoding er riktig innstilt. Kontakt standardiseringssekr
 ==== Fullstendig navn
 Topografisk grunndatabase
 
-// Identisk med tag på pakka i EA for SOSI_langnavn. 
+// Identisk med tag på pakka i EA for SOSI_langnavn.
 
 
 ==== Versjon
 desember 2023
 
-// Identisk med tag på pakka i EA for version. 
+// Identisk med tag på pakka i EA for version.
 
 
 === Referansedato
 2023-12-24
 
-// PSS og PSV er litt uklare på hva referansedato er. Det er nevnt gyldighetsdato og utgivelsesdato. 
+// PSS og PSV er litt uklare på hva referansedato er. Det er nevnt gyldighetsdato og utgivelsesdato.
 
 
 === Ansvarlig organisasjon
@@ -466,12 +466,12 @@ Norsk
 
 
 // Fritekst som beskriver hovedtema. Gjerne inspirert av DOK-hovedkategorier eller nasjonal temainndeling: 
-// https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling 
+// https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling
 
 
 === Temakategori
 
-// Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier. 
+// Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier.
 
 
 === Sammendrag
@@ -520,12 +520,12 @@ Landsdekkende for Norge
 === Identifikasjonsomfang
 Hele datasettet
 
-// Dette punktet er litt uklart i PSS og PSV. I ISO-standarden for produktspesifikasjoner (NS-EN ISO 19131) er det krav om at identifikasjonen (hele kapittel 3 i denne malen) skal ha en link til den delen av spesifikasjonsomfanget som gjelder hele produktspesifikasjonen (ofte avsnitt 4.1 i denne malen). Forslag til utfylling kan være "hele datasettet" eller "Som angitt i avsnitt 4.<x>.". 
+// Dette punktet er litt uklart i PSS og PSV. I ISO-standarden for produktspesifikasjoner (NS-EN ISO 19131) er det krav om at identifikasjonen (hele kapittel 3 i denne malen) skal ha en link til den delen av spesifikasjonsomfanget som gjelder hele produktspesifikasjonen (ofte avsnitt 4.1 i denne malen). Forslag til utfylling kan være "hele datasettet" eller "Som angitt i avsnitt 4.<x>.".
 
 
 === Supplerende beskrivelse
 
-// Dette punktet er gjemt i PSS 13.6.3 og i PSV 4.Kap 3.12.  
+// Dette punktet er gjemt i PSS 13.6.3 og i PSV 4.Kap 3.12. 
 == Spesifikasjonsomfang
 
 (Antall spesifikasjonsomfang: <sett inn antall>)
@@ -682,7 +682,7 @@ Datafangst kan være nært knyttet til kapittel 7.
 
 == Datavedlikehold
 
-// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4. 
+// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
 
 // VEDLIKEHOLDSINFORMASJON.  Dette delkapittelet kan repeteres om nødvendig (ned til // SLUTT_VEDLIKEHOLDSINFORMASJON
 
@@ -699,7 +699,7 @@ Gjelder hele datasettet
 
 == Presentasjon
 
-// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4. 
+// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
 
 === Omfang
 
@@ -707,7 +707,7 @@ Gjelder hele datasettet
 
 == Leveranse
 
-// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4. 
+// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
 
 // LEVERANSEMETODE.  Dette delkapittelet dersom det er flere leveransemetoder (ned til // SLUTT LEVERANSEMETODE
 
@@ -750,7 +750,7 @@ Gjelder hele datasettet
 ////
 Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
 
-Merk også at du her skal angi hvilke metadata som skal følge produktet, men ikke selve metadatene.  
+Merk også at du her skal angi hvilke metadata som skal følge produktet, men ikke selve metadatene.
 ////
 
 === Omfang
@@ -761,7 +761,7 @@ Merk også at du her skal angi hvilke metadata som skal følge produktet, men ik
 == SOSI-format realisering
 
 ////
----Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SOSI-format-realiserings-rapport -- 
+---Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SOSI-format-realiserings-rapport --
 
 Dersom SOSI-format ikke er et leveranseformat, kan dette vedlegget sløyfes
 ////
@@ -770,7 +770,7 @@ Dersom SOSI-format ikke er et leveranseformat, kan dette vedlegget sløyfes
 == GML realisering
 
 ////
---Dersom GML er angitt som leveranseformat i kapittel 11, skal det her angis hvordan applikasjonsskjemaet skal realiseres i GML i form av URL ---  
+--Dersom GML er angitt som leveranseformat i kapittel 11, skal det her angis hvordan applikasjonsskjemaet skal realiseres i GML i form av URL --- 
 ////
 
 Realiseringen defineres av følgende filer:
@@ -785,5 +785,5 @@ Realiseringen defineres av følgende filer:
 
 
 ////
---Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg---  
+--Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg--- 
 ////
