@@ -1,0 +1,33 @@
+(Antall spesifikasjonsomfang: 1)
+
+[[HeleDatasettet]]
+=== Spesifikasjonsomfang for hele spesifikasjonen
+
+==== Identifikasjon
+Hele datasettet
+
+==== Nivå
+Datasett
+
+==== Navn
+{fkbdatasett}
+
+==== Beskrivelse
+
+
+==== Utstrekningsinformasjon
+
+*Utstrekningbeskrivelse* + 
+Topografisk grunndatabase dekker Norges fastlandsterritorium 
+
+*Geografisk område* + 
+Nord: 72° +
+Sør: 57° +
+Øst: 32° +
+Vest: 4°
+
+*Vertikal utbredelse* + 
+Fra ca -250 m til ca 2500 m
+
+*Innhold gyldighetsperiode* + 
+Ikke angitt
