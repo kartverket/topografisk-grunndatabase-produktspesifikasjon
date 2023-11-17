@@ -1,4 +1,4 @@
-=== Definisjoner
+
 // Liste over begreper - termer med definisjoner brukt i standarden. Dersom termene er hentet fra andre standarddokumenter, skal kilde oppgis.  Begrepene bør sorteres alfabetisk etter term.
 .term for begrep
 

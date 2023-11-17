@@ -1,0 +1,11 @@
+
+Denne spesifikasjonen skal være et virkemiddel for å kvalitetssikre og forvalte Topografisk grunndatabase. + 
+
+Spesifikasjonen fastlegger: + 
+ • Overordnede tekniske krav +
+ • Datamodeller + 
+ • Definisjoner, kriterier og representasjon for enkelttema + 
+ • Datakilder for etablering og ajourføring + 
+ • Standard for format/koding i henhold til SOSI + 
+
+Spesifikasjonen regulerer ikke forhold som produksjonsmetoder og produksjonsverktøy. Spesifikasjonen inneholder heller ingen krav til produkter, digitale eller analoge, som er basert på datasettet Topografisk grunndatabase.

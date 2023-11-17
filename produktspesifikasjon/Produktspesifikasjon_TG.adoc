@@ -1,14 +1,106 @@
-:datasett: Topografisk grunndatabase
-:versjon: 0.1
-:skjemaversjon: 0.1
-:publisert: X
-:metadata-url: 
-:prodspek-forrige: 
+:datasett: Topografisk grunndatabase 
+:versjon: 0.1 
+:skjemaversjon: 0.1 
+:publisert: år-mnd-dag 
+:metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-arealbruk/87b31015-a3de-4540-9b8b-cb1bf4e1cb3a 
+:prodspek-forrige:
 :versjon-forrige: 
-// All informasjon i hode over denne linja må fylles ut for hvert datasett. Øvrige parametere settes i adoc_parametere.adoc
-include::../felles_prodspek/adoc_parametere.adoc[]
-= SOSI-standardisert produktspesifikasjon: {X}
-Kartverket
-{versjon}, X
+// All informasjon i hode over denne linja må fylles ut for hvert datasett. Øvrige parametere settes i adoc_parametere.adoc 
+include::../kapittel/adoc_parametere.adoc[] 
+= SOSI-standardisert produktspesifikasjon: {X} 
+Kartverket 
+{versjon}, X 
 
-include::../kapittel/dokument_metadata.adoc[]
+include::../kapittel/dokument_metadata.adoc[] 
+
+== Innledning, historikk og endringslogg
+
+=== Innledning
+Topografisk grunndatabase (TG) er en DLM. Topografisk grunndatabase er en landsdekkende homogen kartdatabase. Kartdataene skal være i målestokken 1:10 000 og danne grunnlaget for kartplott i 1:20 000. 
+
+=== Historikk
+Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for en landsdekkende, homogen kartdatabase i stor målestokk. Arbeidet med første produktspesifikasjon var ett samarbeid mellom flere fagfelt; FKB, Kartprodukter, Datadelingsteamet, Standardisering og Sjø.
+
+|===
+|Versjon|Dato |Utførtav |Merknad
+|0.1|X|Ida Hope Barth|Utkast
+|===
+
+=== Endringslogg
+
+=== Normative referanser
+
+include::../kapittel/normativ_ref.adoc[]
+
+
+== Definisjoner og forkortelser
+
+=== Definisjoner
+
+include::../kapittel/definisjoner.adoc[]
+
+=== Forkortelser
+
+include::../kapittel/forkortelser.adoc[]
+
+<<<
+
+== Generelt om spesifikasjonen
+
+=== Unik identifisering
+Topografisk grunndatabase
+
+==== Fullstendig navn
+{datasett} 
+
+==== Versjon
+{versjon}
+
+=== Referansedato
+år-mnd-dag
+
+=== Ansvarlig organisasjon
+Kartverket, Landdivisjonen, Avdeling for kartprodukter + 
+Postadresse: 3507 Hønefoss + 
+Besøksadresse: Kartverksveien 21, 3511 Hønefoss + 
+E-post: post@kartverket.no + 
+Telefon: 32 11 80 00 + 
+Internettadresse: www.kartverket.no + 
+
+=== Språk
+Norsk
+
+=== Hovedtema
+Basis geodata
+
+=== Temakategori
+basis geodata
+
+=== Sammendrag
+FKB-Arealbruk beskriver fysisk bruk av et geografisk område. 
+
+=== Formål
+// Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
+include::../kapittel/formal.adoc[]
+
+
+// Fellesdel som dekker kap 3.9 - 3.12 for alle FKB-produktspesifikasjoner
+include::../kapittel/representasjon.adoc[]
+
+=== Supplerende beskrivelse
+Data ikke angitt
+
+<<<
+
+== Spesifikasjonsomfang
+
+include::../kapittel/omfang.adoc[]  
+
+<<<
+
+== Innhold og struktur
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+

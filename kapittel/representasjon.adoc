@@ -1,0 +1,25 @@
+=== Representasjonsform
+vektor
+
+=== Datasettoppløsning
+Topografisk grunndatabase er satt sammen av mange ulike geodatakilder, silt og tilpasset databasen. Stedfestingsnøyaktigheten varierer fra .....
+Topografisk grunndatabase egner seg for presentasjon i målestokker fra ca 1:5000 til ca 1:20000
+
+=== Utstrekningsinformasjon
+*Utstrekningbeskrivelse* + 
+Topografisk grunndatbase dekker Norges fastlandsterritorium 
+
+*Geografisk område* + 
+Nord: 72° +
+Sør: 57° +
+Øst: 32° +
+Vest: 4°
+
+*Vertikal utbredelse* + 
+Fra ca -250 m til ca 2500 m
+
+*Innhold gyldighetsperiode* + 
+Ikke angitt
+
+=== Identifikasjonsomfang
+<<HeleDatasettet,Hele datasettet>>
