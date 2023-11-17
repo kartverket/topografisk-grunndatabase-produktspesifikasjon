@@ -1,0 +1,14 @@
+:datasett: Topografisk grunndatabase
+:versjon: 0.1
+:skjemaversjon: 0.1
+:publisert: X
+:metadata-url: 
+:prodspek-forrige: 
+:versjon-forrige: 
+// All informasjon i hode over denne linja må fylles ut for hvert datasett. Øvrige parametere settes i adoc_parametere.adoc
+include::../felles_prodspek/adoc_parametere.adoc[]
+= SOSI-standardisert produktspesifikasjon: {X}
+Kartverket
+{versjon}, X
+
+include::../kapittel/dokument_metadata.adoc[]
