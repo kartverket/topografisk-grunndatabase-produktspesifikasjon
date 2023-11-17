@@ -1,4 +1,5 @@
 ////
+/// Test
 Dette er en mal for SOSI produktspesifikasjoner som skal være konform med standarden SOSI produktspesifikasjoner - Krav og godkjenning.
 
 Ved bruk av malen, bruk et verktøy som behandler rene tekstfiler (eks notepad, notepad++, emacs, ...) eller et laget for asciidoc (eks ASCIIdocFX)
