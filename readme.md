@@ -7,3 +7,5 @@ Produktet utformes slik at det kan brukes som datagrunnlag for N50 og andre avle
 
 Datamodellering gjøres i EA. Asciidoc-filer eksporteres ut fra UML-modell og sys sammen med skisser/bilder og tilleggstekster til helhetlig dokumentasjon i dette repoet.
 
+HTML-visning av produktspesifikasjon: https://htmlpreview.github.io/?https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/blob/main/produktspesifikasjon/index.html
+
