@@ -2,16 +2,12 @@
 :versjon: 0.1 
 :skjemaversjon: 0.1 
 :publisert: år-mnd-dag 
-:metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-arealbruk/87b31015-a3de-4540-9b8b-cb1bf4e1cb3a 
+:metadata-url: Link_til_Geonorge
 :prodspek-forrige:
 :versjon-forrige: 
 // All informasjon i hode over denne linja må fylles ut for hvert datasett. Øvrige parametere settes i adoc_parametere.adoc 
-include::../kapittel/adoc_parametere.adoc[] 
-= SOSI-standardisert produktspesifikasjon: {X} 
-Kartverket 
-{versjon}, X 
-
-include::../kapittel/dokument_metadata.adoc[] 
+include::../kapittel/filhode.adoc[] 
+ 
 
 == Innledning, historikk og endringslogg
 
@@ -77,7 +73,7 @@ Basis geodata
 basis geodata
 
 === Sammendrag
-FKB-Arealbruk beskriver fysisk bruk av et geografisk område. 
+Topografisk grunnkart...
 
 === Formål
 // Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
@@ -102,5 +98,7 @@ include::../kapittel/omfang.adoc[]
 
 === Omfang
 <<HeleDatasettet,Hele datasettet>>
+
+include::kap5.adoc[] 
 
 
