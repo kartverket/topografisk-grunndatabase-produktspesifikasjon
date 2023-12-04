@@ -13,10 +13,10 @@
 |no
  
 |SOSI_kortnavn
-|Grunnkartdatabase
+|TopografiskGrunndatabase
  
 |SOSI_langnavn
-|Grunnkartdatabase
+|Topografisk Grunndatabase
  
 |SOSI_modellstatus
 |utkast
@@ -28,16 +28,16 @@
 |5.0
  
 |targetNamespace
-|https://skjema.geonorge.no/SOSI/produktspesifikasjon/Grunnkartdatabase/20231201
+|https://skjema.geonorge.no/SOSI/produktspesifikasjon/TopografiskGrunndatabase/1.0
  
 |version
-|20230401
+|1.0
  
 |xmlns
 |app
  
 |xsdDocument
-|N50.xsd
+|topografiskGrunndatabase.xsd
  
 |xsdEncodingRule
 |sosi
@@ -60,6 +60,11 @@ image::diagrammer/Pakkerealisering Generelle typer.png[link=diagrammer/Pakkereal
  
 '''
  
+.Oversiktsdiagram Generelle typer 
+image::diagrammer/Oversiktsdiagram Generelle typer.png[link=diagrammer/Oversiktsdiagram Generelle typer.png, alt="Diagram med navn Oversiktsdiagram Generelle typer som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
 .Hoveddiagram Generelle typer 
 image::diagrammer/Hoveddiagram Generelle typer.png[link=diagrammer/Hoveddiagram Generelle typer.png, alt="Diagram med navn Hoveddiagram Generelle typer som viser UML-klasser beskrevet i teksten nedenfor."]
  
@@ -72,6 +77,22 @@ image::diagrammer/Kodelister Generelle typer.png[link=diagrammer/Kodelister Gene
  
 .SOSI objektrealisering 
 image::diagrammer/SOSI objektrealisering.png[link=diagrammer/SOSI objektrealisering.png, alt="Diagram med navn SOSI objektrealisering som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+[[konnekteringspunkt]]
+===== «FeatureType» Konnekteringspunkt
+*Definisjon:* 
+ 
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|===
  
 '''
  
@@ -345,6 +366,7 @@ SOSI_navn: KVALITET +
 <<bane,«FeatureType» Bane>> +
 <<pir,«FeatureType» Pir>> +
 <<campingplass,«FeatureType» Campingplass>> +
+<<konnekteringspunkt,«FeatureType» Konnekteringspunkt>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
@@ -422,53 +444,6 @@ SOSI_navn: KVALITET +
 <<innsjø,«FeatureType» Innsjø>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
-|===
- 
-'''
- 
-[[opphavsinformasjon]]
-===== «dataType» Opphavsinformasjon
-*Definisjon:* 
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*opphavData*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 25 + 
-SOSI_navn: OPPHAV + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*id*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: ID + 
 |===
  
 '''
@@ -799,6 +774,53 @@ SOSI_navn: RETN +
  
 '''
  
+[[opphavsinformasjon]]
+===== «dataType» Opphavsinformasjon
+*Definisjon:* 
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*opphavData*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 25 + 
+SOSI_navn: OPPHAV + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*id*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: ID + 
+|===
+ 
+'''
+ 
 [[datafangstmetode]]
 ===== «CodeList» Datafangstmetode
 *Definisjon:* metode for datafangst. 
@@ -1026,6 +1048,11 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 .Pakkerealisering Administrative områder 
 image::diagrammer/Pakkerealisering Administrative områder.png[link=diagrammer/Pakkerealisering Administrative områder.png, alt="Diagram med navn Pakkerealisering Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Oversiktsdiagram Administrative områder 
+image::diagrammer/Oversiktsdiagram Administrative områder.png[link=diagrammer/Oversiktsdiagram Administrative områder.png, alt="Diagram med navn Oversiktsdiagram Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1561,13 +1588,13 @@ image::diagrammer/Pakkerealisering Arealdekke.png[link=diagrammer/Pakkerealiseri
  
 '''
  
-.Oversiktsdiagram Arealdekke A-I 
-image::diagrammer/Oversiktsdiagram Arealdekke A-I.png[link=diagrammer/Oversiktsdiagram Arealdekke A-I.png, alt="Diagram med navn Oversiktsdiagram Arealdekke A-I som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Arealdekke objekttyper A-I 
+image::diagrammer/Oversiktsdiagram Arealdekke objekttyper A-I.png[link=diagrammer/Oversiktsdiagram Arealdekke objekttyper A-I.png, alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper A-I som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Oversiktsdiagram Arealdekke K-V 
-image::diagrammer/Oversiktsdiagram Arealdekke K-V.png[link=diagrammer/Oversiktsdiagram Arealdekke K-V.png, alt="Diagram med navn Oversiktsdiagram Arealdekke K-V som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Arealdekke objekttyper K-V 
+image::diagrammer/Oversiktsdiagram Arealdekke objekttyper K-V.png[link=diagrammer/Oversiktsdiagram Arealdekke objekttyper K-V.png, alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper K-V som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1606,8 +1633,23 @@ image::diagrammer/Hoveddiagram Kystkontur.png[link=diagrammer/Hoveddiagram Kystk
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper fra generell objektkatalog Areal 4.0 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog Areal 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Areal 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Areal 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog Vann 4.0 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog Vann 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Vann 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Vann 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog øvrige fagområder 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige fagområder.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige fagområder.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -3188,33 +3230,6 @@ SOSI_navn: VANNBR +
  
 |Til klasse
 |<<kanalkant,«FeatureType» Kanalkant>>
-|===
- 
-[discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*avgrensningsobjekter i samsvar med områdegeometri*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
- 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon innenfor område*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
- 
 |===
  
 [discrete]
@@ -5365,18 +5380,38 @@ image::diagrammer/Pakkerealisering Bygninger og Anlegg.png[link=diagrammer/Pakke
  
 '''
  
-.Hoveddiagram Bygninger og anlegg  
-image::diagrammer/Hoveddiagram Bygninger og anlegg .png[link=diagrammer/Hoveddiagram Bygninger og anlegg .png, alt="Diagram med navn Hoveddiagram Bygninger og anlegg  som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Bygninger og anlegg objekttyper A-P 
+image::diagrammer/Oversiktsdiagram Bygninger og anlegg objekttyper A-P.png[link=diagrammer/Oversiktsdiagram Bygninger og anlegg objekttyper A-P.png, alt="Diagram med navn Oversiktsdiagram Bygninger og anlegg objekttyper A-P som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Oversiktsdiagram Kodelister og Datatyper 
-image::diagrammer/Oversiktsdiagram Kodelister og Datatyper.png[link=diagrammer/Oversiktsdiagram Kodelister og Datatyper.png, alt="Diagram med navn Oversiktsdiagram Kodelister og Datatyper som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Bygninger og anlegg objekttyper R-V 
+image::diagrammer/Oversiktsdiagram Bygninger og anlegg objekttyper R-V.png[link=diagrammer/Oversiktsdiagram Bygninger og anlegg objekttyper R-V.png, alt="Diagram med navn Oversiktsdiagram Bygninger og anlegg objekttyper R-V som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet 
+image::diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet.png[link=diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet.png, alt="Diagram med navn Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet  
+image::diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet .png[link=diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet .png, alt="Diagram med navn Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Oversiktsdiagram kodelister og datatyper Bygninger og anlegg 
+image::diagrammer/Oversiktsdiagram kodelister og datatyper Bygninger og anlegg.png[link=diagrammer/Oversiktsdiagram kodelister og datatyper Bygninger og anlegg.png, alt="Diagram med navn Oversiktsdiagram kodelister og datatyper Bygninger og anlegg som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog Bygnan 4.0 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog Bygnan 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Bygnan 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Bygnan 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog øvrige 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -5554,6 +5589,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Dam +
 |===
  
 '''
@@ -5679,6 +5716,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» AnnetGjerde +
 |===
  
 '''
@@ -5738,6 +5777,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygg-4.5/Bygningsavgrensning::«featureType» Grunnmur +
 |===
  
 '''
@@ -6179,6 +6220,10 @@ SOSI_navn: VERTIKALAVSTAND +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Mast +
+|Realisering av: 
+|«ApplicationSchema» FKB-Ledning-5.0/Objekttyper - instansierbare::«FeatureType» Mast +
 |===
  
 '''
@@ -6283,6 +6328,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» MurFrittstående +
 |===
  
 '''
@@ -6367,6 +6414,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» FKB-BygnAnlegg-5.0.2/TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettslokalitet +
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettsmerder +
 |===
  
 '''
@@ -6448,6 +6499,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Vegsituasjon-4.5::«featureType» Parkeringsområde +
 |===
  
 '''
@@ -6519,6 +6572,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/BygningsmessigeAnlegg/Pakke2::«featureType» Pipe +
 |===
  
 '''
@@ -6623,6 +6678,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» FKB-BygnAnlegg-5.0.2/MurerOgGjerder::«featureType» Ruin +
 |===
  
 '''
@@ -6769,6 +6826,8 @@ SOSI_navn: HOB +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» Skjerm +
 |===
  
 '''
@@ -6890,6 +6949,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Slipp +
 |===
  
 '''
@@ -6990,7 +7051,7 @@ Alle sykehus skal med i Topografisk grunndatabase. Sykehus er med som eget punkt
 |*akuttmotak*
  
 |Definisjon: 
-|
+|sykehus som har en avdeling som tar seg av akutte skader og sykdommer
  
 |Multiplisitet: 
 |[1..1]
@@ -7051,6 +7112,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnlKulturLekMm::«featureType» Svømmebasseng +
 |===
  
 '''
@@ -7177,6 +7240,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygg-4.5/Takoverbygg::«featureType» Takoverbygg +
 |===
  
 '''
@@ -7256,6 +7321,8 @@ SOSI_navn: HREF +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnlKulturLekMm::«featureType» Taubane +
 |===
  
 '''
@@ -7296,6 +7363,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |Supertype: 
 |<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
  
+|Realisering av: 
+|«ApplicationSchema» FKB-BygnAnlegg-5.0.2/TekniskeAnleggKulturLek::«featureType» Tribune +
 |===
  
 '''
@@ -7511,6 +7580,8 @@ SOSI_navn: NAVHØYDE +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Vindturbin +
 |===
  
 '''
@@ -7609,6 +7680,8 @@ SOSI_navn: HOB +
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» Voll +
 |===
  
 '''
@@ -7966,18 +8039,18 @@ image::diagrammer/Pakkerealisering Høyde.png[link=diagrammer/Pakkerealisering H
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Høyde 
+image::diagrammer/Hoveddiagram Høyde.png[link=diagrammer/Hoveddiagram Høyde.png, alt="Diagram med navn Hoveddiagram Høyde som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 .Realisering av kodelister fra generell objektkatalog 
 image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
- 
-'''
- 
-.Hoveddiagram Høyde 
-image::diagrammer/Hoveddiagram Høyde.png[link=diagrammer/Hoveddiagram Høyde.png, alt="Diagram med navn Hoveddiagram Høyde som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -7987,9 +8060,6 @@ image::diagrammer/Hoveddiagram Høyde.png[link=diagrammer/Hoveddiagram Høyde.pn
 
 Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).
 
-
--- Definition -- 
-line in the terrain with a fixed height value (z value) above the reference height
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8014,10 +8084,6 @@ line in the terrain with a fixed height value (z value) above the reference heig
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Kurve + 
 |===
 [cols="20,80"]
 |===
@@ -8025,7 +8091,19 @@ SOSI_navn: Kurve +
 |*høydekurvetype*
  
 |Definisjon: 
-|
+|egenskapen høydekurvetype beskriver type høydekurve
+
+*Forsenkningskurve:* linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.
+
+*Hjelpekurve:* linje som følger terrenget med fast høydeverdi (z-verdi) og som brukes for bedre å beskrive terrenget mellom de vanlige høydekurvene
+
+*Høydekurve:* linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden
+Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).
+
+
+
+
  
 |Multiplisitet: 
 |[1..1]
@@ -8047,8 +8125,6 @@ SOSI_navn: HØYDEKURVETYPE +
 |Definisjon: 
 |angivelse av høydekurvens høyde over høydereferansen i meter
 
--- Definition -- 
-indication of the depression curve's height above the height reference in metres - to be given with decimals if necessary
  
 |Multiplisitet: 
 |[1..1]
@@ -8107,12 +8183,6 @@ point in the terrain with a measured height value used to indicate the height on
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: * + 
-SOSI_lengde:  + 
-SOSI_navn: NØ + 
-SOSI_navn: Punkt + 
 |===
 [cols="20,80"]
 |===
@@ -8120,7 +8190,11 @@ SOSI_navn: Punkt +
 |*høydepunkttype*
  
 |Definisjon: 
-|
+|egenskapen høydepunkttype beskriver type høydepunkt
+
+*Terrengpunkt:* punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte topper i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser
+
+*Trigonometriskpunkt:* varig merket punkt, markert med bolt eller annet merke, der plane koordinater og høyde er bestemt i et trigonometrisk nett, i et geodetisk system
  
 |Multiplisitet: 
 |[1..1]
@@ -8211,13 +8285,18 @@ image::diagrammer/Pakkerealisering Restriksjonsområder.png[link=diagrammer/Pakk
  
 '''
  
+.Oversiktsdiagram Restriksjonsområder 
+image::diagrammer/Oversiktsdiagram Restriksjonsområder.png[link=diagrammer/Oversiktsdiagram Restriksjonsområder.png, alt="Diagram med navn Oversiktsdiagram Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
 .Hoveddiagram Restriksjonsområder 
 image::diagrammer/Hoveddiagram Restriksjonsområder.png[link=diagrammer/Hoveddiagram Restriksjonsområder.png, alt="Diagram med navn Hoveddiagram Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog og generelle typer 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog og generelle typer.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog og generelle typer.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog og generelle typer som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper fra generell objektkatalog 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -8411,10 +8490,6 @@ SOSI_navn: NAVN +
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Kurve + 
 |===
  
 [discrete]
@@ -8460,10 +8535,6 @@ SOSI_navn: Kurve +
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
 |===
 [cols="20,80"]
 |===
@@ -8583,9 +8654,6 @@ area where divisions from the armed forces undertake live firing practice on lan
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
 [cols="20,80"]
 |===
@@ -8776,18 +8844,23 @@ image::diagrammer/Pakkerealisering Samferdsel.png[link=diagrammer/Pakkerealiseri
  
 '''
  
-.Oversiktsdiagram Samferdsel - FeatureTyper 
-image::diagrammer/Oversiktsdiagram Samferdsel - FeatureTyper.png[link=diagrammer/Oversiktsdiagram Samferdsel - FeatureTyper.png, alt="Diagram med navn Oversiktsdiagram Samferdsel - FeatureTyper som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Samferdsel 
+image::diagrammer/Oversiktsdiagram Samferdsel.png[link=diagrammer/Oversiktsdiagram Samferdsel.png, alt="Diagram med navn Oversiktsdiagram Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Oversiktsdiagram Kodelister og Datatyper 
-image::diagrammer/Oversiktsdiagram Kodelister og Datatyper.png[link=diagrammer/Oversiktsdiagram Kodelister og Datatyper.png, alt="Diagram med navn Oversiktsdiagram Kodelister og Datatyper som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Samferdsel objekttyper 
+image::diagrammer/Hoveddiagram Samferdsel objekttyper.png[link=diagrammer/Hoveddiagram Samferdsel objekttyper.png, alt="Diagram med navn Hoveddiagram Samferdsel objekttyper som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Kodelister 
+image::diagrammer/Hoveddiagram Kodelister.png[link=diagrammer/Hoveddiagram Kodelister.png, alt="Diagram med navn Hoveddiagram Kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av objekttyper fra generell objektkatalog 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -9123,7 +9196,7 @@ SOSI_navn: TYPEVEG +
 |*belysning*
  
 |Definisjon: 
-|
+|permanent belysning langs sti eller løype
  
 |Multiplisitet: 
 |[0..1]
@@ -9132,8 +9205,6 @@ SOSI_navn: TYPEVEG +
 |http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
 |Profilparametre i tagged values: 
 |
-isMetadata: false + 
-sequenceNumber:  + 
 SOSI_lengde:  + 
 SOSI_navn: BELYSNING + 
 |===
@@ -9705,13 +9776,18 @@ image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, alt
  
 '''
  
+.Oversiktsdiagram Stedsnavn 
+image::diagrammer/Oversiktsdiagram Stedsnavn.png[link=diagrammer/Oversiktsdiagram Stedsnavn.png, alt="Diagram med navn Oversiktsdiagram Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
 .Hoveddiagram Stedsnavn 
 image::diagrammer/Hoveddiagram Stedsnavn.png[link=diagrammer/Hoveddiagram Stedsnavn.png, alt="Diagram med navn Hoveddiagram Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av featuretyper fra generell objektkatalog 
-image::diagrammer/Realisering av featuretyper fra generell objektkatalog.png[link=diagrammer/Realisering av featuretyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av featuretyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper fra generell objektkatalog 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -9900,9 +9976,6 @@ SOSI_navn: TEKSTTYPE +
  
 |Type: 
 |<<navneobjekthovedgruppe,«CodeList» Navneobjekthovedgruppe>>
-|Profilparametre i tagged values: 
-|
-asDictionary: false + 
 |===
 [cols="20,80"]
 |===
@@ -9917,9 +9990,6 @@ asDictionary: false +
  
 |Type: 
 |<<navneobjektgruppe,«CodeList» Navneobjektgruppe>>
-|Profilparametre i tagged values: 
-|
-asDictionary: false + 
 |===
 [cols="20,80"]
 |===
@@ -9934,9 +10004,6 @@ asDictionary: false +
  
 |Type: 
 |<<navneobjekttype,«CodeList» Navneobjekttype>>
-|Profilparametre i tagged values: 
-|
-asDictionary: false + 
 |===
 [cols="20,80"]
 |===
