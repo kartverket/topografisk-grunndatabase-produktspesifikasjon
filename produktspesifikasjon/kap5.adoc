@@ -75,14 +75,14 @@ image::diagrammer/Kodelister Generelle typer.png[link=diagrammer/Kodelister Gene
  
 '''
  
-.SOSI objektrealisering 
-image::diagrammer/SOSI objektrealisering.png[link=diagrammer/SOSI objektrealisering.png, alt="Diagram med navn SOSI objektrealisering som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av SOSI-objektet Generelle typer 
+image::diagrammer/Realisering av SOSI-objektet Generelle typer.png[link=diagrammer/Realisering av SOSI-objektet Generelle typer.png, alt="Diagram med navn Realisering av SOSI-objektet Generelle typer som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[konnekteringspunkt]]
 ===== «FeatureType» Konnekteringspunkt
-*Definisjon:* 
+*Definisjon:* det er etablert konnekteringspunkter for temaene kraftlinjer, veger, stier, bygninger, jernbane, elver, innsjøkontur og enkelte midtlinjer for innsjøer og elver som krysser riksgrensen mellom Norge og Sverige. Dataene for de respektive landene kan da settes sammen slik at man får et godt kartbilde. Det er de nasjonale kartverkene i Sverige og Norge som vedlikeholder datasettet. Kilde for endringer er fotogrammetrisk konstruksjon og digitalisering fra ortofoto.
  
  
 [discrete]
@@ -774,53 +774,6 @@ SOSI_navn: RETN +
  
 '''
  
-[[opphavsinformasjon]]
-===== «dataType» Opphavsinformasjon
-*Definisjon:* 
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*opphavData*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 25 + 
-SOSI_navn: OPPHAV + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*id*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: ID + 
-|===
- 
-'''
- 
 [[datafangstmetode]]
 ===== «CodeList» Datafangstmetode
 *Definisjon:* metode for datafangst. 
@@ -909,7 +862,10 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 [[opphav]]
 ===== «CodeList» Opphav
-*Definisjon:* 
+*Definisjon:* kildehenvisning for det enkelte kartobjekt
+
+Eksempel:
+Nibio, FKB-bygning eller N50 Kartdata
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -936,7 +892,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 [[registreringsversjon]]
 ===== «CodeList» Registreringsversjon
-*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -1061,13 +1017,13 @@ image::diagrammer/Hoveddiagram Administrative områder.png[link=diagrammer/Hoved
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper fra generell objektkatalog Administrative områder 
+image::diagrammer/Realisering av objekttyper fra generell objektkatalog Administrative områder.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Administrative områder.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av kodelister fra generell objektkatalog Administrative områder 
+image::diagrammer/Realisering av kodelister fra generell objektkatalog Administrative områder.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog Administrative områder.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1407,10 +1363,6 @@ Note: It must be following that municipality number always consists of 4 digits,
 [[teiggrensepunkt]]
 ===== «FeatureType» Teiggrensepunkt
 *Definisjon:* koordinatbestemt punkt som er påvist, beskrevet og/eller markert spesielt i den geografiske avgrensinga av teigen
-
-
--- Definition -- 
-point established by coordinates, which is proven, described and/or marked specifically in the geographical demarcation of the parcel Note: Can also be am auxiliary point for technical registration purposes Note: A boundary point is placed either at the beginning or end of a parcel boundary.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -1490,6 +1442,36 @@ SOSI_navn: GRENSEPUNKTNUMMER +
  
 |Realisering av: 
 |«ApplicationSchema» Eiendomsinformasjon-4.0::«featureType» Teiggrensepunkt +
+|===
+ 
+'''
+ 
+[[fylkesnummer]]
+===== «CodeList» Fylkesnummer
+*Definisjon:* nummerering av fylker    
+ 
+  Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null. 
+ URI til ekstern kodeliste:  https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer?
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|2
+ 
+|SOSI_navn
+|FYLKESNUMMER
+ 
 |===
  
 '''
@@ -1588,8 +1570,8 @@ image::diagrammer/Pakkerealisering Arealdekke.png[link=diagrammer/Pakkerealiseri
  
 '''
  
-.Oversiktsdiagram Arealdekke objekttyper A-I 
-image::diagrammer/Oversiktsdiagram Arealdekke objekttyper A-I.png[link=diagrammer/Oversiktsdiagram Arealdekke objekttyper A-I.png, alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper A-I som viser UML-klasser beskrevet i teksten nedenfor."]
+.Oversiktsdiagram Arealdekke objekttyper A-K 
+image::diagrammer/Oversiktsdiagram Arealdekke objekttyper A-K.png[link=diagrammer/Oversiktsdiagram Arealdekke objekttyper A-K.png, alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper A-K som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1608,58 +1590,58 @@ image::diagrammer/Hoveddiagram Arealdekke - ArealbruksgrenseFiktiv.png[link=diag
  
 '''
  
-.Hoveddiagram Arealdekke - Punkt 
-image::diagrammer/Hoveddiagram Arealdekke - Punkt.png[link=diagrammer/Hoveddiagram Arealdekke - Punkt.png, alt="Diagram med navn Hoveddiagram Arealdekke - Punkt som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Arealdekke - Objekttyper med punktgeometri 
+image::diagrammer/Hoveddiagram Arealdekke - Objekttyper med punktgeometri.png[link=diagrammer/Hoveddiagram Arealdekke - Objekttyper med punktgeometri.png, alt="Diagram med navn Hoveddiagram Arealdekke - Objekttyper med punktgeometri som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Hoveddiagram Vann 
-image::diagrammer/Hoveddiagram Vann.png[link=diagrammer/Hoveddiagram Vann.png, alt="Diagram med navn Hoveddiagram Vann som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Arealdekke - Vann 
+image::diagrammer/Hoveddiagram Arealdekke - Vann.png[link=diagrammer/Hoveddiagram Arealdekke - Vann.png, alt="Diagram med navn Hoveddiagram Arealdekke - Vann som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Hoveddiagram ElveKant 
-image::diagrammer/Hoveddiagram ElveKant.png[link=diagrammer/Hoveddiagram ElveKant.png, alt="Diagram med navn Hoveddiagram ElveKant som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Arealdekke - ElveKant 
+image::diagrammer/Hoveddiagram Arealdekke - ElveKant.png[link=diagrammer/Hoveddiagram Arealdekke - ElveKant.png, alt="Diagram med navn Hoveddiagram Arealdekke - ElveKant som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Hoveddiagram Innsjøkant 
-image::diagrammer/Hoveddiagram Innsjøkant.png[link=diagrammer/Hoveddiagram Innsjøkant.png, alt="Diagram med navn Hoveddiagram Innsjøkant som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Arealdekke - Innsjøkant 
+image::diagrammer/Hoveddiagram Arealdekke - Innsjøkant.png[link=diagrammer/Hoveddiagram Arealdekke - Innsjøkant.png, alt="Diagram med navn Hoveddiagram Arealdekke - Innsjøkant som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Hoveddiagram Kystkontur 
-image::diagrammer/Hoveddiagram Kystkontur.png[link=diagrammer/Hoveddiagram Kystkontur.png, alt="Diagram med navn Hoveddiagram Kystkontur som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Arealdekke - Kystkontur 
+image::diagrammer/Hoveddiagram Arealdekke - Kystkontur.png[link=diagrammer/Hoveddiagram Arealdekke - Kystkontur.png, alt="Diagram med navn Hoveddiagram Arealdekke - Kystkontur som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog Areal 4.0 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog Areal 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Areal 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Areal 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Arealdekke fra Areal 4.0 
+image::diagrammer/Realisering av objekttyper Arealdekke fra Areal 4.0.png[link=diagrammer/Realisering av objekttyper Arealdekke fra Areal 4.0.png, alt="Diagram med navn Realisering av objekttyper Arealdekke fra Areal 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog Vann 4.0 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog Vann 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Vann 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Vann 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Arealdekke fra  Vann 4.0 
+image::diagrammer/Realisering av objekttyper Arealdekke fra  Vann 4.0.png[link=diagrammer/Realisering av objekttyper Arealdekke fra  Vann 4.0.png, alt="Diagram med navn Realisering av objekttyper Arealdekke fra  Vann 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0 
+image::diagrammer/Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0.png[link=diagrammer/Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0.png, alt="Diagram med navn Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog øvrige fagområder 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige fagområder.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige fagområder.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Arealdekke fra øvrige fagområder 
+image::diagrammer/Realisering av objekttyper Arealdekke fra øvrige fagområder.png[link=diagrammer/Realisering av objekttyper Arealdekke fra øvrige fagområder.png, alt="Diagram med navn Realisering av objekttyper Arealdekke fra øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av datatyper og kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av datatyper og kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av kodelister Arealdekke 
+image::diagrammer/Realisering av kodelister Arealdekke.png[link=diagrammer/Realisering av kodelister Arealdekke.png, alt="Diagram med navn Realisering av kodelister Arealdekke som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Kodelister og datatyper 
-image::diagrammer/Kodelister og datatyper.png[link=diagrammer/Kodelister og datatyper.png, alt="Diagram med navn Kodelister og datatyper som viser UML-klasser beskrevet i teksten nedenfor."]
+.Kodelister Arealdekke 
+image::diagrammer/Kodelister Arealdekke.png[link=diagrammer/Kodelister Arealdekke.png, alt="Diagram med navn Kodelister Arealdekke som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -3444,10 +3426,7 @@ Kystkonturen skal være registrert fullstendig og sammenhengende.
 *Definisjon:* område for lekeplass
 
 *Kriterier*
- Alle lekeplasser over 100 kvm skal med i Topografisk grunndatabase 
-Lekeområder i skolegårder/barnehager skal registreres som en sammenhengende lekeplass med mindre lekeområder ligger fysisk adskilt. I så fall registreres lekeplass for hvert enkelt område.
-Lekeplasser i åpne fellesareal (blokkbebyggelse) og innenfor andre arealbruksflater (for eksempel park) skal registreres.
-Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.
+Alle lekeplasser over 100 kvm skal med i Topografisk grunndatabase. Lekeområder i skolegårder/barnehager skal registreres som en sammenhengende lekeplass med mindre lekeområder ligger fysisk adskilt. I så fall registreres lekeplass for hvert enkelt område. Lekeplasser i åpne fellesareal (blokkbebyggelse) og innenfor andre arealbruksflater (for eksempel park) skal registreres. Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.
  
  
 '''
@@ -3487,8 +3466,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 ===== «FeatureType» Lufthavn
 *Definisjon:* land- eller sjøområde (med bygninger, installasjoner og utstyr) som helt eller delvis brukes for luftfartøyers avgang, landing og annen manøvrering på bakken
 
-Alle lufthavner som er større enn 20 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase og avlegges som flate. I tillegg tas objekttypen Rullebane med som flate, og Lufthavn som punkt. Det er lufthavnpunktet som skal ha den utdypende informasjonen om lufthavnen. Lufthavnpunktet på lufthavnene avsettes tilnærmet på midten av rullebanen og roteres i rullebanens retning.
-Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger på eller like ved bygninger.
+*Kriterier*
+Alle lufthavner som er større enn 20 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase og avlegges som flate. I tillegg tas objekttypen Rullebane med som flate, og Lufthavn som punkt. Det er lufthavnpunktet som skal ha den utdypende informasjonen om lufthavnen. Lufthavnpunktet på lufthavnene avsettes tilnærmet på midten av rullebanen og roteres i rullebanens retning. Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger på eller like ved bygninger.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -3741,7 +3720,8 @@ SOSI_navn: NAVN +
 *Definisjon:* permanent massedeponering som ikke er skogbevokst og er dominerende i
 landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdragsutbygging)
 
-Massedeponi større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase
+*Kriterier*
+Massedeponi større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
 ====== Egenskaper
@@ -3834,9 +3814,10 @@ Massedeponi større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk 
  
 [[masseuttak]]
 ===== «FeatureType» Masseuttak
-*Definisjon:* Dagbrudd for uttak av malm, skifer, sand, grus og pukk.
+*Definisjon:* dagbrudd for uttak av malm, skifer, sand, grus og pukk.
 
-Masseuttak større enn 800     m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase
+*Kriterier*
+Masseuttak større enn 800     m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -3939,7 +3920,8 @@ Masseuttak større enn 800     m 2  og bredere enn 10 meter skal med i Topografi
 ===== «FeatureType» MidtlinjeElvInnsjø
 *Definisjon:* kunstig objekt hvor senterlinjen er en fiktiv linje som skjøter sammen en-strekselver gjennom en innsjø, - eller elveflate
 
-Det skal etableres midtlinjer for alle elver og innsjøflatene som er en del av elvenettverket i Topografisk grunndatabase
+*Kriterier*
+Det skal etableres midtlinjer for alle elver og innsjøflatene som er en del av elvenettverket i Topografisk grunndatabase.
  
 [discrete]
 ====== Egenskaper
@@ -3975,7 +3957,9 @@ Det skal etableres midtlinjer for alle elver og innsjøflatene som er en del av 
 
 Merknad:  
 Myra kan være bevokst, men da av få eller små trær. Grøftet myr som er blitt skogmark tas IKKE med. Åpent område med vannmettet mark.
-Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase
+
+*Kriterier*
+Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4092,6 +4076,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 ===== «FeatureType» Park
 *Definisjon:* grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
 
+*Kriterier*
 Områder større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Fornøyelsesparker inngår ikke i denne kategorien.
  
 [discrete]
@@ -4195,7 +4180,8 @@ Områder større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grun
 ===== «FeatureType» Rullebane
 *Definisjon:* avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer
 
-Alle rullebaner skal med i Topografisk grunndatabase
+*Kriterier*
+Alle rullebaner skal med i Topografisk grunndatabase.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4298,6 +4284,7 @@ Alle rullebaner skal med i Topografisk grunndatabase
 ===== «FeatureType» Skjær
 *Definisjon:* generalisert punktobjekt for små øyer eller landareal
 
+*Kriterier*
 Alle øyer under 100m 2  og smalere enn 3 meter skal med som skjær. Kun skjær som har høyde lik eller høyere enn den lokale MHV-verdien skal registreres.
  
 [discrete]
@@ -4344,11 +4331,8 @@ Alle øyer under 100m 2  og smalere enn 3 meter skal med som skjær. Kun skjær 
 
 Merknad: Også hogstflater - selv om nyplanting ikke er synlig.  Omfatter alle slags skogboniteter, også storvokste vierkrattbelter i Nord-Norge
 
-Skog skal skilles i treslagene Barskog, Blandingsskog og Lauvskog, der det er mulig.
-
-Skogområder som er større enn 800 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. 
-  
-  Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.
+*Kriterier*
+Skog skal skilles i treslagene Barskog, Blandingsskog og Lauvskog, der det er mulig. Skogområder som er større enn 800 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4487,9 +4471,9 @@ SOSI_navn: ARTRESLAG +
 
 Merknad:
 Masse av is og tettpakket snø som vesentlig ligger på land, der isen er i bevegelse, i motsetning til snømassen som ligger i ro. Isbre og snøfonn er slått sammen i definisjonen fordi det ofte kan være vanskelig å skille mellom dem. 
-Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase.
-  
-  Mindre isfrie områder beholdes dersom de er større enn 2 000 m 2  og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.
+
+*Kriterier*
+Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase. Mindre isfrie områder beholdes dersom de er større enn 2 000 m 2  og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4606,9 +4590,8 @@ Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografi
 ===== «FeatureType» SportIdrettPlass
 *Definisjon:* område hvor det utøves sport og idrett
 
-Idrettsplass større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase.
-
-For motorsportanlegg se SpesiellDetalj.
+*Kriterier*
+Idrettsplass større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. For motorsportanlegg se SpesiellDetalj.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4711,8 +4694,8 @@ For motorsportanlegg se SpesiellDetalj.
 ===== «featureType» Stein
 *Definisjon:* markert stein
 
-Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 .
-Er det et område med mange steiner som er større enn 400 m 2 , skal arealet steinur registreres. Se steinur.
+*Kriterier*
+Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et område med mange steiner som er større enn 400 m 2 , skal arealet steinur registreres. Se steinur.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4756,7 +4739,8 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 ===== «featureType» Steinur
 *Definisjon:* steinurer, steinområder
  
-  Alle områder større enn 400  m 2  skal med i Topografisk grunndatbase
+ *Kriterier*
+Alle områder større enn 400 m 2  skal med i Topografisk grunndatbase.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -4800,6 +4784,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 ===== «FeatureType» Tettbebyggelse
 *Definisjon:* sammenhengende bebygd område (overveiende boligbegyggelse) hvor husene i hovedsak ligger tettere enn 50 meter
 
+*Kriterier*
 Tettbebyggelse som er større enn 2 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
@@ -4903,7 +4888,7 @@ Tettbebyggelse som er større enn 2 000 m 2  og bredere enn 10 meter skal med i 
 ===== «featureType» Transformatorstasjon
 *Definisjon:* område for omforming og fordeling av elektrisk energi.
 
-Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn o
+Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn.
  
  
 '''
@@ -4960,10 +4945,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 ===== «FeatureType» Tregruppe
 *Definisjon:* enkeltstående tre eller trær i små grupper
 
-Skogflater under minstemålet for skog kan omgjøres til tregrupper. 
-Avstanden mellom tregrupper, og fra tregrupper til arealflater som skog og innsjø, skal være minimum 30 meter.
-Der tregruppen er i konflikt med gjeldene tema utelates tregruppen. Dette inkluderer veg, traktorveg, sti, kraftlinjer, navn, høydepunkt, bygningspunkt og grunnriss.
-Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som skog. 
+*Kriterier*
+Skogflater under minstemålet for skog kan omgjøres til tregrupper. Avstanden mellom tregrupper, og fra tregrupper til arealflater som skog og innsjø, skal være minimum 30 meter. Der tregruppen er i konflikt med gjeldene tema utelates tregruppen. Dette inkluderer veg, traktorveg, sti, kraftlinjer, navn, høydepunkt, bygningspunkt og grunnriss. Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som skog. 
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -5065,9 +5048,8 @@ SOSI_navn: VANN_SPERRETYPE +
 ===== «FeatureType» ÅpentOmråde
 *Definisjon:* område som ikke er klassifisert som annet tema i henhold til gjeldende produktspesifikasjon
 
-Åpent område som er større enn 400 m 2  og bredere enn 5 meter skal med i TG.
-
-Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i Topografisk grunndatabase
+*Kriterier*
+Åpent område som er større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i Topografisk grunndatabase
  
 [discrete]
 ====== Egenskaper
@@ -5316,10 +5298,6 @@ Merknad: Benyttes i N50 Kartdata i forhold til luftfart
 [[vannbredde]]
 ===== «CodeList» VannBredde
 *Definisjon:* grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
-
-
--- Definition - - 
-Rough classification of river system according to average width over longer sections.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -5390,6 +5368,11 @@ image::diagrammer/Oversiktsdiagram Bygninger og anlegg objekttyper R-V.png[link=
  
 '''
  
+.Oversiktsdiagram Bygninger og anlegg kodelister og datatyper  
+image::diagrammer/Oversiktsdiagram Bygninger og anlegg kodelister og datatyper .png[link=diagrammer/Oversiktsdiagram Bygninger og anlegg kodelister og datatyper .png, alt="Diagram med navn Oversiktsdiagram Bygninger og anlegg kodelister og datatyper  som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
 .Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet 
 image::diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet.png[link=diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet.png, alt="Diagram med navn Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet som viser UML-klasser beskrevet i teksten nedenfor."]
  
@@ -5400,28 +5383,18 @@ image::diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kval
  
 '''
  
-.Oversiktsdiagram kodelister og datatyper Bygninger og anlegg 
-image::diagrammer/Oversiktsdiagram kodelister og datatyper Bygninger og anlegg.png[link=diagrammer/Oversiktsdiagram kodelister og datatyper Bygninger og anlegg.png, alt="Diagram med navn Oversiktsdiagram kodelister og datatyper Bygninger og anlegg som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0 
+image::diagrammer/Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0.png[link=diagrammer/Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0.png, alt="Diagram med navn Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog Bygnan 4.0 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog Bygnan 4.0.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog Bygnan 4.0.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Bygnan 4.0 som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder 
+image::diagrammer/Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder.png[link=diagrammer/Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder.png, alt="Diagram med navn Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog øvrige 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige som viser UML-klasser beskrevet i teksten nedenfor."]
- 
-'''
- 
-.Realisering av datatyper fra generell objektkatalog 
-image::diagrammer/Realisering av datatyper fra generell objektkatalog.png[link=diagrammer/Realisering av datatyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av datatyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
- 
-'''
- 
-.Realisering av kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av datatyper og kodelister Bygninger og Anlegg 
+image::diagrammer/Realisering av datatyper og kodelister Bygninger og Anlegg.png[link=diagrammer/Realisering av datatyper og kodelister Bygninger og Anlegg.png, alt="Diagram med navn Realisering av datatyper og kodelister Bygninger og Anlegg som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -5429,7 +5402,7 @@ image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=
 ===== «FeatureType» Bygning
 *Definisjon:* bygning som er registrert i Matrikkelen
 
-Kriterier
+*Kriterier*
 Bygninger større enn 50 m 2  og med minste bredde 5 meter registreres som flateobjekt, øvrige som punkt.I bygninger med atrium (&#171;hull&#187;) må atriet være større enn 50 m 2  for at dette skal med. Er det mindre, inngår atriet i den omkringliggende bygningsflaten.
 
 I tillegg til bygningsflaten, vil enkelte bygninger angis med symbol.
@@ -5513,7 +5486,7 @@ SOSI_navn: BYGGTYP_NBR +
 ===== «FeatureType» Campingplass
 *Definisjon:* faste anlegg med vaskerom, campinghytter o.l.
 
-kriterier
+*Kriterier*
 Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal inngå i arealbruksflaten.
  
 [discrete]
@@ -5558,7 +5531,7 @@ Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal
 ===== «FeatureType» Demning
 *Definisjon:* konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen
 
-kriterier
+*Kriterier*
 Alle objekter i samsvar med definisjonen som er lengre enn 10 meter skal med i Topografisk grunndatabase. Demning omfatter oppbygde hindringer som skal sikre jevn vannføring til vannforsyningsanlegg eller kraftverk, eller som skal skape grunnlag for fiskeoppdrett.
  
  
@@ -5599,9 +5572,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 ===== «FeatureType» Flytebrygge
 *Definisjon:* brygge som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
 
-kriterier
+*Kriterier*
 flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
-Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase
+Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -5645,8 +5618,8 @@ Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i T
 ===== «FeatureType» Gjerde
 *Definisjon:* oppsatt stengsel som hindrer passering. Står ofte i grensa mellom eiendommer
 
-kriterier
-flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning. Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase
+*Kriterier*
+flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning. Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
  
  
 '''
@@ -5726,8 +5699,8 @@ SOSI_navn: HREF +
 ===== «FeatureType» Grunnmur
 *Definisjon:* bygningens ytteravgrensning langs grunnmur
 
-kriterier
-bygningens ytteravgrensning langs grunnmur. Benyttes hovedsaklig for bygning under oppføring. For bygninger som revet/nedbrent benyttes objekttype ruin. Grunnmur større enn 50 m2 og med minste bredde 5 meter registreres som flateobjekt.
+*Kriterier*
+Bygningens ytteravgrensning langs grunnmur. Benyttes hovedsaklig for bygning under oppføring. For bygninger som revet/nedbrent benyttes objekttype ruin. Grunnmur større enn 50 m2 og med minste bredde 5 meter registreres som flateobjekt.
  
  
 '''
@@ -5787,7 +5760,7 @@ SOSI_navn: HREF +
 ===== «FeatureType» Gruve
 *Definisjon:* ikke dagbrudd og skjerp, hvor gruveinngangen er tydelig
 
-kriterier
+*Kriterier*
 Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er tydelig og hvorfra det utvinnes, eller har blitt utvunnet, malm eller mineraler. Alle objekter som tilfredsstiller definisjonen skal med. Punktet plasseres så nær gruveinngangen om mulig. Gruve omfatter ikke masseuttak (dagbrudd).
  
 [discrete]
@@ -5832,7 +5805,7 @@ Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er ty
 ===== «FeatureType» Hoppbakke
 *Definisjon:* anlegg for skihopping med kunstig eller naturlig tilløp
 
-kriterier
+*Kriterier*
 Alle objekter i samsvar med definisjonen som er lengre enn 50 meter, målt i grunnriss, fra toppen av tilløpet til enden av unnarennet skal med i Topografisk grunndatabase.
 Merknad
 Egenskapen lengde sier noe om størrelsen til hoppbakken og egenskapen retning er vinkelen et punktsymbol skal roteres med for å få riktig retning på hoppsymbolet. Vinkelen er satt i forhold til koordinatsystemet Euref89 UTM sone 33.
@@ -5915,6 +5888,7 @@ SOSI_navn: RETNING +
 ===== «FeatureType» KaiBrygge
 *Definisjon:* angivelse av  innretninger som er satt opp for å betjene båter ved lasting- lossing og landligge
 
+*Kriterier*
 Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.
 
  
@@ -5976,10 +5950,6 @@ Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.
 
 Merknad:
 Kan benyttes dersom ..MEDIUM L og ..LEDNING * 3 8
-
-
--- Definition -- 
-line conducting electrical power over large distances and where it is uncertain whether there is a low-voltage or high-voltage line. Note: may be used if ..MEDIUM L and ..LINE * 3 8
  
 [discrete]
 ====== Egenskaper
@@ -6034,7 +6004,7 @@ SOSI_navn: FLER_LINJER +
 ===== «FeatureType» Lysløype
 *Definisjon:* løypetrasé som har belysning
 
-  Kriterier  
+*Kriterier*
 Lysløyper i samsvar med definisjonen skal med i Topografisk grunndatabase.
  
 [discrete]
@@ -6071,9 +6041,8 @@ Lysløyper i samsvar med definisjonen skal med i Topografisk grunndatabase.
 ===== «FeatureType» Mast
 *Definisjon:* alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken
 
-kriterier
-Alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken
-Merknad FKB: En mast kan bestå av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).
+*Kriterier*
+Alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken skal med i Topografisk grunndatabase.
  
  
 '''
@@ -6232,7 +6201,7 @@ SOSI_navn: VERTIKALAVSTAND +
 ===== «FeatureType» Molo
 *Definisjon:* kunstig eller naturlig oppbygning som demper eller tilintetgjør bølgebevegelser i sjøen
 
-kriterier
+*Kriterier*
 Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topografisk grunndatabase.
  
 [discrete]
@@ -6277,7 +6246,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topogra
 ===== «FeatureType» Mur
 *Definisjon:* vegg, vern, gjerde eller annet skille av (mur)stein eller betong
 
-kriterier
+*Kriterier*
 Alle enkeltstående murer lengre enn 25 meter skal med i Topografisk grunndatabase.
  
  
@@ -6338,7 +6307,7 @@ SOSI_navn: HREF +
 ===== «FeatureType» Navigasjonsinstallasjon
 *Definisjon:* objekt som hjelper sjøfarende å navigere på sjøen
 
-kriterier
+*Kriterier*
 Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte belysning).
  
 [discrete]
@@ -6383,8 +6352,8 @@ Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte
 ===== «featureType» Oppdrettslokalitet
 *Definisjon:* fast anlegg for oppdrett av fisk i vann
 
-kriterier
-alle oppdrettslokaliteter skal med i Topografisk grunndatabase
+*Kriterier*
+alle oppdrettslokaliteter skal med i Topografisk grunndatabase.
  
  
 '''
@@ -6426,7 +6395,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 ===== «FeatureType» Parkeringsområde
 *Definisjon:* Område for parkering av kjøretøy
 
-  Kriterier  
+*Kriterier*
 Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse skal flate over 500 kvm med i Topografisk grunndatabase.
 
  
@@ -6509,8 +6478,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 ===== «FeatureType» Pipe
 *Definisjon:* frittstående rørformete innretninger for transport av avgasser
 
-kriterier
-Piper over 10 meter skal med i topografisk grunndatabase.
+*Kriterier*
+Piper med høyde over 10 meter skal med i topografisk grunndatabase.
  
  
 '''
@@ -6582,7 +6551,7 @@ SOSI_navn: HREF +
 ===== «FeatureType» Pir
 *Definisjon:* markert utstikkende brygge, normalt med vann under, i sjø
 
-kriterier
+*Kriterier*
 Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topografisk grunndatabase.
  
 [discrete]
@@ -6627,7 +6596,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topograf
 ===== «FeatureType» Ruin
 *Definisjon:* Synlig mur som er rester etter tidligere byggverk
 
-kriterier
+*Kriterier*
 Ruin brukes kun om gamle, forfalne murer. For nye/vedlikeholdte murer/byggverk brukes andre objekttyper.
  
  
@@ -6691,7 +6660,7 @@ SOSI_navn: HREF +
 merknad
 rør som leder vann frem til foredlingsanlegg, kraftverk, annet vassdrag, fjernvarmeanlegg, tømmerrenne, osv. Skal ligge på og/eller over bakken og være godt synlig i terrenget.
 
-kriterier
+*Kriterier*
 Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med i Topografisk grunndatabase. Rørgate som inngår i tettbebyggelse og bymessig bebyggelse tas ikke med som selvstendige objekter. Rørgate skal unntaksvis tas med i industriområde.
  
 [discrete]
@@ -6736,7 +6705,7 @@ Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med
 ===== «featureType» Skjerm
 *Definisjon:* frittstående konstruksjon laget for å skjerme mot støy eller snø, eller hindre/begrense ras og flom.
 
-kriterier
+*Kriterier*
 Alle enkeltstående skjermer lengre enn 25 meter skal med i Topografisk grunndatabase.
  
  
@@ -6836,14 +6805,11 @@ SOSI_navn: HOB +
 ===== «FeatureType» Skytebane
 *Definisjon:* Tekniske anlegg på skytebane - standplass og skiver som ikke blir registrert som f.eks bygninger og murer
 
-  Tilleggsbeskrivelse for produktspesifikasjonen   
+*Tilleggsbeskrivelse for produktspesifikasjonen*
 Anlegg med standplass og nedslagsfelt/skiveholdere beregnet for skyting med håndvåpen.
 
-  Kriterier  
-Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedslagsfelt/skiveholdere lengre enn 25 meter skal med i topografisk grunndatabase. 
-
-Anlegget representeres alltid med 2 punkter. Første punkt er senter standplass, andre punkt er senter skiveholdere.
-Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registreres omrisset av det tekniske anlegget.
+*Kriterier*
+Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedslagsfelt/skiveholdere lengre enn 25 meter skal med i topografisk grunndatabase. Anlegget representeres alltid med 2 punkter. Første punkt er senter standplass, andre punkt er senter skiveholdere. Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registreres omrisset av det tekniske anlegget.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -6959,9 +6925,10 @@ SOSI_navn: HREF +
 ===== «FeatureType» SpesiellDetalj
 *Definisjon:* objekttyper som det er nødvendig å angi av kartografiske hensyn og som ikke fanges opp av definerte objekttyper
 
-Tilleggsbeskrivelse for produktspesifikasjonen 
+*Tilleggsbeskrivelse for produktspesifikasjonen *
 Detalj i terrenget som ikke fanges opp av andre bygningstema, for eksempel bosettingsplass hvor bebyggelsen er borte, minnesmerke, offersted, elveforbygning, bobbane, rulleskibane og motorsportanlegg
-Kriterier
+
+*Kriterier*
 Alle kurveobjekter i samsvar med definisjonen og som er lengre enn 50 meter skal med i topografisk grunndatabase. Benyttes også for å knytte stedsnavn til et punkt der all bebyggelse er borte, f. eks. en tidligere seter. Spesiell detalj som punkt og linje kan også benyttes uten at stedsnavn er knyttet til punktet. Spesiell detalj som inngår i tettbebyggelse, bymessig bebyggelse eller industriområde tas ikke med som selvstendig objekt.
  
 [discrete]
@@ -7026,8 +6993,8 @@ Alle kurveobjekter i samsvar med definisjonen og som er lengre enn 50 meter skal
 ===== «FeatureType» Sykehus
 *Definisjon:* Sykehus er en helseinstitusjon som er godkjent for innleggelse, undersøkelse og behandling av pasienter og fødende kvinner som trenger spesialisert helsetjeneste. Til sykehusene hører sengeavdelinger, poliklinikker og laboratorier.
 
-kriterier
-Alle sykehus skal med i Topografisk grunndatabase. Sykehus er med som eget punkt for å kunne symbolisere sykehus med og uten akuttmotak.
+*Kriterier*
+Alle sykehus skal med i Topografisk grunndatabase. Sykehus har enten egenskapen akuttmotak eller ikke, slik at dette kan symboliseres.
  
 [discrete]
 ====== Egenskaper
@@ -7081,7 +7048,7 @@ SOSI_navn: AKUTTMOTAK +
 ===== «FeatureType» Svømmebasseng
 *Definisjon:* basseng for svømming og vannlek
 
-kriterier
+*Kriterier*
 Alle objekter større enn 100 m&#178; skal med i Topografisk grunndatabase.
  
  
@@ -7122,7 +7089,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 ===== «FeatureType» Tank
 *Definisjon:* lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning
 
-kriterier
+*Kriterier*
 Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178; som punkt. Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.
  
 [discrete]
@@ -7182,7 +7149,7 @@ Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178;
 *Definisjon:* byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen
 Eksempel:  'carport' eller tak over bensinpumper
 
-kriterier
+*Kriterier*
 Alle flater over 200 m&#178; skal med i Topografisk grunndatabase.
  
  
@@ -7250,7 +7217,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ===== «FeatureType» Taubane
 *Definisjon:* innretning hvor tau eller vaiere bærer og eller trekker last over en strekning
 
-kriterier
+*Kriterier*
 Alle Taubaner lenger enn 50 meter skal med i Topografisk grunndatabase.
  
  
@@ -7332,7 +7299,7 @@ SOSI_navn: HREF +
 *Definisjon:* opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer, særlig idrettsanlegg
 Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.
 
-kriterier
+*Kriterier*
 Alle flater over 500 m&#178; skal med i Topografisk grunndatabase.
  
  
@@ -7373,8 +7340,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 ===== «FeatureType» Turisthytte
 *Definisjon:* Turisthytte er en hytte med tilbud om overnatting og ofte også bespisning, særlig i fjellstrøk.
 
-kriterier
-Alle DNT hytter, ...
+*Kriterier*
+Alle hytter som tilbyr overnatting, både selvbetjent og ubetjent.
  
 [discrete]
 ====== Egenskaper
@@ -7447,7 +7414,7 @@ Information on cabins in the form of identification, services offered and owner
 Merknad: Omfatter alle tårn med unntak av de tårn som har en mer spesifisert beskrivelse- som f.eks Silo og tank. 
 Eksempel: Måletårn og stupetårn
 
-  kriterier  
+*Kriterier*
 Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde.
  
 [discrete]
@@ -7490,9 +7457,9 @@ Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ik
  
 [[vindturbin]]
 ===== «FeatureType» Vindturbin
-*Definisjon:* en kontainer som betegner en hel "vindmølle". En vindturbin har en generator
+*Definisjon:* vindturbin er en mekanisk innretning som omdanner vindenergi til rotasjonsenergi, og som inngår som en viktig komponent i et vindkraftverk. 
 
-  Kriterier  
+*Kriterier*
 Alle objektene i samsvar med definisjonen skal med i Topografisk grunndatabase.
  
  
@@ -7590,7 +7557,7 @@ SOSI_navn: NAVHØYDE +
 ===== «FeatureType» Voll
 *Definisjon:* opphøyd terrengformasjon anlagt for å hindre støy, ukontrollert gjennomstrømming av vann, skade fra  prosjektiler på skytebane o.l.
 
- kriterier 
+*Kriterier*
 Alle enkeltstående voller lengre enn 25 meter skal med i Topografisk grunndatabase.
  
  
@@ -7689,10 +7656,6 @@ SOSI_navn: HOB +
 [[hytteinformasjon]]
 ===== «dataType» Hytteinformasjon
 *Definisjon:* informasjon om hytter i form av identifikasjon, betjeningsgrad og eier
-
-
--- Definition - - 
-information about cabins in the form of identification, service level and owner
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -7781,9 +7744,6 @@ SOSI_navn: HYTTEEIER +
 ===== «CodeList» Betjeningsgrad
 *Definisjon:* beskrivelse av hvilke servicefunksjoner som er tilgengelige
 
-
--- Definition - - 
-description of which service functions are available
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -7892,10 +7852,6 @@ description of which service functions are available
 [[hytteeier]]
 ===== «CodeList» Hytteeier
 *Definisjon:* eieren av en turisthytte
-
-
--- Definition - - 
-the owner of a cabin
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8044,13 +8000,13 @@ image::diagrammer/Hoveddiagram Høyde.png[link=diagrammer/Hoveddiagram Høyde.pn
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Høyde 
+image::diagrammer/Realisering av objekttyper Høyde.png[link=diagrammer/Realisering av objekttyper Høyde.png, alt="Diagram med navn Realisering av objekttyper Høyde som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av kodelister Høyde 
+image::diagrammer/Realisering av kodelister Høyde.png[link=diagrammer/Realisering av kodelister Høyde.png, alt="Diagram med navn Realisering av kodelister Høyde som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -8155,10 +8111,6 @@ SOSI_navn: HØYDE +
 [[terrengpunkt]]
 ===== «FeatureType» Terrengpunkt
 *Definisjon:* punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser
-
-
--- Definition -- 
-point in the terrain with a measured height value used to indicate the height on pronounced surfaces in the terrain, such as saddles and large surfaces, in road and street intersections and other intersections between transportation lines, in courtyards outside main entrances and in car parks
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8295,13 +8247,13 @@ image::diagrammer/Hoveddiagram Restriksjonsområder.png[link=diagrammer/Hoveddia
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Restriksjonsområder 
+image::diagrammer/Realisering av objekttyper Restriksjonsområder.png[link=diagrammer/Realisering av objekttyper Restriksjonsområder.png, alt="Diagram med navn Realisering av objekttyper Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av kodelister Restriksjonsområder 
+image::diagrammer/Realisering av kodelister Restriksjonsområder.png[link=diagrammer/Realisering av kodelister Restriksjonsområder.png, alt="Diagram med navn Realisering av kodelister Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -8433,7 +8385,7 @@ SOSI_navn: NAVN +
  
 [[flyplassavgrensning]]
 ===== «FeatureType» Flyplassavgrensning
-*Definisjon:* 
+*Definisjon:* avgrensning av flyplassområde
  
 [discrete]
 ====== Egenskaper
@@ -8626,10 +8578,6 @@ SOSI_navn: NAVN +
 *Definisjon:* område for militære avdelingers skarpskyteøvelse til lands og/eller til vanns
 
 Merknad: Gjelder også testfelt knyttet til våpen- spregningsindustri
-
-
--- Definition -- 
-area where divisions from the armed forces undertake live firing practice on land and/or at sea. Note: Also applies to proving grounds related to the explosive armaments industry
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8854,29 +8802,29 @@ image::diagrammer/Hoveddiagram Samferdsel objekttyper.png[link=diagrammer/Hovedd
  
 '''
  
-.Hoveddiagram Kodelister 
-image::diagrammer/Hoveddiagram Kodelister.png[link=diagrammer/Hoveddiagram Kodelister.png, alt="Diagram med navn Hoveddiagram Kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram Samferdsel kodelister 
+image::diagrammer/Hoveddiagram Samferdsel kodelister.png[link=diagrammer/Hoveddiagram Samferdsel kodelister.png, alt="Diagram med navn Hoveddiagram Samferdsel kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Samferdsel 
+image::diagrammer/Realisering av objekttyper Samferdsel.png[link=diagrammer/Realisering av objekttyper Samferdsel.png, alt="Diagram med navn Realisering av objekttyper Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av datatyper fra generell objektkatalog 
-image::diagrammer/Realisering av datatyper fra generell objektkatalog.png[link=diagrammer/Realisering av datatyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av datatyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av datatyper Samferdsel 
+image::diagrammer/Realisering av datatyper Samferdsel.png[link=diagrammer/Realisering av datatyper Samferdsel.png, alt="Diagram med navn Realisering av datatyper Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av kodelister Samferdsel 
+image::diagrammer/Realisering av kodelister Samferdsel.png[link=diagrammer/Realisering av kodelister Samferdsel.png, alt="Diagram med navn Realisering av kodelister Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[skuterløype]]
 ===== «FeatureType» Skuterløype
-*Definisjon:* 
+*Definisjon:* fastsatte ruter for ferdsel med snøskuter
  
 [discrete]
 ====== Egenskaper
@@ -8930,13 +8878,8 @@ SOSI_navn: MEDIUM +
 ===== «FeatureType» Bane
 *Definisjon:* teoretisk linje som representerer ett enkelt eller flere parallelle spor som del av en banestrekning
 
-
--- Definition -- 
-theoretical line which represents a single or several parallel tracks as part of a railway line
-
-
- -- INSPIRE -- 
- Maps to RailwayLink 
+*Kriterier*
+Banestrekningen behøver ikke å ha regelmessig trafikk. Bane innenfor industriområder tas også med.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -9036,9 +8979,8 @@ SOSI_navn: MEDIUM +
 ===== «FeatureType» Stasjon
 *Definisjon:* representasjonspunkt for stasjon, holdeplass eller godsterminal
 
-
--- Definition -- 
-representation point for station, stopping place or freight terminal
+*Kriterier*
+Alle jernbanestasjoner som har av- og påstigning for passasjerer eller lasting/lossing skal med i Topografisk grunndatabase. Nedlagte stasjoner tas ikke med. Stasjonspunktet skal knyttes til jernbanelinjen.
  
 [discrete]
 ====== Egenskaper
@@ -9114,6 +9056,16 @@ directed line segment in the plane
 ===== «FeatureType» Veglenke
 *Definisjon:* Objekttype som representerer lenker i vegnettet
 Eksempel: NVDB Referanselenkedeler
+
+*Tilleggsbeskrivelse for produktspesifikasjonen  *  
+Trasé for transportmiddel (f.eks. bil, traktor, ferje) eller gående.
+
+*Kriterier*
+Alle bilferjeruter i privat og offentlig vegsamband tas med. Ruten må være fast i hele eller deler av året. Strekninger der kjøretøyet må heises om bord i ferjen kodes som Passasjerferje. 
+
+Der bilferje- og passasjerferjestrekningen er sammenfallende fra anløp- til anløpssted beholdes kun bilferjestrekningen. Dersom en ferjestrekning har to forskjellige vegnummer, brukes det laveste nummeret.
+
+Passasjerferje på innsjøer og hav mellom faste anløpssteder, tas med. Ruten må være fast i hele eller deler av året.
  
 [discrete]
 ====== Egenskaper
@@ -9246,9 +9198,6 @@ SOSI_navn: MEDIUM +
 ===== «FeatureType» Vegsperring
 *Definisjon:* fysisk sperring av vegen
 
-
--- Definition -- 
-physical blockage of the road
  
 [discrete]
 ====== Egenskaper
@@ -9630,7 +9579,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 [[typeveg]]
 ===== «CodeList» TypeVeg
-*Definisjon:* type veg (FormOfWay).
+*Definisjon:* type veg
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -9685,6 +9634,9 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 [[vegfase]]
 ===== «CodeList» Vegfase
 *Definisjon:* angir vegens fase i livet
+
+Eksempel:
+EksisterendeVeg, PlanlagtVeg eller VegUnderBygging
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -9740,9 +9692,6 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 ===== «CodeList» Vegsperringtype
 *Definisjon:* angir type vegsperring
 
-
--- Definition - - 
-indicates type of roadblock
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -9771,8 +9720,8 @@ indicates type of roadblock
  
 '''
  
-.Pakkerealisering 
-image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, alt="Diagram med navn Pakkerealisering som viser UML-klasser beskrevet i teksten nedenfor."]
+.Pakkerealisering Stedsnavn 
+image::diagrammer/Pakkerealisering Stedsnavn.png[link=diagrammer/Pakkerealisering Stedsnavn.png, alt="Diagram med navn Pakkerealisering Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -9786,13 +9735,18 @@ image::diagrammer/Hoveddiagram Stedsnavn.png[link=diagrammer/Hoveddiagram Stedsn
  
 '''
  
-.Realisering av objekttyper fra generell objektkatalog 
-image::diagrammer/Realisering av objekttyper fra generell objektkatalog.png[link=diagrammer/Realisering av objekttyper fra generell objektkatalog.png, alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Hoveddiagram kodelister Stedsnavn 
+image::diagrammer/Hoveddiagram kodelister Stedsnavn.png[link=diagrammer/Hoveddiagram kodelister Stedsnavn.png, alt="Diagram med navn Hoveddiagram kodelister Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
-.Realisering av datatyper og kodelister fra generell objektkatalog 
-image::diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png[link=diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png, alt="Diagram med navn Realisering av datatyper og kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."]
+.Realisering av objekttyper Stedsnavn 
+image::diagrammer/Realisering av objekttyper Stedsnavn.png[link=diagrammer/Realisering av objekttyper Stedsnavn.png, alt="Diagram med navn Realisering av objekttyper Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Realisering av datatyper og kodelister Stedsnavn 
+image::diagrammer/Realisering av datatyper og kodelister Stedsnavn.png[link=diagrammer/Realisering av datatyper og kodelister Stedsnavn.png, alt="Diagram med navn Realisering av datatyper og kodelister Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -10122,7 +10076,7 @@ SOSI_navn: SKRIVEMÅTENUMMER +
  
 [[tekstformatering]]
 ===== «dataType» Tekstformatering
-*Definisjon:* presentasjonsegenskaper knytta til tekst
+*Definisjon:* presentasjonsegenskaper knyttet til tekst
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -10376,7 +10330,7 @@ SOSI_navn: TRØST +
  
 [[skriftkode]]
 ===== «CodeList» Skriftkode
-*Definisjon:* koblingsnøkkel mot presentasjonsinformasjon. Forslag til presentasjon av stedsnavn og høydetall basert på skriftkoder. Presentasjonskoden er basert på hovedkartserien 1:50 000/M711 produsert av Kartverket. Kartverket har egne fonter, men oversatt til TimesNewRoman slik at enhver kan presentere dataene tilnærmet presentasjonen til Kartverket. Ved bruk av ESRI FGDB filformat ligger fontinformasjon allerede inne i egenskapstabellen.
+*Definisjon:* koblingsnøkkel mot presentasjonsinformasjon. Forslag til presentasjon av stedsnavn og høydetall basert på skriftkoder.
  
 [discrete]
 ====== Profilparametre i tagged values
