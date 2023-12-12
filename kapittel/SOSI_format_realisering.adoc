@@ -1,0 +1,9 @@
+
+[appendix]
+== SOSI-format realisering
+
+////
+---Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SOSI-format-realiserings-rapport --
+
+Dersom SOSI-format ikke er et leveranseformat, kan dette vedlegget sløyfes
+////

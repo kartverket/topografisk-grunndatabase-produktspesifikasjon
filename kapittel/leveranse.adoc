@@ -1,0 +1,36 @@
+
+== Leveranse
+
+// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
+
+// LEVERANSEMETODE.  Dette delkapittelet dersom det er flere leveransemetoder (ned til // SLUTT LEVERANSEMETODE
+
+=== Leveransemetode [<id>]
+
+==== Omfang
+
+==== Leveranseformat
+
+===== Formatnavn
+
+===== Formatversjon
+
+===== Formatspesifikasjon
+
+===== Filstruktur
+
+===== Språk
+
+===== Tegnsett
+
+==== Leveransemedium
+
+===== Leveranseenhet
+
+===== Overføringsstørrelse
+
+===== Navn på medium
+
+===== Annen leveranseinformasjon
+
+// SLUTT LEVERANSEMETODE

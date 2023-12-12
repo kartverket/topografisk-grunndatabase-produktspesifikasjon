@@ -1,0 +1,4 @@
+
+== Tilleggsinformasjon
+
+// Merk at tilleggsinformasjon skal referere til omfang (scopes) angitt i kapittel 4.

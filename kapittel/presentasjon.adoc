@@ -1,0 +1,7 @@
+== Presentasjon
+
+// Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
+
+=== Omfang
+
+=== Referanse til presentasjonskatalog

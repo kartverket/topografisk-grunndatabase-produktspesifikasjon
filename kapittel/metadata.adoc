@@ -1,0 +1,12 @@
+
+== Metadata
+
+////
+Merk at "Omfang" skal referere til omfang (scopes) angitt i kapittel 4.
+
+Merk også at du her skal angi hvilke metadata som skal følge produktet, men ikke selve metadatene.
+////
+
+=== Omfang
+
+=== Metadataspesifikasjon

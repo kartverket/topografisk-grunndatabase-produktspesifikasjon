@@ -1,0 +1,34 @@
+
+== Referansesystem
+
+(Antall lovlige romlige koordinatsystem for dette produktet: <sett inn antall>)
+
+// ROMLIG_REFERANSESYSTEM.  Dersom det er flere lovlige referansesystem, repeter seksjonen (ned til // SLUTT ROMLIG_REFERANSESYSTEM)
+
+=== Romlig referansesystem [<id>]
+
+==== Omfang
+
+==== Navn på kilden til referansesystemet
+
+==== Ansvarlig organisasjon for referansesystemet
+
+==== Link til mer info om referansesystemet
+
+==== Koderom
+
+==== Identifikasjonskode
+
+==== Kodeversjon
+
+// SLUTT ROMLIG_REFERANSESYSTEM
+
+// TEMPORALT_REFERANSESYSTEM.  Dersom det ikke benyttes temporalt referansesystem kan denne seksjonen sløyfes (ned til // SLUTT TEMPORALT_REFERANSESYSTEM
+
+=== Temporalt referansesystem
+
+==== Navn på temporalt referansesystem
+
+==== Omfang
+
+// SLUTT TEMPORALT_REFERANSESYSTEM
