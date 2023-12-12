@@ -2,3 +2,4 @@
 
 [appendix]
 == Annen nyttig informasjon til brukere
+

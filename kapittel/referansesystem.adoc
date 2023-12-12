@@ -1,6 +1,4 @@
 
-== Referansesystem
-
 (Antall lovlige romlige koordinatsystem for dette produktet: <sett inn antall>)
 
 // ROMLIG_REFERANSESYSTEM.  Dersom det er flere lovlige referansesystem, repeter seksjonen (ned til // SLUTT ROMLIG_REFERANSESYSTEM)
