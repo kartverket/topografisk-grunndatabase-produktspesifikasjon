@@ -1,0 +1,12 @@
+
+[appendix]
+== GML realisering
+
+////
+--Dersom GML er angitt som leveranseformat i kapittel 11, skal det her angis hvordan applikasjonsskjemaet skal realiseres i GML i form av URL --- 
+////
+
+Realiseringen defineres av følgende filer:
+
+* link:{gmlskjema}[GML-skjema]
+* link:{schematronskjema}[Schematron-skjema til validering av modellerte restriksjoner]

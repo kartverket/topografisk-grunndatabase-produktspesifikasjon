@@ -101,4 +101,22 @@ include::../kapittel/omfang.adoc[]
 
 include::kap5.adoc[] 
 
+include::referansesystem.adoc[]
 
+include::datafangst[]
+
+include::datavedlikehold.adoc[]
+
+include::presentasjon.adoc[]
+
+include::leveranse.adoc[]
+
+include::tilleggsinformasjon.adoc[]
+
+include::metadata.adoc[]
+
+include::SOSI_format_realisering.adoc[]
+
+include::GML_realisering[]
+
+include::AppendixA.adoc[]

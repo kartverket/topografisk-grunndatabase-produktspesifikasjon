@@ -1,0 +1,9 @@
+
+
+== Datafangst
+
+////
+Datafangst skal også referere til omfang (scopes) angitt i kapittel 4.
+
+Datafangst kan være nært knyttet til kapittel 7.
+////
