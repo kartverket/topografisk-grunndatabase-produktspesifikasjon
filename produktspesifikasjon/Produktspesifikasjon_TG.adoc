@@ -76,11 +76,9 @@ basis geodata
 Topografisk grunnkart...
 
 === Formål
-// Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
+
 include::../kapittel/formal.adoc[]
 
-
-// Fellesdel som dekker kap 3.9 - 3.12 for alle FKB-produktspesifikasjoner
 include::../kapittel/representasjon.adoc[]
 
 === Supplerende beskrivelse
@@ -101,22 +99,76 @@ include::../kapittel/omfang.adoc[]
 
 include::kap5.adoc[] 
 
-include::referansesystem.adoc[]
+<<<
 
-include::datafangst[]
+== Referansesystem
 
-include::datavedlikehold.adoc[]
+include::../kapittel/referansesystem.adoc[]
 
-include::presentasjon.adoc[]
+<<<
 
-include::leveranse.adoc[]
+== Kvalitet
 
-include::tilleggsinformasjon.adoc[]
+include::../kapittel/kvalitet.adoc[]
 
-include::metadata.adoc[]
+<<<
 
-include::SOSI_format_realisering.adoc[]
+== Datafangst
 
-include::GML_realisering[]
+include::../kapittel/datafangst.adoc[]
 
-include::AppendixA.adoc[]
+<<<
+
+== Datavedlikehold
+
+include::../kapittel/vedlikehold.adoc[]
+
+<<<
+
+== Presentasjon
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Referanse til presentasjonskatalog
+Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi
+
+<<<
+
+== Leveranse
+
+include::../kapittel/leveranse.adoc[]
+
+<<<
+
+== Tilleggsinformasjon
+Ingen angitt informasjon
+
+== Metadata
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Metadataspesifikasjon
+
+include::../kapittel/metadata.adoc[]
+
+<<<
+
+
+[appendix]
+== GML-realisering
+
+GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
+
+* link:{skjema-url}/FKBBygnAnlegg.xsd[GML-skjema]
+* link:{skjema-url}/FKBBygnAnlegg.sch[Schematron-regler til validering av tilleggskrav til datainnhold og -struktur utover det som er definert i GML-skjemafil] (sch-fil)
+* link:{skjema-url}/eksempel/[Katalog med eksempelfiler]
+
+[appendix]
+== SOSI-format-realisering
+
+SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. Under en utlisting av SOSI-formatrealiseringen:
+
+include::../kapittel/SOSI_realisering.adoc[]
+
