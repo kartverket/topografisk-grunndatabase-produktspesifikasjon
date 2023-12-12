@@ -508,7 +508,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#identifikasjon">«dataType» Identifikasjon</a></li>
 <li><a href="#posisjonskvalitet">«dataType» Posisjonskvalitet</a></li>
 <li><a href="#retning">«dataType» Retning</a></li>
-<li><a href="#opphavsinformasjon">«dataType» Opphavsinformasjon</a></li>
 <li><a href="#datafangstmetode">«CodeList» Datafangstmetode</a></li>
 <li><a href="#høydereferanse">«CodeList» Høydereferanse</a></li>
 <li><a href="#medium">«CodeList» Medium</a></li>
@@ -526,6 +525,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#grunnlinjepunkt">«FeatureType» Grunnlinjepunkt</a></li>
 <li><a href="#kommune">«FeatureType» Kommune</a></li>
 <li><a href="#teiggrensepunkt">«FeatureType» Teiggrensepunkt</a></li>
+<li><a href="#fylkesnummer">«CodeList» Fylkesnummer</a></li>
 <li><a href="#grensepunkttype">«CodeList» Grensepunkttype</a></li>
 <li><a href="#kommunenummer">«CodeList» Kommunenummer</a></li>
 <li><a href="#typeavgrensning">«CodeList» TypeAvgrensning</a></li>
@@ -1422,15 +1422,15 @@ Ikke angitt</p>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/SOSI objektrealisering.png"><img src="diagrammer/SOSI%20objektrealisering.png" alt="Diagram med navn SOSI objektrealisering som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av SOSI-objektet Generelle typer.png"><img src="diagrammer/Realisering%20av%20SOSI-objektet%20Generelle%20typer.png" alt="Diagram med navn Realisering av SOSI-objektet Generelle typer som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 6. SOSI objektrealisering</div>
+<div class="title">Figur 6. Realisering av SOSI-objektet Generelle typer</div>
 </div>
 <hr>
 <div class="sect4">
 <h5 id="konnekteringspunkt">«FeatureType» Konnekteringspunkt</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong></p>
+<p><strong>Definisjon:</strong> det er etablert konnekteringspunkter for temaene kraftlinjer, veger, stier, bygninger, jernbane, elver, innsjøkontur og enkelte midtlinjer for innsjøer og elver som krysser riksgrensen mellom Norge og Sverige. Dataene for de respektive landene kan da settes sammen slik at man får et godt kartbilde. Det er de nasjonale kartverkene i Sverige og Norge som vedlikeholder datasettet. Kilde for endringer er fotogrammetrisk konstruksjon og digitalisering fra ortofoto.</p>
 </div>
 <h6 id="_arv_og_realiseringer" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -2378,74 +2378,6 @@ SOSI_navn: RETN<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="opphavsinformasjon">«dataType» Opphavsinformasjon</h5>
-<div class="paragraph">
-<p><strong>Definisjon:</strong></p>
-</div>
-<h6 id="_egenskaper_7" class="discrete">Egenskaper</h6>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphavData</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/CharacterString">CharacterString</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 25<br>
-SOSI_navn: OPPHAV<br></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>id</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/CharacterString">CharacterString</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 255<br>
-SOSI_navn: ID<br></p></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-<div class="sect4">
 <h5 id="datafangstmetode">«CodeList» Datafangstmetode</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> metode for datafangst.</p>
@@ -2563,7 +2495,11 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect4">
 <h5 id="opphav">«CodeList» Opphav</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong></p>
+<p><strong>Definisjon:</strong> kildehenvisning for det enkelte kartobjekt</p>
+</div>
+<div class="paragraph">
+<p>Eksempel:
+Nibio, FKB-bygning eller N50 Kartdata</p>
 </div>
 <h6 id="_profilparametre_i_tagged_values_8" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -2599,7 +2535,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect4">
 <h5 id="registreringsversjon">«CodeList» Registreringsversjon</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
+<p><strong>Definisjon:</strong> verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
 </div>
 <h6 id="_profilparametre_i_tagged_values_9" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
@@ -2771,16 +2707,16 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog Administrative områder.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20Administrative%20områder.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 10. Realisering av objekttyper fra generell objektkatalog</div>
+<div class="title">Figur 10. Realisering av objekttyper fra generell objektkatalog Administrative områder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog Administrative områder.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog%20Administrative%20områder.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog Administrative områder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 11. Realisering av kodelister fra generell objektkatalog</div>
+<div class="title">Figur 11. Realisering av kodelister fra generell objektkatalog Administrative områder</div>
 </div>
 <hr>
 <div class="sect4">
@@ -2791,7 +2727,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p>Merknad: Tilsvarer NUTS 3 på internasjonalt statistisk nivå</p>
 </div>
-<h6 id="_egenskaper_8" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_7" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2926,7 +2862,7 @@ SOSI_navn: FYLKESNAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Generell avgrensingslinje</p>
 </div>
-<h6 id="_egenskaper_9" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_8" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3020,7 +2956,7 @@ SOSI_navn: FYLKESNAVN<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_10" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_9" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3153,7 +3089,7 @@ SOSI_navn: GRUNNLINJENUMMER<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_11" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_10" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3285,9 +3221,6 @@ Note: It must be following that municipality number always consists of 4 digits,
 <div class="paragraph">
 <p><strong>Definisjon:</strong> koordinatbestemt punkt som er påvist, beskrevet og/eller markert spesielt i den geografiske avgrensinga av teigen</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;point established by coordinates, which is proven, described and/or marked specifically in the geographical demarcation of the parcel Note: Can also be am auxiliary point for technical registration purposes Note: A boundary point is placed either at the beginning or end of a parcel boundary.</p>
-</div>
 <h6 id="_profilparametre_i_tagged_values_15" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3305,7 +3238,7 @@ Note: It must be following that municipality number always consists of 4 digits,
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_12" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_11" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3411,11 +3344,53 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <hr>
 </div>
 <div class="sect4">
+<h5 id="fylkesnummer">«CodeList» Fylkesnummer</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> nummerering av fylker</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null.
+URI til ekstern kodeliste:  https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer</pre>
+</div>
+</div>
+<h6 id="_profilparametre_i_tagged_values_16" class="discrete">Profilparametre i tagged values</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer" class="bare">https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer</a>?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FYLKESNUMMER</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+<div class="sect4">
 <h5 id="grensepunkttype">«CodeList» Grensepunkttype</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Angivelse av hva slags grensemerke som er brukt i terrenget.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_16" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_17" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3457,7 +3432,7 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <div class="paragraph">
 <p>Merknad 2: Modelleringsverktøyet Enterprise Architect håndterer ikke samiske tegn eller tankestrek. Det betyr at det vil forekomme avvik mellom definisjonene i denne lista i SOSI modellregister og definisjonene i offisielt standarddokument.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_17" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_18" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3493,7 +3468,7 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> oversikt over ulike typer avgrensingslinjer.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_18" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_19" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3541,9 +3516,9 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Oversiktsdiagram Arealdekke objekttyper A-I.png"><img src="diagrammer/Oversiktsdiagram%20Arealdekke%20objekttyper%20A-I.png" alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper A-I som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Oversiktsdiagram Arealdekke objekttyper A-K.png"><img src="diagrammer/Oversiktsdiagram%20Arealdekke%20objekttyper%20A-K.png" alt="Diagram med navn Oversiktsdiagram Arealdekke objekttyper A-K som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 13. Oversiktsdiagram Arealdekke objekttyper A-I</div>
+<div class="title">Figur 13. Oversiktsdiagram Arealdekke objekttyper A-K</div>
 </div>
 <hr>
 <div class="imageblock">
@@ -3569,79 +3544,79 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Arealdekke - Punkt.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20Punkt.png" alt="Diagram med navn Hoveddiagram Arealdekke - Punkt som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Arealdekke - Objekttyper med punktgeometri.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20Objekttyper%20med%20punktgeometri.png" alt="Diagram med navn Hoveddiagram Arealdekke - Objekttyper med punktgeometri som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 17. Hoveddiagram Arealdekke - Punkt</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Vann.png"><img src="diagrammer/Hoveddiagram%20Vann.png" alt="Diagram med navn Hoveddiagram Vann som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 18. Hoveddiagram Vann</div>
+<div class="title">Figur 17. Hoveddiagram Arealdekke - Objekttyper med punktgeometri</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram ElveKant.png"><img src="diagrammer/Hoveddiagram%20ElveKant.png" alt="Diagram med navn Hoveddiagram ElveKant som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Arealdekke - Vann.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20Vann.png" alt="Diagram med navn Hoveddiagram Arealdekke - Vann som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 19. Hoveddiagram ElveKant</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Innsjøkant.png"><img src="diagrammer/Hoveddiagram%20Innsjøkant.png" alt="Diagram med navn Hoveddiagram Innsjøkant som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 20. Hoveddiagram Innsjøkant</div>
+<div class="title">Figur 18. Hoveddiagram Arealdekke - Vann</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Kystkontur.png"><img src="diagrammer/Hoveddiagram%20Kystkontur.png" alt="Diagram med navn Hoveddiagram Kystkontur som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Arealdekke - ElveKant.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20ElveKant.png" alt="Diagram med navn Hoveddiagram Arealdekke - ElveKant som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 21. Hoveddiagram Kystkontur</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog Areal 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20Areal%204.0.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Areal 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 22. Realisering av objekttyper fra generell objektkatalog Areal 4.0</div>
+<div class="title">Figur 19. Hoveddiagram Arealdekke - ElveKant</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog Vann 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20Vann%204.0.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Vann 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Arealdekke - Innsjøkant.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20Innsjøkant.png" alt="Diagram med navn Hoveddiagram Arealdekke - Innsjøkant som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 23. Realisering av objekttyper fra generell objektkatalog Vann 4.0</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20Annen%20naturinfo%204.0%20og%20Kyst%20og%20sjø%204.0.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 24. Realisering av objekttyper fra generell objektkatalog Annen naturinfo 4.0 og Kyst og sjø 4.0</div>
+<div class="title">Figur 20. Hoveddiagram Arealdekke - Innsjøkant</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige fagområder.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20øvrige%20fagområder.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Arealdekke - Kystkontur.png"><img src="diagrammer/Hoveddiagram%20Arealdekke%20-%20Kystkontur.png" alt="Diagram med navn Hoveddiagram Arealdekke - Kystkontur som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 25. Realisering av objekttyper fra generell objektkatalog øvrige fagområder</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20datatyper%20og%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av datatyper og kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 26. Realisering av datatyper og kodelister fra generell objektkatalog</div>
+<div class="title">Figur 21. Hoveddiagram Arealdekke - Kystkontur</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Kodelister og datatyper.png"><img src="diagrammer/Kodelister%20og%20datatyper.png" alt="Diagram med navn Kodelister og datatyper som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Arealdekke fra Areal 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Arealdekke%20fra%20Areal%204.0.png" alt="Diagram med navn Realisering av objekttyper Arealdekke fra Areal 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 27. Kodelister og datatyper</div>
+<div class="title">Figur 22. Realisering av objekttyper Arealdekke fra Areal 4.0</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av objekttyper Arealdekke fra  Vann 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Arealdekke%20fra%20%20Vann%204.0.png" alt="Diagram med navn Realisering av objekttyper Arealdekke fra  Vann 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 23. Realisering av objekttyper Arealdekke fra  Vann 4.0</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Arealdekke%20fra%20Annen%20naturinfo%204.0%20og%20Kyst%20og%20sjø%204.0.png" alt="Diagram med navn Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 24. Realisering av objekttyper Arealdekke fra Annen naturinfo 4.0 og Kyst og sjø 4.0</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av objekttyper Arealdekke fra øvrige fagområder.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Arealdekke%20fra%20øvrige%20fagområder.png" alt="Diagram med navn Realisering av objekttyper Arealdekke fra øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 25. Realisering av objekttyper Arealdekke fra øvrige fagområder</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av kodelister Arealdekke.png"><img src="diagrammer/Realisering%20av%20kodelister%20Arealdekke.png" alt="Diagram med navn Realisering av kodelister Arealdekke som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 26. Realisering av kodelister Arealdekke</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Kodelister Arealdekke.png"><img src="diagrammer/Kodelister%20Arealdekke.png" alt="Diagram med navn Kodelister Arealdekke som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 27. Kodelister Arealdekke</div>
 </div>
 <hr>
 <div class="sect4">
@@ -3653,7 +3628,7 @@ SOSI_navn: GRENSEPUNKTNUMMER<br></p></td>
 <p><strong>kriterier</strong>
 Alle alpinbakker skal med i Topografisk grunndatabase. Alpinbakke skal registreres fullstedig, avgrensingen skal være i samsvar med utstrekningen av Skitrekk / Stolheis og preparerte løyper.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_19" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_20" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3666,7 +3641,7 @@ Alle alpinbakker skal med i Topografisk grunndatabase. Alpinbakke skal registrer
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_13" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_12" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3816,7 +3791,7 @@ Alle alpinbakker skal med i Topografisk grunndatabase. Alpinbakke skal registrer
 <p>Merknad:
 Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der dette representerer flata.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_20" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_21" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3829,7 +3804,7 @@ Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_14" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_13" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3882,7 +3857,7 @@ Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der
 <p>Merknad:
 Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der dette representerer flata.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_21" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_22" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3895,7 +3870,7 @@ Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_15" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_14" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4002,7 +3977,7 @@ Husene har overveiende to eller flere etasjer.</p>
 <p><strong>Kriterier</strong>
 Bymessig bebyggelse som er større enn 1000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_22" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_23" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4015,7 +3990,7 @@ Bymessig bebyggelse som er større enn 1000 m 2  og bredere enn 20 meter skal me
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_16" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_15" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4165,7 +4140,7 @@ Bymessig bebyggelse som er større enn 1000 m 2  og bredere enn 20 meter skal me
 <p><strong>Kriterier</strong>
 Dyrket mark skal skilles i arealtypene Overflatedyrket, Innmarksbeite og Fulldyrka jord. Dyrket mark som er større enn 500 m 2  og bredere enn 15 meter skal med i Topografisk grunndatabase. Dyrket mark som dekker hele øyer som er mindre enn minstemålet for dyrket mark, skal med i Topografisk grunndatabase</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_23" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_24" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4178,7 +4153,7 @@ Dyrket mark skal skilles i arealtypene Overflatedyrket, Innmarksbeite og Fulldyr
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_17" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_16" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4328,7 +4303,7 @@ Dyrket mark skal skilles i arealtypene Overflatedyrket, Innmarksbeite og Fulldyr
 <p><strong>Kriterier</strong>
 Elver bredere enn 3 meter og lengre enn 10 meter danner elveflater (flater med vannBredde 3 - 5). Øy i elv som er større enn 100 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_egenskaper_18" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_17" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4481,7 +4456,7 @@ Naturlig rennende vann med bredde opptil 3 meter registreres som midtlinje (vann
 <div class="paragraph">
 <p>Merknad: Det skal etableres nodepunkt mellom ElvBekk (midtlinje) og andre tilstøtende vannobjekter. Der det er naturlig skal det lages nodepunkt i 3D.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_24" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_25" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4498,7 +4473,7 @@ Naturlig rennende vann med bredde opptil 3 meter registreres som midtlinje (vann
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_19" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_18" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4573,7 +4548,7 @@ Rough classification of river system according to average width over longer sect
 <div class="paragraph">
 <p><strong>Definisjon:</strong> konturlinje mellom land og elveflate</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_25" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_26" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4586,7 +4561,7 @@ Rough classification of river system according to average width over longer sect
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_20" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_19" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4643,7 +4618,7 @@ Flatene avgrenses av FerskvannTørrfallKant og elve- eller kanalkant som grenser
 <p><strong>Kriterier</strong>
 Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_26" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_27" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4656,7 +4631,7 @@ Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase</
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_21" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_20" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4754,7 +4729,7 @@ Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase</
 <div class="paragraph">
 <p><strong>Definisjon:</strong> avgrensningslinje for FerskvannTørrfall</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_27" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_28" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4767,7 +4742,7 @@ Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase</
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_22" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_21" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4825,7 +4800,7 @@ Benyttes kun på elveløp bredere enn 5 meter. Smalere flomløp enn
 <p>Merknad:
 Flomløp finnes fortrinnsvis i regulerte vassdrag.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_28" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_29" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4838,7 +4813,7 @@ Flomløp finnes fortrinnsvis i regulerte vassdrag.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_23" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_22" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4893,7 +4868,7 @@ Større fosser av nasjonal- eller turistinteresse skal med i Topografisk grunnda
 Merknad:
 Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt knyttes punktsymbolet til kurven, og roteres slik at det står vinkelrett på elva. Er elva avlagt som flate legges punktet midt i elva og punktsymbolet roteres slik at dette står vinkelrett på elva.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_29" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_30" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4906,7 +4881,7 @@ Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_24" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_23" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4983,7 +4958,7 @@ Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt
 <p><strong>Kriterier</strong>
 Alle baneanlegg med minst 6 hull skal med i Topografisk grunndatabase. Mindre skogflater innenfor flaten kan avsettes som tregrupper. Golfbanen skal registreres fullstendig. Interne veger og tilhørende areal skal inngå i arealbruksflaten, ikke bare spilleflaten på de forskjellige hullene</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_30" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_31" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -4996,7 +4971,7 @@ Alle baneanlegg med minst 6 hull skal med i Topografisk grunndatabase. Mindre sk
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_25" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_24" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5146,7 +5121,7 @@ Alle baneanlegg med minst 6 hull skal med i Topografisk grunndatabase. Mindre sk
 <p><strong>Kriterier</strong>
 Gravplass/kirkegård større enn 400 m 2  og bredere enn 5 meter tas med. Gravplassen skal registreres fullstendig. Interne veger, gangveger og tilhørende areal skal inngå i arealbruksflaten</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_31" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_32" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5163,7 +5138,7 @@ Gravplass/kirkegård større enn 400 m 2  og bredere enn 5 meter tas med. Gravpl
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_26" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_25" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5313,7 +5288,7 @@ Gravplass/kirkegård større enn 400 m 2  og bredere enn 5 meter tas med. Gravpl
 <p><strong>Kriterier</strong>
 Alle øyer som er større enn 100 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. Øyer under minstemålet kodes som skjær.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_32" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_33" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5326,7 +5301,7 @@ Alle øyer som er større enn 100 m&#178; og bredere enn 5 meter skal med i Topo
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_27" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_26" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5456,7 +5431,7 @@ Omfatter også anlegg for vannforsyning, avfallshåndtering og rensing, samt kra
 <p><strong>Kriterier</strong>
 Industriområder som er større enn 3000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase. Industriområder under minstemålet innlemmes i tettbebyggelsen der disse grenser til hverandre.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_33" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_34" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5469,7 +5444,7 @@ Industriområder som er større enn 3000 m 2  og bredere enn 20 meter skal med i
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_28" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_27" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5619,7 +5594,7 @@ Industriområder som er større enn 3000 m 2  og bredere enn 20 meter skal med i
 <p><strong>Kriterier</strong>
 Innsjøer og øyer over 100m 2  og bredere enn 3 meter skal med i Topografisk grunndatabase. Øyer i innsjø som er større enn 100 m&#178; og bredere enn 3 meter skal med i Topografisk grunndatabase. Innsjøer over 2 500 m 2  skal være påført løpenummer for innsjø (vatnLøpenummer). For alle oppdemte og regulerte innsjøer der reguleringen er i drift kodes innsjøen med egenskapen Regulert. Det skal tilstrebes at alle innsjøer skal ha egenskapen høyde. Høyden skal angis i hele meter.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_34" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_35" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5632,7 +5607,7 @@ Innsjøer og øyer over 100m 2  og bredere enn 3 meter skal med i Topografisk gr
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_29" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_28" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5851,7 +5826,7 @@ SOSI_navn: LRV<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> konturlinje mellom land og innsjø</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_35" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_36" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5864,7 +5839,7 @@ SOSI_navn: LRV<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_30" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_29" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5924,7 +5899,7 @@ Alle kanal bredere enn 3 meter (vannBredde 3-5) skal med i Topografisk grunndata
 </div>
 <div class="title">Figur 28. Illustrasjon av objekttype Kanal</div>
 </div>
-<h6 id="_egenskaper_31" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_30" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6040,7 +6015,7 @@ Alle kanalgrøft som er en del av elvenettverket skal med i Topografisk grunndat
 </div>
 <div class="title">Figur 29. Illustrasjon av objekttype KanalGrøft</div>
 </div>
-<h6 id="_egenskaper_32" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_31" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6127,7 +6102,7 @@ SOSI_navn: VANNBR<br></p></td>
 </div>
 <div class="title">Figur 30. Illustrasjon av objekttype Kanalkant</div>
 </div>
-<h6 id="_egenskaper_33" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_32" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6189,7 +6164,7 @@ KonnekteringVann er kun til analyseformål og bør ikke brukes i kartsammenheng.
 </div>
 <div class="title">Figur 31. Illustrasjon av objekttype KonnekteringVann</div>
 </div>
-<h6 id="_egenskaper_34" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_33" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6246,7 +6221,7 @@ Tilsvarer COALNE i S-57</p>
 <p><strong>Kriterier</strong>
 Kystkonturen skal være registrert fullstendig og sammenhengende.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_36" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_37" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6259,7 +6234,7 @@ Kystkonturen skal være registrert fullstendig og sammenhengende.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_35" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_34" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6310,10 +6285,7 @@ Kystkonturen skal være registrert fullstendig og sammenhengende.</p>
 </div>
 <div class="paragraph">
 <p><strong>Kriterier</strong>
- Alle lekeplasser over 100 kvm skal med i Topografisk grunndatabase
-Lekeområder i skolegårder/barnehager skal registreres som en sammenhengende lekeplass med mindre lekeområder ligger fysisk adskilt. I så fall registreres lekeplass for hvert enkelt område.
-Lekeplasser i åpne fellesareal (blokkbebyggelse) og innenfor andre arealbruksflater (for eksempel park) skal registreres.
-Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.</p>
+Alle lekeplasser over 100 kvm skal med i Topografisk grunndatabase. Lekeområder i skolegårder/barnehager skal registreres som en sammenhengende lekeplass med mindre lekeområder ligger fysisk adskilt. I så fall registreres lekeplass for hvert enkelt område. Lekeplasser i åpne fellesareal (blokkbebyggelse) og innenfor andre arealbruksflater (for eksempel park) skal registreres. Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -6322,7 +6294,7 @@ Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.</p
 </div>
 <div class="title">Figur 32. Illustrasjon av objekttype Lekeplass</div>
 </div>
-<h6 id="_egenskaper_36" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_35" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6372,10 +6344,10 @@ Områder med lekeapparater i private hager (villa/enebolig) registreres ikke.</p
 <p><strong>Definisjon:</strong> land- eller sjøområde (med bygninger, installasjoner og utstyr) som helt eller delvis brukes for luftfartøyers avgang, landing og annen manøvrering på bakken</p>
 </div>
 <div class="paragraph">
-<p>Alle lufthavner som er større enn 20 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase og avlegges som flate. I tillegg tas objekttypen Rullebane med som flate, og Lufthavn som punkt. Det er lufthavnpunktet som skal ha den utdypende informasjonen om lufthavnen. Lufthavnpunktet på lufthavnene avsettes tilnærmet på midten av rullebanen og roteres i rullebanens retning.
-Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger på eller like ved bygninger.</p>
+<p><strong>Kriterier</strong>
+Alle lufthavner som er større enn 20 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase og avlegges som flate. I tillegg tas objekttypen Rullebane med som flate, og Lufthavn som punkt. Det er lufthavnpunktet som skal ha den utdypende informasjonen om lufthavnen. Lufthavnpunktet på lufthavnene avsettes tilnærmet på midten av rullebanen og roteres i rullebanens retning. Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger på eller like ved bygninger.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_37" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_38" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6388,7 +6360,7 @@ Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger p
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_37" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_36" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6768,9 +6740,10 @@ SOSI_navn: NAVN<br></p></td>
 landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdragsutbygging)</p>
 </div>
 <div class="paragraph">
-<p>Massedeponi større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+Massedeponi større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_egenskaper_38" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_37" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6914,12 +6887,13 @@ landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdrag
 <div class="sect4">
 <h5 id="masseuttak">«FeatureType» Masseuttak</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Dagbrudd for uttak av malm, skifer, sand, grus og pukk.</p>
+<p><strong>Definisjon:</strong> dagbrudd for uttak av malm, skifer, sand, grus og pukk.</p>
 </div>
 <div class="paragraph">
-<p>Masseuttak større enn 800     m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+Masseuttak større enn 800     m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_38" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_39" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -6932,7 +6906,7 @@ landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdrag
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_39" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_38" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7079,9 +7053,10 @@ landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdrag
 <p><strong>Definisjon:</strong> kunstig objekt hvor senterlinjen er en fiktiv linje som skjøter sammen en-strekselver gjennom en innsjø, - eller elveflate</p>
 </div>
 <div class="paragraph">
-<p>Det skal etableres midtlinjer for alle elver og innsjøflatene som er en del av elvenettverket i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+Det skal etableres midtlinjer for alle elver og innsjøflatene som er en del av elvenettverket i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_egenskaper_40" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_39" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7128,10 +7103,13 @@ landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdrag
 </div>
 <div class="paragraph">
 <p>Merknad:
-Myra kan være bevokst, men da av få eller små trær. Grøftet myr som er blitt skogmark tas IKKE med. Åpent område med vannmettet mark.
-Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase</p>
+Myra kan være bevokst, men da av få eller små trær. Grøftet myr som er blitt skogmark tas IKKE med. Åpent område med vannmettet mark.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_39" class="discrete">Profilparametre i tagged values</h6>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.</p>
+</div>
+<h6 id="_profilparametre_i_tagged_values_40" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7144,7 +7122,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_41" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_40" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7315,9 +7293,10 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 <p><strong>Definisjon:</strong> grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende</p>
 </div>
 <div class="paragraph">
-<p>Områder større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Fornøyelsesparker inngår ikke i denne kategorien.</p>
+<p><strong>Kriterier</strong>
+Områder større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Fornøyelsesparker inngår ikke i denne kategorien.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_40" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_41" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7330,7 +7309,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_42" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_41" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7477,9 +7456,10 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 <p><strong>Definisjon:</strong> avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer</p>
 </div>
 <div class="paragraph">
-<p>Alle rullebaner skal med i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+Alle rullebaner skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_41" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_42" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7492,7 +7472,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_43" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_42" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7639,9 +7619,10 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 <p><strong>Definisjon:</strong> generalisert punktobjekt for små øyer eller landareal</p>
 </div>
 <div class="paragraph">
-<p>Alle øyer under 100m 2  og smalere enn 3 meter skal med som skjær. Kun skjær som har høyde lik eller høyere enn den lokale MHV-verdien skal registreres.</p>
+<p><strong>Kriterier</strong>
+Alle øyer under 100m 2  og smalere enn 3 meter skal med som skjær. Kun skjær som har høyde lik eller høyere enn den lokale MHV-verdien skal registreres.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_42" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_43" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7654,7 +7635,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_44" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_43" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7707,17 +7688,10 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 <p>Merknad: Også hogstflater - selv om nyplanting ikke er synlig.  Omfatter alle slags skogboniteter, også storvokste vierkrattbelter i Nord-Norge</p>
 </div>
 <div class="paragraph">
-<p>Skog skal skilles i treslagene Barskog, Blandingsskog og Lauvskog, der det er mulig.</p>
+<p><strong>Kriterier</strong>
+Skog skal skilles i treslagene Barskog, Blandingsskog og Lauvskog, der det er mulig. Skogområder som er større enn 800 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.</p>
 </div>
-<div class="paragraph">
-<p>Skogområder som er større enn 800 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.</pre>
-</div>
-</div>
-<h6 id="_profilparametre_i_tagged_values_43" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_44" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7730,7 +7704,7 @@ Myr som er større enn 800 m 2  og bredere enn 10 meter skal med i Topografisk g
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_45" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_44" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7933,15 +7907,13 @@ SOSI_navn: ARTRESLAG<br></p></td>
 </div>
 <div class="paragraph">
 <p>Merknad:
-Masse av is og tettpakket snø som vesentlig ligger på land, der isen er i bevegelse, i motsetning til snømassen som ligger i ro. Isbre og snøfonn er slått sammen i definisjonen fordi det ofte kan være vanskelig å skille mellom dem.
-Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase.</p>
+Masse av is og tettpakket snø som vesentlig ligger på land, der isen er i bevegelse, i motsetning til snømassen som ligger i ro. Isbre og snøfonn er slått sammen i definisjonen fordi det ofte kan være vanskelig å skille mellom dem.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Mindre isfrie områder beholdes dersom de er større enn 2 000 m 2  og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.</pre>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografisk grunndatabase. Mindre isfrie områder beholdes dersom de er større enn 2 000 m 2  og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.</p>
 </div>
-</div>
-<h6 id="_profilparametre_i_tagged_values_44" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_45" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -7954,7 +7926,7 @@ Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografi
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_46" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_45" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8125,12 +8097,10 @@ Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografi
 <p><strong>Definisjon:</strong> område hvor det utøves sport og idrett</p>
 </div>
 <div class="paragraph">
-<p>Idrettsplass større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase.</p>
+<p><strong>Kriterier</strong>
+Idrettsplass større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. For motorsportanlegg se SpesiellDetalj.</p>
 </div>
-<div class="paragraph">
-<p>For motorsportanlegg se SpesiellDetalj.</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_45" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_46" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8143,7 +8113,7 @@ Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografi
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_47" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_46" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8290,10 +8260,10 @@ Breer som er større enn 6 000 m 2  og bredere enn 20 meter skal med i Topografi
 <p><strong>Definisjon:</strong> markert stein</p>
 </div>
 <div class="paragraph">
-<p>Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 .
-Er det et område med mange steiner som er større enn 400 m 2 , skal arealet steinur registreres. Se steinur.</p>
+<p><strong>Kriterier</strong>
+Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et område med mange steiner som er større enn 400 m 2 , skal arealet steinur registreres. Se steinur.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_46" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_47" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8306,7 +8276,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_48" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_47" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8357,10 +8327,11 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Alle områder større enn 400  m 2  skal med i Topografisk grunndatbase</pre>
+<pre> *Kriterier*
+Alle områder større enn 400 m 2  skal med i Topografisk grunndatbase.</pre>
 </div>
 </div>
-<h6 id="_profilparametre_i_tagged_values_47" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_48" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8373,7 +8344,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_49" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_48" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8423,9 +8394,10 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 <p><strong>Definisjon:</strong> sammenhengende bebygd område (overveiende boligbegyggelse) hvor husene i hovedsak ligger tettere enn 50 meter</p>
 </div>
 <div class="paragraph">
-<p>Tettbebyggelse som er større enn 2 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.</p>
+<p><strong>Kriterier</strong>
+Tettbebyggelse som er større enn 2 000 m 2  og bredere enn 10 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_48" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_49" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8438,7 +8410,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_50" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_49" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8585,7 +8557,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 <p><strong>Definisjon:</strong> område for omforming og fordeling av elektrisk energi.</p>
 </div>
 <div class="paragraph">
-<p>Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn o</p>
+<p>Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn.</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -8594,7 +8566,7 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 </div>
 <div class="title">Figur 33. Illustrasjon av objekttype Transformatorstasjon</div>
 </div>
-<h6 id="_egenskaper_51" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_50" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8669,12 +8641,10 @@ Er det et område med mange steiner som er større enn 400 m 2 , skal arealet st
 <p><strong>Definisjon:</strong> enkeltstående tre eller trær i små grupper</p>
 </div>
 <div class="paragraph">
-<p>Skogflater under minstemålet for skog kan omgjøres til tregrupper.
-Avstanden mellom tregrupper, og fra tregrupper til arealflater som skog og innsjø, skal være minimum 30 meter.
-Der tregruppen er i konflikt med gjeldene tema utelates tregruppen. Dette inkluderer veg, traktorveg, sti, kraftlinjer, navn, høydepunkt, bygningspunkt og grunnriss.
-Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som skog.</p>
+<p><strong>Kriterier</strong>
+Skogflater under minstemålet for skog kan omgjøres til tregrupper. Avstanden mellom tregrupper, og fra tregrupper til arealflater som skog og innsjø, skal være minimum 30 meter. Der tregruppen er i konflikt med gjeldene tema utelates tregruppen. Dette inkluderer veg, traktorveg, sti, kraftlinjer, navn, høydepunkt, bygningspunkt og grunnriss. Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som skog.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_49" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_50" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8687,7 +8657,7 @@ Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som s
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_52" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_51" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8743,7 +8713,7 @@ Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som s
 </div>
 <div class="title">Figur 34. Illustrasjon av objekttype VannFiktivGrense</div>
 </div>
-<h6 id="_egenskaper_53" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_52" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8824,12 +8794,10 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 <p><strong>Definisjon:</strong> område som ikke er klassifisert som annet tema i henhold til gjeldende produktspesifikasjon</p>
 </div>
 <div class="paragraph">
-<p>Åpent område som er større enn 400 m 2  og bredere enn 5 meter skal med i TG.</p>
+<p><strong>Kriterier</strong>
+Åpent område som er større enn 400 m 2  og bredere enn 5 meter skal med i Topografisk grunndatabase. Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i Topografisk grunndatabase</p>
 </div>
-<div class="paragraph">
-<p>Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i Topografisk grunndatabase</p>
-</div>
-<h6 id="_egenskaper_54" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_53" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -8995,7 +8963,7 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> inndeling etter fordeling av kronedekket mellom bartrær og lauvtrær</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_50" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_51" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9035,7 +9003,7 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 <p>Merknad1: Ikke alle lufthavner har IATA kode.
 Merknad 2: Bare norske lufthavner er tatt med her.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_51" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_52" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9074,7 +9042,7 @@ Merknad 2: Bare norske lufthavner er tatt med her.</p>
 <div class="paragraph">
 <p>Merknad: Den første bokstaven tilordnes etter kontinent og angir et land eller en gruppe land på det samme kontinentet. Den andre bokstaven angir landet og de to siste angir lufthavn.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_52" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_53" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9110,7 +9078,7 @@ Merknad 2: Bare norske lufthavner er tatt med her.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angivelse av type lufthavn</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_53" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_54" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9149,7 +9117,7 @@ Merknad 2: Bare norske lufthavner er tatt med her.</p>
 <div class="paragraph">
 <p>Merknad: Benyttes i N50 Kartdata i forhold til luftfart</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_54" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_55" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9185,11 +9153,7 @@ Merknad 2: Bare norske lufthavner er tatt med her.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition - -
-Rough classification of river system according to average width over longer sections.</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_55" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_56" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9225,7 +9189,7 @@ Rough classification of river system according to average width over longer sect
 <div class="paragraph">
 <p><strong>Definisjon:</strong> inndeling av hjelpelinjer for avgrensning og oppdeling av vannflater</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_56" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_57" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9287,51 +9251,44 @@ Rough classification of river system according to average width over longer sect
 <hr>
 <div class="imageblock">
 <div class="content">
+<a class="image" href="diagrammer/Oversiktsdiagram Bygninger og anlegg kodelister og datatyper .png"><img src="diagrammer/Oversiktsdiagram%20Bygninger%20og%20anlegg%20kodelister%20og%20datatyper%20.png" alt="Diagram med navn Oversiktsdiagram Bygninger og anlegg kodelister og datatyper  som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 38. Oversiktsdiagram Bygninger og anlegg kodelister og datatyper</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet.png"><img src="diagrammer/Hoveddiagram%20Bygninger%20og%20anlegg%20objekttyper%20med%20opsjonell%20kvalitet.png" alt="Diagram med navn Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 38. Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet</div>
+<div class="title">Figur 39. Hoveddiagram Bygninger og anlegg objekttyper med opsjonell kvalitet</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet .png"><img src="diagrammer/Hoveddiagram%20Bygninger%20og%20anlegg%20objekttyper%20med%20påkrevd%20kvalitet%20.png" alt="Diagram med navn Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet  som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 39. Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet</div>
+<div class="title">Figur 40. Hoveddiagram Bygninger og anlegg objekttyper med påkrevd kvalitet</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Oversiktsdiagram kodelister og datatyper Bygninger og anlegg.png"><img src="diagrammer/Oversiktsdiagram%20kodelister%20og%20datatyper%20Bygninger%20og%20anlegg.png" alt="Diagram med navn Oversiktsdiagram kodelister og datatyper Bygninger og anlegg som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Bygninger%20og%20Anlegg%20fra%20Bygnan%204.0.png" alt="Diagram med navn Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 40. Oversiktsdiagram kodelister og datatyper Bygninger og anlegg</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog Bygnan 4.0.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20Bygnan%204.0.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog Bygnan 4.0 som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 41. Realisering av objekttyper fra generell objektkatalog Bygnan 4.0</div>
+<div class="title">Figur 41. Realisering av objekttyper Bygninger og Anlegg fra Bygnan 4.0</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog øvrige.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog%20øvrige.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog øvrige som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Bygninger%20og%20Anlegg%20fra%20øvrige%20fagområder.png" alt="Diagram med navn Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 42. Realisering av objekttyper fra generell objektkatalog øvrige</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av datatyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20datatyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av datatyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 43. Realisering av datatyper fra generell objektkatalog</div>
+<div class="title">Figur 42. Realisering av objekttyper Bygninger og Anlegg fra øvrige fagområder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av datatyper og kodelister Bygninger og Anlegg.png"><img src="diagrammer/Realisering%20av%20datatyper%20og%20kodelister%20Bygninger%20og%20Anlegg.png" alt="Diagram med navn Realisering av datatyper og kodelister Bygninger og Anlegg som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 44. Realisering av kodelister fra generell objektkatalog</div>
+<div class="title">Figur 43. Realisering av datatyper og kodelister Bygninger og Anlegg</div>
 </div>
 <hr>
 <div class="sect4">
@@ -9340,13 +9297,13 @@ Rough classification of river system according to average width over longer sect
 <p><strong>Definisjon:</strong> bygning som er registrert i Matrikkelen</p>
 </div>
 <div class="paragraph">
-<p>Kriterier
+<p><strong>Kriterier</strong>
 Bygninger større enn 50 m 2  og med minste bredde 5 meter registreres som flateobjekt, øvrige som punkt.I bygninger med atrium (&#171;hull&#187;) må atriet være større enn 50 m 2  for at dette skal med. Er det mindre, inngår atriet i den omkringliggende bygningsflaten.</p>
 </div>
 <div class="paragraph">
 <p>I tillegg til bygningsflaten, vil enkelte bygninger angis med symbol.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_57" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_58" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9363,7 +9320,7 @@ Bygninger større enn 50 m 2  og med minste bredde 5 meter registreres som flate
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_55" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_54" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9468,10 +9425,10 @@ SOSI_navn: BYGGTYP_NBR<br></p></td>
 <p><strong>Definisjon:</strong> faste anlegg med vaskerom, campinghytter o.l.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal inngå i arealbruksflaten.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_58" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_59" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9484,7 +9441,7 @@ Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_56" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_55" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9534,7 +9491,7 @@ Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal
 <p><strong>Definisjon:</strong> konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter i samsvar med definisjonen som er lengre enn 10 meter skal med i Topografisk grunndatabase. Demning omfatter oppbygde hindringer som skal sikre jevn vannføring til vannforsyningsanlegg eller kraftverk, eller som skal skape grunnlag for fiskeoppdrett.</p>
 </div>
 <hr>
@@ -9542,9 +9499,9 @@ Alle objekter i samsvar med definisjonen som er lengre enn 10 meter skal med i T
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png" alt="Bilde av et eksempel på objekttypen Demning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 45. Illustrasjon av objekttype Demning</div>
+<div class="title">Figur 44. Illustrasjon av objekttype Demning</div>
 </div>
-<h6 id="_egenskaper_57" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_56" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9594,11 +9551,11 @@ Alle objekter i samsvar med definisjonen som er lengre enn 10 meter skal med i T
 <p><strong>Definisjon:</strong> brygge som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
-Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase</p>
+Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_59" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_60" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9611,7 +9568,7 @@ Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i T
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_58" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_57" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9661,17 +9618,17 @@ Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i T
 <p><strong>Definisjon:</strong> oppsatt stengsel som hindrer passering. Står ofte i grensa mellom eiendommer</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning. Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning. Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png" alt="Bilde av et eksempel på objekttypen Gjerde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 46. Illustrasjon av objekttype Gjerde</div>
+<div class="title">Figur 45. Illustrasjon av objekttype Gjerde</div>
 </div>
-<h6 id="_egenskaper_59" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_58" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9783,17 +9740,17 @@ SOSI_navn: HREF<br></p></td>
 <p><strong>Definisjon:</strong> bygningens ytteravgrensning langs grunnmur</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-bygningens ytteravgrensning langs grunnmur. Benyttes hovedsaklig for bygning under oppføring. For bygninger som revet/nedbrent benyttes objekttype ruin. Grunnmur større enn 50 m2 og med minste bredde 5 meter registreres som flateobjekt.</p>
+<p><strong>Kriterier</strong>
+Bygningens ytteravgrensning langs grunnmur. Benyttes hovedsaklig for bygning under oppføring. For bygninger som revet/nedbrent benyttes objekttype ruin. Grunnmur større enn 50 m2 og med minste bredde 5 meter registreres som flateobjekt.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png" alt="Bilde av et eksempel på objekttypen Grunnmur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 47. Illustrasjon av objekttype Grunnmur</div>
+<div class="title">Figur 46. Illustrasjon av objekttype Grunnmur</div>
 </div>
-<h6 id="_egenskaper_60" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_59" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9874,10 +9831,10 @@ SOSI_navn: HREF<br></p></td>
 <p><strong>Definisjon:</strong> ikke dagbrudd og skjerp, hvor gruveinngangen er tydelig</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er tydelig og hvorfra det utvinnes, eller har blitt utvunnet, malm eller mineraler. Alle objekter som tilfredsstiller definisjonen skal med. Punktet plasseres så nær gruveinngangen om mulig. Gruve omfatter ikke masseuttak (dagbrudd).</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_60" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_61" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9890,7 +9847,7 @@ Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er ty
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_61" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_60" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9940,12 +9897,12 @@ Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er ty
 <p><strong>Definisjon:</strong> anlegg for skihopping med kunstig eller naturlig tilløp</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter i samsvar med definisjonen som er lengre enn 50 meter, målt i grunnriss, fra toppen av tilløpet til enden av unnarennet skal med i Topografisk grunndatabase.
 Merknad
 Egenskapen lengde sier noe om størrelsen til hoppbakken og egenskapen retning er vinkelen et punktsymbol skal roteres med for å få riktig retning på hoppsymbolet. Vinkelen er satt i forhold til koordinatsystemet Euref89 UTM sone 33.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_61" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_62" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -9958,7 +9915,7 @@ Egenskapen lengde sier noe om størrelsen til hoppbakken og egenskapen retning e
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_62" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_61" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10066,9 +10023,10 @@ SOSI_navn: LENGDE<br></p></td>
 <p><strong>Definisjon:</strong> angivelse av  innretninger som er satt opp for å betjene båter ved lasting- lossing og landligge</p>
 </div>
 <div class="paragraph">
-<p>Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.</p>
+<p><strong>Kriterier</strong>
+Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_62" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_63" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10081,7 +10039,7 @@ SOSI_navn: LENGDE<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_63" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_62" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10158,10 +10116,7 @@ SOSI_navn: LENGDE<br></p></td>
 <p>Merknad:
 Kan benyttes dersom ..MEDIUM L og ..LEDNING * 3 8</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;line conducting electrical power over large distances and where it is uncertain whether there is a low-voltage or high-voltage line. Note: may be used if ..MEDIUM L and ..LINE * 3 8</p>
-</div>
-<h6 id="_egenskaper_64" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_63" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10240,13 +10195,11 @@ SOSI_navn: FLER_LINJER<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> løypetrasé som har belysning</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  Kriterier
-Lysløyper i samsvar med definisjonen skal med i Topografisk grunndatabase.</pre>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Lysløyper i samsvar med definisjonen skal med i Topografisk grunndatabase.</p>
 </div>
-</div>
-<h6 id="_egenskaper_65" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_64" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10296,18 +10249,17 @@ Lysløyper i samsvar med definisjonen skal med i Topografisk grunndatabase.</pre
 <p><strong>Definisjon:</strong> alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-Alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken
-Merknad FKB: En mast kan bestå av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).</p>
+<p><strong>Kriterier</strong>
+Alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg" alt="Bilde av et eksempel på objekttypen Mast, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 48. Illustrasjon av objekttype Mast</div>
+<div class="title">Figur 47. Illustrasjon av objekttype Mast</div>
 </div>
-<h6 id="_egenskaper_66" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_65" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10533,10 +10485,10 @@ SOSI_navn: VERTIKALAVSTAND<br></p></td>
 <p><strong>Definisjon:</strong> kunstig eller naturlig oppbygning som demper eller tilintetgjør bølgebevegelser i sjøen</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_63" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_64" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10549,7 +10501,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topogra
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_67" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_66" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10599,7 +10551,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topogra
 <p><strong>Definisjon:</strong> vegg, vern, gjerde eller annet skille av (mur)stein eller betong</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle enkeltstående murer lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -10607,9 +10559,9 @@ Alle enkeltstående murer lengre enn 25 meter skal med i Topografisk grunndataba
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png" alt="Bilde av et eksempel på objekttypen Mur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 49. Illustrasjon av objekttype Mur</div>
+<div class="title">Figur 48. Illustrasjon av objekttype Mur</div>
 </div>
-<h6 id="_egenskaper_68" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_67" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10690,10 +10642,10 @@ SOSI_navn: HREF<br></p></td>
 <p><strong>Definisjon:</strong> objekt som hjelper sjøfarende å navigere på sjøen</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte belysning).</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_64" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_65" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10706,7 +10658,7 @@ Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_69" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_68" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10756,17 +10708,17 @@ Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte
 <p><strong>Definisjon:</strong> fast anlegg for oppdrett av fisk i vann</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-alle oppdrettslokaliteter skal med i Topografisk grunndatabase</p>
+<p><strong>Kriterier</strong>
+alle oppdrettslokaliteter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png" alt="Bilde av et eksempel på objekttypen Oppdrettslokalitet, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 50. Illustrasjon av objekttype Oppdrettslokalitet</div>
+<div class="title">Figur 49. Illustrasjon av objekttype Oppdrettslokalitet</div>
 </div>
-<h6 id="_egenskaper_70" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_69" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10819,20 +10771,18 @@ alle oppdrettslokaliteter skal med i Topografisk grunndatabase</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Område for parkering av kjøretøy</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  Kriterier
-Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse skal flate over 500 kvm med i Topografisk grunndatabase.</pre>
-</div>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse skal flate over 500 kvm med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomrade.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomrade.png" alt="Bilde av et eksempel på objekttypen Parkeringsområde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 51. Illustrasjon av objekttype Parkeringsområde</div>
+<div class="title">Figur 50. Illustrasjon av objekttype Parkeringsområde</div>
 </div>
-<h6 id="_egenskaper_71" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_70" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -10943,17 +10893,17 @@ Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv ska
 <p><strong>Definisjon:</strong> frittstående rørformete innretninger for transport av avgasser</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-Piper over 10 meter skal med i topografisk grunndatabase.</p>
+<p><strong>Kriterier</strong>
+Piper med høyde over 10 meter skal med i topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png" alt="Bilde av et eksempel på objekttypen Pipe, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 52. Illustrasjon av objekttype Pipe</div>
+<div class="title">Figur 51. Illustrasjon av objekttype Pipe</div>
 </div>
-<h6 id="_egenskaper_72" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_71" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11051,10 +11001,10 @@ SOSI_navn: HREF<br></p></td>
 <p><strong>Definisjon:</strong> markert utstikkende brygge, normalt med vann under, i sjø</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_65" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_66" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11067,7 +11017,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topograf
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_73" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_72" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11117,7 +11067,7 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topograf
 <p><strong>Definisjon:</strong> Synlig mur som er rester etter tidligere byggverk</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Ruin brukes kun om gamle, forfalne murer. For nye/vedlikeholdte murer/byggverk brukes andre objekttyper.</p>
 </div>
 <hr>
@@ -11125,9 +11075,9 @@ Ruin brukes kun om gamle, forfalne murer. For nye/vedlikeholdte murer/byggverk b
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png" alt="Bilde av et eksempel på objekttypen Ruin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 53. Illustrasjon av objekttype Ruin</div>
+<div class="title">Figur 52. Illustrasjon av objekttype Ruin</div>
 </div>
-<h6 id="_egenskaper_74" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_73" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11212,10 +11162,10 @@ SOSI_navn: HREF<br></p></td>
 rør som leder vann frem til foredlingsanlegg, kraftverk, annet vassdrag, fjernvarmeanlegg, tømmerrenne, osv. Skal ligge på og/eller over bakken og være godt synlig i terrenget.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med i Topografisk grunndatabase. Rørgate som inngår i tettbebyggelse og bymessig bebyggelse tas ikke med som selvstendige objekter. Rørgate skal unntaksvis tas med i industriområde.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_66" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_67" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11228,7 +11178,7 @@ Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_75" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_74" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11278,7 +11228,7 @@ Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med
 <p><strong>Definisjon:</strong> frittstående konstruksjon laget for å skjerme mot støy eller snø, eller hindre/begrense ras og flom.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle enkeltstående skjermer lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -11286,9 +11236,9 @@ Alle enkeltstående skjermer lengre enn 25 meter skal med i Topografisk grunndat
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png" alt="Bilde av et eksempel på objekttypen Skjerm, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 54. Illustrasjon av objekttype Skjerm</div>
+<div class="title">Figur 53. Illustrasjon av objekttype Skjerm</div>
 </div>
-<h6 id="_egenskaper_76" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_75" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11429,23 +11379,15 @@ SOSI_navn: HOB<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Tekniske anlegg på skytebane - standplass og skiver som ikke blir registrert som f.eks bygninger og murer</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  Tilleggsbeskrivelse for produktspesifikasjonen
-Anlegg med standplass og nedslagsfelt/skiveholdere beregnet for skyting med håndvåpen.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>  Kriterier
-Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedslagsfelt/skiveholdere lengre enn 25 meter skal med i topografisk grunndatabase.</pre>
-</div>
+<div class="paragraph">
+<p><strong>Tilleggsbeskrivelse for produktspesifikasjonen</strong>
+Anlegg med standplass og nedslagsfelt/skiveholdere beregnet for skyting med håndvåpen.</p>
 </div>
 <div class="paragraph">
-<p>Anlegget representeres alltid med 2 punkter. Første punkt er senter standplass, andre punkt er senter skiveholdere.
-Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registreres omrisset av det tekniske anlegget.</p>
+<p><strong>Kriterier</strong>
+Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedslagsfelt/skiveholdere lengre enn 25 meter skal med i topografisk grunndatabase. Anlegget representeres alltid med 2 punkter. Første punkt er senter standplass, andre punkt er senter skiveholdere. Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registreres omrisset av det tekniske anlegget.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_67" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_68" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11458,7 +11400,7 @@ Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registrere
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_77" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_76" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11536,9 +11478,9 @@ Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registrere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png" alt="Bilde av et eksempel på objekttypen Slipp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 55. Illustrasjon av objekttype Slipp</div>
+<div class="title">Figur 54. Illustrasjon av objekttype Slipp</div>
 </div>
-<h6 id="_egenskaper_78" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_77" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11619,12 +11561,14 @@ SOSI_navn: HREF<br></p></td>
 <p><strong>Definisjon:</strong> objekttyper som det er nødvendig å angi av kartografiske hensyn og som ikke fanges opp av definerte objekttyper</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsbeskrivelse for produktspesifikasjonen
-Detalj i terrenget som ikke fanges opp av andre bygningstema, for eksempel bosettingsplass hvor bebyggelsen er borte, minnesmerke, offersted, elveforbygning, bobbane, rulleskibane og motorsportanlegg
-Kriterier
+<p>*Tilleggsbeskrivelse for produktspesifikasjonen *
+Detalj i terrenget som ikke fanges opp av andre bygningstema, for eksempel bosettingsplass hvor bebyggelsen er borte, minnesmerke, offersted, elveforbygning, bobbane, rulleskibane og motorsportanlegg</p>
+</div>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
 Alle kurveobjekter i samsvar med definisjonen og som er lengre enn 50 meter skal med i topografisk grunndatabase. Benyttes også for å knytte stedsnavn til et punkt der all bebyggelse er borte, f. eks. en tidligere seter. Spesiell detalj som punkt og linje kan også benyttes uten at stedsnavn er knyttet til punktet. Spesiell detalj som inngår i tettbebyggelse, bymessig bebyggelse eller industriområde tas ikke med som selvstendig objekt.</p>
 </div>
-<h6 id="_egenskaper_79" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_78" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11722,10 +11666,10 @@ Alle kurveobjekter i samsvar med definisjonen og som er lengre enn 50 meter skal
 <p><strong>Definisjon:</strong> Sykehus er en helseinstitusjon som er godkjent for innleggelse, undersøkelse og behandling av pasienter og fødende kvinner som trenger spesialisert helsetjeneste. Til sykehusene hører sengeavdelinger, poliklinikker og laboratorier.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-Alle sykehus skal med i Topografisk grunndatabase. Sykehus er med som eget punkt for å kunne symbolisere sykehus med og uten akuttmotak.</p>
+<p><strong>Kriterier</strong>
+Alle sykehus skal med i Topografisk grunndatabase. Sykehus har enten egenskapen akuttmotak eller ikke, slik at dette kan symboliseres.</p>
 </div>
-<h6 id="_egenskaper_80" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_79" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11802,7 +11746,7 @@ SOSI_navn: AKUTTMOTAK<br></p></td>
 <p><strong>Definisjon:</strong> basseng for svømming og vannlek</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter større enn 100 m&#178; skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -11810,9 +11754,9 @@ Alle objekter større enn 100 m&#178; skal med i Topografisk grunndatabase.</p>
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png" alt="Bilde av et eksempel på objekttypen Svømmebasseng, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 56. Illustrasjon av objekttype Svømmebasseng</div>
+<div class="title">Figur 55. Illustrasjon av objekttype Svømmebasseng</div>
 </div>
-<h6 id="_egenskaper_81" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_80" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11862,10 +11806,10 @@ Alle objekter større enn 100 m&#178; skal med i Topografisk grunndatabase.</p>
 <p><strong>Definisjon:</strong> lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178; som punkt. Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_68" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_69" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11878,7 +11822,7 @@ Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178;
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_82" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_81" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -11953,7 +11897,7 @@ Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178;
 Eksempel:  'carport' eller tak over bensinpumper</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle flater over 200 m&#178; skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -11961,9 +11905,9 @@ Alle flater over 200 m&#178; skal med i Topografisk grunndatabase.</p>
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png" alt="Bilde av et eksempel på objekttypen Takoverbygg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 57. Illustrasjon av objekttype Takoverbygg</div>
+<div class="title">Figur 56. Illustrasjon av objekttype Takoverbygg</div>
 </div>
-<h6 id="_egenskaper_83" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_82" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12050,7 +11994,7 @@ Alle flater over 200 m&#178; skal med i Topografisk grunndatabase.</p>
 <p><strong>Definisjon:</strong> innretning hvor tau eller vaiere bærer og eller trekker last over en strekning</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle Taubaner lenger enn 50 meter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -12058,9 +12002,9 @@ Alle Taubaner lenger enn 50 meter skal med i Topografisk grunndatabase.</p>
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png" alt="Bilde av et eksempel på objekttypen Taubane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 58. Illustrasjon av objekttype Taubane</div>
+<div class="title">Figur 57. Illustrasjon av objekttype Taubane</div>
 </div>
-<h6 id="_egenskaper_84" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_83" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12173,7 +12117,7 @@ SOSI_navn: HREF<br></p></td>
 Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
+<p><strong>Kriterier</strong>
 Alle flater over 500 m&#178; skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
@@ -12181,9 +12125,9 @@ Alle flater over 500 m&#178; skal med i Topografisk grunndatabase.</p>
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png" alt="Bilde av et eksempel på objekttypen Tribune, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 59. Illustrasjon av objekttype Tribune</div>
+<div class="title">Figur 58. Illustrasjon av objekttype Tribune</div>
 </div>
-<h6 id="_egenskaper_85" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_84" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12233,10 +12177,10 @@ Alle flater over 500 m&#178; skal med i Topografisk grunndatabase.</p>
 <p><strong>Definisjon:</strong> Turisthytte er en hytte med tilbud om overnatting og ofte også bespisning, særlig i fjellstrøk.</p>
 </div>
 <div class="paragraph">
-<p>kriterier
-Alle DNT hytter, &#8230;&#8203;</p>
+<p><strong>Kriterier</strong>
+Alle hytter som tilbyr overnatting, både selvbetjent og ubetjent.</p>
 </div>
-<h6 id="_egenskaper_86" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_85" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12339,13 +12283,11 @@ SOSI_navn: BYGGTYP_NBR<br></p></td>
 Merknad: Omfatter alle tårn med unntak av de tårn som har en mer spesifisert beskrivelse- som f.eks Silo og tank.
 Eksempel: Måletårn og stupetårn</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  kriterier
-Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde.</pre>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde.</p>
 </div>
-</div>
-<h6 id="_profilparametre_i_tagged_values_69" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_70" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12358,7 +12300,7 @@ Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ik
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_87" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_86" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12405,22 +12347,20 @@ Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ik
 <div class="sect4">
 <h5 id="vindturbin">«FeatureType» Vindturbin</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> en kontainer som betegner en hel "vindmølle". En vindturbin har en generator</p>
+<p><strong>Definisjon:</strong> vindturbin er en mekanisk innretning som omdanner vindenergi til rotasjonsenergi, og som inngår som en viktig komponent i et vindkraftverk.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>  Kriterier
-Alle objektene i samsvar med definisjonen skal med i Topografisk grunndatabase.</pre>
-</div>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Alle objektene i samsvar med definisjonen skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg" alt="Bilde av et eksempel på objekttypen Vindturbin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 60. Illustrasjon av objekttype Vindturbin</div>
+<div class="title">Figur 59. Illustrasjon av objekttype Vindturbin</div>
 </div>
-<h6 id="_egenskaper_88" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_87" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12549,20 +12489,18 @@ SOSI_navn: NAVHØYDE<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> opphøyd terrengformasjon anlagt for å hindre støy, ukontrollert gjennomstrømming av vann, skade fra  prosjektiler på skytebane o.l.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre> kriterier
-Alle enkeltstående voller lengre enn 25 meter skal med i Topografisk grunndatabase.</pre>
-</div>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Alle enkeltstående voller lengre enn 25 meter skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png" alt="Bilde av et eksempel på objekttypen Voll, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."></a>
 </div>
-<div class="title">Figur 61. Illustrasjon av objekttype Voll</div>
+<div class="title">Figur 60. Illustrasjon av objekttype Voll</div>
 </div>
-<h6 id="_egenskaper_89" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_88" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12703,11 +12641,7 @@ SOSI_navn: HOB<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> informasjon om hytter i form av identifikasjon, betjeningsgrad og eier</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition - -
-information about cabins in the form of identification, service level and owner</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_70" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_71" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12724,7 +12658,7 @@ information about cabins in the form of identification, service level and owner<
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_90" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_89" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12833,11 +12767,7 @@ SOSI_navn: HYTTEEIER<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beskrivelse av hvilke servicefunksjoner som er tilgengelige</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition - -
-description of which service functions are available</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_71" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_72" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12873,7 +12803,7 @@ description of which service functions are available</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> bygningstype sier hva bygningen er brukt til</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_72" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_73" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12909,7 +12839,7 @@ description of which service functions are available</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angivelse av antall kraftlinjer</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_73" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_74" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12945,7 +12875,7 @@ description of which service functions are available</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Type gjerde</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_74" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_75" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -12981,11 +12911,7 @@ description of which service functions are available</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> eieren av en turisthytte</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition - -
-the owner of a cabin</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_75" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_76" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13024,7 +12950,7 @@ the owner of a cabin</p>
 <div class="paragraph">
 <p>Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstypen er hentet fra.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_76" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_77" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13060,7 +12986,7 @@ the owner of a cabin</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> ulike funksjoner en skjerm kan ha</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_77" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_78" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13096,7 +13022,7 @@ the owner of a cabin</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> hva slags type taubane</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_78" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_79" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13132,7 +13058,7 @@ the owner of a cabin</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beskriver om hytta er låst eller ulåst.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_79" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_80" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13175,28 +13101,28 @@ the owner of a cabin</p>
 <div class="content">
 <a class="image" href="diagrammer/Pakkerealisering Høyde.png"><img src="diagrammer/Pakkerealisering%20Høyde.png" alt="Diagram med navn Pakkerealisering Høyde som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 62. Pakkerealisering Høyde</div>
+<div class="title">Figur 61. Pakkerealisering Høyde</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Høyde.png"><img src="diagrammer/Hoveddiagram%20Høyde.png" alt="Diagram med navn Hoveddiagram Høyde som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 63. Hoveddiagram Høyde</div>
+<div class="title">Figur 62. Hoveddiagram Høyde</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Høyde.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Høyde.png" alt="Diagram med navn Realisering av objekttyper Høyde som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 64. Realisering av objekttyper fra generell objektkatalog</div>
+<div class="title">Figur 63. Realisering av objekttyper Høyde</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av kodelister Høyde.png"><img src="diagrammer/Realisering%20av%20kodelister%20Høyde.png" alt="Diagram med navn Realisering av kodelister Høyde som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 65. Realisering av kodelister fra generell objektkatalog</div>
+<div class="title">Figur 64. Realisering av kodelister Høyde</div>
 </div>
 <hr>
 <div class="sect4">
@@ -13207,7 +13133,7 @@ the owner of a cabin</p>
 <div class="paragraph">
 <p>Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_80" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_81" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13220,7 +13146,7 @@ the owner of a cabin</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_91" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_90" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13336,10 +13262,7 @@ SOSI_navn: HØYDE<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;point in the terrain with a measured height value used to indicate the height on pronounced surfaces in the terrain, such as saddles and large surfaces, in road and street intersections and other intersections between transportation lines, in courtyards outside main entrances and in car parks</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_81" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_82" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13352,7 +13275,7 @@ SOSI_navn: HØYDE<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_92" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_91" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13469,7 +13392,7 @@ SOSI_navn: HØYDE<br></p></td>
 <p>Eksempel:
 Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_82" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_83" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13514,35 +13437,35 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="content">
 <a class="image" href="diagrammer/Pakkerealisering Restriksjonsområder.png"><img src="diagrammer/Pakkerealisering%20Restriksjonsområder.png" alt="Diagram med navn Pakkerealisering Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 66. Pakkerealisering Restriksjonsområder</div>
+<div class="title">Figur 65. Pakkerealisering Restriksjonsområder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Oversiktsdiagram Restriksjonsområder.png"><img src="diagrammer/Oversiktsdiagram%20Restriksjonsområder.png" alt="Diagram med navn Oversiktsdiagram Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 67. Oversiktsdiagram Restriksjonsområder</div>
+<div class="title">Figur 66. Oversiktsdiagram Restriksjonsområder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Restriksjonsområder.png"><img src="diagrammer/Hoveddiagram%20Restriksjonsområder.png" alt="Diagram med navn Hoveddiagram Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 68. Hoveddiagram Restriksjonsområder</div>
+<div class="title">Figur 67. Hoveddiagram Restriksjonsområder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Restriksjonsområder.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Restriksjonsområder.png" alt="Diagram med navn Realisering av objekttyper Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 69. Realisering av objekttyper fra generell objektkatalog</div>
+<div class="title">Figur 68. Realisering av objekttyper Restriksjonsområder</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av kodelister Restriksjonsområder.png"><img src="diagrammer/Realisering%20av%20kodelister%20Restriksjonsområder.png" alt="Diagram med navn Realisering av kodelister Restriksjonsområder som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 70. Realisering av kodelister fra generell objektkatalog</div>
+<div class="title">Figur 69. Realisering av kodelister Restriksjonsområder</div>
 </div>
 <hr>
 <div class="sect4">
@@ -13555,7 +13478,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <pre>Merknad: Det er ofte vilkår om at den bruksberettigede må ha en eiendom av en viss størrelse. Eksempel på rettigheter er beiterett, hogstrett, fiskerett.</pre>
 </div>
 </div>
-<h6 id="_egenskaper_93" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_92" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13689,7 +13612,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> avgrensning av allmenning</p>
 </div>
-<h6 id="_egenskaper_94" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_93" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13736,9 +13659,9 @@ SOSI_navn: NAVN<br></p></td>
 <div class="sect4">
 <h5 id="flyplassavgrensning">«FeatureType» Flyplassavgrensning</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong></p>
+<p><strong>Definisjon:</strong> avgrensning av flyplassområde</p>
 </div>
-<h6 id="_egenskaper_95" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_94" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13783,7 +13706,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> avgrenser et naturvernområde</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_83" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_84" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13796,7 +13719,7 @@ SOSI_navn: NAVN<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_96" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_95" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13845,7 +13768,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> naturvernområde</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_84" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_85" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -13862,7 +13785,7 @@ SOSI_navn: NAVN<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_97" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_96" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14026,10 +13949,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p>Merknad: Gjelder også testfelt knyttet til våpen- spregningsindustri</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;area where divisions from the armed forces undertake live firing practice on land and/or at sea. Note: Also applies to proving grounds related to the explosive armaments industry</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_85" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_86" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14042,7 +13962,7 @@ SOSI_navn: NAVN<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_98" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_97" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14174,7 +14094,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> avgrenser skytefelt</p>
 </div>
-<h6 id="_egenskaper_99" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_98" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14219,7 +14139,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> nærmere inndeling av allmenninger</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_86" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_87" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14255,7 +14175,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angir skytefeltstatus</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_87" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_88" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14291,7 +14211,7 @@ SOSI_navn: NAVN<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> verneformer som sorterer under forskjellig lovverk og restriksjoner</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_88" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_89" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14334,57 +14254,57 @@ SOSI_navn: NAVN<br></p></td>
 <div class="content">
 <a class="image" href="diagrammer/Pakkerealisering Samferdsel.png"><img src="diagrammer/Pakkerealisering%20Samferdsel.png" alt="Diagram med navn Pakkerealisering Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 71. Pakkerealisering Samferdsel</div>
+<div class="title">Figur 70. Pakkerealisering Samferdsel</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Oversiktsdiagram Samferdsel.png"><img src="diagrammer/Oversiktsdiagram%20Samferdsel.png" alt="Diagram med navn Oversiktsdiagram Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 72. Oversiktsdiagram Samferdsel</div>
+<div class="title">Figur 71. Oversiktsdiagram Samferdsel</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Samferdsel objekttyper.png"><img src="diagrammer/Hoveddiagram%20Samferdsel%20objekttyper.png" alt="Diagram med navn Hoveddiagram Samferdsel objekttyper som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 73. Hoveddiagram Samferdsel objekttyper</div>
+<div class="title">Figur 72. Hoveddiagram Samferdsel objekttyper</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Kodelister.png"><img src="diagrammer/Hoveddiagram%20Kodelister.png" alt="Diagram med navn Hoveddiagram Kodelister som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram Samferdsel kodelister.png"><img src="diagrammer/Hoveddiagram%20Samferdsel%20kodelister.png" alt="Diagram med navn Hoveddiagram Samferdsel kodelister som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 74. Hoveddiagram Kodelister</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
-</div>
-<div class="title">Figur 75. Realisering av objekttyper fra generell objektkatalog</div>
+<div class="title">Figur 73. Hoveddiagram Samferdsel kodelister</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av datatyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20datatyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av datatyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Samferdsel.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Samferdsel.png" alt="Diagram med navn Realisering av objekttyper Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 76. Realisering av datatyper fra generell objektkatalog</div>
+<div class="title">Figur 74. Realisering av objekttyper Samferdsel</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av datatyper Samferdsel.png"><img src="diagrammer/Realisering%20av%20datatyper%20Samferdsel.png" alt="Diagram med navn Realisering av datatyper Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 77. Realisering av kodelister fra generell objektkatalog</div>
+<div class="title">Figur 75. Realisering av datatyper Samferdsel</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av kodelister Samferdsel.png"><img src="diagrammer/Realisering%20av%20kodelister%20Samferdsel.png" alt="Diagram med navn Realisering av kodelister Samferdsel som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 76. Realisering av kodelister Samferdsel</div>
 </div>
 <hr>
 <div class="sect4">
 <h5 id="skuterløype">«FeatureType» Skuterløype</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong></p>
+<p><strong>Definisjon:</strong> fastsatte ruter for ferdsel med snøskuter</p>
 </div>
-<h6 id="_egenskaper_100" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_99" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14460,15 +14380,10 @@ På bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p></td>
 <p><strong>Definisjon:</strong> teoretisk linje som representerer ett enkelt eller flere parallelle spor som del av en banestrekning</p>
 </div>
 <div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;theoretical line which represents a single or several parallel tracks as part of a railway line</p>
+<p><strong>Kriterier</strong>
+Banestrekningen behøver ikke å ha regelmessig trafikk. Bane innenfor industriområder tas også med.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>-- INSPIRE --
-Maps to RailwayLink</pre>
-</div>
-</div>
-<h6 id="_profilparametre_i_tagged_values_89" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_90" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14481,7 +14396,7 @@ Maps to RailwayLink</pre>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_101" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_100" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14616,9 +14531,10 @@ På bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p></td>
 <p><strong>Definisjon:</strong> representasjonspunkt for stasjon, holdeplass eller godsterminal</p>
 </div>
 <div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;representation point for station, stopping place or freight terminal</p>
+<p><strong>Kriterier</strong>
+Alle jernbanestasjoner som har av- og påstigning for passasjerer eller lasting/lossing skal med i Topografisk grunndatabase. Nedlagte stasjoner tas ikke med. Stasjonspunktet skal knyttes til jernbanelinjen.</p>
 </div>
-<h6 id="_egenskaper_102" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_101" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14725,7 +14641,21 @@ directed line segment in the plane</p></td>
 <p><strong>Definisjon:</strong> Objekttype som representerer lenker i vegnettet
 Eksempel: NVDB Referanselenkedeler</p>
 </div>
-<h6 id="_egenskaper_103" class="discrete">Egenskaper</h6>
+<div class="paragraph">
+<p>*Tilleggsbeskrivelse for produktspesifikasjonen  *
+Trasé for transportmiddel (f.eks. bil, traktor, ferje) eller gående.</p>
+</div>
+<div class="paragraph">
+<p><strong>Kriterier</strong>
+Alle bilferjeruter i privat og offentlig vegsamband tas med. Ruten må være fast i hele eller deler av året. Strekninger der kjøretøyet må heises om bord i ferjen kodes som Passasjerferje.</p>
+</div>
+<div class="paragraph">
+<p>Der bilferje- og passasjerferjestrekningen er sammenfallende fra anløp- til anløpssted beholdes kun bilferjestrekningen. Dersom en ferjestrekning har to forskjellige vegnummer, brukes det laveste nummeret.</p>
+</div>
+<div class="paragraph">
+<p>Passasjerferje på innsjøer og hav mellom faste anløpssteder, tas med. Ruten må være fast i hele eller deler av året.</p>
+</div>
+<h6 id="_egenskaper_102" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -14933,10 +14863,7 @@ På bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> fysisk sperring av vegen</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition&#8201;&#8212;&#8201;physical blockage of the road</p>
-</div>
-<h6 id="_egenskaper_104" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_103" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15036,7 +14963,7 @@ directed line segment in the plane</p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beskrivelse av jernbanen.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_90" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_91" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15049,7 +14976,7 @@ directed line segment in the plane</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_105" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_104" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15118,7 +15045,7 @@ directed line segment in the plane</p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Definerer hvilke deler av vegnettet som forvaltningsmessig hører sammen.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_91" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_92" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15143,7 +15070,7 @@ directed line segment in the plane</p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_106" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_105" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15260,7 +15187,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> definerer status for drift på en banestrekning</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_92" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_93" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15296,7 +15223,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> klassifisering av jernbaneanlegg i hht. konstruksjon/dimensjonering</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_93" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_94" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15336,7 +15263,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Eksempel:
 Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_94" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_95" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15372,7 +15299,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> klassifisering av veger etter grad av vilkår med hensyn til f.eks. fart, avkjøringer/kryss og antall kjørefelt</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_95" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_96" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15408,7 +15335,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> forteller om det er merking  langs en sti, løype, veg, sykkelvei mv</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_96" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_97" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15444,7 +15371,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> antall jernbanespor</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_97" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_98" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15478,9 +15405,9 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect4">
 <h5 id="typeveg">«CodeList» TypeVeg</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> type veg (FormOfWay).</p>
+<p><strong>Definisjon:</strong> type veg</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_98" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_99" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15516,7 +15443,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> institusjon eller andre som har ansvar for vedlikehold av rute</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_99" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_100" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15552,7 +15479,11 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angir vegens fase i livet</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_100" class="discrete">Profilparametre i tagged values</h6>
+<div class="paragraph">
+<p>Eksempel:
+EksisterendeVeg, PlanlagtVeg eller VegUnderBygging</p>
+</div>
+<h6 id="_profilparametre_i_tagged_values_101" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15588,7 +15519,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> kategorisering som angir på hvilket nivå vegmyndigheten for strekningen ligger</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_101" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_102" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15624,11 +15555,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angir type vegsperring</p>
 </div>
-<div class="paragraph">
-<p>&#8201;&#8212;&#8201;Definition - -
-indicates type of roadblock</p>
-</div>
-<h6 id="_profilparametre_i_tagged_values_102" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_103" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15669,37 +15596,44 @@ indicates type of roadblock</p>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Pakkerealisering.png"><img src="diagrammer/Pakkerealisering.png" alt="Diagram med navn Pakkerealisering som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Pakkerealisering Stedsnavn.png"><img src="diagrammer/Pakkerealisering%20Stedsnavn.png" alt="Diagram med navn Pakkerealisering Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 78. Pakkerealisering</div>
+<div class="title">Figur 77. Pakkerealisering Stedsnavn</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Oversiktsdiagram Stedsnavn.png"><img src="diagrammer/Oversiktsdiagram%20Stedsnavn.png" alt="Diagram med navn Oversiktsdiagram Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 79. Oversiktsdiagram Stedsnavn</div>
+<div class="title">Figur 78. Oversiktsdiagram Stedsnavn</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="diagrammer/Hoveddiagram Stedsnavn.png"><img src="diagrammer/Hoveddiagram%20Stedsnavn.png" alt="Diagram med navn Hoveddiagram Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 80. Hoveddiagram Stedsnavn</div>
+<div class="title">Figur 79. Hoveddiagram Stedsnavn</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av objekttyper fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20objekttyper%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av objekttyper fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Hoveddiagram kodelister Stedsnavn.png"><img src="diagrammer/Hoveddiagram%20kodelister%20Stedsnavn.png" alt="Diagram med navn Hoveddiagram kodelister Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 81. Realisering av objekttyper fra generell objektkatalog</div>
+<div class="title">Figur 80. Hoveddiagram kodelister Stedsnavn</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av datatyper og kodelister fra generell objektkatalog.png"><img src="diagrammer/Realisering%20av%20datatyper%20og%20kodelister%20fra%20generell%20objektkatalog.png" alt="Diagram med navn Realisering av datatyper og kodelister fra generell objektkatalog som viser UML-klasser beskrevet i teksten nedenfor."></a>
+<a class="image" href="diagrammer/Realisering av objekttyper Stedsnavn.png"><img src="diagrammer/Realisering%20av%20objekttyper%20Stedsnavn.png" alt="Diagram med navn Realisering av objekttyper Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
 </div>
-<div class="title">Figur 82. Realisering av datatyper og kodelister fra generell objektkatalog</div>
+<div class="title">Figur 81. Realisering av objekttyper Stedsnavn</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="diagrammer/Realisering av datatyper og kodelister Stedsnavn.png"><img src="diagrammer/Realisering%20av%20datatyper%20og%20kodelister%20Stedsnavn.png" alt="Diagram med navn Realisering av datatyper og kodelister Stedsnavn som viser UML-klasser beskrevet i teksten nedenfor."></a>
+</div>
+<div class="title">Figur 82. Realisering av datatyper og kodelister Stedsnavn</div>
 </div>
 <hr>
 <div class="sect4">
@@ -15707,7 +15641,7 @@ indicates type of roadblock</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> abstrakt objekt som bærer en felles egenskaper som brukes på tekstobjektene</p>
 </div>
-<h6 id="_egenskaper_107" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_106" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15899,7 +15833,7 @@ SOSI_navn: FULLTEKST<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> PresentasjonTekst benyttes for høydetall som skal presenteres på kartet. Kodelista teksttype angir hva slags type objekt høydetall står til.</p>
 </div>
-<h6 id="_egenskaper_108" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_107" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -15948,7 +15882,7 @@ SOSI_navn: FULLTEKST<br></p></td>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> StedsnavnTekst er stedsnavn fra SSR tilpasset visning på kart</p>
 </div>
-<h6 id="_egenskaper_109" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_108" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16196,9 +16130,9 @@ SOSI_navn: SKRIVEMÅTENUMMER<br></p></td>
 <div class="sect4">
 <h5 id="tekstformatering">«dataType» Tekstformatering</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> presentasjonsegenskaper knytta til tekst</p>
+<p><strong>Definisjon:</strong> presentasjonsegenskaper knyttet til tekst</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_103" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_104" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16211,7 +16145,7 @@ SOSI_navn: SKRIVEMÅTENUMMER<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_110" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_109" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16388,7 +16322,7 @@ SOSI_navn: REFMSTK<br></p></td>
 Merknad: Hvis ikke andre verdier er oppgitt, er default plassering av TREF som følger:
 TRNORD = 1, TRØST = 0, dvs nedre venstre punkt til første bokstav.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_104" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_105" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16401,7 +16335,7 @@ TRNORD = 1, TRØST = 0, dvs nedre venstre punkt til første bokstav.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="_egenskaper_111" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_110" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16462,7 +16396,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> hovedgruppene følger i hovedsak Inspire "NamedPlaceTypeValue", men populatedPlace og building er samlet under bebyggelse og hydrography er delt mellom sjø og ferskvann.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_105" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_106" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16498,7 +16432,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> inndeling i kategorier under hver hovedgruppe.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_106" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_107" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16534,7 +16468,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> stedets navneobjekttype er en underinndeling av navneobjektgruppene som igjen er inndeling av navneobjekthovedgruppene.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_107" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_108" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16568,9 +16502,9 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="sect4">
 <h5 id="skriftkode">«CodeList» Skriftkode</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> koblingsnøkkel mot presentasjonsinformasjon. Forslag til presentasjon av stedsnavn og høydetall basert på skriftkoder. Presentasjonskoden er basert på hovedkartserien 1:50 000/M711 produsert av Kartverket. Kartverket har egne fonter, men oversatt til TimesNewRoman slik at enhver kan presentere dataene tilnærmet presentasjonen til Kartverket. Ved bruk av ESRI FGDB filformat ligger fontinformasjon allerede inne i egenskapstabellen.</p>
+<p><strong>Definisjon:</strong> koblingsnøkkel mot presentasjonsinformasjon. Forslag til presentasjon av stedsnavn og høydetall basert på skriftkoder.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_108" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_109" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16606,7 +16540,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> subsett av ISO 639-3 som inneholder trebokstavs-koder de språkene som trengs for å konvertere innholdet fra SSR. Kodelisten kan utvides ved behov etter produksjonssetting.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_109" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_110" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16645,7 +16579,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p>Det er de første fem verdiene i kodene (de norske språkene) som varierer mellom kodene, ellers er det lik (alfabetisk i forhold til ISO-kodeverdien) rekkefølge på språkene som ikke er aktuelle for behandling etter lov om stadnamn.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_110" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_111" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16681,7 +16615,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> vertikal plassering av teksten</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_111" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_112" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16717,7 +16651,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> horisontal plassering av teksten</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_112" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_113" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -16753,7 +16687,7 @@ Merknad: N50 Kartdata plasseres alltid teksten langs bunnlinja, dvs. TRNORD = 0<
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beskriver hva teksten står til.</p>
 </div>
-<h6 id="_profilparametre_i_tagged_values_113" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_114" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
