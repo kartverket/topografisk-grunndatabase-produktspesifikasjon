@@ -315,7 +315,7 @@ SOSI_navn: KVALITET +
 <<rørgate,«FeatureType» Rørgate>> +
 <<elvbekk,«FeatureType» ElvBekk>> +
 <<tårn,«FeatureType» Tårn>> +
-<<skuterløype,«FeatureType» Skuterløype>> +
+<<snøskuterløype,«FeatureType» Snøskuterløype>> +
 <<vindturbin,«FeatureType» Vindturbin>> +
 <<navigasjonsinstallasjon,«FeatureType» Navigasjonsinstallasjon>> +
 <<turisthytte,«FeatureType» Turisthytte>> +
@@ -341,6 +341,7 @@ SOSI_navn: KVALITET +
 <<voll,«FeatureType» Voll>> +
 <<grunnmur,«FeatureType» Grunnmur>> +
 <<molo,«FeatureType» Molo>> +
+<<interessepunkt,«FeatureType» Interessepunkt>> +
 <<vegsperring,«FeatureType» Vegsperring>> +
 <<kaibrygge,«FeatureType» KaiBrygge>> +
 <<vannfiktivgrense,«FeatureType» VannFiktivGrense>> +
@@ -535,6 +536,53 @@ SOSI_navn: VERSJONID +
 |===
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
+ 
+'''
+ 
+[[opphavsinformasjon]]
+===== «dataType» Opphavsinformasjon
+*Definisjon:* 
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*opphavData*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 25 + 
+SOSI_navn: OPPHAV + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*objektPeker*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: ID + 
 |===
  
 '''
@@ -8065,9 +8113,10 @@ Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilf
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|<<høydekurve,«FeatureType» Høydekurve>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSPace: https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/h%C3%B8ydekurvetype + 
 isMetadata: false + 
 sequenceNumber:  + 
 SOSI_lengde:  + 
@@ -8152,9 +8201,10 @@ SOSI_navn: HØYDE +
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|<<høydepunkttype,«CodeList» Høydepunkttype>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/h%C3%B8ydepunkttype + 
 isMetadata: false + 
 sequenceNumber:  + 
 SOSI_lengde:  + 
@@ -8196,6 +8246,60 @@ SOSI_navn: HØYDE +
  
 '''
  
+[[høydekurvetype]]
+===== «CodeList» Høydekurvetype
+*Definisjon:* 
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/h%C3%B8ydekurvetype
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|17
+ 
+|SOSI_navn
+|HØYDEKURVETYPE
+ 
+|===
+ 
+'''
+ 
+[[høydepunkttype]]
+===== «CodeList» Høydepunkttype
+*Definisjon:* 
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/h%c3%b8ydepunkttype
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|19
+ 
+|SOSI_navn
+|HØYDEPUNKTTYPE
+ 
+|===
+ 
+'''
+ 
 [[mediumhøyde]]
 ===== «CodeList» MediumHøyde
 *Definisjon:* objektets beliggenhet i forhold til jordoverflaten
@@ -8221,6 +8325,89 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |SOSI_navn
 |MEDIUM
+ 
+|===
+<<<
+'''
+==== Pakke: Interessepunkt
+*Definisjon:* 
+ 
+'''
+ 
+.Hoveddiagram Interessepunkt 
+image::diagrammer/Hoveddiagram Interessepunkt.png[link=diagrammer/Hoveddiagram Interessepunkt.png, alt="Diagram med navn Hoveddiagram Interessepunkt som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Kodelister Interessepunkt 
+image::diagrammer/Kodelister Interessepunkt.png[link=diagrammer/Kodelister Interessepunkt.png, alt="Diagram med navn Kodelister Interessepunkt som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+[[interessepunkt]]
+===== «FeatureType» Interessepunkt
+*Definisjon:* 
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|sted som objektet eksisterer på
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*typeInteressepunkt*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/type-interessepunkt + 
+SOSI_lengde: 30 + 
+SOSI_navn: TYPEPOI + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|===
+ 
+'''
+ 
+[[interessepunkt]]
+===== «CodeList» Interessepunkt
+*Definisjon:* 
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/type-interessepunkt
  
 |===
 <<<
@@ -8822,58 +9009,6 @@ image::diagrammer/Realisering av kodelister Samferdsel.png[link=diagrammer/Reali
  
 '''
  
-[[skuterløype]]
-===== «FeatureType» Skuterløype
-*Definisjon:* fastsatte ruter for ferdsel med snøskuter
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
-
-Eksempel:
-På bro, i tunnel, inne i et bygningsmessig anlegg, etc.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<medium,«CodeList» Medium>>
-|Profilparametre i tagged values: 
-|
-SOSI_navn: MEDIUM + 
-|===
- 
-[discrete]
-====== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|===
- 
-'''
- 
 [[bane]]
 ===== «FeatureType» Bane
 *Definisjon:* teoretisk linje som representerer ett enkelt eller flere parallelle spor som del av en banestrekning
@@ -8971,6 +9106,58 @@ SOSI_navn: MEDIUM +
  
 |Realisering av: 
 |«ApplicationSchema» Bane-4.5Utkast::«featureType» Bane +
+|===
+ 
+'''
+ 
+[[snøskuterløype]]
+===== «FeatureType» Snøskuterløype
+*Definisjon:* fastsatte ruter for ferdsel med snøskuter
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forløp som følger objektets sentrale del
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+
+Eksempel:
+På bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|<<medium,«CodeList» Medium>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: MEDIUM + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
 |===
  
 '''
