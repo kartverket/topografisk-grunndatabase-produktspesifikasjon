@@ -22,7 +22,6 @@ Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for
 |0.1|X|Ida Hope Barth|Utkast
 |===
 
-
 === Endringslogg
 
 === Normative referanser
@@ -47,7 +46,6 @@ include::../kapittel/forkortelser.adoc[]
 === Unik identifisering
 Topografisk grunndatabase
 
-
 ////
 Identisk med tag 'SOSI_kortnavn' på pakka i EA.
 
@@ -69,8 +67,6 @@ Norske tegn er ok hvis enkoding er riktig innstilt. Kontakt standardiseringssekr
 
 === Referansedato
 år-mnd-dag
-
-
 
 // PSS og PSV er litt uklare på hva referansedato er. Det er nevnt gyldighetsdato og utgivelsesdato.
 
@@ -98,7 +94,7 @@ basis geodata
 // Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier.
 
 === Sammendrag
-Topografisk grunnkart
+Topografisk grunnkart...
 
 
 ////
@@ -137,32 +133,28 @@ include::../kapittel/omfang.adoc[]
 include::../produktspesifikasjon/kap5.adoc[] 
 
 <<<
+
 == Referansesystem
 
-include::../kapittel/kap6_referansesystem.adoc[]
-
+include::../kapittel/referansesystem.adoc[]
 
 <<<
 
 == Kvalitet
 
-include::../kapittel/kap7_kvalitet.adoc[]
-
+include::../kapittel/kvalitet.adoc[]
 
 <<<
 
 == Datafangst
 
-include::../kapittel/kap8_datafangst.adoc[]
+include::../kapittel/datafangst.adoc[]
 
 <<<
-
 
 == Datavedlikehold
 
-include::../kapittel/kap9_vedlikehold.adoc[]
-
-<<<
+include::../kapittel/vedlikehold.adoc[]
 
 <<<
 
@@ -172,16 +164,13 @@ include::../kapittel/kap9_vedlikehold.adoc[]
 <<HeleDatasettet,Hele datasettet>>
 
 === Referanse til presentasjonskatalog
-Spesifikasjon for skjermkartografi er et hjelpemiddel til å oppnå en god skjermpresentasjon av kartdata fra Kartverket og Geovekst. Spesifikasjonen er tilpasset produktene N50-N5000 Kartdata og FKB-data. Den gir en grafisk fremstilling av kartobjektene vist i ulike målestokkintervaller.
-Spesifikasjonen er utviklet av Kartverket og Forsvaret, og kan benyttes fritt av alle som ønsker det. 
-
-Det eksisterer ikke i dag en egen skjermkartografi eller tegneregler for topografisk grunndatabase.
+Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi
 
 <<<
 
 == Leveranse
 
-include::../kapittel/kap11_leveranse.adoc[]
+include::../kapittel/leveranse.adoc[]
 
 <<<
 
@@ -190,28 +179,14 @@ Ingen angitt informasjon
 
 == Metadata
 
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
 
-include::../kapittel/kap13_metadata.adoc[]
+=== Metadataspesifikasjon
 
-<<<
-
-[appendix]
-== GML-realisering
-
-GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
-
-
-[appendix]
-== SOSI-format-realisering
-
-SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. Under en utlisting av SOSI-formatrealiseringen:
-
-include::../kapittel/SOSI_format_realisering.adoc[]
-
-:sectnums!:
+include::../kapittel/metadata.adoc[]
 
 <<<
-
 
 
 

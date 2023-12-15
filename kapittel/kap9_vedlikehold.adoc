@@ -1,0 +1,34 @@
+
+=== Vedlikeholdsinformasjon Kartleggingsprosjekter
+
+==== Omfang 
+<<HeleDatasettet,Hele datasettet>>
+
+==== Vedlikeholdsfrekvens 
+X
+
+==== Vedlikeholdsbeskrivelse 
+X
+
+
+=== Vedlikeholdsinformasjon Kontinuerlig ajourhold
+
+==== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+==== Vedlikeholdsfrekvens
+
+X
+==== Vedlikeholdsbeskrivelse
+X
+
+=== Vedlikeholdsinformasjon Meldinger om feil og mangler
+
+==== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+==== Vedlikeholdsfrekvens
+Kontinuerlig
+
+==== Vedlikeholdsbeskrivelse
+X

@@ -1,6 +1,8 @@
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
 
-
-== Datafangst
+=== Datafangst
+Topografisk grunndatabase er basert på andre kilder. For å finne datafangst metode kan egenskapen opphav viser til kilde for hvert objekt. Se kilde for datfangstmetode.
 
 ////
 Datafangst skal også referere til omfang (scopes) angitt i kapittel 4.
