@@ -24,7 +24,7 @@ ifdef::backend-pdf[:toc: macro]
 :skjema-url: {skjemabase-url}{datasett}/{versjon}
 :prodspek-url: {prodspekbase-url}{datasett}
 :uml-url: {umlbase-url}{datasett}/{versjon}
-
+:figur-url: https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/tree/main/figurer/
 = SOSI-standardisert produktspesifikasjon: {datasett} 
 Kartverket 
 {versjon}, dato
