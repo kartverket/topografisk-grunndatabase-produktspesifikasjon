@@ -25,11 +25,6 @@ Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for
 
 === Endringslogg
 
-=== Normative referanser
-
-include::../kapittel/normativ_ref.adoc[]
-
-
 == Definisjoner og forkortelser
 
 === Definisjoner
@@ -45,7 +40,6 @@ include::../kapittel/forkortelser.adoc[]
 == Generelt om spesifikasjonen
 
 === Unik identifisering
-Topografisk grunndatabase
 
 
 ////
@@ -55,6 +49,8 @@ Er case-sensitiv i SOSI-kontroll.
 
 Norske tegn er ok hvis enkoding er riktig innstilt. Kontakt standardiseringssekretariatet hvis du har problemer med norske tegn.
 ////
+==== Kortnavn
+{datasett}
 
 ==== Fullstendig navn
 {datasett} 
@@ -93,12 +89,21 @@ Basis geodata
 
 
 === Temakategori
-basis geodata
+Administrative grenser +
+Helse +
+Høydedata +
+Innsjø og vassdrag +
+Konstruksjoner +
+Kyst og sjø +
+Landbruk og havbruk +
+Ledningsinformasjon +
+Stedsangivelse +
+Transport
 
 // Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier.
 
 === Sammendrag
-Topografisk grunnkart
+Topografisk grunndatabase skal dekke behovet for landsdekkende kartdata i stor målestokk. Hovedfokus er å danne ett grunnlag for kartdata, kartproduksjon og tilpasse databasen slik at den kan brukes for automatisk generalisering til mindre målestokker. 
 
 
 ////
@@ -207,6 +212,11 @@ GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>.
 SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. Under en utlisting av SOSI-formatrealiseringen:
 
 include::../kapittel/SOSI_format_realisering.adoc[]
+
+[appendix]
+== Normative referanser
+
+include::../kapittel/normativ_ref.adoc[]
 
 :sectnums!:
 

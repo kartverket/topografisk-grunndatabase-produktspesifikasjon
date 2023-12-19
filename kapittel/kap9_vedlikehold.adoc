@@ -5,10 +5,14 @@
 <<HeleDatasettet,Hele datasettet>>
 
 ==== Vedlikeholdsfrekvens 
-X
+ 
+
+Det er et ønske om å ha oppdaterte data, men vedlikeholdsfrekvens for kartleggingsprosjekter er ikke angitt. 
 
 ==== Vedlikeholdsbeskrivelse 
-X
+På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt i Topografisk grunndatabase og hva som skal hentes fra andre geodatakilder. Det som skal ajourføres direkte i basen er avhengig av datafangstmetode.
+
+
 
 
 === Vedlikeholdsinformasjon Kontinuerlig ajourhold
@@ -17,10 +21,10 @@ X
 <<HeleDatasettet,Hele datasettet>>
 
 ==== Vedlikeholdsfrekvens
+kontinuerlig
 
-X
 ==== Vedlikeholdsbeskrivelse
-X
+På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt i Topografisk grunndatabase og hva som skal hentes fra andre geodatakilder. Kartdata hentet fra andre datakilder vil være sentralt i det kontinuerlige vedlikeholdet. Oppdatering og ajourhold vil kunne basere seg på endringsanalyser.
 
 === Vedlikeholdsinformasjon Meldinger om feil og mangler
 
@@ -31,4 +35,5 @@ X
 Kontinuerlig
 
 ==== Vedlikeholdsbeskrivelse
-X
+Kartverket mottar gjennom kundesenteret og tjenesten Rettikartet.no en del meldinger om feil og mangler i i kartet fra publikum. Disse meldingene kan etter en vurdering mot andre datakilder bli lagt inn i Topografisk grunndatabase.
+

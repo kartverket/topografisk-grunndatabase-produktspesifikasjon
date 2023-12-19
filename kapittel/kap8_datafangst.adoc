@@ -2,8 +2,11 @@
 <<HeleDatasettet,Hele datasettet>>
 
 === Registeringsinstruks
-Fotogrammetrisk datafangst er den dominerende datafangstmetoden for {fkbdatasett}. Se {reginstr-url}/Fotogrammetrisk_2022-01-01[fotogrammetrisk registreringsinstruks for {fkbdatasett}].
 
+
+En første versjon av Topografisk grunndatabase vil være en samling av ulike geodatakilder, sydd sammen til en landsdekkende database i stor målestokk. Noen kategorier vil være naturlig å ajourføre i Topografisk grunndatabase og datafangst av ulik karakter vil være nødvendig. Dette er imidlertid ikke vurdert på det nåværende tidspunktet.
+
+Egenskapen datafangstmetode er arvet fra geodatakilde og er en egenskap som er påkrevd for alle kartobjekter.
 ////
 Datafangst skal også referere til omfang (scopes) angitt i kapittel 4.
 

@@ -1,5 +1,5 @@
 
-=== Romlig referansesystem UTM sone 32 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
+=== Romlig referansesystem 1
 
 ==== Omfang
 <<HeleDatasettet,Hele datasettet>>
@@ -11,18 +11,19 @@ Norwegian Mapping Authority
 The international Association of Oil & Gas Producers
 
 ==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5972
+http://www.espg.org +
+https://register.geonorge.no/epsg-koder
 
 ==== Koderom
 EPSG
 
 ==== Identifikasjonskode
-5972
+EPSG 5972
 
 ==== Kodeversjon
 2020-03-30
 
-=== Romlig referansesystem UTM sone 33 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
+=== Romlig referansesystem 2
 
 ==== Omfang
 <<HeleDatasettet,Hele datasettet>>
@@ -34,18 +35,19 @@ Norwegian Mapping Authority
 The international Association of Oil & Gas Producers
 
 ==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5973
+http://www.espg.org +
+https://register.geonorge.no/epsg-koder
 
 ==== Koderom
 EPSG
 
 ==== Identifikasjonskode
-5973
+EPSG 5973
 
 ==== Kodeversjon
 2020-03-30
 
-=== Romlig referansesystem UTM sone 35 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
+=== Romlig referansesystem 3
 
 ==== Omfang
 <<HeleDatasettet,Hele datasettet>>
@@ -57,13 +59,14 @@ Norwegian Mapping Authority
 The international Association of Oil & Gas Producers
 
 ==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5975
+http://www.espg.org +
+https://register.geonorge.no/epsg-koder
 
 ==== Koderom
 EPSG
 
 ==== Identifikasjonskode
-5975
+EPSG 5975
 
 ==== Kodeversjon
 2020-03-30
@@ -71,10 +74,11 @@ EPSG
 
 === Temporalt referansesystem
 
-==== Omfang
-<<HeleDatasettet,Hele datasettet>>
 
 ==== Navn på temporalt referansesystem
 UTC
 
 Dersom ikke tidssone er spesielt angitt ved angivelse av tidspunkt skal man anta at det er norsk tid som benyttes. Dvs. UTC+1 (normaltid) på vinteren og UTC+2 (sommertid) på sommeren.
+
+==== Omfang
+<<HeleDatasettet,Hele datasettet>>
