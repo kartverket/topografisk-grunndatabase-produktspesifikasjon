@@ -1,4 +1,4 @@
-(Antall spesifikasjonsomfang: 1)
+
 
 [[HeleDatasettet]]
 === Spesifikasjonsomfang for hele spesifikasjonen
@@ -10,10 +10,10 @@ Hele datasettet
 Datasett
 
 ==== Navn
-{fkbdatasett}
+{datasett}
 
 ==== Beskrivelse
-
+Detaljeringen av Topografisk grunndatabase er tilpasset 1:10 000. Databasen skal være homogen og landsdekkende.
 
 ==== Utstrekningsinformasjon
 

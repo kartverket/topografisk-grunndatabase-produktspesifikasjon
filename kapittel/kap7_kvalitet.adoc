@@ -4,13 +4,13 @@
 <<HeleDatasettet,Hele datasettet>>
 
 === Beskrivelse av datakvalitet
-FKB er detaljerte kartdata med en nøyaktighet på typisk 10 cm - 1 m og kan egne seg som datagrunnlag  i f.eks. beredskap, analyse, planlegging og prosjektering i tillegg til å fungere som et topografisk grunnkart. 
+Topografisk grunndatabase vil innholde data fra mange ulike kilder og en beskrivelse av kvalitet, stedfestingsnøyaktighet, egenskapsnøyaktighet og tidfestingsnøyaktighet for hele databasen kan ikke beskrives i sin helhet. Alle objekter skal ha egenskapene datafangstmetode, oppdateringsdato, datafangstdato og opphavsinformasjon, som alle gir ett innblikk i kvaliteten på kartdataobjektet.
 
-Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se {reginstr-url}[fotogrammetrisk registreringsinstruks for {fkbdatasett}].
+Kvalitet kan også angis kvalitativt (noe NS-ISO 19115 og andre også omfatter). Det kan for eksempel være at geodataene er registrert etter en innmålingsinstruks, eller at de er resultat av beregninger beskrevet i en teknisk rapport eller vitenskapelig artikkel. Merk at dette er nært knyttet til kapittel 8.
 
-FKB vil ofte også inneholde data fra andre datakilder, for eksempel data etablert gjennom kommunal/offentlig saksbehandling, innmelding fra publikum eller digitalisert fra ortofoto. Se kapittel 9 for en nærmere beskrivelse av datakilder ved vedlikehold av FKB-data. 
+Topografisk grunndatabase skal være landsdekkende og homogent. Datasettet skal være fullstendig.
 
-Prinsippet er at fullstendighet prioriteres foran nøyaktighet og FKB-data for et område vil derfor bestå av data med varierende grad av kvalitet. Alle data er kodet med datafangstdato og posisjonskvalitet slik at det er mulig å vurdere datakvaliteten til det enkelte dataobjekt. Det vil også være mulig å aggregere denne informasjonen som finnes på objektnivå opp til en beskrivelse av kvaliteten på datainnholdet i området som helhet. Det er imidlertid vanskelig å garantere datakvaliteten for FKB innenfor et område.
+
 
 ////
 Dette kan være et vanskelig kapittel. Det første du bør gjøre er å sjekke hva du anførte som formål i avsnitt 3.8. Hvis du skal bestille data, er det mest naturlig om du her angir kvalitetskrav. Hvis du dokumenterer eksisterende geodata, derimot, bør kvaliteten her beskrive geodataene.

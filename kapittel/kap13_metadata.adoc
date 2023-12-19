@@ -12,6 +12,5 @@ Merk også at du her skal angi hvilke metadata som skal følge produktet, men ik
 === Metadataspesifikasjon
 Det leveres metadata i henhold til ISO 19115 [ISO-METADATA].
 
-Se oppdaterte metadata for {metadata-url}[{fkbdatasett} i kartkatalog på Geonorge].
+Når metadata eksisterer, vil det blir tilgjengerlig her.
 
-Under https://forvaltningsinformasjon.geonorge.no finnes mer detaljert kommunevis informasjon om datainnholdet og forvaltningen av FKB-data.
