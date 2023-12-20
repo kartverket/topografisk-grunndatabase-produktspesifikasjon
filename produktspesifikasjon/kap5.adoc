@@ -558,7 +558,10 @@ SOSI_navn: VERSJONID +
 |*opphavData*
  
 |Definisjon: 
-|
+|kilde til kartdataobjekt
+
+Eksempel:
+Nibio, FKB-bygning eller N50 Kartdata
  
 |Multiplisitet: 
 |[1..1]
@@ -577,7 +580,7 @@ SOSI_navn: OPPHAV_DATA +
 |*objektpeker*
  
 |Definisjon: 
-|
+|arvet id fra opphavData
  
 |Multiplisitet: 
 |[0..1]
@@ -1377,11 +1380,8 @@ SOSI_navn: KOMMUNENAVN +
 |Definisjon: 
 |nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste
 
-Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer. +
+Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.
 
--- Definition - - 
-numbering of municipalities in accordance with Statistics Norway’s official list 
-Note: It must be following that municipality number always consists of 4 digits, i.e. sometimes with leading zero. Municipality is used for establishing relations to a number of other registers which also use 4 digits.
  
 |Multiplisitet: 
 |[1..1]
@@ -1458,9 +1458,6 @@ Note: It must be following that municipality number always consists of 4 digits,
  
 |Definisjon: 
 |angivelse av hva slags grensemerke som er brukt i terrenget. Sier også om grensepunktet er merket i terrenget, eller om det bare er et registreringsteknisk punkt.
-
--- Definition -- 
-statement of what kind of grensemerke which is used in the terrain. Indicates also whether the boundary point is marked in the terrain, or whether it is merely a point for technical registration purposes.
  
 |Multiplisitet: 
 |[1..1]
@@ -1720,6 +1717,10 @@ Alle alpinbakker skal med i Topografisk grunndatabase. Alpinbakke skal registrer
 |FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Alpinbakke
+image::figurer\objtype_alpinbakke.png[link=figurer\objtype_alpinbakke.png, alt="Bilde av et eksempel på objekttypen Alpinbakke, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -1893,10 +1894,10 @@ Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der
 |Definisjon: 
 |unik identifikasjon av et objekt 
 
-Merknad FKB:
+Merknad Topografisk grunndatabase:
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
+For Topografisk grunndatabase  benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir datasettet Topografisk grunndatabase
  
 |Multiplisitet: 
 |[1..1]
@@ -1915,17 +1916,6 @@ SOSI_navn: IDENT +
 |Definisjon: 
 |tidspunkt for siste endring på objektet 
 
-Merknad FKB: 
-
-Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
-
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
-
-ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
-
-iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
-
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -2296,9 +2286,6 @@ Merknad: Det skal etableres nodepunkt mellom ElvBekk (midtlinje) og andre tilst�
 |Definisjon: 
 |grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
 
-
--- Definition - - 
-Rough classification of river system according to average width over longer sections.
  
 |Multiplisitet: 
 |[1..1]
@@ -2612,6 +2599,10 @@ Alle baneanlegg med minst 6 hull skal med i Topografisk grunndatabase. Mindre sk
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Golfbane
+image::figurer\objtype_golfbane.png[link=figurer\objtype_golfbane.png, alt="Bilde av et eksempel på objekttypen Golfbane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2719,6 +2710,10 @@ Gravplass/kirkegård større enn 400 m&#178; og bredere enn 5 meter tas med. Gra
 |Gravplass
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Gravplass
+image::figurer\objtype_gravplass.png[link=figurer\objtype_gravplass.png, alt="Bilde av et eksempel på objekttypen Gravplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2823,6 +2818,10 @@ Alle øyer som er større enn 100 m&#178; og bredere enn 5 meter skal med i Topo
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Havflate
+image::figurer\objtype_havflate.png[link=figurer\objtype_havflate.png, alt="Bilde av et eksempel på objekttypen Havflate, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2916,6 +2915,10 @@ Industriområder som er større enn 3000 m&#178; og bredere enn 20 meter skal me
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Industriområde
+image::figurer\objtype_industriomrade.png[link=figurer\objtype_industriomrade.png, alt="Bilde av et eksempel på objekttypen Industriområde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3021,6 +3024,10 @@ Innsjøer og øyer over 100 m&#178; og bredere enn 3 meter skal med i Topografis
 |PUNKT;KURVE;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Innsjø
+image::figurer\objtype_innsjo.png[link=figurer\objtype_innsjo.png, alt="Bilde av et eksempel på objekttypen Innsjø, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3044,9 +3051,6 @@ Innsjøer og øyer over 100 m&#178; og bredere enn 3 meter skal med i Topografis
  
 |Definisjon: 
 |unik identifikasjon på innsjøer som fortløpende løpenummer i henhold til NVEs Innsjøregister
-
--- Definition -- 
-unique identification of lakes as consecutive serial number in accordance with the lake register of the NVE (The Norwegian Water Resources and Energy Administration)
  
 |Multiplisitet: 
 |[0..1]
@@ -3103,9 +3107,6 @@ SOSI_navn: REGULERT +
  
 |Definisjon: 
 |laveste regulerte vannstand - LRV
-
--- Definition -- 
-lowest regulated water level
  
 |Multiplisitet: 
 |[0..1]
@@ -3217,7 +3218,7 @@ Alle kanal bredere enn 3 meter (vannBredde 3-5) skal med i Topografisk grunndata
  
 '''
 .Illustrasjon av objekttype Kanal
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanal.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanal.png, alt="Bilde av et eksempel på objekttypen Kanal, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_kanal.png[link=figurer/objtype_kanal.png, alt="Bilde av et eksempel på objekttypen Kanal, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3296,7 +3297,7 @@ Alle kanalgrøft som er en del av elvenettverket skal med i Topografisk grunndat
  
 '''
 .Illustrasjon av objekttype KanalGrøft
-image::/figurer/objtype_kanalgroft.png[link=/figurer/objtype_kanalgroft.png, alt="Bilde av et eksempel på objekttypen KanalGrøft, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_kanalgroft.png[link=figurer/objtype_kanalgroft.png, alt="Bilde av et eksempel på objekttypen KanalGrøft, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3354,7 +3355,7 @@ SOSI_navn: VANNBR +
  
 '''
 .Illustrasjon av objekttype Kanalkant
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalkant.png, alt="Bilde av et eksempel på objekttypen Kanalkant, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_kanalkant.png[link=figurer/objtype_kanalkant.png, alt="Bilde av et eksempel på objekttypen Kanalkant, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3398,7 +3399,7 @@ KonnekteringVann er kun til analyseformål og bør ikke brukes i kartsammenheng.
  
 '''
 .Illustrasjon av objekttype KonnekteringVann
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_konnekteringvann.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_konnekteringvann.png, alt="Bilde av et eksempel på objekttypen KonnekteringVann, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_konnekteringvann.png[link=figurer/objtype_konnekteringvann.png, alt="Bilde av et eksempel på objekttypen KonnekteringVann, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3451,6 +3452,10 @@ Kystkonturen skal være registrert fullstendig og sammenhengende.
 |KURVE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Kystkontur
+image::figurer\objtype_kystkontur.png[link=figurer\objtype_kystkontur.png, alt="Bilde av et eksempel på objekttypen Kystkontur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3491,7 +3496,7 @@ Alle lekeplasser over 100 m&#178; skal med i Topografisk grunndatabase. Lekeomr�
  
 '''
 .Illustrasjon av objekttype Lekeplass
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png, alt="Bilde av et eksempel på objekttypen Lekeplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_lekeplass.png[link=figurer/objtype_lekeplass.png, alt="Bilde av et eksempel på objekttypen Lekeplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3783,6 +3788,10 @@ landskapet (f.eks. laget i forbindelse med gruvedrift, masseuttak eller vassdrag
 *Kriterier:*
 Massedeponi større enn 800 m&#178; og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
+ 
+'''
+.Illustrasjon av objekttype Massedeponi
+image::figurer\objtype_steintipp.png[link=figurer\objtype_steintipp.png, alt="Bilde av et eksempel på objekttypen Massedeponi, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4147,6 +4156,10 @@ Områder større enn 400 m&#178; og bredere enn 5 meter skal med i Topografisk g
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Park
+image::figurer\objtype_park.png[link=figurer\objtype_park.png, alt="Bilde av et eksempel på objekttypen Park, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4355,6 +4368,10 @@ Alle øyer under 100 m&#178;   og smalere enn 3 meter skal med som skjær. Kun s
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Skjær
+image::figurer\objtype_skjer.png[link=figurer\objtype_skjer.png, alt="Bilde av et eksempel på objekttypen Skjær, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4543,6 +4560,10 @@ Breer som er større enn 6 000 m&#178; og bredere enn 20 meter skal med i Topogr
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype SnøIsbre
+image::figurer\objtype_snoisbre.png[link=figurer\objtype_snoisbre.png, alt="Bilde av et eksempel på objekttypen SnøIsbre, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4661,6 +4682,10 @@ Idrettsplass større enn 400 m&#178; og bredere enn 5 meter skal med i Topografi
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype SportIdrettPlass
+image::figurer\objtype_sportidrettplass.png[link=figurer\objtype_sportidrettplass.png, alt="Bilde av et eksempel på objekttypen SportIdrettPlass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4765,6 +4790,10 @@ Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et områ
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Stein
+image::figurer\objtype_stein.png[link=figurer\objtype_stein.png, alt="Bilde av et eksempel på objekttypen Stein, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4798,8 +4827,8 @@ Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et områ
 [[steinur]]
 ===== «FeatureType» Steinur
 *Definisjon:* steinurer, steinområder
- 
- *Kriterier:*
+
+*Kriterier:*
 Alle områder større enn 400 m&#178; skal med i Topografisk grunndatbase.
  
 [discrete]
@@ -4953,7 +4982,7 @@ Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn.
  
 '''
 .Illustrasjon av objekttype Transformatorstasjon
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_transformatorstasjon.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_transformatorstasjon.png, alt="Bilde av et eksempel på objekttypen Transformatorstasjon, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_transformatorstasjon.png[link=figurer/objtype_transformatorstasjon.png, alt="Bilde av et eksempel på objekttypen Transformatorstasjon, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5053,7 +5082,7 @@ Skogflater under minstemålet for skog kan omgjøres til tregrupper. Avstanden m
  
 '''
 .Illustrasjon av objekttype VannFiktivGrense
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_vannfiktivgrense.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_vannfiktivgrense.png, alt="Bilde av et eksempel på objekttypen VannFiktivGrense, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_vannfiktivgrense.png[link=figurer/objtype_vannfiktivgrense.png, alt="Bilde av et eksempel på objekttypen VannFiktivGrense, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5557,6 +5586,10 @@ Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Campingplass
+image::figurer\objtype_campingplass.png[link=figurer\objtype_campingplass.png, alt="Bilde av et eksempel på objekttypen Campingplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5597,7 +5630,7 @@ Alle objekter i samsvar med definisjonen som er lengre enn 10 meter skal med i T
  
 '''
 .Illustrasjon av objekttype Demning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png, alt="Bilde av et eksempel på objekttypen Demning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_demning.png[link=figurer/objtype_demning.png, alt="Bilde av et eksempel på objekttypen Demning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5644,6 +5677,10 @@ Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i T
 |PUNKT;KURVE;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Flytebrygge
+image::figurer\objtype_flytebrygge.png[link=figurer\objtype_flytebrygge.png, alt="Bilde av et eksempel på objekttypen Flytebrygge, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5684,7 +5721,7 @@ flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av
  
 '''
 .Illustrasjon av objekttype Gjerde
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png, alt="Bilde av et eksempel på objekttypen Gjerde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_gjerde.png[link=figurer/objtype_gjerde.png, alt="Bilde av et eksempel på objekttypen Gjerde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5765,7 +5802,7 @@ Bygningens ytteravgrensning langs grunnmur. Benyttes hovedsaklig for bygning und
  
 '''
 .Illustrasjon av objekttype Grunnmur
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png, alt="Bilde av et eksempel på objekttypen Grunnmur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_grunnmur.png[link=figurer/objtype_grunnmur.png, alt="Bilde av et eksempel på objekttypen Grunnmur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5879,6 +5916,10 @@ Egenskapen lengde sier noe om størrelsen til hoppbakken og egenskapen retning e
 |PUNKT;KURVE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Hoppbakke
+image::figurer\objtype_hoppbakke.png[link=figurer\objtype_hoppbakke.png, alt="Bilde av et eksempel på objekttypen Hoppbakke, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5961,6 +6002,10 @@ Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.
 |PUNKT;KURVE;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype KaiBrygge
+image::figurer\objtype_kaibrygge.png[link=figurer\objtype_kaibrygge.png, alt="Bilde av et eksempel på objekttypen KaiBrygge, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6012,6 +6057,10 @@ Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.
 Merknad:
 Kan benyttes dersom ..MEDIUM L og ..LEDNING * 3 8
  
+ 
+'''
+.Illustrasjon av objekttype Ledning
+image::figurer\objtype_ledning.png[link=figurer\objtype_ledning.png, alt="Bilde av et eksempel på objekttypen Ledning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6108,7 +6157,7 @@ Alle konstruksjoner som primært er laget for å holde ledningsnett/komponent op
  
 '''
 .Illustrasjon av objekttype Mast
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, alt="Bilde av et eksempel på objekttypen Mast, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/Mast.jpg[link=figurer/Mast.jpg, alt="Bilde av et eksempel på objekttypen Mast, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6133,8 +6182,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 |Definisjon: 
 |antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt
 
-Merknad FKB:
-Angis kun dersom mastens geometri har laser som datafangstmetode.
  
 |Multiplisitet: 
 |[0..1]
@@ -6258,6 +6305,10 @@ Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topogra
 |PUNKT;KURVE;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Molo
+image::figurer\objtype_molo.png[link=figurer\objtype_molo.png, alt="Bilde av et eksempel på objekttypen Molo, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6298,7 +6349,7 @@ Alle enkeltstående murer lengre enn 25 meter skal med i Topografisk grunndataba
  
 '''
 .Illustrasjon av objekttype Mur
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png, alt="Bilde av et eksempel på objekttypen Mur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_murfrittstaende.png[link=figurer/objtype_murfrittstaende.png, alt="Bilde av et eksempel på objekttypen Mur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6364,6 +6415,10 @@ Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte
 |PUNKT;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Navigasjonsinstallasjon
+image::figurer\objtype_navigasjonsinstallasjon.png[link=figurer\objtype_navigasjonsinstallasjon.png, alt="Bilde av et eksempel på objekttypen Navigasjonsinstallasjon, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6404,7 +6459,7 @@ alle oppdrettslokaliteter skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Oppdrettslokalitet
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png, alt="Bilde av et eksempel på objekttypen Oppdrettslokalitet, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_oppdrettslokalitet.png[link=figurer/objtype_oppdrettslokalitet.png, alt="Bilde av et eksempel på objekttypen Oppdrettslokalitet, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6448,7 +6503,7 @@ Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv ska
  
 '''
 .Illustrasjon av objekttype Parkeringsområde
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomrade.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomrade.png, alt="Bilde av et eksempel på objekttypen Parkeringsområde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_parkeringsomrade.png[link=figurer/objtype_parkeringsomrade.png, alt="Bilde av et eksempel på objekttypen Parkeringsområde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6503,7 +6558,7 @@ Piper med høyde over 10 meter skal med i topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Pipe
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png, alt="Bilde av et eksempel på objekttypen Pipe, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_pipe.png[link=figurer/objtype_pipe.png, alt="Bilde av et eksempel på objekttypen Pipe, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6609,7 +6664,7 @@ Ruin brukes kun om gamle, forfalne murer. For nye/vedlikeholdte murer/byggverk b
  
 '''
 .Illustrasjon av objekttype Ruin
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png, alt="Bilde av et eksempel på objekttypen Ruin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_ruin.png[link=figurer/objtype_ruin.png, alt="Bilde av et eksempel på objekttypen Ruin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6678,6 +6733,10 @@ Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med
 |KURVE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Rørgate
+image::figurer\objtype_rorgate.png[link=figurer\objtype_rorgate.png, alt="Bilde av et eksempel på objekttypen Rørgate, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6718,7 +6777,7 @@ Alle enkeltstående skjermer lengre enn 25 meter skal med i Topografisk grunndat
  
 '''
 .Illustrasjon av objekttype Skjerm
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png, alt="Bilde av et eksempel på objekttypen Skjerm, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_skjerm.png[link=figurer/objtype_skjerm.png, alt="Bilde av et eksempel på objekttypen Skjerm, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6826,6 +6885,10 @@ Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedsla
 |KURVE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Skytebane
+image::figurer\objtype_skytebane.png[link=figurer\objtype_skytebane.png, alt="Bilde av et eksempel på objekttypen Skytebane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -6877,7 +6940,7 @@ Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedsla
  
 '''
 .Illustrasjon av objekttype Slipp
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png, alt="Bilde av et eksempel på objekttypen Slipp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_slipp.png[link=figurer/objtype_slipp.png, alt="Bilde av et eksempel på objekttypen Slipp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7061,7 +7124,7 @@ Alle objekter større enn 100 m&#178; skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Svømmebasseng
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png, alt="Bilde av et eksempel på objekttypen Svømmebasseng, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_svommebasseng.png[link=figurer/objtype_svommebasseng.png, alt="Bilde av et eksempel på objekttypen Svømmebasseng, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7107,6 +7170,10 @@ Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178;
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Tank
+image::figurer\objtype_tank.png[link=figurer\objtype_tank.png, alt="Bilde av et eksempel på objekttypen Tank, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7162,7 +7229,7 @@ Alle flater over 200 m&#178; skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Takoverbygg
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png, alt="Bilde av et eksempel på objekttypen Takoverbygg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_takoverbygg.png[link=figurer/objtype_takoverbygg.png, alt="Bilde av et eksempel på objekttypen Takoverbygg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7203,7 +7270,7 @@ Alle Taubaner lenger enn 50 meter skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Taubane
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png, alt="Bilde av et eksempel på objekttypen Taubane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_taubane.png[link=figurer/objtype_taubane.png, alt="Bilde av et eksempel på objekttypen Taubane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7285,7 +7352,7 @@ Alle flater over 500 m&#178; skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Tribune
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png, alt="Bilde av et eksempel på objekttypen Tribune, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_tribune.png[link=figurer/objtype_tribune.png, alt="Bilde av et eksempel på objekttypen Tribune, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7346,9 +7413,6 @@ Alle hytter som tilbyr overnatting, både selvbetjent og ubetjent.
  
 |Definisjon: 
 |informasjon om hytter i form av betjeningsgrad, eier og tilgjengelighet
-
--- Definition -- 
-Information on cabins in the form of identification, services offered and owner
  
 |Multiplisitet: 
 |[0..1]
@@ -7385,6 +7449,10 @@ Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ik
 |PUNKT;FLATE;
  
 |===
+ 
+'''
+.Illustrasjon av objekttype Tårn
+image::figurer\objtype_tarn.png[link=figurer\objtype_tarn.png, alt="Bilde av et eksempel på objekttypen Tårn, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7425,7 +7493,7 @@ Alle objektene i samsvar med definisjonen skal med i Topografisk grunndatabase.
  
 '''
 .Illustrasjon av objekttype Vindturbin
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg, alt="Bilde av et eksempel på objekttypen Vindturbin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/Vindturbin.jpg[link=figurer/Vindturbin.jpg, alt="Bilde av et eksempel på objekttypen Vindturbin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7508,7 +7576,7 @@ Alle enkeltstående voller lengre enn 25 meter skal med i Topografisk grunndatab
  
 '''
 .Illustrasjon av objekttype Voll
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png, alt="Bilde av et eksempel på objekttypen Voll, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer/objtype_voll.png[link=figurer/objtype_voll.png, alt="Bilde av et eksempel på objekttypen Voll, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -7622,9 +7690,6 @@ SOSI_navn: HOB +
  
 |Definisjon: 
 |beskrivelse av hvilke servicefunksjoner som er tilgengelige
-
--- Definition -- 
-description of which service functions are available
  
 |Multiplisitet: 
 |[0..1]
@@ -7645,9 +7710,6 @@ SOSI_navn: BETJENINGSGRAD +
  
 |Definisjon: 
 |eieren av en hytte
-
--- Definition -- 
-the owner of a cabin
  
 |Multiplisitet: 
 |[0..1]
@@ -8271,7 +8333,7 @@ image::diagrammer/Kodelister Interessepunkt.png[link=diagrammer/Kodelister Inter
 |*typeInteressepunkt*
  
 |Definisjon: 
-|
+|type interessepunkt
  
 |Multiplisitet: 
 |[1..1]
@@ -9155,6 +9217,10 @@ Der bilferje- og passasjerferjestrekningen er sammenfallende fra anløp- til anl
 
 Passasjerferje på innsjøer og hav mellom faste anløpssteder, tas med. Ruten må være fast i hele eller deler av året.
  
+ 
+'''
+.Illustrasjon av objekttype Veglenke
+image::figurer\objtype_veglenke.png[link=figurer\objtype_veglenke.png, alt="Bilde av et eksempel på objekttypen Veglenke, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -9177,7 +9243,7 @@ Passasjerferje på innsjøer og hav mellom faste anløpssteder, tas med. Ruten m
 |*typeVeg*
  
 |Definisjon: 
-|type veg (FormOfWay).
+|type veg
  
 |Multiplisitet: 
 |[1..1]
@@ -9290,6 +9356,10 @@ SOSI_navn: MEDIUM +
 *Definisjon:* fysisk sperring av vegen
 
  
+ 
+'''
+.Illustrasjon av objekttype Vegsperring
+image::figurer\objtype_vegsperring.png[link=figurer\objtype_vegsperring.png, alt="Bilde av et eksempel på objekttypen Vegsperring, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -9313,9 +9383,6 @@ SOSI_navn: MEDIUM +
  
 |Definisjon: 
 |angir type vegsperring
-
--- Definition -- 
-indicates type of roadblock
  
 |Multiplisitet: 
 |[0..1]
@@ -9331,9 +9398,6 @@ indicates type of roadblock
 |Definisjon: 
 |linjestykke i planet med retning 
 
-
--- Definition - - 
-directed line segment in the plane
  
 |Multiplisitet: 
 |[1..1]
@@ -9888,9 +9952,6 @@ SOSI_navn: STRENG +
  
 |Definisjon: 
 |dato for siste endring på objektetdataene 
-
--Definition-
-Date and time at which this version of the spatial object was inserted or changed in the spatial data set.
  
 |Multiplisitet: 
 |[0..1]
