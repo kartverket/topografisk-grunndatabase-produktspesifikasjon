@@ -5,6 +5,7 @@
 :metadata-url: Link_til_Geonorge
 :prodspek-forrige:
 :versjon-forrige: 
+:bilde_sti: https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/tree/main/figurer
 
 include::../kapittel/filhode.adoc[]
 
