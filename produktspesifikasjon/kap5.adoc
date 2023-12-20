@@ -6,6 +6,9 @@
 ==== Profilparametre i tagged values
 [cols="20,80"]
 |===
+|definition
+|"Basic topographical database"@en
+ 
 |designation
 |"Topografisk grunndatabase"@no
  
@@ -324,7 +327,7 @@ SOSI_navn: KVALITET +
 <<ferskvanntørrfallkant,«FeatureType» FerskvannTørrfallkant>> +
 <<kanalgrøft,«FeatureType» KanalGrøft>> +
 <<kystkontur,«FeatureType» Kystkontur>> +
-<<skjerm,«featureType» Skjerm>> +
+<<skjerm,«FeatureType» Skjerm>> +
 <<pipe,«FeatureType» Pipe>> +
 <<naturverngrense,«FeatureType» Naturverngrense>> +
 <<foss,«FeatureType» Foss>> +
@@ -358,7 +361,7 @@ SOSI_navn: KVALITET +
 <<parkeringsområde,«FeatureType» Parkeringsområde>> +
 <<skjær,«FeatureType» Skjær>> +
 <<taubane,«FeatureType» Taubane>> +
-<<stein,«featureType» Stein>> +
+<<stein,«FeatureType» Stein>> +
 <<hoppbakke,«FeatureType» Hoppbakke>> +
 <<elvekant,«FeatureType» ElveKant>> +
 <<stasjon,«FeatureType» Stasjon>> +
@@ -420,8 +423,8 @@ SOSI_navn: KVALITET +
 <<allmenning,«FeatureType» Allmenning>> +
 <<kommune,«FeatureType» Kommune>> +
 <<svømmebasseng,«FeatureType» Svømmebasseng>> +
-<<steinur,«featureType» Steinur>> +
-<<transformatorstasjon,«featureType» Transformatorstasjon>> +
+<<steinur,«FeatureType» Steinur>> +
+<<transformatorstasjon,«FeatureType» Transformatorstasjon>> +
 <<elv,«FeatureType» Elv>> +
 <<demning,«FeatureType» Demning>> +
 <<industriområde,«FeatureType» Industriområde>> +
@@ -443,7 +446,7 @@ SOSI_navn: KVALITET +
 <<snøisbre,«FeatureType» SnøIsbre>> +
 <<naturvernområde,«FeatureType» Naturvernområde>> +
 <<massedeponi,«FeatureType» Massedeponi>> +
-<<oppdrettslokalitet,«featureType» Oppdrettslokalitet>> +
+<<oppdrettslokalitet,«FeatureType» Oppdrettslokalitet>> +
 <<innsjø,«FeatureType» Innsjø>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
@@ -544,7 +547,8 @@ SOSI_navn: VERSJONID +
  
 [[opphavsinformasjon]]
 ===== «dataType» Opphavsinformasjon
-*Definisjon:* 
+*Definisjon:* kildehenvisning for det enkelte kartobjekt
+
  
 [discrete]
 ====== Egenskaper
@@ -565,12 +569,12 @@ SOSI_navn: VERSJONID +
 |
 SOSI_datatype: T + 
 SOSI_lengde: 25 + 
-SOSI_navn: OPPHAV + 
+SOSI_navn: OPPHAV_DATA + 
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*objektPeker*
+|*objektpeker*
  
 |Definisjon: 
 |
@@ -584,7 +588,7 @@ SOSI_navn: OPPHAV +
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
-SOSI_navn: ID + 
+SOSI_navn: OBJEKTPEKER + 
 |===
  
 '''
@@ -594,7 +598,7 @@ SOSI_navn: ID +
 *Definisjon:* beskrivelse av kvaliteten på stedfestingen.
 
 Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -1373,7 +1377,7 @@ SOSI_navn: KOMMUNENAVN +
 |Definisjon: 
 |nummerering av kommuner i henhold til Statistisk sentralbyrå sin offisielle liste
 
-Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.
+Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer. +
 
 -- Definition - - 
 numbering of municipalities in accordance with Statistics Norway’s official list 
@@ -1507,7 +1511,6 @@ SOSI_navn: GRENSEPUNKTNUMMER +
 *Definisjon:* nummerering av fylker    
  
   Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null. 
-URI til ekstern kodeliste: https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -3293,7 +3296,7 @@ Alle kanalgrøft som er en del av elvenettverket skal med i Topografisk grunndat
  
 '''
 .Illustrasjon av objekttype KanalGrøft
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalgroft.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalgroft.png, alt="Bilde av et eksempel på objekttypen KanalGrøft, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::/figurer/objtype_kanalgroft.png[link=/figurer/objtype_kanalgroft.png, alt="Bilde av et eksempel på objekttypen KanalGrøft, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4748,7 +4751,7 @@ Idrettsplass større enn 400 m&#178; og bredere enn 5 meter skal med i Topografi
 '''
  
 [[stein]]
-===== «featureType» Stein
+===== «FeatureType» Stein
 *Definisjon:* markert stein
 
 *Kriterier:*
@@ -4793,7 +4796,7 @@ Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et områ
 '''
  
 [[steinur]]
-===== «featureType» Steinur
+===== «FeatureType» Steinur
 *Definisjon:* steinurer, steinområder
  
  *Kriterier:*
@@ -4942,7 +4945,7 @@ Tettbebyggelse som er større enn 2 000 m&#178; og bredere enn 10 meter skal med
 '''
  
 [[transformatorstasjon]]
-===== «featureType» Transformatorstasjon
+===== «FeatureType» Transformatorstasjon
 *Definisjon:* område for omforming og fordeling av elektrisk energi.
 
 Oftest et tydelig avgrenset/inngjerdet område med mange kabler inn.
@@ -6226,21 +6229,6 @@ SOSI_navn: VERTIKALAVSTAND +
 |===
  
 [discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*driftsmerking på Mast og Masteomriss skal være like*
- 
-|Beskrivelse: 
-|inv: (self.driftsmerking -&gt; notEmpty() and self.omriss -&gt; notEmpty() ) implies (self.omriss-&gt;forAll(m:Masteomriss\|m.driftsmerking = self.driftsmerking) )
-
-
---hvis Mast har driftsmerking og har tilhørende Masteomriss, skal driftsmerking på Mast og Masteomriss være like
- 
-|===
- 
-[discrete]
 ====== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -6407,7 +6395,7 @@ Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte
 '''
  
 [[oppdrettslokalitet]]
-===== «featureType» Oppdrettslokalitet
+===== «FeatureType» Oppdrettslokalitet
 *Definisjon:* fast anlegg for oppdrett av fisk i vann
 
 *Kriterier:*
@@ -6493,33 +6481,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |===
  
 [discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*avgrensningsobjekter i samsvar med områdegeometri*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
- 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon innenfor område*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
- 
-|===
- 
-[discrete]
 ====== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -6578,18 +6539,6 @@ defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/
 SOSI_datatype: T + 
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
-|===
- 
-[discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Skal ha enten punkt- eller flategeometri*
- 
-|Beskrivelse: 
-|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
- 
 |===
  
 [discrete]
@@ -6760,7 +6709,7 @@ Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med
 '''
  
 [[skjerm]]
-===== «featureType» Skjerm
+===== «FeatureType» Skjerm
 *Definisjon:* frittstående konstruksjon laget for å skjerme mot støy eller snø, eller hindre/begrense ras og flom.
 
 *Kriterier:*
@@ -7232,33 +7181,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |===
  
 [discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*avgrensningsobjekter i samsvar med områdegeometri*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
- 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon innenfor område*
- 
-|Beskrivelse: 
-|
---ingen OCL, restriksjonen implementeres manuelt
- + 
---Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
- 
-|===
- 
-[discrete]
 ====== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -7420,26 +7342,6 @@ Alle hytter som tilbyr overnatting, både selvbetjent og ubetjent.
 [cols="20,80"]
 |===
 |*Navn:* 
-|*bygningstype*
- 
-|Definisjon: 
-|bygningstype sier hva bygningen er brukt til
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<bygningstypekode,«CodeList» BygningstypeKode>>
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 3 + 
-SOSI_lengde: 3 + 
-SOSI_navn: BYGGTYP_NBR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
 |*hytteinformasjon*
  
 |Definisjon: 
@@ -7558,7 +7460,7 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: 3.3 + 
+SOSI_lengde: 6.2 + 
 SOSI_navn: ROTORBLADLENGDE + 
 |===
 [cols="20,80"]
@@ -7579,23 +7481,8 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: D3.3 + 
+SOSI_lengde: 6.2 + 
 SOSI_navn: NAVHØYDE + 
-|===
- 
-[discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*driftsmerking på Vindturbin og Vindturbinomriss skal være like*
- 
-|Beskrivelse: 
-|inv: (self.driftsmerking -&gt; notEmpty() and self.omriss -&gt; notEmpty() ) implies (self.driftsmerking = self.omriss.driftsmerking)
-
-
---hvis Vindturbin har driftsmerking og har tilhørende Vindturbinomriss, skal driftsmerking på Vindturbin og Vindturbinomriss være like
- 
 |===
  
 [discrete]
@@ -8258,7 +8145,9 @@ SOSI_navn: HØYDE +
  
 [[høydekurvetype]]
 ===== «CodeList» Høydekurvetype
-*Definisjon:* 
+*Definisjon:* type høydekurve
+
+Eksempel: høydekurve, hjelpekurve eller forsenkningskurve
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8285,7 +8174,9 @@ SOSI_navn: HØYDE +
  
 [[høydepunkttype]]
 ===== «CodeList» Høydepunkttype
-*Definisjon:* 
+*Definisjon:* Type høydepunkt
+
+Eksempel: forsenkningspunkt, toppunkt, trigonometriskPunkt eller terrengpunkt
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -8339,7 +8230,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 <<<
 '''
-==== Pakke: Interessepunkt
+==== Pakke: Interessepunkt (POI)
 *Definisjon:* 
  
 '''
