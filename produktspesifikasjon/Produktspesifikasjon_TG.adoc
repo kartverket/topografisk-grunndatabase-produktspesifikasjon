@@ -120,9 +120,9 @@ I PSS nevnes ikke brukstilfeller, men det er naturlig å plassere de her. En fra
 
 === Formål
 
-include::../kapittel/formal.adoc[]
+include::../kapittel/kap3.8_formal.adoc[]
 
-include::../kapittel/representasjon.adoc[]
+include::../kapittel/kap3.9_representasjon.adoc[]
 
 === Supplerende beskrivelse
 Data ikke angitt
@@ -131,7 +131,7 @@ Data ikke angitt
 
 == Spesifikasjonsomfang
 
-include::../kapittel/omfang.adoc[]  
+include::../kapittel/kap4_omfang.adoc[]  
 
 <<<
 

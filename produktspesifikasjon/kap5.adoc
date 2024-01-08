@@ -114,11 +114,6 @@ Merknad:  Dataene for de respektive landene kan da settes sammen slik at man få
  
 |Definisjon: 
 |unik identifikasjon av et objekt 
-
-Merknad FKB:
-Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -137,17 +132,6 @@ SOSI_navn: IDENT +
 |Definisjon: 
 |tidspunkt for siste endring på objektet 
 
-Merknad FKB: 
-
-Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
-
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
-
-ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
-
-iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
-
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -185,8 +169,6 @@ SOSI_navn: DATAFANGSTDATO +
 |Definisjon: 
 |Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
 
-Merknad FKB:
-Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.
  
 |Multiplisitet: 
 |[0..1]
@@ -206,8 +188,6 @@ SOSI_navn: SLUTTDATO +
 |Definisjon: 
 |dato når dataene er fastslått å være i samsvar med virkeligheten.
 
-Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -226,9 +206,6 @@ SOSI_navn: VERIFISERINGSDATO +
  
 |Definisjon: 
 |generell opplysning.
-
-Merknad FKB:
-Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -480,7 +457,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
 |Definisjon: 
 |lokal identifikator av et objekt
 
-Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.
  
 |Multiplisitet: 
 |[1..1]
@@ -1509,6 +1486,8 @@ SOSI_navn: GRENSEPUNKTNUMMER +
  
   Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null. 
  
+ 
+ 
 [discrete]
 ====== Profilparametre i tagged values
 [cols="20,80"]
@@ -2529,6 +2508,7 @@ Flomløp finnes fortrinnsvis i regulerte vassdrag.
 
 *Kriterier:*
 Større fosser av nasjonal- eller turistinteresse skal med i Topografisk grunndatabase. Det skal etterstrebes at alle fosser er navnsatt.
+
 Merknad:
 Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt knyttes punktsymbolet til kurven, og roteres slik at det står vinkelrett på elva. Er elva avlagt som flate legges punktet midt i elva og punktsymbolet roteres slik at dette står vinkelrett på elva.
  
@@ -6497,7 +6477,7 @@ image::figurer/objtype_oppdrettslokalitet.png[link=figurer/objtype_oppdrettsloka
 *Definisjon:* Område for parkering av kjøretøy
 
 *Kriterier:*
-Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse skal flate over 500 kvm med i Topografisk grunndatabase.
+Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse med flate over 500 kvm skal med i Topografisk grunndatabase.
 
  
  
@@ -8411,7 +8391,9 @@ image::diagrammer/Realisering av kodelister Restriksjonsområder.png[link=diagra
 ===== «FeatureType» Allmenning
 *Definisjon:*  område som alle, eller en bestemt gruppe har bruksrett til 
  
-  Merknad: Det er ofte vilkår om at den bruksberettigede må ha en eiendom av en viss størrelse. Eksempel på rettigheter er beiterett, hogstrett, fiskerett. 
+  Merknad: Det er ofte vilkår om at den bruksrettigede må ha en eiendom av en viss størrelse. Eksempel på rettigheter er beiterett, hogstrett og fiskerett. 
+ 
+ 
  
 [discrete]
 ====== Egenskaper
@@ -9206,7 +9188,6 @@ directed line segment in the plane
 ===== «FeatureType» Veglenke
 *Definisjon:* objekttype som representerer lenker i vegnettet
 Eksempel: NVDB Referanselenkedeler
-
 *Tilleggsbeskrivelse for produktspesifikasjonen:  *  
 Trasé for transportmiddel (f.eks. bil, traktor, ferje) eller gående.
 
