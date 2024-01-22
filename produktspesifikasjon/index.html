@@ -1295,7 +1295,7 @@ Transport</p>
 <div class="sect2">
 <h3 id="_formål">3.8. Formål</h3>
 <div class="paragraph">
-<p>Topografisk grunndatabase skal sikre godt kartgrunnlag i stor målestokk.Topografisk grunndatabase kan brukes til:<br></p>
+<p>Topografisk grunndatabase skal sikre godt kartgrunnlag i stor målestokk. Topografisk grunndatabase kan brukes til:<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -1594,11 +1594,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt</p>
-<p class="tableblock">Merknad FKB:
-Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1626,13 +1622,7 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebæ
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet</p>
-<p class="tableblock">Merknad FKB:</p>
-<p class="tableblock">Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:</p>
-<p class="tableblock">i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).</p>
-<p class="tableblock">ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.</p>
-<p class="tableblock">iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.</p>
-<p class="tableblock">iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1690,9 +1680,7 @@ SOSI_navn: DATAFANGSTDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.</p>
-<p class="tableblock">Merknad FKB:
-Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1721,9 +1709,7 @@ SOSI_navn: SLUTTDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.</p>
-<p class="tableblock">Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1752,9 +1738,7 @@ SOSI_navn: VERIFISERINGSDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.</p>
-<p class="tableblock">Merknad FKB:
-Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2073,7 +2057,7 @@ SOSI_navn: OPPHAV<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p>
-<p class="tableblock">Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
+<p class="tableblock">Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -5066,8 +5050,10 @@ Flomløp finnes fortrinnsvis i regulerte vassdrag.</p>
 </div>
 <div class="paragraph">
 <p><strong>Kriterier:</strong>
-Større fosser av nasjonal- eller turistinteresse skal med i Topografisk grunndatabase. Det skal etterstrebes at alle fosser er navnsatt.
-Merknad:
+Større fosser av nasjonal- eller turistinteresse skal med i Topografisk grunndatabase. Det skal etterstrebes at alle fosser er navnsatt.</p>
+</div>
+<div class="paragraph">
+<p>Merknad:
 Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt knyttes punktsymbolet til kurven, og roteres slik at det står vinkelrett på elva. Er elva avlagt som flate legges punktet midt i elva og punktsymbolet roteres slik at dette står vinkelrett på elva.</p>
 </div>
 <h6 id="_profilparametre_i_tagged_values_30" class="discrete">Profilparametre i tagged values</h6>
@@ -11088,7 +11074,7 @@ alle oppdrettslokaliteter skal med i Topografisk grunndatabase.</p>
 </div>
 <div class="paragraph">
 <p><strong>Kriterier:</strong>
-Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse skal flate over 500 kvm med i Topografisk grunndatabase.</p>
+Alle parkeringsområder som er naturlig utgangspunkt for tur- og friluftsliv skal med i topografisk grunndatabase. Parkeringsområder i tettbebyggelse og bymessigbebyggelse med flate over 500 kvm skal med i Topografisk grunndatabase.</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -13876,7 +13862,7 @@ SOSI_navn: TYPEPOI<br></p></td>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Merknad: Det er ofte vilkår om at den bruksberettigede må ha en eiendom av en viss størrelse. Eksempel på rettigheter er beiterett, hogstrett, fiskerett.</pre>
+<pre>Merknad: Det er ofte vilkår om at den bruksrettigede må ha en eiendom av en viss størrelse. Eksempel på rettigheter er beiterett, hogstrett og fiskerett.</pre>
 </div>
 </div>
 <h6 id="_egenskaper_94" class="discrete">Egenskaper</h6>
@@ -15040,10 +15026,8 @@ directed line segment in the plane</p></td>
 <h5 id="veglenke">«FeatureType» Veglenke</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> objekttype som representerer lenker i vegnettet
-Eksempel: NVDB Referanselenkedeler</p>
-</div>
-<div class="paragraph">
-<p>*Tilleggsbeskrivelse for produktspesifikasjonen:  *
+Eksempel: NVDB Referanselenkedeler
+*Tilleggsbeskrivelse for produktspesifikasjonen:  *
 Trasé for transportmiddel (f.eks. bil, traktor, ferje) eller gående.</p>
 </div>
 <div class="paragraph">
@@ -17668,7 +17652,7 @@ Spesifikasjonen er utviklet av Kartverket og Forsvaret, og kan benyttes fritt av
 <div id="footer">
 <div id="footer-text">
 Versjon 0.1<br>
-Last updated 2024-01-05 12:13:20 +0100
+Last updated 2024-01-09 15:30:45 +0100
 </div>
 </div>
 </body>
