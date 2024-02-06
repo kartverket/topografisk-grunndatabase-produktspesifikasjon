@@ -22,12 +22,12 @@ ifdef::backend-pdf[:toc: macro]
 :umlbase-url: https://sosi.geonorge.no/uml-modeller/sosi-del-3-produktspesifikasjoner/
 :reginstrbase-url: https://sosi.geonorge.no/registreringsinstrukser/
 :skjema-url: {skjemabase-url}{datasett}/{versjon}
-:prodspek-url: {prodspekbase-url}{datasett}
-:uml-url: {umlbase-url}{datasett}/{versjon}
+:prodspek-url: {prodspekbase-url}{kortnavn}
+:uml-url: {umlbase-url}{kortnavn}/{versjon}
 :figur-url: https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/tree/main/figurer/
-= SOSI-standardisert produktspesifikasjon: {datasett} 
+= Produktspesifikasjon: {datasett} 
 Kartverket 
-{versjon}, dato
+{versjon}, {underversjon}
 
 
 ****

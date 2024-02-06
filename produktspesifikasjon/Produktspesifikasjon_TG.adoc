@@ -1,7 +1,9 @@
 :datasett: Topografisk grunndatabase 
-:versjon: 0.1 
-:skjemaversjon: 0.1 
-:publisert: år-mnd-dag 
+:kortnavn: TopografiskGrunndatabase 
+:versjon: 1.0 
+:skjemaversjon: 1.0 
+:publisert: 2024-02-06
+:underversjon: 2024-02-01 
 :metadata-url: Link_til_Geonorge
 :prodspek-forrige:
 :versjon-forrige: 
@@ -51,7 +53,7 @@ Er case-sensitiv i SOSI-kontroll.
 Norske tegn er ok hvis enkoding er riktig innstilt. Kontakt standardiseringssekretariatet hvis du har problemer med norske tegn.
 ////
 ==== Kortnavn
-{datasett}
+{kortnavn}
 
 ==== Fullstendig navn
 {datasett} 
