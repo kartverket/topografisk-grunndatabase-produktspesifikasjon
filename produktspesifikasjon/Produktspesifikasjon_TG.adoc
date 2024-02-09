@@ -15,7 +15,7 @@ include::../kapittel/filhode.adoc[]
 == Innledning, historikk og endringslogg
 
 === Innledning
-Topografisk grunndatabase (TG) er en DLM. Topografisk grunndatabase er en landsdekkende homogen kartdatabase. Kartdataene skal være i målestokken 1:10 000 og danne grunnlaget for kartplott i 1:20 000. 
+Topografisk grunndatabase (TG) er en DLM. Topografisk grunndatabase er en landsdekkende homogen kartdatabase. Kartdataene skal være i målestokken 1:10 000 og danne grunnlaget for kartplott i 1:20 000. Første versjon vil inneholde en sammenstilling av eksisterende data. Derfor vil kvalitetskrav som homogenitet først bli gjeldene ved senere versjoner.
 
 === Historikk
 Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for en landsdekkende, homogen kartdatabase i stor målestokk. Arbeidet med første produktspesifikasjon var ett samarbeid mellom flere fagfelt; FKB, Kartprodukter, Datadelingsteamet, Standardisering og Sjø.
