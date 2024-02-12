@@ -1,0 +1,84 @@
+= Høringsnotat Topografisk grunndatabase
+:sectnums:
+:toc: left
+:toc-title: Innholdsfortegnelse
+:toclevels: 3
+:figure-caption: Figur
+:table-caption: Tabell
+:doctype: article
+:encoding: utf-8
+:lang: nb
+:SOSITEST: https://skjema.geonorge.no/SOSITEST/produktspesifikasjon
+:publisert: Oppdatert 2024-02-19
+
+
+
+== Høring av Topografisk grunndatabase
+
+=== Innledning
+
+Topografisk grunndatabase skal være en ny landsdekkende, homogen kartdatabase i målestokk 1:10 000. Databasen skal primært baseres på eksisterende kilder, men utvides der det i dag ikke finnes tilfredstillende grunnlag. Topografisk grunndatabase skal være en DLM (Digital landskapsmodell), som betyr at kartobjektene skal ha sin virkelige plassering og skal være minimalt kartografisk redigert. 
+Dette er første versjon av produktspesifikasjon og vil utgjøre grunnlaget for arbeidet med å opprette databasen. Det vil derfor ikke være tilgjengerlig testdata. Første versjon vil være en samenstilling av eksisterende data fra primærkilder og vil per dags dato ikke tilfredstille fremtidsvisjonen om homogenitet. 
+
+Topografisk grunndatabase sendes ut på høring 19. februar 2024 med frist for å gi høringsinnspill 19. mars 2024. 
+
+
+=== Innhold i høringen av Topografisk grunndatabase produktspesifikasjon
+
+For datasett i høringen har vi følgende dokumentasjon:
+
+. Link til PDF og HTML-versjon av dokumentet. 
+. Link til vedlegg
+** GML-skjema
+
+
+Det er lagt inn datering av filene som lenkes opp her i høringsdokumentet. Selve produktspesifikasjonsdokumentene skal ikke bli oppdatert i høringsperioden (etter 19.februar), men vedlegg kan bli oppdatert/utvidet i løpet av høringsperioden dersom dette vurderes som fornuftig for forståelse av innholdet i spesifikasjonene.
+
+UML-datamodellene for topografisk grunndatabase datasettet ligger også tilgjengelig i https://www.kartverket.no/geodataarbeid/standardisering/veiledere-og-verktoy[SOSI-modellregister] og kan vurderes direkte der av de som har programvare for dette. På https://objektkatalog.geonorge.no/Home/Search?owner=Geovekst&type=produktspesifikasjon&navPaths=SOSI+Produktspesifikasjoner&userclick=true&status=Utkast[geonorge.no] finnes en visning av SOSI-modellregister som også kan være en mulighet. UML-pakkene er gitt status "utkast" i SOSI-modellregister. 
+
+=== Hvordan lese produktspesifikasjoner
+
+Produktspesifikasjonen er basert på UML datamodeller. 
+
+* HTML er hovedformatet for spesifikasjonen. Det er forsøkt lagt inn mange linker/referanser internt i dokumentene og ut til ressurser på utsiden. Det anbefales at man forholder seg til Topografisk grunndatabase produktspesifikasjonen som HTML for å få utbytte av dette.
+* PDF er sekundærformatet. De som fortsatt ønsker seg en utskrift på papir kan printe PDF-varianten. 
+* Både PDF og HTML inneholder en innholdsfortegnelse (synlig i venstre marg) som gjør det langt lettere å manøvrere rundt i dokumentene. Bruk denne!
+** Kapittel 1: Beskrivelse av datasettet
+** Kapittel 5: En beskrivelse av objekttyper og øvrige elementer i datamodellen (utlisting fra UML)
+* Det er beskrivende bilde/skisse for mange av objekttypene. Dette er hentet fra FKB og er kun for å illustrere hva objekttypen skal representere. Når Topografisk grunndatabase har egene data, skal bilder og illustrasjoner byttes ut.
+
+Se forøvrig https://sosi.geonorge.no/veiledere/uml/[veiledning for å lese UML-diagrammer] på sosi.geonorge.no.
+
+=== Andre problemstillinger vi ønsker tilbakemelding på
+
+==== Eksterne kodelister
+I Topografisk grunndatabase er alle kodelister modellert som eksterne. Det innebærer at kodelisteregisteret i Geonorge er en viktig del av Topografisk grunndatabase. Høringa omfatter også innspill på _innholdet_ i kodelisteregisteret på Geonorge. Tilbakemelding på https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase[kodelistene] gjøres som en del av høringen for Topografisk grunndatabase. Der primærkilden og Topografisk grunndatabase har like kodelister er linken knyttet til primærkilden. Det ønskes tilbakemelding på selve kodene uavhengig om den opprinnerlig tilhører primærkilden eller Topografisk grunndatabase.
+
+==== Kildehenvisning
+I produktspesifikasjonen er diagrammene fargekodet for å tydliggjøre hvor det er aktuelt å hente kartobjektene fra. Denne listen er ikke komplett, men er en henvisning til de største primærkildene. Det ønskes tilbakemeldinger på hvorvidt det finnes bedre eller mer aktuelle primærkilder for Topografisk grunndatabase. 
+
+==== Høringsdokumenter
+
+
+.Høringsdokumenter
+[cols="3*", options="header"]
+|===
+|Dokument
+|Link
+|Dato
+
+|Produktspesifikasjon Topografisk grunndatabase (HTML)
+|{SOSITEST}/Topografisk_grunndatabase/
+|2024-10-01
+
+|Produktspesifikasjon Topografisk grunndatabase (PDF)
+|{SOSITEST}/Topografisk_grunndatabase.pdf
+|2024-10-01
+
+|GML skjemafil
+|{SOSITEST}/Topografisk_grunndatabase.xsd
+|2024-10-01
+
+|===
+
+
