@@ -19,10 +19,12 @@
 
 |GML| Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon (OpenGIS® Geograph Markup Language (GML) Encoding Standard)
 
+|HVD| Datasett med høy verdi. Hva som er HVD data er fastsatt av ODD.
+
 |NRL| Nasjonalt register for luftfartshindre
 
 |NVDB| Nasjonal vegdatabank. Forvaltningsløsning for vegnettet og tilhørende informasjon eid av Statens vegvesen.
-
+|ODD| Åpne data-direktivet. Europaparlaments- og rådsdirektiv (EU) om åpne data og viderebruk av informasjon fra offentlig sektor.
 
 |PBL| Plan- og bygningsloven.
 |SOSI|Samordnet Opplegg for Stedfestet Informasjon

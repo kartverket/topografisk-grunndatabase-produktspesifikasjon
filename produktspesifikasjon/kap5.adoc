@@ -1484,7 +1484,7 @@ SOSI_navn: GRENSEPUNKTNUMMER +
 ===== «CodeList» Fylkesnummer
 *Definisjon:* nummerering av fylker    
  
-  Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null. 
+Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid ha 2 sifre, dvs. eventuelt med ledende null. 
  
  
  
