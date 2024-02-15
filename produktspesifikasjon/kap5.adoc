@@ -424,6 +424,7 @@ SOSI_navn: KVALITET +
 <<naturvernområde,«FeatureType» Naturvernområde>> +
 <<massedeponi,«FeatureType» Massedeponi>> +
 <<oppdrettslokalitet,«FeatureType» Oppdrettslokalitet>> +
+<<oppdrettsmerd,«FeatureType» Oppdrettsmerd>> +
 <<innsjø,«FeatureType» Innsjø>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
@@ -915,7 +916,7 @@ Nibio, FKB-bygning eller N50 Kartdata
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/opphav
+|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/opphav-data
  
 |SOSI_datatype
 |T
@@ -1496,7 +1497,7 @@ Merknad: Inneholder fremtidige, gyldige og utgåtte nummer. Fylket skal alltid h
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer?
+|https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer
  
 |SOSI_datatype
 |T
@@ -1581,7 +1582,7 @@ Merknad 2: Modelleringsverktøyet Enterprise Architect håndterer ikke samiske t
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/typeavgrensning
+|https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase/type-avgrensning
  
 |SOSI_datatype
 |T
@@ -1688,14 +1689,6 @@ image::diagrammer/Kodelister Arealdekke.png[link=diagrammer/Kodelister Arealdekk
 Alle alpinbakker skal med i Topografisk grunndatabase. Alpinbakke skal registreres fullstedig, avgrensingen skal være i samsvar med utstrekningen av Skitrekk/Stolheis og preparerte løyper.
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Alpinbakke
@@ -1797,14 +1790,6 @@ Merknad:
 Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der dette representerer flata.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -1841,14 +1826,6 @@ Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der
 Merknad:
 Kode for bruken av arealet legges på flaten, dvs på representasjonspunktet der dette representerer flata.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -1919,14 +1896,6 @@ Husene har overveiende to eller flere etasjer.
 *Kriterier:*
 Bymessig bebyggelse som er større enn 1000 m&#178; og bredere enn 20 meter skal med i Topografisk grunndatabase.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2025,14 +1994,6 @@ Dyrket mark skal skilles i arealtypene Overflatedyrket, Innmarksbeite og Fulldyr
 
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2237,9 +2198,6 @@ Merknad: Det skal etableres nodepunkt mellom ElvBekk (midtlinje) og andre tilst�
 |SOSI_geometri
 |KURVE
  
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
 |===
 [discrete]
 ====== Egenskaper
@@ -2293,14 +2251,6 @@ Merknad: Det skal etableres nodepunkt mellom ElvBekk (midtlinje) og andre tilst�
   
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -2341,14 +2291,6 @@ Flatene avgrenses av FerskvannTørrfallKant og elve- eller kanalkant som grenser
 Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2416,14 +2358,6 @@ Tørrfallflater større enn 1 000 m&#178; skal med i Topografisk grunndatabase
 
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -2465,14 +2399,6 @@ Merknad:
 Flomløp finnes fortrinnsvis i regulerte vassdrag.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -2512,14 +2438,6 @@ Større fosser av nasjonal- eller turistinteresse skal med i Topografisk grunnda
 Merknad:
 Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt knyttes punktsymbolet til kurven, og roteres slik at det står vinkelrett på elva. Er elva avlagt som flate legges punktet midt i elva og punktsymbolet roteres slik at dette står vinkelrett på elva.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2571,14 +2489,6 @@ Foss representeres med et punkt på toppen av fossen. Der elva er et kurveobjekt
 *Kriterier:*
 Alle baneanlegg med minst 6 hull skal med i Topografisk grunndatabase. Mindre skogflater innenfor flaten kan avsettes som tregrupper. Golfbanen skal registreres fullstendig. Interne veger og tilhørende areal skal inngå i arealbruksflaten, ikke bare spilleflaten på de forskjellige hullene
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Golfbane
@@ -2683,9 +2593,6 @@ Gravplass/kirkegård større enn 400 m&#178; og bredere enn 5 meter tas med. Gra
 ====== Profilparametre i tagged values
 [cols="20,80"]
 |===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
 |SOSI_navn
 |Gravplass
  
@@ -2693,7 +2600,7 @@ Gravplass/kirkegård større enn 400 m&#178; og bredere enn 5 meter tas med. Gra
  
 '''
 .Illustrasjon av objekttype Gravplass
-image::figurer/objtype_gravplass.png[link=figurer/objtype_gravplass.png, alt="Bilde av et eksempel på objekttypen Gravplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::figurer\objtype_gravplass.png[link=figurer\objtype_gravplass.png, alt="Bilde av et eksempel på objekttypen Gravplass, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -2785,19 +2692,10 @@ image::figurer/objtype_gravplass.png[link=figurer/objtype_gravplass.png, alt="Bi
  
 [[havflate]]
 ===== «FeatureType» Havflate
-*Definisjon:* havområde som avgrenses av Kystkontur, Kystsperre, HavElvSperre og KystkonturTekniskAnlegg
-
+*Definisjon:* havområde som avgrenses av Kystkontur
 *Kriterier:*
 Alle øyer som er større enn 100 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. Øyer under minstemålet kodes som skjær.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Havflate
@@ -2879,7 +2777,7 @@ image::figurer\objtype_havflate.png[link=figurer\objtype_havflate.png, alt="Bild
  
 [[industriområde]]
 ===== «FeatureType» Industriområde
-*Definisjon:* område, bebygd eller ubebygd, benyttet til industriformål
+*Definisjon:* område, bebygd eller ubebygd, benyttet til industri- og næringsformål
 
 Merknad:
 Omfatter også anlegg for vannforsyning, avfallshåndtering og rensing, samt kraftstasjon, transformatorstasjon o.l. I Topografisk grunndatabase inkluderes næringsområder/næringsparker der det drives ulike typer næringsvirksomhet, f.eks kontorlokaler, produksjonsbedrifter eller lager. Handel-/forretningsvirksomhet kan også forekomme i industriområder.
@@ -2887,14 +2785,6 @@ Omfatter også anlegg for vannforsyning, avfallshåndtering og rensing, samt kra
 *Kriterier:*
 Industriområder som er større enn 3000 m&#178; og bredere enn 20 meter skal med i Topografisk grunndatabase. Industriområder under minstemålet innlemmes i tettbebyggelsen der disse grenser til hverandre. 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Industriområde
@@ -2996,14 +2886,6 @@ image::figurer\objtype_industriomrade.png[link=figurer\objtype_industriomrade.pn
 Innsjøer og øyer over 100 m&#178; og bredere enn 3 meter skal med i Topografisk grunndatabase. Øyer i innsjø som er større enn 100 m&#178; og bredere enn 3 meter skal med i Topografisk grunndatabase. Innsjøer over 2 500 m&#178; skal være påført løpenummer for innsjø (vatnLøpenummer). For alle oppdemte og regulerte innsjøer der reguleringen er i drift kodes innsjøen med egenskapen Regulert. Det skal tilstrebes at alle innsjøer skal ha egenskapen høyde. Høyden skal angis i hele meter. 
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Innsjø
@@ -3150,14 +3032,6 @@ SOSI_navn: LRV +
 
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -3424,14 +3298,6 @@ Kystkonturen skal være registrert fullstendig og sammenhengende.
 
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Kystkontur
@@ -3515,14 +3381,6 @@ image::figurer/objtype_lekeplass.png[link=figurer/objtype_lekeplass.png, alt="Bi
 Alle lufthavner som er større enn 20 000 m&#178; og bredere enn 10 meter skal med i Topografisk grunndatabase og avlegges som flate. I tillegg tas objekttypen Rullebane med som flate, og Lufthavn som punkt. Det er lufthavnpunktet som skal ha den utdypende informasjonen om lufthavnen. Lufthavnpunktet på lufthavnene avsettes tilnærmet på midten av rullebanen og roteres i rullebanens retning. Alle helikopterplasser skal med i Topografisk grunndatabase, selv om de ligger på eller like ved bygninger.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -3589,49 +3447,6 @@ SOSI_navn: LUFTHAVNTYPE +
 SOSI_datatype: T + 
 SOSI_lengde: 1 + 
 SOSI_navn: TRAFIKKTYPE + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*iataKode*
- 
-|Definisjon: 
-|unik kode for lufthavner. 
-
-Merknad1: Ikke alle lufthavner har IATA kode.
-Merknad 2: Bare norske lufthavner er tatt med her.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<iatakode,«CodeList» IATAKode>>
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 3 + 
-SOSI_navn: IATA_KODE + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*icaoKode*
- 
-|Definisjon: 
-|angivelse av lufthavn ved    kode    på fire    alfanumeriske       tegn   . 
-
-Merknad: Den første bokstaven tilordnes etter kontinent og angir et land eller en gruppe land på det samme kontinentet. Den andre bokstaven angir landet og de to siste angir lufthavn.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<icaokode,«CodeList» ICAOKode>>
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 4 + 
-SOSI_navn: ICAO_KODE + 
 |===
 [cols="20,80"]
 |===
@@ -3869,14 +3684,6 @@ image::figurer\objtype_steintipp.png[link=figurer\objtype_steintipp.png, alt="Bi
 Masseuttak større enn 800     m&#178; og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -4011,14 +3818,6 @@ Myra kan være bevokst, men da av få eller små trær. Grøftet myr som er blit
 Myr som er større enn 800 m&#178; og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -4128,14 +3927,6 @@ Myr som er større enn 800 m&#178; og bredere enn 10 meter skal med i Topografis
 *Kriterier:*
 Områder større enn 400 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. Fornøyelsesparker inngår ikke i denne kategorien.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Park
@@ -4237,14 +4028,6 @@ image::figurer\objtype_park.png[link=figurer\objtype_park.png, alt="Bilde av et 
 Alle rullebaner skal med i Topografisk grunndatabase.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -4340,14 +4123,6 @@ Alle rullebaner skal med i Topografisk grunndatabase.
 *Kriterier:*
 Alle øyer under 100 m&#178;   og smalere enn 3 meter skal med som skjær. Kun skjær som har høyde lik eller høyere enn den lokale MHV-verdien skal registreres.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Skjær
@@ -4391,14 +4166,6 @@ Merknad: Også hogstflater - selv om nyplanting ikke er synlig.  Omfatter alle s
 *Kriterier:*
 Skog skal skilles i treslagene Barskog, Blandingsskog og Lauvskog, der det er mulig. Skogområder som er større enn 800 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -4532,14 +4299,6 @@ Masse av is og tettpakket snø som vesentlig ligger på land, der isen er i beve
 *Kriterier:*
 Breer som er større enn 6 000 m&#178; og bredere enn 20 meter skal med i Topografisk grunndatabase. Mindre isfrie områder beholdes dersom de er større enn 2 000 m&#178; og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype SnøIsbre
@@ -4654,14 +4413,6 @@ image::figurer\objtype_snoisbre.png[link=figurer\objtype_snoisbre.png, alt="Bild
 *Kriterier:*
 Idrettsplass større enn 400 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. For motorsportanlegg se SpesiellDetalj.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype SportIdrettPlass
@@ -4762,14 +4513,6 @@ image::figurer\objtype_idrettsplass.png[link=figurer\objtype_idrettsplass.png, a
 *Kriterier:*
 Enkeltstående stein høyere enn 2 meter og større enn 10 m 3 . Er det et område med mange steiner som er større enn 400 m&#178;, skal arealet steinur registreres. Se steinur.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Stein
@@ -4812,14 +4555,6 @@ image::figurer\objtype_stein.png[link=figurer\objtype_stein.png, alt="Bilde av e
 Alle områder større enn 400 m&#178; skal med i Topografisk grunndatbase.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -4856,14 +4591,6 @@ Alle områder større enn 400 m&#178; skal med i Topografisk grunndatbase.
 *Kriterier:*
 Tettbebyggelse som er større enn 2 000 m&#178; og bredere enn 10 meter skal med i Topografisk grunndatabase.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5017,14 +4744,6 @@ image::figurer/objtype_transformatorstasjon.png[link=figurer/objtype_transformat
 *Kriterier:*
 Skogflater under minstemålet for skog kan omgjøres til tregrupper. Avstanden mellom tregrupper, og fra tregrupper til arealflater som skog og innsjø, skal være minimum 30 meter. Der tregruppen er i konflikt med gjeldene tema utelates tregruppen. Dette inkluderer veg, traktorveg, sti, kraftlinjer, navn, høydepunkt, bygningspunkt og grunnriss. Skog som dekker hele øyer som er mindre enn minstemålet avlegges likevel som skog. 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -5248,66 +4967,6 @@ SOSI_navn: VANN_SPERRETYPE +
  
 '''
  
-[[iatakode]]
-===== «CodeList» IATAKode
-*Definisjon:* unik kode for lufthavner. 
-
-Merknad 1: Ikke alle lufthavner har IATA kode.
-Merknad 2: Bare norske lufthavner er tatt med her.
-
- 
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|codeList
-|https://register.geonorge.no/sosi-kodelister/kartdata/iatakode
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|3
- 
-|SOSI_navn
-|IATA_KODE
- 
-|===
- 
-'''
- 
-[[icaokode]]
-===== «CodeList» ICAOKode
-*Definisjon:* angivelse av lufthavn ved    kode    på fire    alfanumeriske       tegn   . 
-
-Merknad: Den første bokstaven tilordnes etter kontinent og angir et land eller en gruppe land på det samme kontinentet. Den andre bokstaven angir landet og de to siste angir lufthavn.
- 
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|codeList
-|https://register.geonorge.no/sosi-kodelister/kartdata/icaokode
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|4
- 
-|SOSI_navn
-|ICAO_KODE
- 
-|===
- 
-'''
- 
 [[lufthavntype]]
 ===== «CodeList» Lufthavntype
 *Definisjon:* angivelse av type lufthavn
@@ -5483,9 +5142,6 @@ I tillegg til bygningsflaten, vil enkelte bygninger angis med symbol.
 |SOSI-melding
 |Finnes i SOSI_db,men ingen ting skal overføres
  
-|SOSI_geometri
-|PUNKT;FLATE;
- 
 |===
 [discrete]
 ====== Egenskaper
@@ -5558,14 +5214,6 @@ SOSI_navn: BYGGTYP_NBR +
 *Kriterier:*
 Campingplassen skal registreres fullstendig. Interne veier og fellesarealer skal inngå i arealbruksflaten.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Campingplass
@@ -5649,14 +5297,6 @@ image::figurer/objtype_demning.png[link=figurer/objtype_demning.png, alt="Bilde 
 flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
 Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Flytebrygge
@@ -5837,14 +5477,6 @@ SOSI_navn: HREF +
 Tunnel eller system av utsprengte ganger i fast fjell hvor tunnelinngangen er tydelig og hvorfra det utvinnes, eller har blitt utvunnet, malm eller mineraler. Alle objekter som tilfredsstiller definisjonen skal med. Punktet plasseres så nær gruveinngangen om mulig. Gruve omfatter ikke masseuttak (dagbrudd).
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -5884,14 +5516,6 @@ Alle objekter i samsvar med definisjonen som er lengre enn 50 meter, målt i gru
 Merknad
 Egenskapen lengde sier noe om størrelsen til hoppbakken og egenskapen retning er vinkelen et punktsymbol skal roteres med for å få riktig retning på hoppsymbolet. Vinkelen er satt i forhold til koordinatsystemet Euref89 UTM sone 33.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Hoppbakke
@@ -5970,14 +5594,6 @@ SOSI_navn: RETNING +
 Alle faste innretninger i samsvar med definisjonen og lengre enn 25 meter.
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype KaiBrygge
@@ -6056,6 +5672,25 @@ image::figurer\Luftledning.jpg[link=figurer\Luftledning.jpg, alt="Bilde av et ek
 [cols="20,80"]
 |===
 |*Navn:* 
+|*eier*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 9 + 
+SOSI_navn: EIERORGNR + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
 |*ledningstrase*
  
 |Definisjon: 
@@ -6071,6 +5706,29 @@ image::figurer\Luftledning.jpg[link=figurer\Luftledning.jpg, alt="Bilde av et ek
 SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: FLER_LINJER + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*hovedbruk*
+ 
+|Definisjon: 
+|hovedbruken for objektet
+
+Merknad FKB:
+Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde. 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<ledningsnettverkstype,«CodeList» Ledningsnettverkstype>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype + 
+SOSI_datatype: T + 
+SOSI_lengde: 32 + 
+SOSI_navn: LEDNINGSNETTVERKSTYPE + 
 |===
  
 [discrete]
@@ -6273,14 +5931,6 @@ SOSI_navn: VERTIKALAVSTAND +
 *Kriterier:*
 Alle objekter i samsvar med definisjonen lengre enn 25 meter, skal med i Topografisk grunndatabase.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Molo
@@ -6381,16 +6031,8 @@ SOSI_navn: HREF +
 *Definisjon:* objekt som hjelper sjøfarende å navigere på sjøen
 
 *Kriterier:*
-Alle fyr registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte belysning).
+Alle fyr og fyrlykter registrert av Kystverket (ekskludert HIB (Hurtigbåtmerke med indirekte belysning), skal med i topografisk grunndatabase. Fyr er en innretning med lys som skal vise skip og båter hvor det er trygt å ferdes på havet, langs kysten og inn til havn når det er mørkt. Fyrlykt har mindre rekkevidde enn fyr, men skal også med i topografisk grunndatabase.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Navigasjonsinstallasjon
@@ -6464,6 +6106,38 @@ image::figurer/objtype_oppdrettslokalitet.png[link=figurer/objtype_oppdrettsloka
 |«ApplicationSchema» FKB-BygnAnlegg-5.0.2/TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettslokalitet +
 |Realisering av: 
 |«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettsmerder +
+|===
+ 
+'''
+ 
+[[oppdrettsmerd]]
+===== «FeatureType» Oppdrettsmerd
+*Definisjon:* 
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>>
+ 
 |===
  
 '''
@@ -6589,14 +6263,6 @@ SOSI_navn: HREF +
 Alle objekter i samsvar med definisjonen lengre enn 25 meter skal med i Topografisk grunndatabase.
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -6697,14 +6363,6 @@ rør som leder vann frem til foredlingsanlegg, kraftverk, annet vassdrag, fjernv
 *Kriterier:*
 Objekter som tilfredsstiller definisjonen og som er lengre enn 25 meter skal med i Topografisk grunndatabase. Rørgate som inngår i tettbebyggelse og bymessig bebyggelse tas ikke med som selvstendige objekter. Rørgate skal unntaksvis tas med i industriområde.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Rørgate
@@ -6849,14 +6507,6 @@ Anlegg med standplass og nedslagsfelt/skiveholdere beregnet for skyting med hån
 *Kriterier:*
 Alle objekter i samsvar med definisjonen med avstand mellom standplass og nedslagsfelt/skiveholdere lengre enn 25 meter skal med i topografisk grunndatabase. Anlegget representeres alltid med 2 punkter. Første punkt er senter standplass, andre punkt er senter skiveholdere. Bygninger i umiddelbar nærhet av skytebanen skal utelates. I tillegg registreres omrisset av det tekniske anlegget.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Skytebane
@@ -7134,14 +6784,6 @@ image::figurer/objtype_svommebasseng.png[link=figurer/objtype_svommebasseng.png,
 *Kriterier:*
 Alle objekter større enn 100 m&#178; avlegges som flate, mindre enn 100 m&#178; som punkt. Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Tank
@@ -7413,14 +7055,6 @@ Eksempel: Måletårn og stupetårn
 *Kriterier:*
 Objekter høyere enn 10 meter skal med i Topografisk grunndatabase. Tårn tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde.
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Tårn
@@ -7884,6 +7518,36 @@ Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstype
  
 '''
  
+[[ledningsnettverkstype]]
+===== «CodeList» Ledningsnettverkstype
+*Definisjon:* oversikt over nettverkstyper, satt sammen av nettverkskomponenter, med en bestemt hensikt
+
+Merknad: 
+Et nettverk utgjør en logisk enhet. Et nettverk kan være knytta til andre nettverk, men da oftest på bestemte tilkoplingspunkter.
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|32
+ 
+|SOSI_navn
+|LEDNINGSNETTVERKSTYPE
+ 
+|===
+ 
+'''
+ 
 [[skjermingsfunksjon]]
 ===== «CodeList» SkjermingsFunksjon
 *Definisjon:* ulike funksjoner en skjerm kan ha
@@ -7993,17 +7657,9 @@ image::diagrammer/Realisering av kodelister Høyde.png[link=diagrammer/Realiseri
 ===== «FeatureType» Høydekurve
 *Definisjon:* linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden
 
-Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).
+Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng). Topografisk grunndatabase skal ha en ekvidistanse på 5 m.
 
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -8092,14 +7748,6 @@ SOSI_navn: HØYDE +
 ===== «FeatureType» Terrengpunkt
 *Definisjon:* punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -8544,14 +8192,6 @@ SOSI_navn: NAVN +
 *Definisjon:* avgrenser et naturvernområde
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -8589,9 +8229,6 @@ SOSI_navn: NAVN +
 ====== Profilparametre i tagged values
 [cols="20,80"]
 |===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
 |SOSI_navn
 |verneform
  
@@ -8703,14 +8340,6 @@ SOSI_navn: NAVN +
 
 Merknad: Gjelder også testfelt knyttet til våpen- spregningsindustri
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;FLATE;
- 
-|===
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
