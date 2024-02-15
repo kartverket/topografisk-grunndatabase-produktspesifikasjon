@@ -17,9 +17,9 @@
 
 === Innledning
 
-Topografisk grunndatabase skal være en ny landsdekkende, homogen kartdatabase i målestokk 1:10 000. Databasen skal primært baseres på eksisterende kilder, men ajourføres direkte i basen der det i dag ikke finnes tilfredstillende datagrunnlag. Topografisk grunndatabase skal være en DLM (Digital landskapsmodell), som betyr at kartobjektene skal ha sin virkelige plassering og skal være minimalt kartografisk redigert. 
+Topografisk grunndatabase skal være en ny landsdekkende, homogen kartdatabase i målestokk 1:10 000. Databasen skal primært baseres på eksisterende kilder, men vil være primædatakilde der det i dag ikke finnes tilfredstillende datagrunnlag. Topografisk grunndatabase skal være en DLM (Digital landskapsmodell), som betyr at kartobjektene skal ha sin virkelige plassering og skal være minimalt kartografisk redigert. 
 
-Dette er første versjon av produktspesifikasjon og vil utgjøre grunnlaget for arbeidet med å opprette databasen. Det vil derfor ikke være tilgjengerlig testdata. Første versjon vil være en samenstilling av eksisterende data fra primærkilder og vil per dags dato ikke tilfredstille fremtidsvisjonen om homogenitet. 
+Dette er første versjon av produktspesifikasjon og vil utgjøre grunnlaget for arbeidet med å opprette databasen. Det vil derfor ikke være tilgjengelig testdata. Første versjon vil være en sammenstilling av eksisterende data fra primærkilder og vil per dags dato ikke tilfredstille fremtidsvisjonen om homogenitet. 
 
 Topografisk grunndatabase sendes ut på høring 19. februar 2024 med frist for å gi høringsinnspill 19. mars 2024. 
 
@@ -41,12 +41,12 @@ UML-datamodellene for topografisk grunndatabase datasettet ligger også tilgjeng
 
 Produktspesifikasjonen er basert på UML datamodeller. 
 
-* HTML er hovedformatet for spesifikasjonen. Det er forsøkt lagt inn mange linker/referanser internt i dokumentene og ut til ressurser på utsiden. Det anbefales at man forholder seg til Topografisk grunndatabase produktspesifikasjonen som HTML for å få utbytte av dette.
+* HTML er hovedformatet for spesifikasjonen. Det er forsøkt lagt inn mange linker/referanser internt i dokumentene og ut til ressurser på utsiden. Det anbefales at man forholder seg til Topografisk grunndatabase produktspesifikasjon som HTML for å få utbytte av dette.
 * PDF er sekundærformatet. De som fortsatt ønsker seg en utskrift på papir kan printe PDF-varianten. 
 * Både PDF og HTML inneholder en innholdsfortegnelse (synlig i venstre marg) som gjør det langt lettere å manøvrere rundt i dokumentene. Bruk denne!
 ** Kapittel 1: Beskrivelse av datasettet
 ** Kapittel 5: En beskrivelse av objekttyper og øvrige elementer i datamodellen (utlisting fra UML)
-* Det er beskrivende bilde/skisse for mange av objekttypene. Dette er hentet fra FKB og er kun for å illustrere hva objekttypen skal representere. Når Topografisk grunndatabase har egene data, skal bilder og illustrasjoner byttes ut.
+* Det er beskrivende bilde/skisse for mange av objekttypene. Dette er hentet fra FKB og er kun for å illustrere hva objekttypen skal representere. Når Topografisk grunndatabase har egene data, vil bilder og illustrasjoner byttes ut.
 * Diagrammene fra UML-modellen er fargekodet. Fargene representerer hvor de ulike objekttypene er hentet fra. Det betyr imidlertid ikke at dette er kilden til kartobjektet, men en henvisning til tilsvarende objekt som eksisterer i dag.
 
 Se forøvrig https://sosi.geonorge.no/veiledere/uml/[veiledning for å lese UML-diagrammer] på sosi.geonorge.no.
@@ -57,7 +57,7 @@ Se forøvrig https://sosi.geonorge.no/veiledere/uml/[veiledning for å lese UML-
 I Topografisk grunndatabase er alle kodelister modellert som eksterne. Det innebærer at kodelisteregisteret i Geonorge er en viktig del av Topografisk grunndatabase. Høringa omfatter også innspill på _innholdet_ i kodelisteregisteret på Geonorge. Tilbakemelding på https://register.geonorge.no/sosi-kodelister/topografisk-grunndatabase[kodelistene] gjøres som en del av høringen for Topografisk grunndatabase. Der primærkilden og Topografisk grunndatabase har like kodelister er linken knyttet til primærkilden. Det ønskes tilbakemelding på selve kodene uavhengig om den opprinnerlig tilhører primærkilden eller Topografisk grunndatabase. Kom gjerne med tilbakemelding om kodene er forstålig, relevante, og om det mangler noen egenskaper/koder.
 
 ==== Kriterier
-I produktspesikasjonen for Topografisk grunndatabase er kriterine knyttet til hver objekttype. Kriteriet er ikke testet, siden det per dags dato ikke er opprettet en database, og kan derfor kun anses som en teoretisk anslag om størrelse, generalisering og omfang. Det ønskes derimot tilbakemeldinger på kriterine hvis generaliseringsgrad presentert ikke tilsvarer med forventningene.
+I produktspesifikasjonen for Topografisk grunndatabase er kriteriene knyttet til hver objekttype. Kriteriet er ikke testet, siden det per dags dato ikke er opprettet en database, og kan derfor kun anses som et teoretisk anslag om størrelse, generalisering og omfang. Det ønskes derimot tilbakemeldinger på kriteriene hvis presentert generaliseringsgrad ikke tilsvarer med forventningene.
 
 ==== Høringsdokumenter
 
