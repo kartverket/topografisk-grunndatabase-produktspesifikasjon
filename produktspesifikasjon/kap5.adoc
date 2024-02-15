@@ -2692,8 +2692,7 @@ image::figurer\objtype_gravplass.png[link=figurer\objtype_gravplass.png, alt="Bi
  
 [[havflate]]
 ===== «FeatureType» Havflate
-*Definisjon:* havområde som avgrenses av Kystkontur, Kystsperre, HavElvSperre og KystkonturTekniskAnlegg
-
+*Definisjon:* havområde som avgrenses av Kystkontur
 *Kriterier:*
 Alle øyer som er større enn 100 m&#178; og bredere enn 5 meter skal med i Topografisk grunndatabase. Øyer under minstemålet kodes som skjær.
  
@@ -2778,7 +2777,7 @@ image::figurer\objtype_havflate.png[link=figurer\objtype_havflate.png, alt="Bild
  
 [[industriområde]]
 ===== «FeatureType» Industriområde
-*Definisjon:* område, bebygd eller ubebygd, benyttet til industriformål
+*Definisjon:* område, bebygd eller ubebygd, benyttet til industri- og næringsformål
 
 Merknad:
 Omfatter også anlegg for vannforsyning, avfallshåndtering og rensing, samt kraftstasjon, transformatorstasjon o.l. I Topografisk grunndatabase inkluderes næringsområder/næringsparker der det drives ulike typer næringsvirksomhet, f.eks kontorlokaler, produksjonsbedrifter eller lager. Handel-/forretningsvirksomhet kan også forekomme i industriområder.
