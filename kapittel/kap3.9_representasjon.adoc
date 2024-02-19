@@ -22,4 +22,4 @@ Fra ca -250 m til ca 2500 m
 Ikke angitt
 
 === Identifikasjonsomfang
-<<HeleDatasettet,Hele datasettet>> #OBS!! OBS!! skal denne med?# 
+<<HeleDatasettet,Hele datasettet>> 
