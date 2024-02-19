@@ -2,7 +2,7 @@
 :kortnavn: TopografiskGrunndatabase 
 :versjon: 1.0 
 :skjemaversjon: 1.0 
-:publisert: 2024-02-06
+:publisert: 2024-02-19
 :underversjon: 2024-02-01 
 :metadata-url: Link_til_Geonorge
 :prodspek-forrige:
@@ -142,7 +142,7 @@ include::../kapittel/kap4_omfang.adoc[]
 === Omfang
 <<HeleDatasettet,Hele datasettet>>
 
-include::../produktspesifikasjon/kap5.adoc[] 
+include::modellRapport.adoc[] 
 
 <<<
 == Referansesystem
@@ -214,7 +214,7 @@ GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>.
 
 SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. Under en utlisting av SOSI-formatrealiseringen:
 
-include::../kapittel/SOSI_format_realisering.adoc[]
+include::SOSIformatRealisering.adoc[]
 
 [appendix]
 == Normative referanser
