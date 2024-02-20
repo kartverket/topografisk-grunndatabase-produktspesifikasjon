@@ -32,7 +32,7 @@ For datasett i høringen har vi følgende dokumentasjon:
 . Link til kommentarskjema.
 
 
-Selve produktspesifikasjonsdokumentene skal ikke bli oppdatert i høringsperioden (etter 20. februar), men GML-skjemaet kan bli oppdatert/utvidet i løpet av høringsperioden dersom dette vurderes som fornuftig for forståelse av innholdet i spesifikasjonene. Alle tilbakemeldinger skal registreres i kommentarskjemaet og sendes til ida.hope.barth@kartverket.no, eller ved å legge inn høringskommentar som "issue" i GitHub.
+Produktspesifikasjonsdokumentene skal ikke bli oppdatert i høringsperioden (etter 20. februar). Alle tilbakemeldinger skal registreres i kommentarskjemaet og sendes til ida.hope.barth@kartverket.no, eller ved å legge inn høringskommentar som "issue" i GitHub.
 
 UML-datamodellene for topografisk grunndatabase datasettet ligger også tilgjengelig i https://www.geonorge.no/verktoy/verktoy-for-produktspesifikasjon[SOSI-modellregister] og kan vurderes direkte der av de som har programvare for dette. På https://objektkatalog.geonorge.no/Pakke/Index/EAPK_DFC81BB8_4D8A_4673_8164_728B8FF2F6EC[geonorge.no] finnes en visning av SOSI-modellregister som også kan være en mulighet. UML-pakkene er gitt status "utkast" i SOSI-modellregister. 
 
