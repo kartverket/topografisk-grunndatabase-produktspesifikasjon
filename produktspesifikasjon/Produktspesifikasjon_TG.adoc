@@ -22,7 +22,7 @@ Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for
 
 |===
 |Versjon|Dato |Utførtav |Merknad
-|0.1|20240201|Ida Hope Barth, Mika Sundin, Nils Ivar Nes, Tore Freddy Bæk, Mathilde Skjæveland Skår og Åsmund Tjora|Utkast
+|1.0|20240201|Ida Hope Barth, Mika Sundin, Nils Ivar Nes, Tore Freddy Bæk, Mathilde Skjæveland Skår og Åsmund Tjora|Utkast
 |===
 
 
