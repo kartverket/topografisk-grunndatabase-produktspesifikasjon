@@ -19,7 +19,7 @@
 
 Topografisk grunndatabase skal være en ny landsdekkende, homogen kartdatabase i målestokk 1:10 000. Databasen skal primært baseres på eksisterende kilder, men vil være primædatakilde der det i dag ikke finnes tilfredstillende datagrunnlag. Topografisk grunndatabase skal være en DLM (Digital landskapsmodell), som betyr at kartobjektene skal ha sin virkelige plassering og skal være minimalt kartografisk redigert. 
 
-Dette er første versjon av produktspesifikasjon og vil utgjøre grunnlaget for arbeidet med å opprette databasen. Det vil derfor ikke være tilgjengelig testdata. Første versjon vil være en sammenstilling av eksisterende data fra primærkilder og vil per dags dato ikke tilfredstille fremtidsvisjonen om homogenitet. 
+Dette er første versjon av produktspesifikasjon og vil utgjøre grunnlaget for arbeidet med å opprette databasen. Det vil derfor ikke være tilgjengelig testdata. Første versjon vil være en sammenstilling av eksisterende data fra primærkilder og vil per dags dato ikke tilfredstille fremtidsvisjonen om homogenitet. Dette er en høring for innhold av Topografisk grunndatabase, hva som til slutt skal leveres ut og til hvem er ikke besluttet.
 
 Topografisk grunndatabase sendes ut på høring 20. februar 2024 med frist for å gi høringsinnspill 20. mars 2024. 
 
