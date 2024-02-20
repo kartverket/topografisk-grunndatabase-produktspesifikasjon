@@ -1914,7 +1914,13 @@ Merknad:  Dataene for de respektive landene kan da settes sammen slik at man få
   <complexType name="KonnekteringspunktType">
     <complexContent>
       <extension base="app:KvalitetPåkrevdType">
-        <sequence/>
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>konnekteringspunktets posisjon</documentation>
+            </annotation>
+          </element>
+        </sequence>
       </extension>
     </complexContent>
   </complexType>
