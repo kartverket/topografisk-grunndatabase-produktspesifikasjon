@@ -142,7 +142,7 @@ include::../kapittel/kap4_omfang.adoc[]
 === Omfang
 <<HeleDatasettet,Hele datasettet>>
 
-include::modellRapport.adoc[] 
+include::
 
 <<<
 == Referansesystem
