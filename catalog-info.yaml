@@ -14,7 +14,7 @@ spec:
 apiVersion: "backstage.io/v1alpha1"
 kind: "Group"
 metadata:
-  name: "security_champion_topografisk-grunndatabase-produktspesifikasjon"
+  name: "security_champion_topografisk-grunndatabase-produktspesifikasj"
   title: "Security Champion topografisk-grunndatabase-produktspesifikasjon"
 spec:
   type: "security_champion"
@@ -33,6 +33,6 @@ metadata:
     title: "topografisk-grunndatabase-produktspesifikasjon på GitHub"
 spec:
   type: "repo"
-  owner: "security_champion_topografisk-grunndatabase-produktspesifikasjon"
+  owner: "security_champion_topografisk-grunndatabase-produktspesifikasj"
   dependencyOf:
   - "component:topografisk-grunndatabase-produktspesifikasjon"
