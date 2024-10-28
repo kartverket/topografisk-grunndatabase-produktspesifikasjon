@@ -10,29 +10,3 @@ spec:
   lifecycle: "production"
   owner: "topografisk_grunndatabase"
   system: "standardisering"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Group"
-metadata:
-  name: "security_champion_topografisk-grunndatabase-produktspesifikasj"
-  title: "Security Champion topografisk-grunndatabase-produktspesifikasjon"
-spec:
-  type: "security_champion"
-  parent: "land_security_champions"
-  members:
-  - "NilsIvarNes"
-  children:
-  - "resource:topografisk-grunndatabase-produktspesifikasjon"
----
-apiVersion: "backstage.io/v1alpha1"
-kind: "Resource"
-metadata:
-  name: "topografisk-grunndatabase-produktspesifikasjon"
-  links:
-  - url: "https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon"
-    title: "topografisk-grunndatabase-produktspesifikasjon på GitHub"
-spec:
-  type: "repo"
-  owner: "security_champion_topografisk-grunndatabase-produktspesifikasj"
-  dependencyOf:
-  - "component:topografisk-grunndatabase-produktspesifikasjon"
