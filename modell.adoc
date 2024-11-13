@@ -1,1 +1,0 @@
-Bytt ut innholdet i denne fila, `modell.adoc`, med resultatet fra modelldokumentasjonsskriptet.
