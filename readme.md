@@ -1,4 +1,4 @@
-# Dokumentasjon av Produktspesifikasjoner knyttet til Topografisk Grunndatabase #
+# Produktspesifikasjoner for Topografisk Grunndatabase #
 
 Repo som inneholder asciidoc dokumentasjon for produktspesifikasjoner knyttet til Topografisk Grunndatabase.
 
@@ -8,6 +8,8 @@ Med bakgrunn i TG etableres det produkter i målestokker omkring 1:5000 - 1:2000
 Datamodellering gjøres i EA. Asciidoc-filer eksporteres ut fra UML-modell og sys sammen med skisser/bilder og tilleggstekster til helhetlig dokumentasjon i dette repoet.
 
 ## Produktspesifikasjon for N10 Beredskap ##
+
+Vektorprodukt med detaljering tilpasset målestokk ca 1:10000 med Forsvar og beredskap som den primære brukeren.
 
 HTML-visning av produktspesifikasjon: https://htmlpreview.github.io/?https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/blob/main/N10Beredskap/index.html
 
