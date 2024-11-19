@@ -1,28 +1,30 @@
-:datasett: Topografisk grunndatabase 
-:kortnavn: TopografiskGrunndatabase 
+:datasett: N10 Beredskap 
+:kortnavn: N10 
 :versjon: 1.0 
 :skjemaversjon: 1.0 
-:publisert: 2024-02-19
-:underversjon: 2024-02-01 
+:publisert: 2024-11-15
+:underversjon: 2024-11-15 
 :metadata-url: Link_til_Geonorge
 :prodspek-forrige:
 :versjon-forrige: 
 :bilde_sti: https://github.com/kartverket/topografisk-grunndatabase-produktspesifikasjon/tree/main/figurer
 
-include::../kapittel/filhode.adoc[]
+include::inkluder/filhode.adoc[]
 
 
 == Innledning, historikk og endringslogg
 
 === Innledning
-Topografisk grunndatabase (TG) er en DLM. Topografisk grunndatabase er en landsdekkende homogen kartdatabase. Kartdataene skal danne grunnlaget for kartplott i 1:20 000. Første versjon vil inneholde en sammenstilling av eksisterende data. Derfor vil kvalitetskrav som homogenitet først bli gjeldene ved senere versjoner.
+N10 Beredskap er homogent landsdekkende topografisk kartprodukt med detaljering tilpasset visning i målestokk ca 1:10000. N10 er utarbeidet spesielt med tanke på å dekke forsvarets behov og andre typer behov innenfor beredskap.
+
+N10 Beredeskap er basert på Topografisk grunndatabase (TG). TG samler og strukturer primærdata fra FKB og andre kilder til et homogent datagrunnlag med et bredt bruksformål. 
 
 === Historikk
 Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for en landsdekkende, homogen kartdatabase i stor målestokk. Arbeidet med første produktspesifikasjon var ett samarbeid mellom flere fagfelt; FKB, Kartprodukter, Datadelingsteamet, Standardisering og Sjø.
 
 |===
 |Versjon|Dato |Utførtav |Merknad
-|1.0|20240201|Ida Hope Barth, Mika Sundin, Nils Ivar Nes, Tore Freddy Bæk, Mathilde Skjæveland Skår og Åsmund Tjora|Utkast
+|1.0|{publisert}|Ida Hope Barth, Mika Sundin, Nils Ivar Nes, Tore Freddy Bæk, Mathilde Skjæveland Skår og Åsmund Tjora|Utkast
 |===
 
 
@@ -32,11 +34,11 @@ Arbeidet med å spesifisere TG startet 2023. Datasettet skulle dekke behovet for
 
 === Definisjoner
 
-include::../kapittel/definisjoner.adoc[]
+include::inkluder/definisjoner.adoc[]
 
 === Forkortelser
 
-include::../kapittel/forkortelser.adoc[]
+include::inkluder/forkortelser.adoc[]
 
 <<<
 
@@ -67,7 +69,7 @@ Norske tegn er ok hvis enkoding er riktig innstilt. Kontakt standardiseringssekr
 // Identisk med tag på pakka i EA for version.
 
 === Referansedato
-år-mnd-dag
+{underversjon}
 
 
 
@@ -106,7 +108,8 @@ Transport
 // Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier.
 
 === Sammendrag
-Topografisk grunndatabase skal dekke behovet for landsdekkende kartdata i stor målestokk. Hovedfokus er å danne ett grunnlag for kartdata, kartproduksjon og tilpasse databasen slik at den kan brukes for automatisk generalisering til mindre målestokker. 
+Topografisk grunndatabase skal dekke behovet for landsdekkende kartdata i stor målestokk. 
+Hovedfokus er å danne ett grunnlag for kartdata, kartproduksjon og tilpasse datagrunlaget slik at det kan brukes for automatisk generalisering til mindre målestokker. 
 
 
 ////
@@ -122,9 +125,9 @@ I PSS nevnes ikke brukstilfeller, men det er naturlig å plassere de her. En fra
 
 === Formål
 
-include::../kapittel/kap3.8_formal.adoc[]
+include::inkluder/kap3.8_formal.adoc[]
 
-include::../kapittel/kap3.9_representasjon.adoc[]
+include::inkluder/kap3.9_representasjon.adoc[]
 
 === Supplerende beskrivelse
 Data ikke angitt
@@ -133,7 +136,7 @@ Data ikke angitt
 
 == Spesifikasjonsomfang
 
-include::../kapittel/kap4_omfang.adoc[]  
+include::inkluder/kap4_omfang.adoc[]  
 
 <<<
 
@@ -147,28 +150,28 @@ include::modellRapport.adoc[]
 <<<
 == Referansesystem
 
-include::../kapittel/kap6_referansesystem.adoc[]
+include::inkluder/kap6_referansesystem.adoc[]
 
 
 <<<
 
 == Kvalitet
 
-include::../kapittel/kap7_kvalitet.adoc[]
+include::inkluder/kap7_kvalitet.adoc[]
 
 
 <<<
 
 == Datafangst
 
-include::../kapittel/kap8_datafangst.adoc[]
+include::inkluder/kap8_datafangst.adoc[]
 
 <<<
 
 
 == Datavedlikehold
 
-include::../kapittel/kap9_vedlikehold.adoc[]
+include::inkluder/kap9_vedlikehold.adoc[]
 
 <<<
 
@@ -189,7 +192,7 @@ Det eksisterer ikke i dag en egen skjermkartografi eller tegneregler for topogra
 
 == Leveranse
 
-include::../kapittel/kap11_leveranse.adoc[]
+include::inkluder/kap11_leveranse.adoc[]
 
 <<<
 
@@ -199,7 +202,7 @@ Ingen angitt informasjon
 == Metadata
 
 
-include::../kapittel/kap13_metadata.adoc[]
+include::inkluder/kap13_metadata.adoc[]
 
 <<<
 
@@ -219,7 +222,7 @@ include::SOSIformatRealisering.adoc[]
 [appendix]
 == Normative referanser
 
-include::../kapittel/normativ_ref.adoc[]
+include::inkluder/normativ_ref.adoc[]
 
 :sectnums!:
 
