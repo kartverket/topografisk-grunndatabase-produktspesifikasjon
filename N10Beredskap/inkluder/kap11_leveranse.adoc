@@ -1,4 +1,4 @@
-Leveransemetoder og formater for Topografisk grunndatabase er ikke etablert for {versjon}. Tanken er at det skal leveres ut i de filformater som er vanlig for FKB-datasettene og N50 - N5000 Kartdata.
+Leveransemetoder og formater for N10 Beredskap er ikke etablert for {versjon}. Tanken er at det skal leveres ut i de filformater som er vanlig for FKB-datasettene og N50 - N5000 Kartdata.
 
 === Leveransemetode GML filleveranse
 

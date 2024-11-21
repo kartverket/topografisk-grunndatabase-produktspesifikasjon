@@ -186,7 +186,7 @@ include::inkluder/kap9_vedlikehold.adoc[]
 Spesifikasjon for skjermkartografi er et hjelpemiddel til å oppnå en god skjermpresentasjon av kartdata fra Kartverket og Geovekst. Spesifikasjonen er tilpasset produktene N50-N5000 Kartdata og FKB-data. Den gir en grafisk fremstilling av kartobjektene vist i ulike målestokkintervaller.
 Spesifikasjonen er utviklet av Kartverket og Forsvaret, og kan benyttes fritt av alle som ønsker det. 
 
-Det eksisterer ikke i dag en egen skjermkartografi eller tegneregler for topografisk grunndatabase.
+Det eksisterer ikke i dag en egen skjermkartografi eller tegneregler for N10 Beredskap.
 
 <<<
 
