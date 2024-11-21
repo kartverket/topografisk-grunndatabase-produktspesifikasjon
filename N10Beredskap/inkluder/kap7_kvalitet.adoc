@@ -4,11 +4,11 @@
 <<HeleDatasettet,Hele datasettet>>
 
 === Beskrivelse av datakvalitet
-Topografisk grunndatabase vil innholde data fra mange ulike kilder og en beskrivelse av kvalitet, stedfestingsnøyaktighet, egenskapsnøyaktighet og tidfestingsnøyaktighet for hele databasen kan ikke beskrives i sin helhet. Alle objekter skal ha egenskapene datafangstmetode, oppdateringsdato, datafangstdato og opphavsinformasjon, som alle gir ett innblikk i kvaliteten på kartdataobjektet.
+N10 Beredskap vil innholde data fra Topografisk grunndatabase som er satt sammen av mange ulike kilder. Derfor vil en beskrivelse av kvalitet, stedfestingsnøyaktighet, egenskapsnøyaktighet og tidfestingsnøyaktighet for hele databasen ikke kunne beskrives i sin helhet. Alle objekter skal ha egenskapene datafangstmetode, oppdateringsdato, datafangstdato og opphavsinformasjon, som alle gir ett innblikk i kvaliteten på kartdataobjektet.
 
 Kvalitet kan også angis kvalitativt (noe NS-ISO 19115 og andre også omfatter). Det kan for eksempel være at geodataene er registrert etter en innmålingsinstruks, eller at de er resultat av beregninger beskrevet i en teknisk rapport eller vitenskapelig artikkel. Merk at dette er nært knyttet til kapittel 8.
 
-Topografisk grunndatabase skal være landsdekkende og homogent. Datasettet skal være fullstendig.
+N10 Beredskap skal være landsdekkende og homogent. Datasettet skal være fullstendig.
 
 
 

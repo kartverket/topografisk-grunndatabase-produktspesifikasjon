@@ -108,8 +108,8 @@ Transport
 // Temakategorier er en kodeliste i NS-ISO 19115. Hvis du ikke har tilgang til 19115, finner du en tabell i PSS avsnitt 13.5.2. Det angis én eller flere av kodene i tabellen for temakategorier.
 
 === Sammendrag
-Topografisk grunndatabase skal dekke behovet for landsdekkende kartdata i stor målestokk. 
-Hovedfokus er å danne ett grunnlag for kartdata, kartproduksjon og tilpasse datagrunlaget slik at det kan brukes for automatisk generalisering til mindre målestokker. 
+N10 Beredskap skal dekke behovet for landsdekkende kartdata i stor målestokk. 
+Hovedfokus er å lage kartografisk tilpasset kartdata, kartproduksjon og for videre bruk til automatisk generalisering til mindre målestokker. 
 
 
 ////
