@@ -4,7 +4,7 @@
 === Registeringsinstruks
 
 
-En første versjon av Topografisk grunndatabase vil være en samling av ulike geodatakilder, sydd sammen til en landsdekkende database i stor målestokk. Noen kategorier vil være naturlig å ajourføre i Topografisk grunndatabase og datafangst av ulik karakter vil være nødvendig. Dette er imidlertid ikke vurdert på det nåværende tidspunktet.
+En første versjon av N10 Beredskap vil være en samling av ulike geodatakilder hentet fra Topografisk grunndatabase, sydd sammen til en landsdekkende DCM i stor målestokk. 
 
 Egenskapen datafangstmetode er arvet fra geodatakilde og er en egenskap som er påkrevd for alle kartobjekter.
 ////

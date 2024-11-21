@@ -10,7 +10,7 @@
 Det er et ønske om å ha oppdaterte data, men vedlikeholdsfrekvens for kartleggingsprosjekter er ikke angitt. 
 
 ==== Vedlikeholdsbeskrivelse 
-På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt i Topografisk grunndatabase og hva som skal hentes fra andre geodatakilder. Det som skal ajourføres direkte i basen er avhengig av datafangstmetode.
+På nåværende tidspunkt er det vanskelig å si om det er nødvedig å ajourføre lokalt i N10 Beredskap, men målet er å ha automatiske generaliseringsløyper for å oppdatere N10 Beredskap.
 
 
 
@@ -24,7 +24,7 @@ På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt
 kontinuerlig
 
 ==== Vedlikeholdsbeskrivelse
-På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt i Topografisk grunndatabase og hva som skal hentes fra andre geodatakilder. Kartdata hentet fra andre datakilder vil være sentralt i det kontinuerlige vedlikeholdet. Oppdatering og ajourhold vil kunne basere seg på endringsanalyser.
+På nåværende tidspunkt er det vanskelig å si om det er nødvedig å ajourføre lokalt i N10 Beredskap, men målet er å ha automatiske generaliseringsløyper for å oppdatere N10 Beredskap.
 
 === Vedlikeholdsinformasjon Meldinger om feil og mangler
 
@@ -35,5 +35,5 @@ På nåværende tidspunkt er det vanskelig å si hva som skal ajourføres lokalt
 Kontinuerlig
 
 ==== Vedlikeholdsbeskrivelse
-Kartverket mottar gjennom kundesenteret og tjenesten Rettikartet.no en del meldinger om feil og mangler i i kartet fra publikum. Disse meldingene kan etter en vurdering mot andre datakilder bli lagt inn i Topografisk grunndatabase.
+Kartverket mottar gjennom kundesenteret og tjenesten Rettikartet.no en del meldinger om feil og mangler i i kartet fra publikum. Disse meldingene skal sendes til primærdataeier og endres der, før Topografisk grunndatabase oppdateres og N10 Beredskap kan hente inn data etter rettelse.
 
