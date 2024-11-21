@@ -13,12 +13,12 @@ Datasett
 {datasett}
 
 ==== Beskrivelse
-Detaljeringen av Topografisk grunndatabase er tilpasset 1:10 000. Databasen skal være homogen og landsdekkende.
+Detaljeringen av N10 Beredskap er tilpasset 1:10 000. Databasen skal være homogen og landsdekkende.
 
 ==== Utstrekningsinformasjon
 
 *Utstrekningbeskrivelse* + 
-Topografisk grunndatabase dekker Norges fastlandsterritorium 
+N10 Beredskap dekker Norges fastlandsterritorium 
 
 *Geografisk område* + 
 Nord: 72° +
