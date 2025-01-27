@@ -1,0 +1,24 @@
+//Administrative områder
+====
+Administrative områder inneholder grenser for fastlands Norge, og inndelingen av Norge i kommuner og fylker.
+====
+==== Fylke
+====
+administrativ inndeling av nasjonen på regionalt nivå
+====
+==== Kommune
+====
+inndeling i administrative og politiske enheter innenfor fylket
+====
+==== Grense
+====
+Generell avgrensingslinje
+====
+==== Grunnlinjepunkt
+====
+knekkpunkt på grunnlinjen
+====
+==== Teiggrensepunkt
+====
+koordinatbestemt punkt som er påvist, beskrevet og/eller markert spesielt i den geografiske avgrensinga av teigen
+====

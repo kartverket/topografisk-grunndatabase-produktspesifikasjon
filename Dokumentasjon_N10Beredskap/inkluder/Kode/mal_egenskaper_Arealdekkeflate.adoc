@@ -1,0 +1,49 @@
+//Det er egenskaper som skal med i henhold til produktspesifikasjonen
+
+#Omkoding av egenskaper og nye kolonner opprettes i henhold til produktspesifikasjon#
+
+[.red]#Denne delen er kodet som et scripttool i ArcGIS Pro, men kan lett gjøres om ved å legge til filstier og for-løkke for å gå igjennom alle de objekter i arealdekkeflate.#
+----
+import arcpy
+arcpy.env.overwriteOutput=True
+
+in_workspace = arcpy.GetParameterAsText(0)
+out_workspace = arcpy.GetParameterAsText(2)
+arcpy.env.workspace = in_workspace
+
+fil_skal_endres = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG_ferdig.gdb\ArealdekkeFlate_TG"
+fields = arcpy.ListFields(fil_skal_endres)
+liste_field_check = []
+for field in fields:
+    f = field.name
+    inn = f.upper()
+    liste_field_check.append(inn)
+
+liste = []
+mal = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG_ferdig.gdb\Mal_egenskaper_arealdekke"
+fields_mal = arcpy.ListFields(mal)
+liste_mal_navn = []
+for field in fields_mal:
+    f = field.name
+    inn = f.upper()
+    liste_mal_navn.append(inn)
+    if inn in liste_field_check:
+        continue
+    else:
+        navn_1 = field.name
+        navn = str(navn_1)
+        liste.append(navn)
+        typer = field.type
+        if typer == 'String':
+            typer = 'TEXT'
+        if typer == 'Integer':
+            typer = 'LONG'
+        if typer == 'SmallInteger':
+            typer = 'SHORT'
+        liste.append(str(typer))
+        lengde = field.length
+        liste.append(navn)
+        liste.append(lengde)
+        arcpy.management.AddField(fil_skal_endres, navn, typer, "", "", lengde, navn, "", "","")
+        liste = []
+----

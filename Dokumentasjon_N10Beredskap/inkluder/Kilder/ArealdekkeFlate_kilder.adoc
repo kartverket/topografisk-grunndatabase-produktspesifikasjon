@@ -1,0 +1,75 @@
+// Arealdekkeflate kilder
+
+===== FKB - AR5
+[cols="1,4,1"]
+|===
+|Kilde|Beskrivelse|N10 Beredskap
+
+|FKB - AR5| FKB-AR5 er eit Geovekst-datasett tilpassa målestokk 1:1000 og oppover, og viser arealressursane med vekt på produksjonsgrunnlaget for jord- og skogbruk. Det er eit detaljert, nasjonalt datasett, der landareal er delt inn etter arealtype, skogbonitet, treslag og grunnforhold. +
+ +
+**Det er viktig å påpeke at kilden har store områder som ikke er kartlagt og kan derfor ikke regnes som landsdekkende.** | 
+Myr +
+Skog +
+Åpen fastmark +
+SnøIsbre +
+Samferdsel +
+Ferskvann +
+DyrketMark +
+Bebygd +
+Hav
+|===
+[cols="1,3,1,3,3"]
+|===
+|AR5 modell|Beskrivelse|N10 modell|Beskrivelse|Kriterie
+
+|**Myr** + 
+__Arealtype 60__|Areal med myrvegetasjon og minst 30 cm tjukt torvlag|Myr|område med myrvegitasjon|Myr som er større enn 2000 m² og bredere enn 10 meter skal med i N10 Beredskap.
+
+|**Skog** +
+__Arealtype 30__
+|Areal med minst 6 tre pr dekar som er eller kan bli 5 m høge, og som er jamt fordelt på arealet.|Skog|Skog, delt inn i barskog, lauvskog og blandingsskog|Skogområder som er større enn 800 m² og bredere enn 10 meter skal med i N10 Beredskap. Skog som dekker hele øyer som er mindre enn minstemålet for skog, tas også med.
+
+|**Åpen fastmark** +
+__Arealtype 50__
+|Areal som ikkje er myr, og heller ikkje er jordbruksareal, skog, bebygd eller samferdsel.| ÅpentOmråde| Område som ikke er klassifisert som annet tema i henhold til gjeldende produktspesifikasjon| Åpent område som er større enn 400 m² og bredere enn 5 meter skal med i N10 Beredskap. Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i N10 Beredskap
+
+|**Bebygd** +
+__Arealtype 11__
+|Areal som er utbygd eller betydeleg opparbeida, samt tilstøytande areal som i funksjon er nært knytta til bygningane.| ÅpentOmråde| Område som ikke er klassifisert som annet tema i henhold til gjeldende produktspesifikasjon| Åpent område som er større enn 400 m² og bredere enn 5 meter skal med i N10 Beredskap. Åpent område som dekker hele øyer som er mindre enn minstemålet for åpent område skal med i N10 Beredskap
+
+|**SnøIsbre** + 
+__Arealtype 70__
+|Isbre eller snø som ikkje smelter om sommaren.
+
+|SnøIsbre|grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø
+Merknad: Masse av is og tettpakket snø som vesentlig ligger på land, der isen er i bevegelse, i motsetning til snømassen som ligger i ro. Isbre og snøfonn er slått sammen i definisjonen fordi det ofte kan være vanskelig å skille mellom dem.
+| Breer som er større enn 6 000 m² og bredere enn 20 meter skal med i Topografisk grunndatabase. Mindre isfrie områder beholdes dersom de er større enn 2 000 m² og bredere en 20 meter. Ett unntak fra regelen: Dersom terrengpunkt ligger på isfritt terreng, skal dette vises.
+
+|**Samferdsel** + 
+__Arealtype 12__
+|Samferdsel: Vegar og jernbane|Samferdsel|Samferdsel: Vegar og jernbane|Areal Samferdsel er tatt med, for å slippe å håndtere kompliserte arealdeler i generaliseringen.
+
+|**Ferskvann** + 
+__Arealtype 81__
+|Ferskvann: Innsjø|Innsjø|En ferskvannsflate som ikke er renndende vann|Innsjøer og øyer over 100 m² og bredere enn 3 meter skal med i Topografisk grunndatabase. Øyer i innsjø som er større enn 100 m² og bredere enn 3 meter skal med i Topografisk grunndatabase. Innsjøer over 2 500 m² skal være påført løpenummer for innsjø (vatnLøpenummer). For alle oppdemte og regulerte innsjøer der reguleringen er i drift kodes innsjøen med egenskapen Regulert. Det skal tilstrebes at alle innsjøer skal ha egenskapen høyde. Høyden skal angis i hele meter.
+
+|**Ferskvann** +
+__Arealtype 81__
+|Ferkvann: Elv|Elv|større vannvei for rennende vann representert ved flate|Elver bredere enn 3 meter og lengre enn 10 meter danner elveflater (flater med vannBredde 3 - 5). Øy i elv som er større enn 100 m² og bredere enn 5 meter skal med i Topografisk grunndatabase.
+
+|**Fulldyrka jord** +
+__Arealtype 21__
+| Jordbruksareal som er dyrka til vanleg pløyedjupn, og kan nyttast til åkervekster eller til eng, og som kan fornyast ved pløying| DyrketMark| område med jordbruksareal, som inbefatter fulldyrket og overflatedyrka jord.|Dyrket mark som er større enn 500 m² og bredere enn 15 meter skal med i Topografisk grunndatabase. Dyrket mark som dekker hele øyer som er mindre enn minstemålet for dyrket mark, skal med i N10 Beredskap
+
+|**Overflatedyrka jord** +
+__Arealtype 22__
+| Jordbruksareal som for det meste er rydda og jamna i overflata, slik at maskinell hausting er mulig| DyrketMark| område med jordbruksareal, som inbefatter fulldyrket og overflatedyrka jord.|Dyrket mark som er større enn 500 m² og bredere enn 15 meter skal med i Topografisk grunndatabase. Dyrket mark som dekker hele øyer som er mindre enn minstemålet for dyrket mark, skal med i N10 Beredskap
+
+|**Innmarksbeite** +
+__Arealtype 23__
+|Jordbruksareal som kan brukast som beite, men som ikkje kan haustast maskinelt. Minst 50 % av arealet skal vere dekka av kulturgras og beitetålande urter.|Innmarksbeite|Jordbruksareal som kan brukast som beite, men som ikkje kan haustast maskinelt. Minst 50 % av arealet skal vere dekka av kulturgras og beitetålande urter| Samme beskrivelse som AR5, på grunn av ønsket å skille ut innmarksbeidte fra annen jordbruk. 
+
+|**Hav** +
+__Arealtype 82__
+| Sjø og hav|HavFlate| Havområde som avgrenses av Kystkontur|Alle øyer som er større enn 100 m² og bredere enn 5 meter skal med i N10 Beredskap. Øyer under minstemålet kodes som skjær
+|===

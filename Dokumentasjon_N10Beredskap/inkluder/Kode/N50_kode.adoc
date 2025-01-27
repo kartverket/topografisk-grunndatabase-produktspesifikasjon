@@ -1,0 +1,119 @@
+#N50K#
+
+[.red]#Filepath N50K og AR5 ikke kartlagt#
+----
+N50_arealdekkeflate = Y
+N50_arealdekkeflate_editerbar = X 
+Omraade_ikke_kartlagt = r"Y:\Kartografi\TG\Kilder\AR5\Basisdata_0000_Norge_25833_FKB-AR5_FGDB\Basisdata_0000_Norge_25833_FKB-AR5_FGDB.gdb\AR5_ikke_kartlagt_forenklet"
+
+arcpy.analysis.Select(N50_arealdekkeflate, N50_arealdekkeflate_editerbar) 
+----
+[.red]#Denne navner om alle objekttypene slik at de tilsvarer produktspesifikasjonen#
+----
+
+
+N50_arealdekkeflate_editerbar = X
+in_table = Z
+update_field = ("subtypekode","objtype")
+with arcpy.da.UpdateCursor(N50_arealdekkeflate_editerbar, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        a = str(a)
+        if a == str(10):                             #Bymessigbebyggelse
+            row[1] = "BymessigBebyggelse"
+        elif a == str(3):                            #Innsjø
+            row[1] = 'Innsjø'  
+        elif a == str(4):                            #ElvBekk
+            row[1] = 'Elv'
+        elif a == str(2):                            #Havflate
+            row[1] = 'Havflate_N50'
+        elif a == str(23):                           #Innsjøregulert
+            row[1] = 'InnsjøRegulert'
+        elif a == str(8):                            #Myr
+            row[1] = 'Myr'
+        elif a == str(21):                           #Rullebane
+            row[1] = 'Rullebane'
+        elif a == str(6):                            #Skog
+            row[1] = 'Skog'
+        elif a == str(9):                            #SnøIsbre
+            row[1] = 'SnøIsbre'
+        elif a == str(1):                            #ÅpentOmråde
+            row[1] = 'ÅpentOmråde_N50'
+        elif a == str(7):                            #DyrketMark
+            row[1] = 'DyrketMark_N50'
+        elif a == str(5):                            #FerskvannTørrfall
+            row[1] = 'FerskvannTørrfall' 
+        else:
+            row[1]= 'IkkeAktuelt'
+        cursor.updateRow(row)
+        
+----
+[.red]#Klipper arealene etter omraade ikke_kartlagt i AR5.#
+----
+N50_clip = A
+arcpy.analysis.PairwiseClip(N50_arealdekkeflate_editerbar, Omraade_ikke_kartlagt, N50_clip) 
+----
+
+[.red]#N50 Arealdekke som skal dekke hele Norge, fordi objekttypen ikke eksisterer i AR5 eller at det er oppdaget hull i AR5 i etterkant og maa fylles AR5 omraadene# 
+----
+in_table = N50_clip
+lagring = B
+update_field = ("objtype")
+
+#N50 Arealdekke som skal dekke hele Norge
+list = []
+with arcpy.da.UpdateCursor(N50_arealdekkeflate_editerbar, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        utvalg = 'objtype = ' + "'" + a + "'"
+        if a in list:
+            continue
+        else:
+            if a == str("BymessigBebyggelse"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Rullebane"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("FerskvannTørrfall"): 
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("SnøIsbre"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Foss"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Tregruppe"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("ÅpentOmråde_N50"):
+                arcpy.analysis.Select(N50_arealdekkeflate_editerbar, lagring + str(a) + "_N50K_heldekkende", utvalg)
+        list.append(a)
+        cursor.updateRow(row)
+----
+[.red]#Arealer som kun skal være i omraade AR5 ikke er kartlagt.#
+----
+list = []
+with arcpy.da.UpdateCursor(in_table, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        utvalg = 'objtype = ' + "'" + a + "'"
+        if a in list:
+            continue
+        else:
+            if a == str("ÅpentOmråde_N50"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Innsjø"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("InnsjøRegulert"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Myr"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Tregruppe"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Elv"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Skog"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("Havflate"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+            elif a == str("DyrketMark"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_N50K", utvalg)
+        list.append(a)
+        cursor.updateRow(row)
+----

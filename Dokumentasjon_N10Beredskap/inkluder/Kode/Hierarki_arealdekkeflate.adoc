@@ -1,0 +1,152 @@
+// Sette sammen arealdekke
+
+==== Setter sammen arealdekkeflate fra arealene 
+[.green]#Legger alle arealene sammen i en gdb#
+
+[.blue]#Filepath#
+----
+TG_arealdekke_mappe = \
+Arealdekkeflate_N10_Beredskap_mal = \
+
+x = datetime.datetime.now()
+a = (x.strftime("%B"))
+b = (x.strftime("%Y"))
+z = a + b
+
+Arealdekkeflate_N10_Beredskap = \arealdekkeFlate_{z}'
+----
+[.blue]#Legger alle filene i mappen til en gdb#
+----
+arcpy.analysis.Select(Arealdekkeflate_N10_Beredskap_mal, Arealdekkeflate_N10_Beredskap)
+
+# Sti til geodatabasen (GDB)
+gdb_sti = TG_arealdekke_mappe
+
+# Sti til den tomme mål-fil (feature class) som skal brukes som target
+target_feature_class = Arealdekkeflate_N10_Beredskap
+
+# Set arcpy environment settings (valgfritt, men kan være nyttig for å håndtere stier og geodatabase-konflikter)
+arcpy.env.workspace = gdb_sti
+arcpy.env.overwriteOutput = True  # Hvis du ønsker å overskrive eksisterende filer
+
+# Hent alle feature classes i GDB
+feature_classes = arcpy.ListFeatureClasses()
+
+# Iterere gjennom hver feature class og bruke Append for å legge data til mål-fil
+for feature_class in feature_classes:
+    # Sjekk at feature class ikke er den samme som mål-fil
+    if feature_class != target_feature_class:
+        print(f"Legger til data fra {feature_class} til {target_feature_class}")
+        
+        #Bruk append for å legge til data
+        try:
+            arcpy.Append_management(feature_class, target_feature_class, "NO_TEST")  # "NO_TEST" for å ikke sjekke om feltene stemmer
+            print(f"Data fra {feature_class} er lagt til.")
+        except Exception as e:
+            print(f"Feil under append fra {feature_class}: {e}")
+
+print("Ferdig med å legge til alle data.")
+----
+
+[.green]#Hierarki#
+
+Sette sammen alle arealene til ett arealdekke, krever at vi setter opp ett hiararki for å fastsette hvilke kartobjekter som bestemmer hvor grensa skal gå. 
+
+[.blue]#Filepath#
+----
+arealdekkeflate_innfil = 
+----
+
+[.blue]#Legger til en ny kolonne der hierarkiverdien skal ligge#
+----
+arcpy.management.AddField(arealdekkeflate_innfil, "Hierarki", "LONG")
+----
+
+[.blue]#Beregner hierarkiverdien, som danner grunnlaget for hva som skal klippes mot hva.#
+----
+codeblock = """
+def hirarki_maker(inn):
+    if inn == 'Elv' or inn == 'Ferskvann' or inn == 'Innsjø' or inn == 'InnsjøRegulert' or inn == 'SnøIsbre' or inn == 'Havflate' or inn == 'Kanal' or inn == 'FerskvannTørrfall':
+        return 1
+    elif inn == 'Samferdsel' or inn == 'Havflate_N50':
+        return 2
+    elif inn == 'Alpinbakke' or inn == 'Campingplass' or inn == 'Golfbane' or inn == 'Gravplass' or inn == 'Industriområde' or inn == 'Lekeplass' or inn == 'Massedeponi' or inn == 'Masseuttak' or inn == 'Park' or inn == 'Rullebane' or inn == 'Skytebane' or inn == 'SportIdrettPlass' or inn == 'Transformatorstatjon':
+        return 3
+    elif inn == 'BymessigBebyggelse':
+        return 4
+    elif inn == 'Dyrketmark' or inn == 'Innmarksbeite'  or inn == 'Tettbebyggelse':
+        return 5
+    elif inn == 'ÅpentOmråde':
+        return 6
+    else:
+        return 7"""
+    
+
+arcpy.management.CalculateField(arealdekkeflate_innfil, "Hierarki", "hirarki_maker(!objtype!)", "PYTHON3", codeblock)
+----
+
+[.green]#Partisjonerer arealdekke i passende biter#
+
+[.blue]#Filepath#
+----
+Arealdekkeflate_N10_Beredskap = 
+partition = 
+partition_layer = 
+----
+
+[.blue]#Klipper opp i partisjoner til bruk videre#
+----
+result = arcpy.management.GetCount(partition)
+result = int(result[0]) + 1
+i = 1
+while i < result:
+    Arealdekkeflate_clip = f'\arealdekkeFlate_clip_{i}'
+    where_clause = f"OBJECTID = {i}"
+    arcpy.management.MakeFeatureLayer(partition, partition_layer)
+    arcpy.management.SelectLayerByAttribute(partition_layer, "NEW_SELECTION", where_clause)
+    arcpy.analysis.Clip(Arealdekkeflate_N10_Beredskap, partition_layer, Arealdekkeflate_clip)
+    i = i + 1
+----
+
+
+
+[.green]#Klipper arealene etter hierarki#
+
+
+I kapittelet over ble alle objekttyper organisert i et hierarki som bestemmer hvilke objekter som kan klippes mot hverandre. Dette kan være en potensiell feilkilde, ettersom arealer hentes fra ulike kilder og plasseres på forskjellige nivåer i hierarkiet. En løsning på dette kan være å lage et nytt trinn hvor arealene innenfor hvert nivå klippes mot hverandre på nytt. Dette kan vurderes i neste versjon.
+
+[.blue]#Filepath#
+----
+
+
+----
+[.blue]#Selekterer hierarkiverdi og Eraser mot resterende#
+----
+i = 3 # Denne maa gjøres om til max verdi av partisjoner
+result = i + 1
+
+b = 1
+
+while b < result:
+    a = 1
+    c = a + 1
+    Arealdekkeflate_clip = f'\\arealdekkeFlate_clip_{b}'
+    where_clause = f"Hierarki = {a}"
+    out_feature_class = f'\\arealdekkeFlate_bevar_{b}_{a}'
+    erase_out_feature_class = f'\\arealdekkeFlate_erase_{b}_{c}'
+    arcpy.analysis.Select(Arealdekkeflate_clip, out_feature_class, where_clause)
+    arcpy.analysis.Erase(Arealdekkeflate_clip, out_feature_class, erase_out_feature_class)
+    a = a + 1
+    while a < 8: #Hirarkiet gaar til 7 og vil derfor kun itterere igjenom 7 hierarkiverdier.
+        c = a + 1
+        where_clause = f"Hierarki = {a}"
+        out_feature_class = f'\\arealdekkeFlate_bevar_{b}_{a}'
+        Arealdekkeflate_clip = f'\\arealdekkeFlate_erase_{b}_{a}'
+        erase_out_feature_class = f'\\arealdekkeFlate_erase_{b}_{c}'
+        arcpy.analysis.Select(Arealdekkeflate_clip, out_feature_class, where_clause)
+        arcpy.analysis.Erase(Arealdekkeflate_clip, out_feature_class, erase_out_feature_class)
+        a = a + 1
+    b = b + 1
+
+----
+[.blue]#Ny append til ferdig arealdekke for N10 Beredskap#

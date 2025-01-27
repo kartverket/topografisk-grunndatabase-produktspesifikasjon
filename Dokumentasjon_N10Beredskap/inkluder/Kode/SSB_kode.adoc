@@ -1,0 +1,42 @@
+//SSB - Tettbebyggelse
+
+#SSB - Tettbebyggelse#
+
+[.red]#filepath for SSB Tettbebyggelse#
+----
+SSB_tettbebyggelse = r"Y:\Kartografi\TG\Kilder\Tettsteder_2023_SSB\Befolkning_0000_Norge_25833_Tettsteder2023_FGDB.gdb\tettsted"
+SSB_tettbebyggelse_editerbar = X
+----
+[.red]#Lager en editerbar versjon av orginalen#
+----
+arcpy.analysis.Select(SSB_tettbebyggelse, SSB_tettbebyggelse_editerbar) 
+----
+[.red]#Passer på at Toleranse og Oppløsning er som ønsket#
+----
+arcpy.env.XYTolerance = "0.001 Meters"
+arcpy.env.XYResolution = "0.0001 Meters"
+----
+[.red]#Gjor om til objekttype og modell ønsket for N10 Beredskap#
+----
+
+lstFields = arcpy.ListFields(SSB_tettbebyggelse_editerbar)
+
+x = False
+
+for field in lstFields:
+    if field.name == "objtype":
+        print ("Field exists")
+        x = True
+
+expression = "Tettbebyggelse"
+
+if not x:
+    print ("Field does not exist")
+    arcpy.management.AddField(SSB_tettbebyggelse_editerbar, "objtype", "TEXT")
+    arcpy.management.CalculateField(SSB_tettbebyggelse_editerbar, "objtype", "'Tettbebyggelse'", "PYTHON3")
+
+if x:
+    print ("Field exist")
+    #arcpy.AssignDefaultToField_management(SSB_tettbebyggelse_editerbar, "objtype", "Tettbebyggelse")
+    arcpy.management.CalculateField(in_table=SSB_tettbebyggelse_editerbar, field="objtype",  expression="'Tettbebyggelse'")
+----

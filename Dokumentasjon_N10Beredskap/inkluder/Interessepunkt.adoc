@@ -1,0 +1,6 @@
+//Interessepunkt (POI)
+
+====
+Interessepunkter (POI - Point of interest) inneholder punkter av spesiell interesse i det topografiske grunnkartet som kirker, sykehus, idrettshaller etc.
+====
+*Kilde*
