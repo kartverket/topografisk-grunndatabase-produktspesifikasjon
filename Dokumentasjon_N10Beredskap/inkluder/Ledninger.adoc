@@ -1,0 +1,31 @@
+// Ledning dokumentasjon
+=== Innledning
+Per dags dato eksisterer det to kilder for ledningsdata til N10 Beredskap. NRL, Nasjonalt register over luftfartshindre og FKB-Ledninger. I første omgang er FKB-Ledning valgt som kilde på grunn av større fullstendighet i FKB-Ledning sammenlignet med NRL. Det er fortsatt ikke fastsatt hvilke av de to som vil være primærkilde.
+
+I tillegg eksisterer det to databaser med ulik data av FKB-Ledning. 
+
+* *FKB-Ledning leveranse Geonorge* +
+FKB-Ledning som er tilgjengerlig i Geonorge har ikke med ledninger av trase med lavspent. Det er vedtatt i Geovekst at lavspent ikke skal leveres ut gratis og skal ikke være med i kartprodukter uten tjenestlige behov. N10 Beredskap skal kun leveres til forsvaret og vi mener at det er tjenestlige behov for lavspent. Geovekst er informert.
+
+* *FKB-Ledning fellesdatabase* +
+FKB-Ledning som ligger i fellesdatabasen har med lavspent, men dette er veldig varierende fra kommune til kommune hvor mye som er lagt inn. Det er i noen områder så mange lavspentlinjer med at dette må generaliseres bort. Vi har valgt å ta bort alle lavspentlinjer som ligger i tettbebyggelse.
+
+=== Kilde
+[pass]
+++++
+<table style="background-color: #f0f0f0;">
+  <tr>
+    <td>N10 Beredskap henter ledninger fra FKB-Ledninger med lavspentlinjer fra fellesdatabasen og ikke fra geonorge.</td>
+  </tr>
+</table>
+++++
+
+=== Kode
+==== Generaliserig av ledninger
+Dette kapittelet inneholder en del endring av kildemodell til N10 modell. Tilpassninger og endringer kommer i neste kapittel.
+
+
+include::Kode/Ledninger.adoc[]
+
+=== Neste versjon
+Ledning og vei ligger for nærme hverandre slik det ligger i N10 Beredskap i dag. I neste versjon bør ledning flyttes vekk fra vei for å få ett bedre lesbart kartgrunnlag.

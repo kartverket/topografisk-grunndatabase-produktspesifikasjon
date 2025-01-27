@@ -1,0 +1,50 @@
+//Samferdsel
+Samferdsel er ett viktig tema og som er representert som flate i AR5. Siden vi ikke skal bruke alt for mye tid i startfasen er arealet samferdsel bevart, men med senterlinjer over, slik at samferdsel kan symboliseres som de øvrige kartdatabasene. 
+
+
+=== Bane 
+====
+teoretisk linje som representerer ett enkelt eller flere parallelle spor som del av en banestrekning 
+====
+==== Kilde
+Det eksisterer i hovedsak to mulige kilder for jernbane. BaneNor og FKB - bane. Dette er en av de temaene vi ser nytten av å benytte begge kildene for å oppnå ønsket datasett. 
+
+*BaneNor*
+Har flere egenskaper som er ønsket og er beskrevet i  produktspesifikasjonen. 
+
+*FKB - Bane*
+Geometrisk mer detaljert. Det er en gjenntakene problem at deler av spesielt jernbanetunnel som forsvinner ved nykonstruksjon av bane i FKB. Dette er informert om til ansvarlige for datasettet. 
+
+==== Kode
+Ingen dokumentasjon i denne omgang
+
+=== Snøskuterløype
+====
+fastsatte ruter for ferdsel med snøskuter
+====
+==== Kilde
+Miljødirektoratet
+
+=== Jernbanestasjon
+====
+representasjonspunkt for stasjon, holdeplass eller godsterminal 
+====
+==== Kilde
+BaneNor
+
+=== Veglenke
+
+====
+objekttype som representerer lenker i vegnettet Eksempel: NVDB Referanselenkedeler 
+
+
+*Tilleggsbeskrivelse for produktspesifikasjonen:* Trasé for transportmiddel (f.eks. bil, traktor, ferje) eller gående.
+====
+==== Kilde
+Forenklet Elveg
+
+=== Vegsperring
+====
+fysisk sperring av vegen
+====
+==== Kilde

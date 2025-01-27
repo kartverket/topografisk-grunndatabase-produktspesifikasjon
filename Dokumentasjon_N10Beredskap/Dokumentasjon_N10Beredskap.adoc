@@ -1,0 +1,55 @@
+:datasett: N10 Beredskap 
+:kortnavn: N10 
+:versjon: 1.0 
+:skjemaversjon: 1.0 
+:publisert: x
+:underversjon: 2024-12-02 
+:prodspek-forrige:
+:versjon-forrige: 
+
+include::inkluder/filhode.adoc[]
+
+
+== Innledning, historikk og endringslogg
+
+=== Innledning
+Dokumentet beskriver transformasjonen fra TG til N10 Beredskap. Dette gjelder; modellendringer, modell- og kartografisk generalisering.
+
+N10 Beredskap er homogent landsdekkende topografisk kartprodukt med detaljering tilpasset visning i målestokk ca 1:10000. N10 Beredskap er utarbeidet spesielt med tanke på å dekke forsvarets behov og andre typer behov innenfor beredskap.
+
+N10 Beredeskap er basert på Topografisk grunndatabase (TG). TG samler og strukturer primærdata fra FKB og andre kilder til et homogent datagrunnlag med et bredt bruksformål. 
+
+=== Historikk
+Arbeidet med å spesifisere N10 Beredskap startet 2023. Datasettet skulle dekke behovet for en landsdekkende, homogen kartdatabase i stor målestokk. Arbeidet med første produktspesifikasjon var ett samarbeid mellom flere fagfelt; FKB, Kartprodukter, Datadelingsteamet, Standardisering og Sjø. Dokumentasjonen av metode brukt til å sammenstille data, vil være dokumentert i dette dokumentet.
+
+|===
+|Versjon|Dato |Utførtav |Merknad
+|1.0|{publisert}|Ida Hope Barth, Mika Sundin, Nils Ivar Nes, Arne Sonflå, Jon Endre Kirkholt, Christine Stang og Ådne Brandtzæg|
+|===  
+
+== Forvaltningsløsning
+== Dataflyt
+== *ArealdekkeFlate* 
+
+ArealdekkeFlate er sammenhengende og konsistent datasett som omfatter et spesefikt geografisk område uten hull eller overlapp mellom de ulike arealene.
+
+include::inkluder/ArealdekkeFlate.adoc[] 
+
+== *Ledninger*
+
+include::inkluder/Ledninger.adoc[] 
+
+== *Høydekurver og terrengpunkt*
+
+include::inkluder/Terrengpunkt.adoc[]
+
+== *Samferdsel*
+
+
+include::inkluder/samferdsel.adoc[] 
+
+== *Restriksjonsområder*
+
+
+include::inkluder/samferdsel.adoc[]
+

@@ -1,0 +1,62 @@
+//Terrengpunkt
+
+#TERRENGPUNKT#
+
+[.red]#Lagringsplass#
+----
+FKB_forsenkningspunkt = 
+FKB_terrengpunkt = 
+FKB_toppunkt = 
+
+Partitions_terrengpunkt = 
+Partitions_terrengpunkt_layer = 
+N10B_Terrengpunkt = r"Y:\Kartografi\TG\prosjektet\N10_Beredskap\N10_beredskap.gdb\Terrengpunkt"
+----
+
+[.red]#projeksjonen må med, dette er noen ganger problematisk ved innhenting av FKB data#
+----
+
+sr = arcpy.SpatialReference("ETRS_1989_UTM_Zone_33N")
+
+arcpy.management.DefineProjection(FKB_forsenkningspunkt, sr)
+arcpy.management.DefineProjection(FKB_terrengpunkt, sr)
+arcpy.management.DefineProjection(FKB_toppunkt, sr)
+----
+[.red]#Slår sammen featureclassene med forsenkningspunkter, toppunkter og terrengpunkter#
+----
+arcpy.management.Append([FKB_forsenkningspunkt, FKB_toppunkt], FKB_terrengpunkt)
+----
+[.red]#Legger til egenskaper som trengs ved bruk av verktøyet "Thin Spot Hights" i ArcGIS Pro#
+----
+arcpy.management.AddField(FKB_terrengpunkt, "invisibility_field", "SHORT")
+arcpy.management.AddField(FKB_terrengpunkt, "HOYDE_HELETALL", "LONG")
+arcpy.management.AddField(FKB_terrengpunkt, "Topp_bunnpunkt", "TEXT")
+----
+[.red]#Kalkulerer om høyden i FKB. Endrer Høydetekst i FKB til heltall høydetall til bruk i "Thin Spot Hights" i ArcGIS Pro#
+----
+arcpy.management.CalculateField(FKB_terrengpunkt, "HOYDE_HELETALL", "float(!hoyde!)")
+----
+[.red]#For at verktøyet skal fungere kan ikke alle terrengpunktene siles sammen men deles opp i partisjoner. 50 000 punkter kjører sammen. Mulig kommune kunne brukes hvis det er ønske om høyeste punkt i kommune#
+----
+arcpy.cartography.CreateCartographicPartitions(FKB_terrengpunkt, Partitions_terrengpunkt, 50000)
+----
+[.red]#Verktøyet "Thin Spot Hights" i ArcGIS Pro kjøres med partisjoner. Bruker 500m som ønsket distanse mellom terrengpunktene#
+----
+arcpy.management.MakeFeatureLayer(Partitions_terrengpunkt, Partitions_terrengpunkt_layer)
+fcl = Partitions_terrengpunkt_layer
+ant = int(arcpy.management.GetCount(fcl).getOutput(0))
+ant = ant + 1 
+i = 1
+while i < ant:
+    repl_field = "OBJECTID"
+    value = i
+    sql = '"{}" = {}'.format(repl_field,value)
+    print(value)
+    arcpy.management.SelectLayerByAttribute(Partitions_terrengpunkt_layer, 'NEW_SELECTION', sql)
+    arcpy.topographic.ThinSpotHeights(FKB_terrengpunkt, Partitions_terrengpunkt_layer,"HOYDE_HELETALL","invisibility_field", "Topp_bunnpunkt", "500 Meters")
+    i = i + 1
+----
+[.red]#Selekterer kun de utvalgte punktene til en featureclass for bruk i N10 Beredskap#
+----
+arcpy.analysis.Select(FKB_terrengpunkt, N10B_Terrengpunkt, "invisibility_field = 0")
+----

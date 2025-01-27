@@ -1,0 +1,76 @@
+//Ledninger
+
+#Ledninger#
+
+[.red]#Lagringsplass#
+----
+#Henter data
+FKB_ledninger = r"Y:\Kartografi\TG\Kilder\Ledninger\kopi_fellesbasen_des2024.gdb\trase_senterlinje"
+FKB_mastomriss = r"Y:\Kartografi\TG\Kilder\Ledninger\kopi_fellesbasen_des2024.gdb\masteomriss_grense"
+FKB_mast = r"Y:\Kartografi\TG\Kilder\Ledninger\kopi_fellesbasen_des2024.gdb\mast_punkt"
+Tettsted = r"Y:\Kartografi\TG\Kilder\Tettsteder_2023_SSB\Befolkning_0000_Norge_25833_Tettsteder2023_FGDB.gdb\tettsted"
+
+FKB_Ledninger_copy = 
+lavspent_layer = 
+Tettbebyggelse_layer = 
+FKB_Ledning_dissolve = 
+FKB_ledning_FL = 
+FKB_Ledning_end_start_point = 
+Linjer_aleine = 
+linjer_aleine_layer = 
+buffer_ledning = 
+FKB_mast_copy_layer = 
+buffer_ledning_layer = 
+FKB_mast_polygon = 
+FKB_mast_ved_ledning = 
+FKB_mast_uten_ledning = 
+----
+[.red]#projeksjonen må med, dette er noen ganger problematisk ved innhenting av FKB data fra Geonorge#
+----
+sr = arcpy.SpatialReference("ETRS_1989_UTM_Zone_33N")
+
+arcpy.management.DefineProjection(FKB_ledninger, sr)
+arcpy.management.DefineProjection(FKB_mastomriss, sr)
+arcpy.management.DefineProjection(FKB_mast, sr)
+----
+[.red]#Fjerner lavspentlinjer i Tettbebyggelse#
+----
+
+arcpy.management.CopyFeatures(FKB_ledninger, FKB_Ledninger_copy)
+arcpy.management.MakeFeatureLayer(FKB_Ledninger_copy, lavspent_layer)
+arcpy.management.SelectLayerByAttribute(lavspent_layer,  "NEW_SELECTION", "hovedbruk = 'lavspent'")
+arcpy.management.MakeFeatureLayer(Tettsted, Tettbebyggelse_layer)
+arcpy.management.SelectLayerByLocation(lavspent_layer, 'INTERSECT', Tettbebyggelse_layer, "", 'SUBSET_SELECTION', "NOT_INVERT")
+arcpy.management.DeleteRows(lavspent_layer)
+----
+[.red]#Sletter små linjer som ligger for seg selv#
+----
+arcpy.management.Dissolve(FKB_Ledninger_copy, FKB_Ledning_dissolve, "hovedbruk", "", "SINGLE_PART", "UNSPLIT_LINES", "")
+arcpy.management.FeatureToLine(FKB_Ledning_dissolve, FKB_ledning_FL)
+arcpy.management.FeatureVerticesToPoints(FKB_ledning_FL, FKB_Ledning_end_start_point, "BOTH_ENDS")
+arcpy.analysis.SpatialJoin(FKB_Ledning_dissolve, FKB_Ledning_end_start_point, Linjer_aleine)
+arcpy.management.MakeFeatureLayer(Linjer_aleine, linjer_aleine_layer)
+arcpy.management.SelectLayerByAttribute(linjer_aleine_layer, "NEW_SELECTION", '"Join_Count"= 2')
+arcpy.management.SelectLayerByAttribute(linjer_aleine_layer, "SUBSET_SELECTION", '"senterlinje_Length" < 100')
+arcpy.management.DeleteRows(linjer_aleine_layer)
+
+----
+[.red]#Sletter linjer som er korte og har en dead-end.#
+----
+arcpy.management.SelectLayerByAttribute(linjer_aleine_layer, "NEW_SELECTION", '"Join_Count"= 1')
+arcpy.management.SelectLayerByAttribute(linjer_aleine_layer, "SUBSET_SELECTION", '"senterlinje_Length" < 500')
+arcpy.management.DeleteRows(linjer_aleine_layer)
+----
+[.red]#Henter ut master som ligger innen buffer av ledninger som er hentet ut.#
+----
+arcpy.analysis.Buffer(Linjer_aleine, buffer_ledning, "1 Meters")
+arcpy.management.MakeFeatureLayer(buffer_ledning, buffer_ledning_layer)
+arcpy.management.MakeFeatureLayer(FKB_mast, FKB_mast_copy_layer)
+arcpy.management.SelectLayerByLocation(FKB_mast_copy_layer, 'INTERSECT', buffer_ledning_layer)
+arcpy.analysis.Select(FKB_mast_copy_layer, FKB_mast_ved_ledning)
+----
+[.red]#Legger sammen mastene.#
+----
+arcpy.management.Append(FKB_mast_uten_ledning, FKB_mast_ved_ledning, "NO_TEST", "", "")
+
+----

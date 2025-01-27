@@ -1,0 +1,83 @@
+// Arealdekkeflate kode
+
+#AR5#
+
+[.red]#Kildedata gjenngitt#
+----
+AR5 = r"Y:\Kartografi\TG\Kilder\AR5\Basisdata_0000_Norge_25833_FKB-AR5_FGDB\Basisdata_0000_Norge_25833_FKB-AR5_FGDB.gdb\fkb_ar5_omrade"
+editerbar_AR5 = Y
+----
+[.red]#lager en kopi av AR5, slik at vi ikke editerer på orginalen.#
+----
+arcpy.analysis.Select(AR5, editerbar_AR5)
+----
+[.red]#Vi trenger å kode om verdiene i AR5 til gjeldene verdier i N10 - Beredskap. AR5 har objekttype, men denne oppdateres da med objekttype som skal brukes videre.#
+----
+in_table = editerbar_AR5
+update_field = ("arealtype","objtype")
+with arcpy.da.UpdateCursor(in_table, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        if a == str(11):                         #Bebygde områder
+            row[1] = 'ÅpentOmråde'
+        elif a == str(81):                       #Ferskvann
+            row[1] = 'Ferskvann'             
+        elif a == str(21):                       #Fulldyrka jord
+            row[1] = 'Dyrketmark'
+        elif a == str(82):                       #Hav
+            row[1] = 'Hav'
+        elif a == str(99):                       #Ikke Kartlagt
+            row[1] = 'IkkeKartlagt'
+        elif a == str(23):                       #Innmarksbeite
+            row[1] = 'Innmarksbeite'
+        elif a == str(60):                       #Myr
+            row[1] = 'Myr'
+        elif a == str(22):                       #Overflatedyrka jord
+            row[1] = 'Dyrketmark'
+        elif a == str(12):                       #Samferdsel
+            row[1] = 'Samferdsel'
+        elif a == str(30):                       #Skog
+            row[1] = 'Skog'       
+        elif a == str(70):                       #Snøisbre
+            row[1] = 'SnøIsbre'
+        elif a == str(50):                       #Åpen fastmark
+            row[1] = 'ÅpentOmråde'
+
+        cursor.updateRow(row)
+        
+----
+[.red]#Selekterer alle tema som kun er aktuelle for N10 Beredskap#
+----
+in_table = editerbar_AR5
+lagring = X
+
+update_field = ("objtype")
+list = []
+with arcpy.da.UpdateCursor(in_table, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        utvalg = 'objtype = ' + "'" + a + "'"
+        if a in list:
+            continue
+        else:
+            if a == str("ÅpentOmråde"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Innmarksbeite"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Dyrketmark"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Myr"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Samferdsel"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Skog"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Ferskvann"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("Hav"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+            elif a == str("SnøIsbre"):
+                arcpy.analysis.Select(in_table, lagring + str(a) + "_AR5", utvalg)
+        list.append(a)
+        cursor.updateRow(row)
+----

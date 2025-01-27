@@ -1,0 +1,46 @@
+// Høydekurver og Terrengpunkt dokumentasjon
+
+==== Innledning
+I den første versjonen benyttes høydekurver fra 1:20 000 kartproduksjonen, som har en ekvidistanse på 10 meter. I produktspesifikasjonen står det at det skal være 5 meter. I tillegg er høydekurvene tilpasset N10 Beredskap ved å klippe etter Isbre i N10 Beredskap og ikke N50 Kartdata. Planen var å bruke FKB-Høydekurver, men datasettet har flere betydelige mangler som hindrer det i å fungere som en pålitelig kilde for landdekkende kartdata.
+
+* FKB Høydekurver er kuttet av bygninger i Oslo-området +
+* Det er i noen områder ikke 5 meters kurver, men 20 meter. Se bildet under +
+
+image::\Bilder\hoydekurver.PNG[alt tekst]
+
+
+I tillegg er høydekurvelinjene for detaljert og skaper støy i kartbildet. Ekvidistansen i FKB er 1 meter og tanken var å hente ut 5 meterkurvene til videre bruk i N10 Beredskap. Ved senere versjoner bør det vurderes om det skal genereres nye høydekurver for N10 Beredskap. 
+
+Det er veldig mange terrengpunkt i FKB, og derfor må dataene siles for å kunne brukes i N10 Beredskap. Under kapittel KODE beskrives fremgangsmåten.
+
+
+==== Kilde
+Terrengpunkt
+[pass]
+++++
+<table style="background-color: #f0f0f0;">
+  <tr>
+    <td>N10 Beredskap henter terrengpunkt fra FKB Høydekurver og FKB terrengpunkt</td>
+  </tr>
+</table>
+++++
+
+Høydekurver
+
+[pass]
+++++
+<table style="background-color: #f0f0f0;">
+  <tr>
+    <td>N10 Beredskap henter Høydekurver generert til 1:20 000 plotteserie. Ekvidistansen er 10 meter.</td>
+  </tr>
+</table>
+++++
+
+==== Kode
+===== Siling av terrengpunkt
+
+
+include::Kode/Terrengpunkt.adoc[]
+
+==== Neste versjon
+Noen terrengpunkt kan ligge for nærme andre kartelementer og bør generaliseres bort i neste versjon.

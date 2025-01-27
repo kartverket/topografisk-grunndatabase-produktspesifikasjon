@@ -1,0 +1,26 @@
+//Omkoder Ferskvann til Elv/innsjø ved unik id fra primærkilde FKB - Vann til AR5 - Vann.
+
+#Ferkvann til Elv, Innsjø.#
+
+[.red]#Denne delen av koden henter FKB - Vann og der arealet også eksisterer i AR5, kodes objektypen i AR5 ferkvann til enten elv eller Innsjø. Der vi ikke har informasjon om arealet, blir objekttypen ferskvann. Bruker av datasettet kan velge å symbolisere ferkvann enten som innsjø eller elv.#
+
+[.red]#Filepath#
+----
+FKB_vann = 
+AR5_vann = 
+
+FKB_vann_punkt = 
+AR5_spatialjoin = 
+----
+[.red]#Ferkvann i AR5 er en sekundærkilde, der FKB_vann_omrade er primærkilden. I AR5 er objekttypen ferkvann og skiller derfor ikke på elv eller innsjø som ønskes i N10 - Beredskap. På grunn av etterslep og mangelfull ajourhold i AR5, er det ca. 170 000 ferkvannarealer som ikke overlapper med primærkilden, det tilsvarer ca. 7 prosent av det totale antall ferkvannsobjekter i FKB AR5.
+
+[.red]#gjør polygonet om til midtpunkt med informasjon fra arealet#
+----
+arcpy.management.FeatureToPoint(FKB_vann, FKB_vann_punkt,"INSIDE")
+----
+[.red]#Kjører en overlappanalyse og overfører informasjon om objekttype fra FKB-vann der det eksisterer overlapp mellom de to datasettene.#
+----
+arcpy.analysis.SpatialJoin(AR5_vann, FKB_vann_punkt, AR5_spatialjoin)
+arcpy.management.CalculateField(AR5_spatialjoin, "objtype", '!objtype_1!')
+
+----

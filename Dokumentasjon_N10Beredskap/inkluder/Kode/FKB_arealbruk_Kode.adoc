@@ -1,0 +1,53 @@
+//FKB- arealbruk
+
+#FKB-Arealbruk#
+
+[.red]#Lagringsplass#
+----
+FKB_arealbruk = X
+FKB_arealbruk_Norge = r"Y:\Kartografi\TG\Kilder\FKB-Arealbruk\Basisdata_0000_Norge_5973_FKB-Arealbruk_FGDB.gdb\fkb_arealbruk_omrade"
+----
+[.red]#Legger til toleranse og oppløsning#
+----
+FKB_arealbruk_Norge = r"Y:\Kartografi\TG\Kilder\FKB-Arealbruk\Basisdata_0000_Norge_5973_FKB-Arealbruk_FGDB.gdb\fkb_arealbruk_omrade"
+layer = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG_ferdig.gdb\ArealdekkeFlate\fkb_arealbruk_layer"
+FKB_arealbruk_Norge_editerbar = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG_ferdig.gdb\ArealdekkeFlate\fkb_arealbruk"
+arcpy.env.XYTolerance = "0.001 Meters"
+arcpy.env.XYResolution = "0.0001 Meters"
+where_clause = '"objtype" = \'Campingplass\' or "objtype" = \'Skytebane\''
+arcpy.management.MakeFeatureLayer(FKB_arealbruk_Norge , layer)
+arcpy.management.SelectLayerByAttribute(layer, "NEW_SELECTION", where_clause, "INVERT")
+arcpy.management.CopyFeatures(layer, FKB_arealbruk_Norge_editerbar)
+----
+[.red]#Endrer objektype til FKB_objekttype for å skille mellom hva som er FKB objektype og hva som er tilpasset N10#
+----
+# Loop through feature classes looking for a field named 'objtype'
+FKB_arealbruk_Norge_editerbar = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG_ferdig.gdb\fkb_arealbruk"
+fieldList = arcpy.ListFields(FKB_arealbruk_Norge_editerbar)  # Get a list of fields for in_table
+for field in fieldList:  # Lloop through each field
+    if field.name.lower() == 'objtype':  # Look for the name objtype
+        print('inne')
+        arcpy.management.AlterField(FKB_arealbruk_Norge_editerbar, field.name, 'objtype_fkb', 'objtype_FKB')
+----
+[.red]#Legger til egenskapen objektype på nytt i FKB.#
+----
+arcpy.management.AddField(FKB_arealbruk_Norge_editerbar, "objtype", "TEXT")
+----
+[.red]#Endrer noen av FKB_objekttype til tilpasset navn til N10, eller kopieres alle de andre objekttypene over i N10 objettype uten å endre på navnet#
+----
+update_field = ("objtype_fkb","objtype")
+with arcpy.da.UpdateCursor(FKB_arealbruk_Norge_editerbar, update_field) as cursor:
+    for row in cursor:
+        a = row[0]
+        if a == str("Anleggsområde"):  
+            row[1] = "Massedeponi"
+        elif a == str("Grustak"): 
+            row[1] = 'Masseuttak'
+        elif a == str("Steintipp"): 
+            row[1] = 'Massedeponi'
+        else:
+            row[1] = a
+       
+
+        cursor.updateRow(row)
+----

@@ -1,0 +1,61 @@
+// Arealdekkeflate dokumentasjon
+
+==== Innledning
+Per i dag finnes det ikke et arealdekke i stor målestokk som dekker hele Norge. For å etablere et landsdekkende arealdekke er det derfor nødvendig å benytte flere kilder. Disse kildene har ulike definisjoner av de aktuelle temaene, de er tilpasset forskjellige bruksområder, samt har varierende ajourhold og målestokk. Det har blitt gjort forsøk på å sammenstille disse dataene til ett samlet datasett. Det er imidlertid viktig å understreke at det resulterende arealdekket ikke vil være homogent, gitt de betydelige forskjellene i kildenes natur.
+
+==== Problemstilling
+Det er gjennomført en vurdering av flere kilder for å dekke behovet beskrevet i produktspesifikasjonen. De vurderte kildene inkluderer AR5, SR16, N50K, FKB Arealbruk, FKB Vann og SSB. Hensikten er å benytte de mest oppdaterte dataene tilgjengelig. Siden kildene har ulike avgrensninger, og et arealdekke for N10 Beredskap skal være ett sammenhengende datasett uten overlapp eller hull, er det nødvendig å klippe kildene mot hverandre i et hierarkisk system før de kan settes sammen. Flere metoder har blitt forsøkt for å bevare de kartdataene med høyest kvalitet, særlig med hensyn til oppdatering og detaljnivå. Det har imidlertid vist seg å være en utfordring å oppnå dette på en tilfredsstillende måte.
+
+===== Sekundær- og primærkilder
+FKB - AR5 og N50K skiller seg fra de øvrige kildene ved at de representerer arealdekke, i motsetning til kun tematiske arealdata. FKB - AR5 har et høyere detaljnivå og er derfor valgt som førstevalget. Både N50K og FKB - AR5 består av en kombinasjon av sekundærkilder og primærkilder for ulike temaer. For eksempel omfatter FKB - AR5 ferskvann hentet fra FKB - Vann og samferdsel hentet fra FKB - Vei. Disse representerer sekundærkilder, og det foreligger et betydelig etterslep i ajourholdet av disse dataene sammenlignet med primærkildene FKB - Vann og FKB - Samferdsel. Dette innebærer at det eksisterer data av høyere kvalitet (fra FKB - Vann/Samferdsel), men disse er ikke integrert i et sammenhengende arealdekke (som FKB - AR5). Løsningen på kort sikt vil være å akseptere det eksisterende etterslepet i FKB - AR5, for å unngå potensielle feil knyttet til overlapp eller hull i det eksisterende arealdekket.
+
+[pass]
+++++
+<table style="background-color: #f0f0f0;">
+  <tr>
+    <td>Overlapp/gap problematikk</td>
+  </tr>
+  <tr>
+    <td>Arealdekke består av en rekke ulike arealer med varierende tema, hvor overlapp eller hull mellom arealene ikke er akseptabelt. Når et enkelt areal skal oppdateres fra en annen kilde, kreves det at alle tilstøtende arealer i arealdekket også oppdateres. Denne prosessen er relativt enkel å gjennomføre manuelt, men medfører større utfordringer når det gjelder kvaliteten ved automatisk erstatning. Det finnes imidlertid eksisterende metoder og løsninger for å håndtere denne problematikken. Overlapp kan håndteres effektivt ved at et hierarkisk system bestemmer hvilke arealer som skal prioriteres før andre. Å håndtere hull er mer utfordrende, men det finnes verktøy som kan identifisere det arealet som har den lengste fellesgrensen med gapet, og deretter fylle gapet med informasjon fra det tilstøtende arealet.</td>
+  </tr>
+</table>
+++++
+
+I denne versjonen vil tematiske arealer ikke bli inkludert, selv om de er nyere enn de eksisterende arealene i N10 Beredskap. Konklusjonen er at det er nødvendig med mer tid for å sikre at løsningen har tilstrekkelig kvalitet, og at nye feil ikke oppstår.
+
+
+===== Eksemplet Skog
+Det finnes tre potensielle kilder for skog i N10 Beredskap: AR5-skog, N50-skog og SR16-skog. Det er et ønske om å kunne klassifisere skog etter type, slik som i AR5 og SR16. Nibio, som har ansvaret for ajourholdet av både SR16 og AR5, har anbefalt bruk av SR16 fremfor AR5-skog på grunn av manglende oppdatering av skogdataene i AR5.
+
+Her oppstår igjen problematikken knyttet til arealdekke og arealtema. AR5 og SR16 overlapper i betydelig grad, men det finnes en andel på 5 % av skogarealene i hver kilde som ikke overlapper. Det er imidlertid en vesentlig forskjell mellom N50K og SR16. Ved en overlapanalyse mellom N50K og SR16 viser det seg at kun 50 % av N50K overlapper med SR16. Årsaken til dette kan være forskjeller i definisjoner.
+
+===== Ulik definisjon
+Brukerbehovene varierer for de kildene som danner grunnlaget for N10 Beredskap. N10 Beredskap er ment å brukes til topografi og ikke arealbruk. Det foreligger flere problemstillinger knyttet til bruken av kilder basert på arealbruk, fremfor arealer som er konstruert spesifikt for topografi.
+
+image::Bilder/Arealbruk_Topografi.png[]
+
+* *Eksempel Myr* +
+Definisjonen av Myr i AR5 angir areal med myrvegetasjon og minst 30 cm tjukt torvlag. Denne definisjonen gjør at det vil være arealer av Myr, der vi vil oppfatte som skog. 
+
+* *Eksempel Innmarksbeite* +
+Definisjonen av Innmarksbeite i AR5 angir at Innmarksbeite også kan ligge i skog. Dette vil også være problematisk ved tanke på topografi. 
+
+==== Kilder
+include::Kilder/ArealdekkeFlate_kilder.adoc[]
+
+==== Kode
+===== Modellgeneralisere TG - N10 ArealdekkeFlate
+Dette kapittelet inneholder en del endring av kildemodell til N10 Beredskap modell. Tilpassninger og endringer kommer i neste kapittel.
+
+
+include::Kode/AR5_kode.adoc[]
+include::Kode/N50_kode.adoc[]
+include::Kode/FKB_arealbruk_Kode.adoc[]
+include::Kode/SSB_Kode.adoc[]
+include::Kode/mal_egenskaper_Arealdekkeflate.adoc[]
+
+
+===== Modifisering og tilpassninger av arealer
+
+include::Kode/Ferkvann_til_elv_innsjo_kode.adoc[]
+include::Kode/Hierarki_arealdekkeflate.adoc[]

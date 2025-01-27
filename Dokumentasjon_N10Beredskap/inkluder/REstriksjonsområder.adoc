@@ -1,0 +1,32 @@
+//Restriksjonsområder
+====
+Restriksjonsområder inneholder: 
+Forekomster og grenser vernet etter Lov om naturvern og grenser som ikke er tilknyttet administrative områder
+====
+==== Allmenning
+====
+område som alle, eller en bestemt gruppe har bruksrett til
+====
+*Kilde* +
+Statskog
+
+==== Flyplassavgrensning
+====
+avgrensning av flyplassområde
+====
+*Kilde* +
+
+==== Naturvernområde
+====
+naturvernområde
+====
+*Kilde* +
+Miljødirektoratet
+
+==== Skytefelt
+====
+område for militære avdelingers skarpskyteøvelse til lands og/eller til vanns. Gjelder også testfelt knyttet til våpen- spregningsindustri
+====
+
+*Kilde* +
+Forsvarsbygg. Uttrekk levert opprinnerlig til N50K, 2025.
