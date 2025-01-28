@@ -1,0 +1,35 @@
+// Bygninger og anlegg
+=== Innledning
+Aktuell kilde for grupperingen bygninger og anlegg i N10 Beredskap er i de fleste tilfeller FKB-datasett. Supplering fra andre datasett i form av f.eks. POI-er for uttegning av symboler er aktuelt.
+
+
+
+=== Kilder
+
+* *FKB-Arealbruk* +
+
+* *FKB-Bygning* +
+Omrissgeometri hentes fra FKB-Bygning. 
+
+* *FKB-BygnAnlegg* +
+De fleste objekttyper som brukes i N10 Beredskap kommer fra dette FKB-datasettet.
+Objekttype Navigasjonsinstallasjon fra FKB-datasettet brukes ikke. 
+
+* *FKB-Ledning* +
+Bruk av data fra FKB-Ledning er beskrevet i eget kapittel.
+
+* *FKB-Vann* +
+Kun et fåtall objekttyper hentes fra dette datasettet.
+
+* *FKB-Veg* +
+Kun et fåtall objekttyper hentes fra dette datasettet.
+
+
+==== Kode
+Omkodinger og testing er utført v.h.a. FYSAK-makroer med Python-overbygning.
+
+Legger ut egen lenke til repos med kode. Makroene er det viktigste, Python-koden er  hovedsaklig brukt til å administrere dataflyt.
+
+En av utfordringee ved omkodingen er få til god håndtering av alle tilleggsbetingelser av ulike typer som er beskrevet i datamodellen. Det gjelder varianter av geometribegrensninger for lengde, areal og høyde samt omgjøring av geometrirepresentasjon.
+
+
