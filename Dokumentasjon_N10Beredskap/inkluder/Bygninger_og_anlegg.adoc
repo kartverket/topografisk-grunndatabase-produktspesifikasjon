@@ -28,7 +28,7 @@ Kun et fåtall objekttyper hentes fra dette datasettet.
 ==== Kode
 Omkodinger og testing er utført v.h.a. FYSAK-makroer med Python-overbygning.
 
-Legger ut egen lenke til repos med kode. Makroene er det viktigste, Python-koden er  hovedsaklig brukt til å administrere dataflyt.
+Makroene er det viktigste, Python-koden er hovedsaklig brukt til å administrere dataflyt.
 
 En av utfordringee ved omkodingen er få til god håndtering av alle tilleggsbetingelser av ulike typer som er beskrevet i datamodellen. Det gjelder varianter av geometribegrensninger for lengde, areal og høyde samt omgjøring av geometrirepresentasjon.
 
