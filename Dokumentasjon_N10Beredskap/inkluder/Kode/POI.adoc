@@ -8,6 +8,35 @@ fgdb_path =
 gpkg_path = 
 fgdb_path_ferdig = 
 ----
+[.red]#Transformerer fra GPKG til FGDB#
+----
+arcpy.env.overwriteOutput = True
+
+#Jeg er ikke helt bevandret i geoPackage, men jeg får ikke dette scriptet til å fungere, så lenge jeg ikke legger til alle filene i gpkg i kartbildet i ArcGIS Pro.
+#Dette bor være noe man bor tenke paa, hvis det ikke fungerer slik man onser i ettertid og skriver om dette scriptet.
+
+# Opprett en File Geodatabase (FGDB) med samme navn som GeoPackage
+fgdb_path = r"Y:\Kartografi\TG\Kilder\POI\POI.gdb"  # Feature class der feltene skal legges til
+# Sti til GeoPackage (GPKG)
+gpkg_path = r"Y:\Kartografi\TG\Kilder\POI\N10datasett.gpkg"  # GeoPackage fil
+
+walk = arcpy.da.Walk(gpkg_path)
+
+for path, names, filenames in walk:
+    for fname in filenames:
+
+        # Splitte teksten ved punktum og ta delene etter det
+        deler = fname.split('.')
+        if len(deler) > 1:
+            fcname = deler[1].strip()  # Fjern eventuelle ledende eller etterfølgende mellomrom
+            print(fcname)
+            out_feature_class = os.path.join(fgdb_path, fcname)
+            print (out_feature_class)
+        else:
+            print("Punktum finnes ikke i teksten.")        
+        arcpy.management.CopyFeatures(fname, out_feature_class)
+
+----
 [.red]#Funksjon for å legge til filnavn i et nytt felt før merge#
 ----
 def add_source_file_field(feature_classes, fgdb_path):
