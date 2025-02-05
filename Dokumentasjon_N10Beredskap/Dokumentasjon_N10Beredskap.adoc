@@ -43,13 +43,14 @@ include::inkluder/Ledninger.adoc[]
 
 include::inkluder/Terrengpunkt.adoc[]
 
-== *Samferdsel*
+== *Punkt av interesse*
 
-
-include::inkluder/samferdsel.adoc[] 
+include::inkluder/POI.adoc[]
 
 == *Restriksjonsområder*
 
+include::inkluder/REstriksjonsområder.adoc[] 
 
+== *Samferdsel*
 include::inkluder/samferdsel.adoc[]
 

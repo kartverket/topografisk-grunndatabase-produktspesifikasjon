@@ -1,0 +1,16 @@
+//Begrensningskurver
+
+====
+Begrensningskurver er linjen som avgrenser polygonet arealdekkeflate. 
+====
+
+*Kilde*
+Genererte, AR5, N50K, FKB Arealbruk og SSB
+
+==== Innledning
+Det ligger viktig informasjon på begrensningskurvene og denne informasjonen fra kildene skal bevares så godt det lar seg gjøre. Det er imidlertidig slik at arealene klippes mot hverandre i ett hierarki og noen linjer vil derfor oppstå som nye ved sammensying av arealdekkeflate i N10 Beredskap. 
+
+For å løse dette har vi valgt å generere nye begrensningskurver for arealdekke og gjøre en overlayanalyse og overføre egenskaper fra der geometrien er helt lik som kilden.
+
+Dette er tidskrevende men informasjonen fra begrensningskurvene r så viktig at vi anser dette som essensielt for resultatet.
+

@@ -8,7 +8,6 @@ I den første versjonen benyttes høydekurver fra 1:20 000 kartproduksjonen, som
 
 image::\Bilder\hoydekurver.PNG[alt tekst]
 
-
 I tillegg er høydekurvelinjene for detaljert og skaper støy i kartbildet. Ekvidistansen i FKB er 1 meter og tanken var å hente ut 5 meterkurvene til videre bruk i N10 Beredskap. Ved senere versjoner bør det vurderes om det skal genereres nye høydekurver for N10 Beredskap. 
 
 Det er veldig mange terrengpunkt i FKB, og derfor må dataene siles for å kunne brukes i N10 Beredskap. Under kapittel KODE beskrives fremgangsmåten.

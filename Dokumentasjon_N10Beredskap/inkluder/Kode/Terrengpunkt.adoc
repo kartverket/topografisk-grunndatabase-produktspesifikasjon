@@ -1,4 +1,4 @@
-//Terrengpunkt
+//Terrengpunkt og hoydekurver
 
 #TERRENGPUNKT#
 
@@ -10,7 +10,7 @@ FKB_toppunkt =
 
 Partitions_terrengpunkt = 
 Partitions_terrengpunkt_layer = 
-N10B_Terrengpunkt = r"Y:\Kartografi\TG\prosjektet\N10_Beredskap\N10_beredskap.gdb\Terrengpunkt"
+N10B_Terrengpunkt = 
 ----
 
 [.red]#projeksjonen må med, dette er noen ganger problematisk ved innhenting av FKB data#
@@ -59,4 +59,137 @@ while i < ant:
 [.red]#Selekterer kun de utvalgte punktene til en featureclass for bruk i N10 Beredskap#
 ----
 arcpy.analysis.Select(FKB_terrengpunkt, N10B_Terrengpunkt, "invisibility_field = 0")
+----
+
+#HØYDEKURVER#
+
+Hoydekurver bør genereres på nytt for N10 Beredskap, hvis det er ett ønske om 5 meters ekvidistanse. Følgene kode er kun for å tilpasse høydekurvene etter ønske om å ha ulik farge på høydekurver over isbre og all annent terreng. Siden Arealdekke er noe annerledes enn det som er i 1:20 000 i dag, må høydekurvene først samles og deretter deles opp. Dette er tidkrevende og datasettet må partisjoneres.
+
+
+[.red]#Lagringsplass#
+----
+hoydekurver_isbre = 
+hoydekurver = 
+Hoydekurver_N10_Beredskap = 
+Partitions_hoydekurver = 
+Partitions_hoydekurver_layer = 
+hoydekurver_layer = 
+hoydekurver_fc = 
+isbrelag_fc = 
+Arealdekkeflate_fc = 
+output_fc = 
+----
+[.red]#Merger 1:20 000 datasettet#
+
+Setter sammen hoydekurvene fra 1:20 000 produksjonen, fordi isbre aealene er oppdatert siden og isbre analysen må oppdateres
+----
+arcpy.management.Merge([hoydekurver, hoydekurver_isbre], Hoydekurver_N10_Beredskap)
+----
+[.red]#Selekterer Isbre fra arealdekkeflate#
+----
+expression =  '"objtype" = \'SnøIsbre\''
+arcpy.analysis.Select(Arealdekkeflate_fc, isbrelag_fc, expression)
+----
+[.red]#Lager partisjoner for hoydekurvene#
+
+----
+arcpy.cartography.CreateCartographicPartitions(Hoydekurver_N10_Beredskap, Partitions_hoydekurver, 500000)
+----
+[.red]#Deler opp data i partisjoner, i tillegg til angi om det er isbre-hoydekurver eller terreng-hoydekurver#
+----
+arcpy.management.MakeFeatureLayer(Partitions_hoydekurver, Partitions_hoydekurver_layer)
+arcpy.management.MakeFeatureLayer(Hoydekurver_N10_Beredskap, hoydekurver_layer)
+fcl = Partitions_hoydekurver_layer
+ant = int(arcpy.management.GetCount(fcl).getOutput(0))
+
+ant = ant + 1
+print(ant)
+i = 1
+while i < ant:
+    repl_field = "OBJECTID"
+    value = i
+    sql = '"{}" = {}'.format(repl_field, value)
+    print(value)
+    
+    #Velg objektet fra Partitions_hoydekurver
+    arcpy.management.SelectLayerByAttribute(Partitions_hoydekurver_layer, 'NEW_SELECTION', sql)
+    
+    #Velg de høydekurver som intersecter Partitions_hoydekurver
+    arcpy.management.SelectLayerByLocation(hoydekurver_layer, "INTERSECT", Partitions_hoydekurver_layer)
+    
+    #Sjekk om det er noen høydekurver som overlapper
+    count_hoydekurver = arcpy.management.GetCount(hoydekurver_layer)[0]
+    
+    if int(count_hoydekurver) > 0:  # Hvis det er høydekurver som overlapper
+        print(f"Det finnes {count_hoydekurver} høydekurver som overlapper.")
+        
+        # Sjekk om det er noen objekter i isbre-laget
+        count_isbre = arcpy.management.GetCount(isbrelag_fc)[0]
+        
+        if int(count_isbre) > 0:  # Hvis det er objekter i isbre-laget
+            print(f"Det finnes {count_isbre} objekter i isbre-laget.")
+            
+            # Utfør Clip og Erase hvis begge lagene har data
+            arcpy.analysis.Clip(hoydekurver_layer, isbrelag_fc, hoydekurver_isbre + str(value) + "januar")
+            arcpy.analysis.Erase(hoydekurver_layer, isbrelag_fc, hoydekurver + str(value) + "januar")
+        else:
+            print("Ingen objekter i isbre-laget å bruke for Clip eller Erase.")
+    else:
+        print("Ingen høydekurver som overlapper.")
+
+    i = i + 1
+----
+[.red]#Merger isbre høydekurvene for seg#
+----
+import arcpy
+import os
+
+fgdb_path = 
+arcpy.env.workspace = fgdb_path
+#Hent alle feature classes i geodatabasen
+feature_classes = arcpy.ListFeatureClasses("Hoydekurver_Isbre*",feature_type='polyline')
+print(feature_classes)
+
+
+#Kontroller at vi har feature classes i GDB-en
+if not feature_classes:
+    print("Ingen feature classes funnet i geodatabasen.")
+else:
+    #Filnavn for den nye sammenslåtte feature classen
+    merged_fc = os.path.join(fgdb_path, "Hoydekurver_Isbre")
+
+    try:
+        #Bruk Merge for å slå sammen alle feature classes i GDB-en
+        arcpy.Merge_management(feature_classes, merged_fc)
+        print(f"Alle feature classes er slått sammen til: {merged_fc}")
+    except Exception as e:
+        print(f"Feil ved sammenføyning: {e}")
+
+----
+[.red]#Merger terreng høydekurvene for seg#
+
+----
+import arcpy
+import os
+
+fgdb_path = 
+arcpy.env.workspace = fgdb_path
+#Hent alle feature classes i geodatabasen
+feature_classes = arcpy.ListFeatureClasses("Hoydekurver_N10*",feature_type='polyline')
+print(feature_classes)
+
+
+#Kontroller at vi har feature classes i GDB-en
+if not feature_classes:
+    print("Ingen feature classes funnet i geodatabasen.")
+else:
+    #Filnavn for den nye sammenslåtte feature classen
+    merged_fc = os.path.join(fgdb_path, "Hoydekurver")
+
+    try:
+        #Bruk Merge for å slå sammen alle feature classes i GDB-en
+        arcpy.Merge_management(feature_classes, merged_fc)
+        print(f"Alle feature classes er slått sammen til: {merged_fc}")
+    except Exception as e:
+        print(f"Feil ved sammenføyning: {e}")
 ----
