@@ -1,0 +1,595 @@
+﻿!========================================================================================
+!
+!Makromal for å omkode innhold i FKB-Bygning til bruk i N10-Beredskap bygning og anlegg
+!Datakilder: FKB-Bygning 
+!Overbygning: Pythonskript som henter inn aktuelle filer og lager FYSAK-jobbnakro
+!
+!Variabler:
+!Arbeidskatalog          : $arbeidskatalog
+!filliste                : $filliste
+!Kommunenr               : $kommnr
+!KatalogN10Bdata         : $n10b_katalog
+!                          Resultatkatalog for genererte N10B-data
+!KatalogSlettedeObjekter : $slettet_katalog
+!                          Inneholder forekomster som ikke blir med ut fra diverse kriterier
+!                          som areal, lengde osv.
+!Utropstegn  :           : $utropstegn
+!                          Settes blank dersom diverse testutskrifter skal aktiveres
+!TegnIKkeAktive          : $tegn_ikke_aktive
+!                          Verdi 1 eller 0
+!=========================================================================================
+!
+!
+! - 20240930
+!   Reduserer data fra FKB-Bygning til N10-representasjon
+! - 20241002 
+!   Fjerner øyer (atrium) mindre enn terskelverdi fra bygningsflater
+! - 20241125 
+!   Gjør ikke om påbygg som har felles geometri med bolig til punkt selv om de er under minstemålet
+!=====================================================================================
+
+FysakVersjon >= L5_2024-09-13
+
+UTFØR
+
+.Fil/Oppsett
+..PekPassiv 1
+..PekRaster 1
+..SlettIndeks 0
+..Rens 0
+..Arbeids-katalog $arbeidskatalog
+!..MKO-katalog
+..IDX-katalog
+!Definerer ikke NGIS-mappe her
+!..NGIS-lokal C:\NGIS
+!..Arbeids-koordsys " 23"
+..LagIdent 1
+
+.Lag/oppsettDatalag
+..Datalag Datalag-1
+..TegnData_v1 1
+..TegnData_v2 $tegn_ikke_aktive
+
+.Fil/Filliste/Åpne
+..NyIndeks 0
+..FilListe $arbeidskatalog\$filliste
+..Steng 1
+..Bakgrunn 0
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+
+.Utvalg/Av
+
+! =================================================================================
+! Fjerner øyer (atrium) mindre enn terskelverdi i bygninger
+
+
+! Finner bygninger med atrium
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Bygning"&
+"og LENGDE_INDRE_AVGRENS > 0.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..TEMP-INFO HAR_ØY"
+".SLUTT"
+
+! Flatedanner indre øy(er)
+.Flate/LinjeFlate
+..Egenskapsnavn "..TEMP-INFO HAR_ØY"
+..3D-beregning 0
+
+! Velger bygninger
+! Finner bygninger med atrium
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Bygning"&
+"OG ..TEMP-INFO = HAR_ØY"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+! Gjør om flate til punkt
+.Flate/Fjern
+
+
+! Velger øyer i bygning mindre enn terskelverdi og sletter
+.Utvalg/Egenskap
+..Tekst "VELG .FLATE"&
+"og ..objtype != Bygning"&
+"og ..TEMP-INFO = HAR_ØY"&
+"og AREAL < 50.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn FilNavn $slettet_katalog\$kommnr-Bygning_atrium_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+! Velger midlertidig flate som beskriver øyer i bygning større enn terskelverdi og sletter
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 0
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 1
+
+.Utvalg/Egenskap
+..Tekst "VELG .FLATE"&
+"og ..objtype != Bygning"&
+"og ..TEMP-INFO = HAR_ØY"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+! Velger rep.pkt og avgrensningslinjer for å repolygonisere bygninger som har fått fjernet små atrium
+! Velger midlertidig flate som beskriver øyer i bygning større enn terskelverdi og sletter
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+
+.Utvalg/Egenskap
+..Tekst "Velg ..TEMP-INFO = HAR_ØY"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Flate/Total
+
+! Legger til merknad om at små øyer er fjernet - start
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 0
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+.Utvalg/Egenskap
+..Tekst "Velg .FLATE"&
+"OG ..TEMP-INFO = HAR_ØY"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..INFORMASJON "Fjernet eventuelle øy(er) mindre enn terskelverdi"
+".SLUTT"
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+
+.Utvalg/Egenskap
+..Tekst "Velg ..TEMP-INFO = HAR_ØY"
+..NullstillUtvalg 1
+..TegnNytt 1
+
+! Legger til merknad om at små øyer er fjernet - slutt
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..STRYK ..TEMP-INFO HAR_ØY"
+".SLUTT"
+
+! ===============================================================================================
+
+
+! Merker mindre påbygg til bolig slik at disse ikke gjøres om til frittliggende punkt selv om de er < 50 m2
+.Utvalg/Egenskap
+..Tekst "VELG ..OBJTYPE = Bygning"&
+"OG ..BYGGTYP_NBR <> 111 134"&
+"OG .FLATE"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Utvalg/Oppsett
+..Snitt 1
+
+.Utvalg/Egenskap
+..Tekst "VELG .KURVE"
+..NullstillUtvalg 0
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..NABO"
+".SLUTT"
+
+.Utvalg/Oppsett
+..Union 1
+
+.Utvalg/Kombinert
+..Flateutvalg "VELG ..BYGGTYP_NBR <> 181 182"
+..NoenIOmkrets 1
+..LinjeUtvalg "VELG ..NABO"
+
+.Tegn/Nytt
+
+.Mred/LinjeTilFlate
+..Erstatt 1
+!..FjernEgenskap 1
+..BeholdEgenskap 1
+..GINFO-1 ..Nabo
+
+.Utvalg/Oppsett
+..VelgRef 0
+
+! Sletter NABO-merking på avgrensningslinjer
+.Utvalg/Egenskap
+..Tekst "VELG .KURVE"&
+"OG ..NABO"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..STRYK ..NABO"
+".SLUTT"
+
+.Utvalg/Oppsett
+..VelgRef 1ua
+
+
+!----- Velg bygningssflater under terskelverdi som har matrikkelinfo og gjør om til punkt
+!      Gjør ikke om flater merket med NABO til punkt
+
+.Utvalg/Egenskap
+..Tekst "VELG ..OBJTYPE = Bygning"&
+"OG ..BYGGTYP_NBR"&
+"OG .FLATE"&
+"OG AREAL < 50.0"&
+"OG ..NABO !"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Flate/Fjern
+
+
+!----- Velg forekomster av Takoverbygg under terskelverdi og slett disse
+.Utvalg/Nullstill
+..Tom 1
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = Takoverbygg"&
+"OG AREAL < 200.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn FilNavn $slettet_katalog\$kommnr-Takoverbygg_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+! ---- Forekomster av AnnenBygning <> 15 50 m2 kodes om til Bygning og gjøres om til punkt
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = AnnenBygning"&
+"OG .FLATE"&
+"OG AREAL <> 15.0 50.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Flate/Fjern
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE ..OBJTYPE AnnenBygning ..OBJTYPE Bygning"&
+"..LEGG-TIL ..INFORMASJON Fra_AnnenBygning_15-50_m2
+".SLUTT"
+
+
+!----- Forekomster av AnnenBygning > 50m2 basert på Grunnmur
+!      - Koder om til Bygning
+
+.Utvalg/Nullstill
+..Tom 1
+
+
+.Utvalg/Kombinert
+..Flateutvalg "VELG ..OBJTYPE = ANNENBYGNING"&
+"OG AREAL > 50.0"
+..AlleIOmkrets 1
+..LinjeUtvalg "VELG ..OBJTYPE = GRUNNMUR"
+
+.Tegn/Nytt
+
+! Koder midlertidig om til BygningGrunnmur for å håndtere at AnennBygning kan være delvis avgrenset av Grunnmur
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE ..OBJTYPE AnnenBygning ..OBJTYPE BygningGrunnmur"&
+".SLUTT"
+
+.Tegn/Nytt
+
+!.Mred/LinjeTilFlateHeleid
+!.MRed/KonvGeometri
+!..LagHeleidGeometri 1
+!..SlettGamleRefererteGrupper 1
+
+.Utvalg/Oppsett
+..Snitt 1
+..VelgRef 0
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = BygningGrunnmur"
+..NullstillUtvalg 0
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..INFORMASJON Grunnmurflate_>_50_m2"&
+".SLUTT"
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 0
+
+
+!----- Forekomster av AnnenBygning > 50m2.  NB Kan ha forekomster av Grunnmur på periferien
+!      - Koder om til Bygning
+!      - Konverterer til heleiid geometri
+
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = AnnenBygning"&
+"OG AREAL > 50.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+!.Utvalg/Kombinert
+!..Flateutvalg "VELG ..OBJTYPE = ANNENBYGNING"&
+!"OG AREAL > 50.0"
+!..IngenIOmkrets 1
+!..LinjeUtvalg "VELG ..OBJTYPE = GRUNNMUR"
+
+.Tegn/Nytt
+
+.Mred/LinjeTilFlateHeleid
+
+.MRed/KonvGeometri
+..LagHeleidGeometri 1
+..SlettGamleRefererteGrupper 1
+
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE ..OBJTYPE AnnenBygning ..OBJTYPE Bygning"&
+".SLUTT"
+
+.Tegn/Nytt
+
+.Utvalg/Oppsett
+..Snitt 1
+..VelgRef 0
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = Bygning"
+..NullstillUtvalg 0
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..INFORMASJON AnnenBygning_>_50_m2"&
+".SLUTT"
+
+
+!----- Koder om BygningGrunnmur til Bygning
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = BygningGrunnmur"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE ..OBJTYPE BygningGrunnmur ..OBJTYPE Bygning"&
+".SLUTT"
+
+
+!----- Velg alle resterende bygningsflater
+!      - Overfør egenskap fra linje til flate
+!      - Gjør om til heleid geometri
+
+
+.Utvalg/Nullstill
+..Tom 1
+
+.Utvalg/Kombinert
+..Flateutvalg "VELG ..OBJTYPE = Bygning"&
+"OG .FLATE"&
+"ELLER ..OBJTYPE = Takoverbygg"
+..IngenIOmkrets 1
+..LinjeUtvalg "VELG ..OBJTYPE = GRUNNMUR"
+
+.Tegn/Nytt
+
+.MRed/LinjeTilFlateHeleid
+
+.MRed/KonvGeometri
+..LagHeleidGeometri 1
+..SlettGamleRefererteGrupper 1
+
+
+
+!----- Velg forekomster av Bygning og Takoverbygg, snu utvalg og slett alt annet
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE = Bygning"&
+"eller ..OBJTYPE = Takoverbygg"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Utvalg/Motsatt
+.Tegn/Nytt
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn FilNavn $slettet_katalog\$kommnr-Bygning_diverse_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+
+!----- Påfør opphavsinformasjon på alle forekomster uten de som beskriver heleid geometri
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 0
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+
+.Utvalg/Nullstill
+..Tom 1
+
+.Utvalg/Egenskap
+..Tekst "VELG ..oBJTYPE != Flateavgrensning"
+..NullstillUtvalg 0
+..TegnNytt 0
+..IkkeHuskUtvalg 0
+
+.Tegn/Nytt
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..LEGG-TIL ..OPPHAV"&
+"..LEGG-TIL ...OPPHAV_DATA fkbBygning"&
+".SLUTT"
+
+
+! Stryker midlertidig nabomerking
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..STRYK ..NABO"
+".SLUTT"
+
+
+! Siste runde med konvertering til heleid geometri for forekomster av Bygning
+! Håndterer her de som er avgrenset av Grunnmur, ...
+
+.Utvalg/Kombinert
+..Flateutvalg "VELG ..OBJTYPE = Bygning"
+..AlleIOmkrets 1
+..LinjeUtvalg "VELG ..OBJTYPE != Flateavgrensning"
+
+.Tegn/Nytt
+
+.MRed/KonvGeometri
+..LagHeleidGeometri 1
+..SlettGamleRefererteGrupper 1
+
+
+! ----- Slutt
+.Utvalg/Av
+.Tegn/Nytt
+
+!--
+------------------------------------
+! Kopier resultatet til ny fil
+!---------------------------------------
+
+.Kopi/LagNyFil
+..FilNavn $n10b_katalog\$kommnr-Bygning_Takoverbygg_Grunnmur_fra_FKB.sos
+.Kopi/Skjermvindu
+.Kopi/StartKopiering
+..ValgtOmråde Skjermvindu
+..Kopier 1
+..Klipp 0
+..Inni 1
+..Ramme 0
+..RammeTema "!..LTEMA 9111"&
+"..OBJTYPE KantUtsnitt"
+..Område "settes til valgt kopiområde"
+
+
+! =================================================================================
+
+.Fil/Avslutt
+..Rens 1

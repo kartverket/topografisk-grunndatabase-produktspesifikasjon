@@ -1,0 +1,788 @@
+!========================================================================================
+!
+!Makromal for å omkode innhold i diverse FKB-datasett til N10-Beredskap bygning og anlegg
+!Datakilder: FKB-Arealbruk,FKB-BygnAnlegg, FKB-Ledning, FKB-Veg og FKB-vann
+!Overbygning: Pythonskript som henter inn aktuelle filer og lager FYSAK-jobbnakro
+!
+!Variabler:
+!Arbeidskatalog          : $arbeidskatalog
+!filliste                : $filliste
+!Kommunenr               : $kommnr
+!KatalogN10Bdata         : $n10b_katalog
+!                          Resultatkatalog for genererte N10B-data
+!KatalogSlettedeObjekter : $slettet_katalog
+!                          Inneholder forekomster som ikke blir med ut fra diverse kriterier
+!                          som areal, lengde osv.
+!Utropstegn  :             $utropstegn
+!                          Settes blank dersom diverse testutskrifter skal aktiveres
+!TegnIKkeAktive          : $tegn_ikke_aktive
+!                          Verdi 1 eller 0
+!
+!=====================================================================================
+!
+! - 20241111
+!   Reduserer data fra divere datasett til N10-beredskap representasjon
+! - 20241113
+!   Lagt inn sammenslåing uavhengig av KVALITET/datoer for Gjerde og murer
+!
+!=====================================================================================
+
+FysakVersjon >= L5_2024-09-13
+
+UTFØR
+
+.Fil/Oppsett
+..PekPassiv 1
+..PekRaster 1
+..SlettIndeks 0
+..Rens 0
+..Arbeids-katalog $arbeidskatalog
+!..MKO-katalog
+..IDX-katalog
+!Definerer ikke NGIS-mappe her
+!..NGIS-lokal C:\NGIS
+!..Arbeids-koordsys " 23"
+..LagIdent 1
+
+
+.Lag/oppsettDatalag
+..Datalag Datalag-1
+..TegnData_v1 1
+..TegnData_v2 $tegn_ikke_aktive
+
+
+.Fil/Filliste/Åpne
+..NyIndeks 0
+..FilListe $arbeidskatalog\$filliste
+..Steng 1
+..Bakgrunn 0
+
+.Utvalg/Oppsett
+..Union 1
+..VelgRef 1
+..VelgNabo 0
+..VelgAssosiasjon 0
+..PolygonFil 0
+..FlatePunkt 0
+
+.Utvalg/Av
+
+
+!---------------------------------------
+! Campingplass 
+!---------------------------------------
+
+
+!---------------------------------------
+! Demning 
+! Objekter med lengde > 10 meter til TG
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Demning"&
+"og LENGDE_YTRE_AVGRENS < 20"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Demning_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Flytebrygge
+! Heleid geomeri
+! Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med ytre avgrensning < 60 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Flytebrygge"&
+"og LENGDE_YTRE_AVGRENS < 60.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Flytebrygge_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Gjerde
+! Sletter alle gjerder kortere enn minstelengde
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Gjerde"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+! Slår først sammen der det er mulig.
+.MRed/Minimaliser
+..Søkeradius 0.001
+..MaksAntallPkt 30000
+..UlikKvalitet 1
+..UlikEnhet 0
+..UlikDato 1
+..MaksLengde 0.00
+..Ignorer
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Gjerde"&
+"og LENGDE < 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Gjerde_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Hoppbakke
+! Kurvegeometri.
+! Alle objekter i samsvar med definisjonen som er lengre enn 50 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 50 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Hoppbakke"&
+"og LENGDE_YTRE_AVGRENS < 110.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Hoppbakke_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+
+!---------------------------------------
+! KaiBrygge
+! Flategeometri, avgrenses av KaiBryggeKant
+! Alle objekter i samsvar med definisjonen som er lengre enn 50 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 50 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = KaiBrygge"&
+"og LENGDE_YTRE_AVGRENS < 60.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-KaiBrygge_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+! Gjør om bevarte forekomster til heleid geometri
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = KaiBrygge"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/KonvGeometri
+..LagHeleidGeometri 1
+..SlettGamleRefererteGrupper 1
+
+
+!---------------------------------------
+! Trase
+! Trase fra FKB-Ledning håndteres i andre flytmekanismer
+!---------------------------------------
+
+!!!.Utvalg/Egenskap
+!!!..Tekst "VELG ..objtype = Trase"
+!!!! Flere betingelser
+!!!!"og ?????"
+!!!..NullstillUtvalg 1
+!!!..TegnNytt 1
+!!!..IkkeHuskUtvalg 0
+
+!!!.MRed/OmkodGinfo
+!!!..Tekst ".DEF-KODEREGEL INNTAST"&
+!!!"..BYTT-KODE ..OBJTYPE Trase ..OBJTYPE Ledning"
+
+
+!---------------------------------------
+! Mast
+! Mast fra FKB-Ledning håndteres i andre flytmekanismer
+!---------------------------------------
+
+
+!---------------------------------------
+! Molo
+! Heleid geomeri
+! Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med ytre avgrensning < 60 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Molo"&
+"og LENGDE_YTRE_AVGRENS < 60.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Molo_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! MurFrittstående og MurLoddrett
+! Kurvegeometri.
+! Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 25 meter og koder om til TG objekttype Mur 
+!---------------------------------------
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = MurFrittstående"&
+"eller ..OBJTYPE = MurLoddrett"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+! Slår sammen der det er mulig
+.MRed/Minimaliser
+..Søkeradius 0.001
+..MaksAntallPkt 30000
+..UlikKvalitet 1
+..UlikEnhet 0
+..UlikDato 1
+..MaksLengde 0.00
+..Ignorer
+
+.Tegn/Nytt
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = MurFrittstående"&
+"eller ..OBJTYPE = MurLoddrett"&
+"og LENGDE < 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Mur_Frittstående-Loddrett_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = MurFrittstående"&
+"eller ..objtype = MurLoddrett"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE ..OBJTYPE MurFrittstående ..OBJTYPE Mur"&
+"..BYTT-KODE ..OBJTYPE MurLoddrett ..OBJTYPE Mur"
+".SLUTT"
+
+
+
+!---------------------------------------
+! Oppdrettslokalitet
+!---------------------------------------
+
+
+!---------------------------------------
+! Parkeringsområde
+! Flategeometri
+! Alle objekter i samsvar med definisjonen som har areal > 500 m2 skal med i Topografisk grunndatabase.
+! Fjerner alle med areal indre enn grenseverdi
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Parkeringsområde"&
+"og AREAL < 500.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Parkeringsområde_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+! Gjør om til heleid geometri
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Parkeringsområde"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/KonvGeometri
+..LagHeleidGeometri 1
+..SlettGamleRefererteGrupper 1
+
+!---------------------------------------
+! Pipe
+! Alle med høyde > 10.0 meter skal til TG
+!---------------------------------------
+
+
+!---------------------------------------
+! Pir
+! KytskonturTekniskeAnlegg med Konstruksjonstype = 4
+! Objekter med lengde > 25.0 meter skal til TG
+! Må kode om til TG objekttype Pir
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..OBJTYPE = KystkonturTekniskeAnlegg"&
+"og ..kystkonstruksjonstype = 4"&
+"og LENGDE < 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Kystkonstruksjonstype4-Pir_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.Utvalg/Egenskap
+..Tekst "VELG ..OBJTYPE = KystkonturTekniskeAnlegg"&
+"og ..kystkonstruksjonstype = 4"&
+"og LENGDE > 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..BYTT-KODE .OBJTYPE = KystkonturTekniskeAnlegg ..OBJTYPE Pir"&
+"..STRYK ..KYSTKONSTRUKSJONSTYPE"
+".SLUTT"
+
+.Utvalg/Egenskap
+..Tekst "VELG ..OBJTYPE = KystkonturTekniskeAnlegg"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+!---------------------------------------
+! Ruin
+!---------------------------------------
+
+
+!---------------------------------------
+! Rørgate
+! Kurvegeometri.
+! Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 25 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Rørgate&
+"og LENGDE < 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Rørgate_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Skjerm
+! Kurvegeometri.
+! Alle objekter i samsvar med definisjonen som er lengre enn 25 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 25 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Skjerm&
+"og LENGDE < 25.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Skjerm_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+
+!---------------------------------------
+! Skytebane
+! Tas fra N50. Tar likevel med omriss.
+!---------------------------------------
+
+
+
+!---------------------------------------
+! Slipp
+! Alt fra FKB skal med
+!---------------------------------------
+
+
+
+!---------------------------------------
+! Svømmebasseng
+! Heleid geometri
+! Alle objekter i samsvar med definisjonen som har areal > 100 m2 skal med i Topografisk grunndatabase.
+! Fjerner alle med areal mindre enn grenseverdi
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Svømmebasseng"&
+"og AREAL < 100.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Svømmebasseng_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Tank
+! Alle objekter i samsvar med definisjonen som har areal > 100 m2 skal med i TG som flate, resten som punkt
+! Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.
+! Fjerner alle med areal mindre enn grenseverdi
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Tank"&
+"og AREAL > 100.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+! Må fjerne det som er under minstemål
+
+
+!---------------------------------------
+! Takoverbygg
+! Håndteres i egen makro
+!---------------------------------------
+
+
+!---------------------------------------
+! Taubane
+! Kurvegeometri.
+! Alle objekter i samsvar med definisjonen som er lengre enn 50 meter skal med i Topografisk grunndatabase.
+! Fjerner alle med lengde < 50 meter 
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Taubane&
+"og LENGDE < 50.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Taubane_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Tribune
+! Heleid geometri
+! Alle objekter i samsvar med definisjonen som har areal > 500 m2 skal med i Topografisk grunndatabase.
+! Fjerner alle med areal indre enn grenseverdi
+!---------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Tribune"&
+"og AREAL < 500.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Tribune_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Tårn
+! Alle med høyde > 10.0 meter skal til TG
+! Hvordan velge på høydekriterium?
+!---------------------------------------
+
+
+!---------------------------------------
+! Vindturbin og VindturbinOmriss
+!---------------------------------------
+
+
+!---------------------------------------
+! Voll
+!---------------------------------------
+
+
+
+!---------------------------------------
+! Overfører til resultatfil og sletter
+!-----------------------------------------
+
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Campingplass"&
+"eller ..objtype = Demning"&
+"eller ..objtype = Flytebrygge"&
+"eller ..objtype = Gjerde"&
+"eller ..objtype = Gruve"&
+"eller ..objtype = Hoppbakke"&
+"eller ..objtype = KaiBrygge"&
+"eller ..objtype = Ledning"&
+"eller ..objtype = Lysløype"&
+"eller ..objtype = Molo"&
+"eller ..objtype = Mur"&
+"eller ..objtype = Navigasjonsinstallasjon"&
+"eller ..objtype = Oppdrettslokalitet"&
+"eller ..objtype = Oppdretttsmerd"&
+"eller ..objtype = Parkeringsområde"&
+"eller ..objtype = Pipe"&
+"eller ..objtype = Pir"&
+"eller ..objtype = Ruin"&
+"eller ..objtype = Rørgate"&
+"eller ..objtype = Skjerm"&
+"eller ..objtype = Skytebane"&
+"eller ..objtype = Slipp"&
+"eller ..objtype = SpesiellDetalj"&
+"eller ..objtype = Sykehus"&
+"eller ..objtype = Svømmebasseng"&
+"eller ..objtype = Tank"&
+"eller ..objtype = Taubane"&
+"eller ..objtype = Tribune"&
+"eller ..objtype = Turisthytte"&
+"eller ..objtype = Tårn"&
+"eller ..objtype = Vindturbin"&
+"eller ..objtype = Voll"
+!
+! Mast blir med i annen dataflyt
+!"eller ..objtype = Mast"&
+!
+! Utelater Bygning, Grunnmur og og Takoverbygg, håndteres i egen makro
+!"eller ..objtype = Grunnmur"&
+!"eller ..objtype = Takoverbygg"&
+!"eller ..objtype = Bygning"
+
+
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.Kopi/LagNyFil
+..FilNavn $n10b_katalog\$kommnr-BygningAnlegg_diverse_fra_FKB.sos
+.Kopi/Skjermvindu
+.Kopi/StartKopiering
+..ValgtOmråde Skjermvindu
+..Kopier 1
+..Klipp 0
+..Inni 1
+..Ramme 0
+..RammeTema "!..LTEMA 9111"&
+"..OBJTYPE KantUtsnitt"
+..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+
+!---------------------------------------
+! Fjerner forekomster av Havflate
+! Tatt ut fra FKB for å tak i Pir
+!-----------------------------------------
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = havflate"
+
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+.Fil/avslutt
+..Rens 0
