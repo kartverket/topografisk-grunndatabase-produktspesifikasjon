@@ -10,7 +10,7 @@ FKB_toppunkt =
 
 Partitions_terrengpunkt = 
 Partitions_terrengpunkt_layer = 
-N10B_Terrengpunkt = r"Y:\Kartografi\TG\prosjektet\N10_Beredskap\N10_beredskap.gdb\Terrengpunkt"
+N10B_Terrengpunkt = 
 ----
 
 [.red]#projeksjonen må med, dette er noen ganger problematisk ved innhenting av FKB data#

@@ -1,0 +1,20 @@
+// Punkt av interesse
+
+==== Innledning
+I første omgang hentes punkter fra NGF-prosjektet, med begrenset informasjon, men som også vil være nyttig for N10-Beredskap. Alle type interessepunkt vil ikke være tilgjengerlig i første versjon, en vurdering av hva som faktisk er mulig å levere bør vurderes videre.
+
+
+
+==== Kilde
+[pass]
+++++
+<table style="background-color: #f0f0f0;">
+  <tr>
+    <td>NGF</td>
+  </tr>
+</table>
+++++
+
+==== Kode
+
+include::Kode/POI.adoc[]
