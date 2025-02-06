@@ -25,11 +25,57 @@ Kun et fåtall objekttyper hentes fra dette datasettet.
 Kun et fåtall objekttyper hentes fra dette datasettet.
 
 
-==== Kode
+I FKB er registrering av enkelte objekttyper opsjonelt, det kan gjelde for alle eller noen av områdestandardene (A, B, C eller D). Dette kan føre til at N10B-datasettet ikke blir homogent over større områder. For eksempel er registrering av objekttype Parkeringsområde i FKB-Veg opsjonelt i alle områdestandardene.
+
+
+=== Tilleggsbetingelser
+
+En av utfordringene ved buk av FKB-data som kilde er få til god håndtering av alle tilleggsbetingelser av ulike typer som er beskrevet i datamodellen. Det gjelder varianter av geometribegrensninger for lengde, areal, høyde, øyer i flategeometri samt omgjøring av geometrirepresentasjon. I tillegg må man vurdere egne bortvalgsmekanismer innenfor enkelte geografiske områder, f.eks. innenfor områder definert som by/tettsted.
+
+Objekter som har stor utstrekning kan være registrert på ulike tidspunkt, med ulike målemetoder og/eller i ulike prosjekter. Dette fører til behov for å slå sammen objektforekomster før vurdering mot andre kriterier som f.eks. minimumslengde.
+Dersom sammenslåing droppes vil konsekvensen bli at mange enkeltforekomster som geometrisk henger sammen ikke oppfyller tileeggsbetingelser og dermed ikke blir med over i avledet datasett. 
+
+Produktspesifikasjonen sier ingen ting om siling/tynning av geometri.
+
+=== Resultatvurdering
+
+De gitte verdiene for diverse tilleggskriterier fører til at objektforeomstene fra FKB beholder en stor detaljeringsgrad.
+
+Noen forekomster forekommer i betydelig grad i flere nivåer vertikalt, f.eks. er det ofte gjerde på toppen av en mur.
+
+Opprinnelig FKB-geometri beholdes. Det fører til at langs samferdelsinfrastruktur som f.eks. jernbane vil gjerder og samferdselsgeometrien ligg svært tett. 
+
+I innledende testing er følgende N10B-objekttyper hentet fra FKB-data:
+
+.N10B-objekttyper fra FKB-data
+[width="50%",options="header"]
+|====================
+|  Objekttypenavn
+|  Bygning
+|  Demning
+|  Gjerde
+|  Grunnmur
+|  Mur
+|  Oppdrettslokalitet
+|  Parkeringsområde
+|  Pipe
+|  Ruin
+|  Skjerm
+|  Slipp
+|  Svømmebasseng
+|  Takoverbygg
+|  Taubane
+|  Tribune
+|  Vindturbin
+|  Voll
+|====================
+
+
+=== Kode
+
 Omkodinger og testing er utført v.h.a. FYSAK-makroer med Python-overbygning.
 
 Makroene er det viktigste, Python-koden er hovedsaklig brukt til å administrere dataflyt.
 
-En av utfordringee ved omkodingen er få til god håndtering av alle tilleggsbetingelser av ulike typer som er beskrevet i datamodellen. Det gjelder varianter av geometribegrensninger for lengde, areal og høyde samt omgjøring av geometrirepresentasjon.
 
 
