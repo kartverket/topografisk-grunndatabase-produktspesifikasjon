@@ -685,9 +685,77 @@ $utropstegn..Område "settes til valgt kopiområde"
 !---------------------------------------
 ! Tårn
 ! Alle med høyde > 10.0 meter skal til TG
-! Hvordan velge på høydekriterium?
+! Tester høydekriteriet med å hente høyde fra WCS
 !---------------------------------------
 
+
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Tårn"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+!Koder midlertidig om Flate til punkt
+.Flate/Fjern
+
+! Påfører høydemerking på PINFO-nivå
+.3D/KontrollerHoyde
+..FraWCS 1
+
+! Flytter PINFO ...HD til GINFO, virker bare på punktgrupper
+! Har ikke annen PINFO utenom HD på punktgruppene
+.Mred/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+..FLYTT-PINFO
+
+! Koder om tilbake til Flate
+.Flate/Total
+
+! Fjerner all midlertidig merking med HD på PINFO-nivå
+.MRed/OmkodPinfo
+..Punktutvalg ".PUNKT-UTVALG PUNKT"&
+"..VELG ...HD"&
+"..BRUK-REGEL PUNKT"
+..OmkodPinfo ".DEF-KODEREGEL PUNKT"&
+"..stryk ...HD"&
+".SLUTT"
+
+! Velger forekomster lavere enn terskelverdi og fjerner disse
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Tårn"&
+"OG ..HD < 10.0"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+$utropstegn.Kopi/LagNyFil
+$utropstegn..FilNavn $slettet_katalog\$kommnr-Tårn_lavere_enn_10m_fjernet.sos
+$utropstegn.Kopi/Skjermvindu
+$utropstegn.Kopi/StartKopiering
+$utropstegn..ValgtOmråde Skjermvindu
+$utropstegn..Kopier 1
+$utropstegn..Klipp 0
+$utropstegn..Inni 1
+$utropstegn..Ramme 0
+$utropstegn..RammeTema "!..LTEMA 9111"&
+$utropstegn"..OBJTYPE KantUtsnitt"
+$utropstegn..Område "settes til valgt kopiområde"
+
+.MRed/SlettUtvalg
+..SlettFlateavgrensning 1
+
+! Fjerner HD-merking i GINFO
+.Utvalg/Egenskap
+..Tekst "VELG ..objtype = Tårn"&
+"OG ..HD"
+..NullstillUtvalg 1
+..TegnNytt 1
+..IkkeHuskUtvalg 0
+
+.MRed/OmkodGinfo
+..Tekst ".DEF-KODEREGEL INNTAST"&
+"..STRYK ..HD"
+".SLUTT"
 
 !---------------------------------------
 ! Vindturbin og VindturbinOmriss
