@@ -70,6 +70,23 @@ I innledende testing er følgende N10B-objekttyper hentet fra FKB-data:
 |  Voll
 |====================
 
+=== Forslag til endring i Produktspesifikasjonen
+
+Det er vurdert slik at kriteriene for N10 Beredskap spesielt anleggslinjer er noe unøyaktige og trenger å spesifiseres. Det er i første versjon lagt til ett forslag for å kunne gi ett bedre kartografisk presentasjon.
+
+Forslag til kriterie:
+Anleggslinjer untatt Flateavgrensning, Slipp og Taubane skal ikke ligge i tettbebyggelse eller bymessigbebyggelse samt ikke ligge nærmere 20 meter fra vei eller bane. 
+Anleggslinjer skal ikke overlappe hverandre og vil prioriteres i denne rekkefølgen:
+
+Flateavgrensning
+Taubane
+Voll
+Skjerm
+Mur
+Gjerde
+Ruin
+
+Videre er anbefalingen at slipp heller blir en del av point og interest, siden denne informasjonen er umulig å lese/forstås i ett kart. I Kode, ligger forslaget på hvordan denne generaliseringen kan gjøres.
 
 === Kode
 
@@ -77,5 +94,6 @@ Omkodinger og testing er utført v.h.a. FYSAK-makroer med Python-overbygning.
 
 Makroene er det viktigste, Python-koden er hovedsaklig brukt til å administrere dataflyt.
 
+==== Forslag til endring i kriterie Anleggslinje:
 
 
