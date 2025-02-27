@@ -1,0 +1,151 @@
+//Anleggslinjer
+
+#Anleggslinjer#
+
+[.red]#Lagringsplass#
+----
+#Anleggslinjer lagring
+Anleggslinjer_FKB = 
+Arealdekke = 
+Vei =
+Bane =  
+
+Arealdekke_Tettbebyggelse_og_bymessigbebyggelse = 
+Buffer_vei_og_bane = 
+Bufferbane = 
+erase_anleggslinjer = 
+Anleggslinjer_N10B = 
+----
+[.red]#Henter ut tettbebyggelse og bymessigbebyggelse#
+----
+Selection = "objtype = 'Tettbebyggelse' Or objtype = 'BymessigBebyggelse'"
+arcpy.analysis.Select(Arealdekke, Arealdekke_Tettbebyggelse_og_bymessigbebyggelse, Selection)
+----
+[.red]#Legger på buffer rundt vei og bane#
+----
+arcpy.analysis.Buffer(Vei, Buffer_vei_og_bane, "20 meters")
+arcpy.analysis.Buffer(Bane, Bufferbane, "20 meters")
+----
+[.red]#Legger sammen alle arealene som skal brukes for å selektere vekk linjer som blir kartografisk støy i 1:10 000#
+----
+arcpy.management.Merge
+([Buffer_vei_og_bane, Bufferbane, Arealdekke_Tettbebyggelse_og_bymessigbebyggelse], erase_anleggslinjer)
+----
+[.red]#Fjerner alle linjer som ikke skal ligge i tettbebyggelse, bymessigbebyggelse og nærmere en vei og bane enn 20 meter.#
+----
+#OBS OBS, denne er ikke med enda
+
+output_feature_class = Anleggslinjer_N10B  # Ny feature class som skal inneholde de gjenværende objektene
+
+# Lag et spatial layer
+arcpy.MakeFeatureLayer_management(Anleggslinjer_FKB, "feature_layer")
+
+# Definer hvilke objekttyper som skal unngås (ikke inkluderes i fjerningen)
+excluded_types = ["Flateavgrensning", "Taubane", "Slipp"]
+
+# Bygg en spørring for å selektere objekter som ikke er i excluded_types
+query = f"\"{hierarchy_field}\" NOT IN ({', '.join([f'\'{type}\'' for type in excluded_types])})"
+
+# Selektér objektene som ikke skal fjernes
+arcpy.SelectLayerByAttribute_management("feature_layer", "NEW_SELECTION", query)
+
+# Nå kan du gjøre Erase-analysen, men ikke inkludere de objektene med de ekskluderte typene
+arcpy.analysis.Erase("feature_layer", erase_anleggslinjer, Anleggslinjer_N10B)
+
+# Nå, lag en liste av de objektene som ikke skal slettes, og legg dem til i den nye feature class
+# Selektér de objektene som har blitt ekskludert fra Erase-prosessen
+query_excluded = f"\"{hierarchy_field}\" IN ({', '.join([f'\'{type}\'' for type in excluded_types])})"
+arcpy.SelectLayerByAttribute_management("feature_layer", "NEW_SELECTION", query_excluded)
+
+# Append de ekskluderte objektene til den nye feature class
+arcpy.Append_management("feature_layer", Anleggslinjer_N10B, "NO_TEST")
+
+print("Erasing and appending completed successfully.")
+
+----
+[.red]##Det er også intern konflikt mellom objekttypene. Setter først opp ett hierarki for utgangspunkt til videre eliminering.#
+----
+arcpy.management.AddField(Anleggslinjer_N10B, "Hirarki", "SHORT")
+
+codeblock = """
+def hierarki(objtype):
+    if objtype == "Flateavgrensning":
+        return 1
+    elif objtype == "Taubane":
+        return 2
+    elif objtype == "Voll":
+        return 3
+    elif objtype == "Skjerm":
+        return 4
+    elif objtype == "Mur":
+        return 5
+    elif objtype == "Gjerde":
+        return 6
+    elif objtype == "Ruin":
+        return 7
+    else:
+        return 8
+        """
+        
+Expression =  "hierarki(!OBJTYPE!)"
+
+
+arcpy.management.CalculateField(Anleggslinjer_N10B, "Hirarki", Expression, "PYTHON3", codeblock)
+----
+[.red]#Går igjennom anleggslinjer og prioriterer etter hierarki, hva som skal med i N10 Beredskap. Er linjene nærmere en 20 meter slettes objekt med laves prioritet.#
+----
+# Set input feature class
+in_feature_class = Anleggslinjer_N10B
+
+# Lavere tall representerer høyere prioritet (f.eks. 1 = høyest prioritet)
+hierarchy_field = "Hirarki"
+
+# Set input feature class and output feature class (buffered and cleaned)
+output_feature_class = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG.gdb\output"
+
+# Opprett et spatial layer fra feature class
+arcpy.MakeFeatureLayer_management(in_feature_class, "feature_layer")
+
+# Få unike prioritetverdier i hierarkiet
+priority_values = set()
+with arcpy.da.SearchCursor(in_feature_class, [hierarchy_field]) as cursor:
+    for row in cursor:
+        priority_values.add(row[0])
+
+# Sorter prioritetverdiene (laveste verdier først)
+sorted_priorities = sorted(priority_values)
+
+# Gjenta prosessen for hver prioritet (fra høyest til lavest)
+for priority in sorted_priorities:
+    print(f"Processing priority {priority}...")
+
+    # Selektér objektene med den nåværende prioriteten (de som lager bufferen)
+    query = f"\"{hierarchy_field}\" = {priority}"  # Selektér kun objektene med denne prioriteten
+    arcpy.SelectLayerByAttribute_management("feature_layer", "NEW_SELECTION", query)
+    
+    # Lag en buffer rundt de valgte objektene (denne prioriteten)
+    buffer_distance = "20 meters"  # Juster avstand etter behov
+    buffered_features = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG.gdb\buffer_midlertidig"
+    arcpy.analysis.Buffer("feature_layer", buffered_features, buffer_distance)
+    
+    # Selektér objektene som overlapper bufferen, men **ikke** den nåværende prioriteten (høyere tallverdi)
+    query_overlap = f"\"{hierarchy_field}\" > {priority}"  # Selektér alle objekter med lavere prioritet (høyere tallverdi)
+    arcpy.SelectLayerByLocation_management("feature_layer", "INTERSECT", buffered_features, selection_type="NEW_SELECTION")
+    arcpy.SelectLayerByAttribute_management("feature_layer", "ADD_TO_SELECTION", query_overlap)
+
+    # Kontroller at seleksjonen ikke er tom før sletting
+    count = int(arcpy.GetCount_management("feature_layer").getOutput(0))
+    if count > 0:
+        print(f"Deleting {count} features due to overlap with priority {priority}.")
+        arcpy.DeleteRows_management("feature_layer")
+    else:
+        print("No features overlap with buffer, skipping deletion.")
+    
+    # Lagre de gjenværende objektene i en ny feature class
+    output_feature_class = f"{output_gdb}\\{output_feature_class_base}_{priority}"
+    arcpy.CopyFeatures_management("feature_layer", output_feature_class)
+    
+    print(f"Completed processing for priority {priority}.")
+
+print("Script complete.")
+
