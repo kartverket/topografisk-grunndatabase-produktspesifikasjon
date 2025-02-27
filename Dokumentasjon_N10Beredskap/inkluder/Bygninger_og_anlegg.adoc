@@ -72,7 +72,7 @@ I innledende testing er følgende N10B-objekttyper hentet fra FKB-data:
 
 === Forslag til endring i Produktspesifikasjonen
 
-Det er vurdert slik at kriteriene for N10 Beredskap spesielt anleggslinjer er noe unøyaktige og trenger å spesifiseres. Det er i første versjon lagt til ett forslag for å kunne gi ett bedre kartografisk presentasjon.
+Det er vurdert slik at kriteriene for N10 Beredskap, spesielt anleggslinjer er noe unøyaktige og trenger å spesifiseres. Det er i første versjon lagt til ett forslag for å kunne gi ett bedre kartografisk presentasjon.
 
 Forslag til kriterie:
 Anleggslinjer untatt Flateavgrensning, Slipp og Taubane skal ikke ligge i tettbebyggelse eller bymessigbebyggelse samt ikke ligge nærmere 20 meter fra vei eller bane. 
@@ -96,4 +96,4 @@ Makroene er det viktigste, Python-koden er hovedsaklig brukt til å administrere
 
 ==== Forslag til endring i kriterie Anleggslinje:
 
-
+include::Kode/Forslag_endring_kriterier_anleggslinje.adoc[]
