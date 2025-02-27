@@ -101,7 +101,7 @@ in_feature_class = Anleggslinjer_N10B
 hierarchy_field = "Hirarki"
 
 # Set input feature class and output feature class (buffered and cleaned)
-output_feature_class = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG.gdb\output"
+output_feature_class = 
 
 # Opprett et spatial layer fra feature class
 arcpy.MakeFeatureLayer_management(in_feature_class, "feature_layer")
@@ -125,7 +125,7 @@ for priority in sorted_priorities:
     
     # Lag en buffer rundt de valgte objektene (denne prioriteten)
     buffer_distance = "20 meters"  # Juster avstand etter behov
-    buffered_features = r"C:\Users\hopida\Documents\ArcGIS\Projects\TG\TG.gdb\buffer_midlertidig"
+    buffered_features = 
     arcpy.analysis.Buffer("feature_layer", buffered_features, buffer_distance)
     
     # Selektér objektene som overlapper bufferen, men **ikke** den nåværende prioriteten (høyere tallverdi)
