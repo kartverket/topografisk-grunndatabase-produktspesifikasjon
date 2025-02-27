@@ -12,5 +12,5 @@ Det ligger viktig informasjon på begrensningskurvene og denne informasjonen fra
 
 For å løse dette har vi valgt å generere nye begrensningskurver for arealdekke og gjøre en overlayanalyse og overføre egenskaper fra der geometrien er helt lik som kilden.
 
-Dette er tidskrevende men informasjonen fra begrensningskurvene r så viktig at vi anser dette som essensielt for resultatet.
+Dette er tidskrevende men informasjonen fra begrensningskurvene er så viktig, at vi anser dette som essensielt for resultatet.
 
