@@ -44,7 +44,7 @@ arcpy.MakeFeatureLayer_management(Anleggslinjer_FKB, "feature_layer")
 excluded_types = ["Flateavgrensning", "Taubane", "Slipp"]
 
 # Bygg en spørring for å selektere objekter som ikke er i excluded_types
-query = f"\"{hierarchy_field}\" NOT IN ({', '.join([f'\'{type}\'' for type in excluded_types])})"
+query = f"\"OBJTYPE\" NOT IN ({', '.join([f'{type!r}' for type in excluded_types])})"
 
 # Selektér objektene som ikke skal fjernes
 arcpy.SelectLayerByAttribute_management("feature_layer", "NEW_SELECTION", query)
@@ -54,7 +54,7 @@ arcpy.analysis.Erase("feature_layer", erase_anleggslinjer, Anleggslinjer_N10B)
 
 # Nå, lag en liste av de objektene som ikke skal slettes, og legg dem til i den nye feature class
 # Selektér de objektene som har blitt ekskludert fra Erase-prosessen
-query_excluded = f"\"{hierarchy_field}\" IN ({', '.join([f'\'{type}\'' for type in excluded_types])})"
+query_excluded = f"\OBJTYPE\" IN ({', '.join([f'{type!r}'for type in excluded_types])})"
 arcpy.SelectLayerByAttribute_management("feature_layer", "NEW_SELECTION", query_excluded)
 
 # Append de ekskluderte objektene til den nye feature class
