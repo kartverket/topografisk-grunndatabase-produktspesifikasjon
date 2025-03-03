@@ -1,0 +1,86 @@
+// Stedsnavn
+=== Innledning
+Aktuell kilde for stedsnavn er SSR.
+
+
+=== Dataflyt SSR til N10B
+
+Utvalg av informasjon fra SSR og dataflyt fram til stednavntekstforekomster til bruk i N10B må i størst mulig grad foregå automatisk.
+Manuell tilpasning av kartografi må unngås så langt som det er mulig.
+
+
+=== Problemstillinger knyttet til dataflyt fra SSR
+
+* *Geometrirepresentasjon* +
+I de fleste tilfeller har ikke SSR kurvegeometri for navneobjektene. Et mindre antall SSR-forekomster har flategeometri. Det betyr at navn i N10-Beredskap stort sett blir presentert horisontalt. 
+
+* *Utvalg av navneobjekttyper* +
+Det er ikke aktuelt å bruke navneforekomster fra alle navneobjekttyper i SSR i et produkt som N10-Beredskap.
+Hvilke forekomster som kan filtreres bort på navneobjekttypenivå vil være gjenstand for videre vurdering.
+
+* *Utvalg av språkvarianter* +
+Mange stedsnavneforekomster har flere språkvarianter, naturlig nok forekommer dette hyppigst i de tre nordligste fylkene. Hvilke språkvarianter som kan filtreres bort vil være gjenstand for videre vurdering.
+
+* *Utvalg av sidenavnsvarianter* +
+Mange stedsnavneforekomster har flere sidenavnsvarianter - dvs. likestilte navn, disse kan være kombinert med flere språkvarianter. Hvilke varianter som kan filtreres bort vil være gjenstand for videre vurdering.
+
+* *Bortvalg basert på geografiske områder* +
+I byer/tettsteder kan det bli for mange navneforekomster som helt/delvis overlapper. Filtrering innenfor geografiske områder må vurderes.
+
+* *Bortvalg basert på konfliktanalyse* +
+Bortvalg av forekomster kan gjøres med konfliktanalyse og klassifisering av elementer fra SSR i et hierarki, f.eks. etter navneobjekttype. Alle elementer i konflikt med elementer høyere i hierarkiet tas bort eller utelates i endelige produkter.
+
+* *Strukturfeil i SSR* +
+Det finnes forekomster i SSR som ikke er knyttet korrekt sammen på ett felles sted. Dette kan fort skape problemer når uthenting fra SSR og tilhørende kartografisk presentasjon skal baseres på automatikk.
+
+
+=== Resultatvurdering
+
+Første testutvalg fra SSR er 100% basert på automatikk. Det forekommer overlappende stedsnavntekster. 
+Der det er flere språkvarianter/sidenavnsvarianter er alle tatt med.
+
+I denne omgang er det sannsynligvis med for mange navneforekomster. Navn på steder der folk samles, idretssanlegg, skoler osv. er ikke tatt bort.
+
+Ved å lage et fullstendig prosentasjonoppsett med egne tegneregler (skrifttype, dimensjonering, innretting osv.) og utvalg vil man kunne styre hvilke forekomster som vises i det endelige produktet.
+
+Illustrasjoner på noen av de problemstillingen som er nevnt over:
+
+[cols="60%,20%",]
+|===
+|image:inkluder/bilder/SSR_tett_med_forekomster_av_en_navneobjekttype.png[] |Eksempel på mange forekomster av navn med samme navneobjekttype, her navneobjekttype = kai, innenfor et lite geografisk område. Kan løses med fullstendig bortvalg av enkelte navneobjekttyper..
+|===
+
+
+[cols="60%,20%",]
+|===
+|image:inkluder/bilder/SSR_mange_språkvarianter.PNG[] |Eksempel på navn med ulike varianter av språkkombinasjoner. Rekkefølgen ovenfra og ned for det enkelte navn er justert jfr. språkprioritering for den enkelte forekomst.
+|===
+
+[cols="60%,20%",]
+|===
+|image:inkluder/bilder/SSR_sidenavnsvarianter.png[] |Eksempel på navn med flere sidestilte sidenavnsvarianter. 
+|===
+
+[cols="60%,20%",]
+|===
+|image:inkluder/bilder/SSR_tett_med_navneforekomster_i_bysentrum.png[] |Eksempel overlappende navneforekomster i bysentrum.
+|===
+
+[cols="60%,20%",]
+|===
+|image:inkluder/bilder/SSR_språkvarianter ikke_koblet_på_ett_stedsnummer.png[] |Eksempel på strukturfeil i SSR. Språkvariantene må her kobles inn på samme stedsnummer.
+|===
+
+
+=== Kode
+
+Verktøyet som er brukt til produksjon av testdata er en variant av en såkalt FYMASS-oppgave som brukes ved uthenting av navn fra SSR til bruk i N5-raster. Ytre styremekanisme er stort sett lik, men det er laget egne N10B-varianter av utvalgsmekanismer for navneobjekttyper og andre produkttilpasninger.
+
+Kode finnes på https://github.com/kartverket/fymass_n5pres_ssr_til_stedstekst
+
+Liste over navneobjekttyper som filtreres [underline]#bort# fra N10B-dataflyten finnes her: https://github.com/kartverket/fymass_n5pres_ssr_til_stedstekst/tree/master/utv
+
+
+
+
+
