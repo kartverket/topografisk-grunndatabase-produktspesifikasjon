@@ -73,19 +73,38 @@ def hierarki(objtype):
         return 1
     elif objtype == "Taubane":
         return 2
-    elif objtype == "Voll":
+    elif objtype == "Hoppbakke":
         return 3
-    elif objtype == "Skjerm":
+    elif objtype == "Idrettsanlegg":
         return 4
-    elif objtype == "Mur":
+    elif objtype == "Lysløype":
         return 5
-    elif objtype == "Gjerde":
+    elif objtype == "Skytebaneinnretning":
         return 6
-    elif objtype == "Ruin":
+    elif objtype == "Rørgate":
         return 7
-    else:
+    elif objtype == "Reingjerde":
         return 8
+    elif objtype == "SpesiellDetalj":
+        return 9
+    elif objtype == "Voll":
+        return 10
+    elif objtype == "Skjerm":
+        return 11
+    elif objtype == "Mur":
+        return 12
+    elif objtype == "Gjerde":
+        return 13
+    elif objtype == "Grunnmur":
+        return 14
+    elif objtype == "Ruin":
+        return 15
+    elif objtype == "Pir":
+        return 16
+    else:
+        return 17
         """
+Expression =  "hierarki(!OBJTYPE!)"
         
 Expression =  "hierarki(!OBJTYPE!)"
 

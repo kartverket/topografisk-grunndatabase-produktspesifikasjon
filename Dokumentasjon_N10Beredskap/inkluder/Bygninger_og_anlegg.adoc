@@ -24,6 +24,8 @@ Kun et fåtall objekttyper hentes fra dette datasettet.
 * *FKB-Veg* +
 Kun et fåtall objekttyper hentes fra dette datasettet.
 
+* *N50K* +
+Henter ut Lysløype, Hoppbakke, Pir, SpesiellDetalj, Flytebrygge, Campingplass, Parkeringsområde og Reingjerde.
 
 I FKB er registrering av enkelte objekttyper opsjonelt, det kan gjelde for alle eller noen av områdestandardene (A, B, C eller D). Dette kan føre til at N10B-datasettet ikke blir homogent over større områder. For eksempel er registrering av objekttype Parkeringsområde i FKB-Veg opsjonelt i alle områdestandardene.
 
@@ -80,10 +82,18 @@ Anleggslinjer skal ikke overlappe hverandre og vil prioriteres i denne rekkeføl
 
 Flateavgrensning
 Taubane
+Hoppbakke
+Idrettsanlegg
+Lysløype
+Skytebaneinnretning
+Rørgate
+Reingjerde
+SpesillDetalj
 Voll
 Skjerm
 Mur
 Gjerde
+Grunnmur
 Ruin
 
 Videre er anbefalingen at slipp heller blir en del av point og interest, siden denne informasjonen er umulig å lese/forstås i ett kart. I Kode, ligger forslaget på hvordan denne generaliseringen kan gjøres.
