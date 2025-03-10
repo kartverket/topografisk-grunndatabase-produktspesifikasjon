@@ -25,7 +25,7 @@ Kun et fåtall objekttyper hentes fra dette datasettet.
 Kun et fåtall objekttyper hentes fra dette datasettet.
 
 * *N50K* +
-Henter ut Lysløype, Hoppbakke, Pir, SpesiellDetalj, Flytebrygge, Campingplass, Parkeringsområde og Reingjerde.
+Henter ut Lysløype, Hoppbakke, Pir, Molo, SpesiellDetalj, Flytebrygge, Campingplass, Parkeringsområde og Reingjerde.
 
 I FKB er registrering av enkelte objekttyper opsjonelt, det kan gjelde for alle eller noen av områdestandardene (A, B, C eller D). Dette kan føre til at N10B-datasettet ikke blir homogent over større områder. For eksempel er registrering av objekttype Parkeringsområde i FKB-Veg opsjonelt i alle områdestandardene.
 
