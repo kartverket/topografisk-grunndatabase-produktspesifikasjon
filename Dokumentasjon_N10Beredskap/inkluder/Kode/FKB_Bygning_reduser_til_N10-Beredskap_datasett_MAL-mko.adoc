@@ -597,3 +597,4 @@ $utropstegn..Område "settes til valgt kopiområde"
 
 #Ekstra informasjon#
 Vi ønsker å beholde alle fritidsboliger og må selektere disse ut før koden over. I tillegg blir det litt mye med at alle bygninger under 50 kvm blir til punkt. Mulig at dette kan løses med å ikke tilate dette i tettbebyggelse elller bymessigbebyggelse. I første omgang er de kun fjernet.
+Vi legger også til Annenbygning og tar kun med de som er over 50 kvm.
