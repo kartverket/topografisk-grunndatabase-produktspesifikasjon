@@ -187,3 +187,5 @@ Har hentet ut mast fra både FKB og NRL:
 De fleste mastene skal kun være med ved overlapp med ledning, men vi har valgt å ta med noen ekstra.
 
 #Anleggsområde#
+
+Alle objektene kommer fra FKB.
