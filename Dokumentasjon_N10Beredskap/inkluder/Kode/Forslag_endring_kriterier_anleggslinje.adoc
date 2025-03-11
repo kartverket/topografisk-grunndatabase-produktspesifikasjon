@@ -2,6 +2,10 @@
 
 #Anleggslinjer#
 
+Det er viktig å selektere ut de flateavgrensningene som ikke ligger til en bygning.
+
+Reingjerde som hentes fra N50K nå i førsteomgang legges ammen med gjerde fra FKB og får egenskapen REingjerde i GjerdeType.
+
 [.red]#Lagringsplass#
 ----
 #Anleggslinjer lagring
@@ -168,3 +172,18 @@ for priority in sorted_priorities:
 
 print("Script complete.")
 
+#Anleggspunkt#
+
+Anleggspunkt inneholder også litt fra FKB og N50K. Ut i fra produktspesifikasjonen hentes inn punkt og noen genereres fra FKB, som er areal men innenfor ett gitt kriterie.
+
+Fra N50K: Gruve, Campingplass, Hoppbakke, og parkeringsområde
+Fra FKB: Pipe, Vindturbin og Tank
+
+OBS! Tank er generert som punkt i fra areal fra FKB under 50 KVM. Bør endre kriteriet fra 100 til 50.
+
+#Master#
+
+Har hentet ut mast fra både FKB og NRL:
+De fleste mastene skal kun være med ved overlapp med ledning, men vi har valgt å ta med noen ekstra.
+
+#Anleggsområde#

@@ -81,14 +81,15 @@ Anleggslinjer untatt Flateavgrensning, Slipp og Taubane skal ikke ligge i tettbe
 Anleggslinjer skal ikke overlappe hverandre og vil prioriteres i denne rekkefølgen:
 
 Flateavgrensning
+Flytebrygge
 Taubane
 Hoppbakke
 Idrettsanlegg
 Lysløype
 Skytebaneinnretning
 Rørgate
-Reingjerde
 SpesillDetalj
+Pir
 Voll
 Skjerm
 Mur
@@ -96,7 +97,7 @@ Gjerde
 Grunnmur
 Ruin
 
-Videre er anbefalingen at slipp heller blir en del av point og interest, siden denne informasjonen er umulig å lese/forstås i ett kart. I Kode, ligger forslaget på hvordan denne generaliseringen kan gjøres.
+Videre er anbefalingen at slipp heller blir en del av point of interest, siden denne informasjonen er umulig å lese/forstås i ett kart. I Kode, ligger forslaget på hvordan denne generaliseringen kan gjøres.
 
 === Kode
 
