@@ -29,4 +29,4 @@ område for militære avdelingers skarpskyteøvelse til lands og/eller til vanns
 ====
 
 *Kilde* +
-Forsvarsbygg. Uttrekk levert opprinnerlig til N50K, 2025.
+Forsvarsbygg, egne datasett ett for land og ett for hav hentes fra Geonorge. De historiske skytefeltene blir tilsendt manuelt.

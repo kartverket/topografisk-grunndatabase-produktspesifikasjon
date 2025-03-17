@@ -1,0 +1,75 @@
+Skytefelt_hav = Skytefelt i sjø hentet fra Geonorge "Forsvarets skyte- og øvingsfelt i sjø"
+Skytefelt_land = Skytefelt på land hentet fra geonorge "Forsvarets skyte- og øvingsfelt land"
+Skytefelt_historiske = Tilsendt skytefelt fra forsvarsbygg
+Lagringsted = X
+N50K_skytefelt = Hentes inn for å lage tamplate for N10B_skytefelt
+N10B_skytefelt = output
+
+#Lager en tom output-fil tilpasset de egenskapene vi ønsker.
+arcpy.management.CreateFeatureclass(Lagringsted, "Skytefelt_forsvaret", "POLYGON", N50K_skytefelt)
+
+# Definer featureclasses
+target_fc = N10B_skytefelt
+fc1 = Skytefelt_historiske
+fc2 = Skytefelt_land
+fc3 = Skytefelt_hav
+
+# Funksjon for å legge til skytefeltstatus-felt hvis det ikke finnes
+def add_status_field(fc):
+    # Sjekk om feltet 'skytefeltstatus' finnes i featureclassen
+    fields = [field.name for field in arcpy.ListFields(fc)]
+    if 'skytefeltstatus' not in fields:
+        # Hvis ikke, legg til feltet
+        arcpy.AddField_management(fc, 'skytefeltstatus', 'TEXT')
+
+# Legg til 'skytefeltstatus' i kildedataene hvis det ikke finnes
+add_status_field(fc1)
+add_status_field(fc2)
+add_status_field(fc3)
+
+# Funksjon for å endre objekttypen til 'skytefelt' for alle featureclassene
+def update_object_type(fc):
+    with arcpy.da.UpdateCursor(fc, ['objtype']) as cursor:  # Bruker 'objtype' i stedet for 'Objekttype'
+        for row in cursor:
+            row[0] = 'Skytefelt'  # Sett objekttypen til 'Skytefelt'
+            cursor.updateRow(row)
+
+# Funksjon for å endre feltnavn fra 'skytefeltNavn' eller 'skytefeltnavn' til 'navn'
+def rename_field(fc):
+    # Hent alle feltnavn i featureclassen i små bokstaver
+    fields = [field.name.lower() for field in arcpy.ListFields(fc)]
+    
+    # Endre feltnavn fra skytefeltNavn eller skytefeltnavn til 'navn'
+    if 'skytefeltnavn' in fields:  # Dette er for Skytefelt_historiske
+        arcpy.AlterField_management(fc, 'skytefeltnavn', 'navn')  # Endre 'skytefeltnavn' til 'navn'
+    elif 'skytefeltNavn' in fields:  # Dette er for Skytefelt_land og Skytefelt_hav
+        arcpy.AlterField_management(fc, 'skytefeltNavn', 'navn')  # Endre 'skytefeltNavn' til 'navn'
+
+# Omdøp feltene i kildedataene
+rename_field(fc1)
+rename_field(fc2)
+rename_field(fc3)
+
+# Oppdater objekttypen til 'Skytefelt' for alle featureclassene
+update_object_type(fc1)
+update_object_type(fc2)
+update_object_type(fc3)
+
+# Funksjon for å legge til status i target_fc under append
+def append_with_status(source_fc, target_fc, status_value):
+    # Legg til status for dataene før append
+    with arcpy.da.UpdateCursor(source_fc, ['navn', 'skytefeltstatus']) as cursor:
+        for row in cursor:
+            if row[0]:  # Hvis det finnes et navn
+                row[1] = status_value  # Sett statusen
+                cursor.updateRow(row)
+
+    # Append kildedataene til target_fc
+    arcpy.Append_management(source_fc, target_fc, "NO_TEST")
+
+# Legg til status og append dataene
+append_with_status(fc1, target_fc, 'Nedlagt')  # Legg til 'Nedlagt' for Skytefelt_historiske (fc1)
+append_with_status(fc2, target_fc, 'Brukes')   # Legg til 'Brukes' for Skytefelt_land (fc2)
+append_with_status(fc3, target_fc, 'Brukes')   # Legg til 'Brukes' for Skytefelt_hav (fc3)
+
+print("Dataene er vellykket lagt til, og status er oppdatert!")
