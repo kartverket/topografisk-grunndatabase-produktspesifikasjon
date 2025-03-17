@@ -30,3 +30,7 @@ område for militære avdelingers skarpskyteøvelse til lands og/eller til vanns
 
 *Kilde* +
 Forsvarsbygg, egne datasett ett for land og ett for hav hentes fra Geonorge. De historiske skytefeltene blir tilsendt manuelt.
+
+==== Kode:
+
+include::Kode/Restriksjonsområder.adoc[]
