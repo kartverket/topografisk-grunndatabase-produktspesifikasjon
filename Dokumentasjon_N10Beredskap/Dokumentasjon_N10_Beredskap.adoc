@@ -54,3 +54,8 @@ include::inkluder/REstriksjonsområder.adoc[]
 == *Samferdsel*
 include::inkluder/samferdsel.adoc[]
 
+== *Bygninger og anlegg*
+include::inkluder/Bygninger_og_anlegg.adoc[]
+
+== *Begrensningskurver*
+include::inkluder/Begrensningskurver.adoc[]
