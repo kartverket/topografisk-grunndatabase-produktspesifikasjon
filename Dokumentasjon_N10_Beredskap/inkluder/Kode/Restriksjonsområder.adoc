@@ -1,20 +1,27 @@
+#Restriksjonsområder#
+
+----
 Skytefelt_hav = Skytefelt i sjø hentet fra Geonorge "Forsvarets skyte- og øvingsfelt i sjø"
 Skytefelt_land = Skytefelt på land hentet fra geonorge "Forsvarets skyte- og øvingsfelt land"
 Skytefelt_historiske = Tilsendt skytefelt fra forsvarsbygg
+
 Lagringsted = X
 N50K_skytefelt = Hentes inn for å lage tamplate for N10B_skytefelt
 N10B_skytefelt = output
 
-#Lager en tom output-fil tilpasset de egenskapene vi ønsker.
+Lager en tom output-fil tilpasset de egenskapene vi ønsker.
 arcpy.management.CreateFeatureclass(Lagringsted, "Skytefelt_forsvaret", "POLYGON", N50K_skytefelt)
-
-# Definer featureclasses
+----
+[.red]#Definer featureclasses#
+----
 target_fc = N10B_skytefelt
 fc1 = Skytefelt_historiske
 fc2 = Skytefelt_land
 fc3 = Skytefelt_hav
+----
 
-# Funksjon for å legge til skytefeltstatus-felt hvis det ikke finnes
+[.red]#Fremgangsmåte til sluttresultat#
+----
 def add_status_field(fc):
     # Sjekk om feltet 'skytefeltstatus' finnes i featureclassen
     fields = [field.name for field in arcpy.ListFields(fc)]
@@ -39,7 +46,7 @@ def rename_field(fc):
     # Hent alle feltnavn i featureclassen i små bokstaver
     fields = [field.name.lower() for field in arcpy.ListFields(fc)]
     
-    # Endre feltnavn fra skytefeltNavn eller skytefeltnavn til 'navn'
+    #Endre feltnavn fra skytefeltNavn eller skytefeltnavn til 'navn'
     if 'skytefeltnavn' in fields:  # Dette er for Skytefelt_historiske
         arcpy.AlterField_management(fc, 'skytefeltnavn', 'navn')  # Endre 'skytefeltnavn' til 'navn'
     elif 'skytefeltNavn' in fields:  # Dette er for Skytefelt_land og Skytefelt_hav
@@ -64,7 +71,7 @@ def append_with_status(source_fc, target_fc, status_value):
                 row[1] = status_value  # Sett statusen
                 cursor.updateRow(row)
 
-    # Append kildedataene til target_fc
+    Append kildedataene til target_fc
     arcpy.Append_management(source_fc, target_fc, "NO_TEST")
 
 # Legg til status og append dataene
@@ -73,3 +80,4 @@ append_with_status(fc2, target_fc, 'Brukes')   # Legg til 'Brukes' for Skytefelt
 append_with_status(fc3, target_fc, 'Brukes')   # Legg til 'Brukes' for Skytefelt_hav (fc3)
 
 print("Dataene er vellykket lagt til, og status er oppdatert!")
+----

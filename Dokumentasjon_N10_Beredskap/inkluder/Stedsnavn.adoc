@@ -30,6 +30,8 @@ I byer/tettsteder kan det bli for mange navneforekomster som helt/delvis overlap
 * *Bortvalg basert på konfliktanalyse* +
 Bortvalg av forekomster kan gjøres med konfliktanalyse og klassifisering av elementer fra SSR i et hierarki, f.eks. etter navneobjekttype. Alle elementer i konflikt med elementer høyere i hierarkiet tas bort eller utelates i endelige produkter.
 
+I testversjonen er det brukt en transformator fra labeling til annotasjon, der håndtering av tekstplassering er gjort ved bruk av ArcGIS Pro. Denne er en enkel versjon og kan jobbes mer med. Det ønskes tilbakemelding på utvalg.
+
 * *Strukturfeil i SSR* +
 Det finnes forekomster i SSR som ikke er knyttet korrekt sammen på ett felles sted. Dette kan fort skape problemer når uthenting fra SSR og tilhørende kartografisk presentasjon skal baseres på automatikk.
 
