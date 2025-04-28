@@ -19,7 +19,7 @@ Det er ikke aktuelt å bruke navneforekomster fra alle navneobjekttyper i SSR i 
 Hvilke forekomster som kan filtreres bort på navneobjekttypenivå vil være gjenstand for videre vurdering.
 
 * *Utvalg av språkvarianter* +
-Mange stedsnavneforekomster har flere språkvarianter, naturlig nok forekommer dette hyppigst i de tre nordligste fylkene. Hvilke språkvarianter som kan filtreres bort vil være gjenstand for videre vurdering.
+Mange stedsnavneforekomster har flere språkvarianter, naturlig nok forekommer dette hyppigst i de tre nordligste fylkene. Hvilke språkvarianter som kan filtreres bort vil være gjenstand for videre vurdering. 
 
 * *Utvalg av sidenavnsvarianter* +
 Mange stedsnavneforekomster har flere sidenavnsvarianter - dvs. likestilte navn, disse kan være kombinert med flere språkvarianter. Hvilke varianter som kan filtreres bort vil være gjenstand for videre vurdering.
@@ -30,7 +30,14 @@ I byer/tettsteder kan det bli for mange navneforekomster som helt/delvis overlap
 * *Bortvalg basert på konfliktanalyse* +
 Bortvalg av forekomster kan gjøres med konfliktanalyse og klassifisering av elementer fra SSR i et hierarki, f.eks. etter navneobjekttype. Alle elementer i konflikt med elementer høyere i hierarkiet tas bort eller utelates i endelige produkter.
 
-I testversjonen er det brukt en transformator fra labeling til annotasjon, der håndtering av tekstplassering er gjort ved bruk av ArcGIS Pro. Denne er en enkel versjon og kan jobbes mer med. Det ønskes tilbakemelding på utvalg.
+* *Automatisk plassering av navn* +
+I testversjonen er det brukt en transformator fra labeling til annotasjon, der håndtering av tekstplassering er gjort ved bruk av ArcGIS Pro. Denne er en enkel versjon og kan jobbes mer med. Det ønskes tilbakemelding på utvalg. Vurdering i etterkant av den automatiske generaliseringen er det observert noen forbedringspotensial.
+
+- Områdenavn er plassert i utkanten av område, dette gjelder spesielt for Bydelsområde. Mulig dette kan løses med skriftkode, for å fremheve forskjeller i stedsnavnene.
+
+- I områder klomper det seg med stedsnavn, dette er fortsatt vanskelig å unngå med plasseringsverktøyet.
+
+- Det er en del stedsnavn som blir veldig lange, og er heller ikke nødvendige. Eksempel "navn gang og sykkelvei bru", kan kanskje fjernes, eventuelt erstattes med symbol. Et annet eksempel på lange navn er skoler. 
 
 * *Strukturfeil i SSR* +
 Det finnes forekomster i SSR som ikke er knyttet korrekt sammen på ett felles sted. Dette kan fort skape problemer når uthenting fra SSR og tilhørende kartografisk presentasjon skal baseres på automatikk.

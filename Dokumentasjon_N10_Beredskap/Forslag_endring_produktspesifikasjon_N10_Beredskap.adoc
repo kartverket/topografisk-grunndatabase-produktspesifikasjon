@@ -1,0 +1,88 @@
+:datasett: Endring av produktspesifikasjon for N10 Beredskap 
+:kortnavn: N10 
+:versjon: 1.0 
+:skjemaversjon: 1.0 
+:publisert: x
+:underversjon: 2025-04-28 
+:prodspek-forrige:
+:versjon-forrige: 
+
+include::inkluder/filhode_2.adoc[]
+
+== Innledning
+Etter at testversjonen av N10 Beredskap er ferdig, starter arbeidet med å revidere produktsesifikasjonen. Dette er nødvendig fordi det ble gjort mindre heldige beslutninger ved opprettelsen av produktspesifikasjonen, som ble avdekket under innhenting og sammenstilling av kildedata.
+
+== Forslag til endringer:
+=== ArealdekkeFlate
+Dette har vært den desidert mest utfordrende innsamlingen og vi har ikke klart å følge produktspesifikasjonen slik den er i dag. Det er behov for noe mer generalisering og utluking slik det står i produktspesifikasjonen. Forslaget er å ikke gjøre store endringer på produktspesfikasjonen, men å avvente og se om vi kan bruke "Grunnkart for Arealregnskap" som sammenstiller de ulike kildene. Slik testdataene er i dag, må det gjennomføres en generalisering og da kan kriteriene fra produktspesifkasjonen testes i større grad.
+
+- Det er imidlertid slik at FerkvannTørrfall kun eksisterer i N50K og vil være vanskelig å opprettholde.
+
+=== Samferdsel
+==== SenterlinjeVeg
+Siden arealdekke fra FKB-AR5 innholder veiareal, blir både veiareal og senterlinje vei med. Vi bruker forenklet elveg i denne omgang, som ser ut til å passe godt til målestokken.
+
+=== Bygg og Anlegg
+Generelt for dette temaet er at det er tatt med for mye i produktspesifikasjonen og det er kartografisk problemetisk i veldig mange tilfeller. 
+
+==== Bygninger
+|===
+| Forslag | Eksisterende| Hvorfor
+| Definisjon: bygning som er registrert i Matrikkelen samt et utvalg av bygninger fra FKB AnnenBygning 
+
+Kriterier: Bygninger større enn 50 m² og med minste bredde 5 meter registreres som flateobjekt. I bygninger med atrium («hull») må atriet være større enn 50 m² for at dette skal med. Er det mindre, inngår atriet i den omkringliggende bygningsflaten. Fritidsboliger under 50 m² tas med | Definisjon: bygning som er registrert i Matrikkelen samt et utvalg av bygninger fra FKB AnnenBygning
+
+Kriterier: Bygninger større enn 50 m² og med minste bredde 5 meter registreres som flateobjekt, øvrige som punkt.I bygninger med atrium («hull») må atriet være større enn 50 m² for at dette skal med. Er det mindre, inngår atriet i den omkringliggende bygningsflaten.
+
+I tillegg til bygningsflaten, vil enkelte bygninger angis med symbol.   | Det ble veldig mange bygningspunkt som forringet kartografien, og vi vil derfor anbefale å beholde alle fritidsboliger og heller fjerne alle bygninger under 50 m². 
+|===
+
+==== Anleggslinjer
+Anleggslinjer behandles hver for seg og har kriterier koblet til objekttype. Dette er problematisk når uthenting skal skje automatisk. Det er veldig mange anlegglinjer i FKB og i en målestokk på 1:10 000 blir det for mange objekter. forslaget er å samle alle anleggslinjer og ha en felles kriterie for alle, der objekttypen er satt opp i ett hierarki. Ledninger behandles for seg.
+|===
+| Forslag | Eksisterende| Hvorfor
+| Alle anleggslinjer innen tettbebyggelse og bymessigbebyggelse fjernes.
+
+Utenfor tettbebyggelse blir alle anleggslinjer vurdert i henhold til hierarki. Alle linjer nærmere en 20 meter fra vei og jernbane fjernes. Alle linjer som er nærmere enn 20 meter fra en annen anleggslinje med høyere hierarki (viktigere anleggslinje) vil også fjernes. 
+|Mange ulike kriterier og minstelengder, får ikke plass her
+
+|Minstekriteriene fungerer dårlig ved automatisk utvelgelse fordi linjene består ofte av små segmenter og en hel del analyse må til for å kunne velge minstemål automatisk.
+|===
+
+===== Ledninger
+
+
+|===
+| Forslag | Eksisterende| Hvorfor
+|Definisjon: overføringslinjer som overfører energi over lange distanser ved høye spenninger
+
+Kriterie:
+- Ledninger i tettbebyggelse eller bymessig bebyggelse vises ikke på kartet.
+- Ledninger under 500 meter som ligger isolert fjernes fra kartet.
+- Ytterkanter av ledningsnettet som er under 500 meter fjernes fra kartet.
+
+|Definisjon: linje som fører elektrisk kraft over store avstander og der det er usikkert om det er lav- eller høyspentlinje
+
+Merknad: Kan benyttes dersom ..MEDIUM L og ..LEDNING * 3 8
+
+|Definisjonen er i utgangspunktet feil, siden vi benytter egenskapen nettverkstype der type ledning angis. Alle Ledninger som overfører energi tas med.
+|===
+
+
+==== Anleggspunkt
+
+===== Tank
+|===
+| Forslag | Eksisterende| Hvorfor
+|Definisjon: lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning
+
+Kriterier: Alle objekter større enn 50 m² avlegges som flate, mindre enn 50 m² som punkt. Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.
+
+
+
+|Definisjon: lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning
+
+Kriterier: Alle objekter større enn 100 m² avlegges som flate, mindre enn 100 m² som punkt. Tank vist som punkt tas ikke med i bymessig bebyggelse, tettbebyggelse og industriområde. Tank som flate kan derimot tas med i industriområde.| Tank kan fint tas med som 50 m² og ved 100 m² blir det for mange punkt.
+
+|===
+
